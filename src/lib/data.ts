@@ -112,7 +112,7 @@ export const entityUrl = (type: string, name: string) => url(`e/${type}/${name}/
 export const sutraUrl = (id: string) => url(`sutra/${id}/`);
 export const cbetaUrl = (id: string) => `https://cbetaonline.dila.edu.tw/zh/${id}`;
 // takedown requests and corrections
-export const feedbackUrl = "https://github.com/alocus/dharma-notes/issues";
+export const feedbackUrl = "https://github.com/tamondigital/dharma-notes/issues";
 
 export function hasEntity(type: string, name: string) { return !!entities[type]?.[name]; }
 
