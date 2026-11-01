@@ -53,20 +53,22 @@ const sutraTitle = (id: string) => sutraData.sutras[id]?.title ?? id;
           {multiChannel && <span hidden data-pagefind-filter="講者">{channelLabel(c)}</span>}
         </div>
         {l.scope && <p class="scope"><b>本講範圍</b>{plain(l.scope)}</p>}
-        <div class="actions">
-          {l.video_id && <button class="btn" type="button" data-open-player>▶ 播放影片</button>}
-          <a class="btn" href="transcript/">逐字稿</a>
-          <button class="btn" type="button" data-toggle-cites aria-pressed="true">出處標記：開</button>
-        </div>
+        {!l.video_id && l.has_transcript && <div class="actions"><a class="btn" href="transcript/">逐字稿</a></div>}
       </header>
 
       {l.video_id && (
-        <div class="player open" id="player">
+        <div class="player open" id="player" data-pagefind-ignore
+          data-next={next ? lessonUrl(sibling(next.no)) : undefined} data-next-title={next ? lessonTitle(s, next) : undefined}>
           <div class="player-body">
             <div class="player-frame"><div data-yt></div></div>
-            <div class="follow" data-follow data-pagefind-ignore tabindex="0" role="region" aria-label="逐字稿跟讀"><p class="muted">逐字稿載入中…</p></div>
+            <div class="follow-wrap">
+              <div class="follow" data-follow tabindex="0" role="region" aria-label="逐字稿跟讀"><p class="muted">逐字稿載入中…</p></div>
+              <div class="follow-grip" data-grip role="separator" tabindex="0" aria-orientation="horizontal" aria-label="拖曳或用上下鍵調整逐字稿高度"></div>
+            </div>
           </div>
-          <PlayerBar toNote follow="跟讀逐字稿" hint="點筆記中的 ● 出處標記或下方逐字稿，影片跳到該處；點「↓ 筆記」回到筆記對應段落。" />
+          <PlayerBar current="note" note={lessonUrl(key)} transcript={l.has_transcript ? "transcript/" : undefined}
+            toNote panel follow="逐字稿自動跟隨影片"
+            hint="點筆記中的 ● 出處標記或逐字稿段落，影片跳到該處；「↓ 對應段落」捲到筆記中講到這裡的地方，有多處時再點一下跳到下一處。拖曳逐字稿下緣可調整高度。播放位置會記住，切換到逐字稿或下次再來都從原處接著播。" />
         </div>
       )}
 

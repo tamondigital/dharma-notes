@@ -100,40 +100,60 @@
   document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") closePop(); });
   window.addEventListener("resize", () => pop && place(pop));
 
-  // ---------- citation toggle ----------
-  const tog = document.querySelector("[data-toggle-cites]");
-  const setCites = (on) => {
-    body.classList.toggle("hide-cites", !on);
-    tog.setAttribute("aria-pressed", String(on));
-    tog.textContent = `出處標記：${on ? "開" : "關"}`;
-    try { localStorage.setItem("cites", on ? "1" : "0"); } catch (e) {}
-  };
-  try { if (localStorage.getItem("cites") === "0") setCites(false); } catch (e) {}
-  tog.addEventListener("click", () => { closePop(); setCites(body.classList.contains("hide-cites")); });
-
   // ---------- player (open by default) + follow-along transcript ----------
   const box = document.getElementById("player");
   const player = box && videoId ? window.notesPlayer(box, videoId) : null;
   const play = (sec) => player?.play(sec);
   if (player) {
     player.ensure();
-    document.querySelector("[data-open-player]")?.addEventListener("click", async () => {
-      box.scrollIntoView({ behavior: notesScroll(), block: "nearest" });
-      (await player.ensure()).playVideo();
+
+    // two separate switches: show the transcript panel; let it follow the video
+    const follow = box.querySelector("[data-follow]");
+    const toggle = (btn, cls, key) => {
+      const set = (on) => {
+        box.classList.toggle(cls, !on);
+        btn.setAttribute("aria-pressed", String(on));
+        try { localStorage.setItem(key, on ? "1" : "0"); } catch (e) {}
+      };
+      try { if (localStorage.getItem(key) === "0") set(false); } catch (e) {}
+      btn.addEventListener("click", () => set(box.classList.contains(cls)));
+      return set;
+    };
+    toggle(box.querySelector("[data-toggle-panel]"), "no-ts", "ts-panel");
+    const followBtn = box.querySelector("[data-toggle-follow]");
+    toggle(followBtn, "no-follow", "ts-follow");
+    let tracker = null;
+    followBtn.addEventListener("click", () => tracker?.resume());
+
+    // panel height: drag the grip under it, or arrow keys on the grip
+    const grip = box.querySelector("[data-grip]");
+    const lineH = () => parseFloat(getComputedStyle(follow).lineHeight) || 28;
+    const setH = (px, keep) => {
+      const h = Math.round(Math.min(Math.max(px, lineH() * 1.5), innerHeight * 0.6));
+      box.style.setProperty("--follow-h", h + "px");
+      if (keep) try { localStorage.setItem("ts-h", String(h)); } catch (e) {}
+    };
+    try { const h = Number(localStorage.getItem("ts-h")); if (h) setH(h); } catch (e) {}
+    grip.addEventListener("pointerdown", (ev) => {
+      ev.preventDefault();
+      grip.setPointerCapture(ev.pointerId);
+      const y0 = ev.clientY, h0 = follow.offsetHeight;
+      const move = (e) => setH(h0 + e.clientY - y0);
+      const up = () => {
+        setH(follow.offsetHeight, true);
+        grip.removeEventListener("pointermove", move); grip.removeEventListener("pointerup", up);
+      };
+      grip.addEventListener("pointermove", move); grip.addEventListener("pointerup", up);
+    });
+    grip.addEventListener("keydown", (ev) => {
+      const d = { ArrowDown: 1, ArrowUp: -1 }[ev.key];
+      if (!d) return;
+      ev.preventDefault();
+      setH(follow.offsetHeight + d * lineH(), true);
     });
 
-    const follow = box.querySelector("[data-follow]");
-    const followBtn = box.querySelector("[data-toggle-follow]");
-    let rows = null, active = [], userScrolled = 0;
-    const setFollow = (on) => {
-      box.classList.toggle("no-follow", !on);
-      followBtn.setAttribute("aria-pressed", String(on));
-      try { localStorage.setItem("follow", on ? "1" : "0"); } catch (e) {}
-    };
-    try { if (localStorage.getItem("follow") === "0") setFollow(false); } catch (e) {}
-    followBtn.addEventListener("click", () => setFollow(box.classList.contains("no-follow")));
-
     // paragraphs after the title block; each keeps its own time or inherits the last one
+    let rows = null;
     loadData().then((data) => {
       if (!data) { follow.innerHTML = '<p class="muted">逐字稿載入失敗。</p>'; return; }
       const title = data.lines.findIndex((x) => x.startsWith("# "));
@@ -146,50 +166,65 @@
         const own = data.t[i + 1];
         if (own) last = own[0];
         if (last == null) return;
-        rows.push({ t: last, own: !!own });
+        rows.push({ t: last, len: text.length });
         html += `<p data-i="${rows.length - 1}"><span class="tm">${own ? fmt(own[0]) : ""}</span>${esc(text)}</p>`;
       });
       follow.innerHTML = html || '<p class="muted">這一講沒有時間對照的逐字稿。</p>';
+      if (!rows.length) return;
+      rows.forEach((r, i) => { r.el = follow.children[i]; });
+      tracker = notesFollow(player, rows, {
+        scroller: follow, cls: "on",
+        enabled: () => !box.classList.contains("no-follow") && !box.classList.contains("no-ts"),
+      });
     });
     follow.addEventListener("click", (ev) => {
       const p = ev.target.closest("p[data-i]");
       if (p) play(rows[p.dataset.i].t);
     });
-    notesOnManualScroll(follow, () => { userScrolled = Date.now(); });
 
-    // video -> note: the citation whose time is the latest at or before now (else the earliest)
-    box.querySelector("[data-to-note]")?.addEventListener("click", async () => {
+    // video -> note: the citations covering the line being spoken (else the latest one before it);
+    // tapping again moves on to the next such place
+    const toNote = box.querySelector("[data-to-note]");
+    const toNoteN = box.querySelector("[data-to-note-n]");
+    let cycle = { blocks: [], i: -1 }, nTimer = null;
+    toNote?.addEventListener("click", async () => {
       const [data, yt] = await Promise.all([loadData(), player.ensure()]);
       if (!data) return;
-      const now = yt.getCurrentTime?.() ?? 0;
-      let best = null, bestT = -1, first = null, firstT = Infinity;
+      const now = player.started() ? yt.getCurrentTime?.() ?? 0 : player.resumeAt;
+      let line = 0;
+      for (const [n, v] of Object.entries(data.t)) if (v[0] <= now && Number(n) > line) line = Number(n);
+      const covering = [], byTime = new Map();
+      let bestT = -1, firstT = Infinity;
       for (const a of body.querySelectorAll("a.c")) {
-        const t = timeOf(data, Number(a.dataset.r.split(/[-,]/)[0]))?.[0];
+        const ranges = a.dataset.r.split(",").map((x) => x.split("-").map(Number));
+        if (line && ranges.some(([s, e]) => s <= line && line <= (e || s))) covering.push(a);
+        const t = timeOf(data, ranges[0][0])?.[0];
         if (t == null) continue;
-        if (t <= now && t > bestT) { best = a; bestT = t; }
-        if (t < firstT) { first = a; firstT = t; }
+        if (!byTime.has(t)) byTime.set(t, []);
+        byTime.get(t).push(a);
+        if (t <= now && t > bestT) bestT = t;
+        if (t < firstT) firstT = t;
       }
-      const a = best ?? first;
-      if (!a) return;
-      const block = a.closest("p, li, blockquote, h2, h3, h4, td") ?? a;
+      const found = covering.length ? covering : byTime.get(bestT >= 0 ? bestT : firstT) ?? [];
+      // one stop per paragraph, in reading order
+      const blocks = [...new Set(found.map((a) => a.closest("p, li, blockquote, h2, h3, h4, td, pre") ?? a))]
+        .sort((x, y) => (x.compareDocumentPosition(y) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
+      if (!blocks.length) { player.status("筆記中沒有對應目前影片的段落"); return; }
+      const same = blocks.length === cycle.blocks.length && blocks.every((b, i) => b === cycle.blocks[i]);
+      cycle = { blocks, i: same ? (cycle.i + 1) % blocks.length : 0 };
+      const block = blocks[cycle.i];
       const top = block.getBoundingClientRect().top + window.scrollY - box.offsetHeight - 24;
       window.scrollTo({ top, behavior: notesScroll() });
       block.classList.remove("flash"); void block.offsetWidth; block.classList.add("flash");
-    });
-
-    player.onTime((now) => {
-      if (!rows?.length || box.classList.contains("no-follow")) return;
-      // last row starting at or before now (rows are in time order)
-      let lo = 0, hi = rows.length - 1, k = -1;
-      while (lo <= hi) { const m = (lo + hi) >> 1; if (rows[m].t <= now) { k = m; lo = m + 1; } else hi = m - 1; }
-      if (k < 0) return;
-      let s = k; while (s > 0 && rows[s - 1].t === rows[k].t) s--;
-      if (active[0] === s) return;
-      active.forEach((i) => follow.children[i]?.classList.remove("on"));
-      active = [];
-      for (let i = s; i <= k; i++) { follow.children[i].classList.add("on"); active.push(i); }
-      if (Date.now() - userScrolled > 5000)
-        follow.scrollTo({ top: follow.children[s].offsetTop - follow.clientHeight / 4, behavior: notesScroll() });
+      // where we landed: the section heading above the paragraph
+      let h = block.closest("h2") ? block : null;
+      for (let el = block; !h && el && el !== body; el = el.previousElementSibling ?? el.parentElement)
+        if (el.tagName === "H2") h = el;
+      const n = blocks.length > 1 ? `${cycle.i + 1}/${blocks.length}` : "";
+      toNoteN.textContent = n ? ` ${n}` : "";
+      clearTimeout(nTimer);
+      nTimer = setTimeout(() => { toNoteN.textContent = ""; }, 8000);
+      player.status(`已跳到筆記${h ? "「" + h.textContent.replace(/〔[^〕]*〕/g, "").trim() + "」" : ""}${n ? `，第 ${n} 處，再點跳下一處` : ""}`);
     });
   }
 

@@ -2,7 +2,7 @@
 import Base from "../../../../layouts/Base.astro";
 import PlayerBar from "../../../../components/PlayerBar.astro";
 import {
-  allLessons, url, lessonUrl, seriesUrl, lessonTitle, transcript, fmtTime, channelLabel, multiChannel, type Located,
+  allLessons, url, lessonUrl, transcriptUrl, seriesUrl, lessonTitle, transcript, fmtTime, channelLabel, multiChannel, type Located,
 } from "../../../../lib/data";
 import { renderLine } from "../../../../lib/render";
 
@@ -28,6 +28,8 @@ const timed = rows.map((r) => {
   return { ...r, t: own ?? null, inherited: !own && last ? last : null };
 });
 const yt = l.video_id ? `https://www.youtube.com/watch?v=${l.video_id}` : null;
+const withVideo = s.lessons.filter((y) => y.has_transcript && y.video_id);
+const next = withVideo[withVideo.findIndex((y) => y.no === l.no) + 1];
 ---
 <Base title={`${title}・逐字稿`} description={`${title} 完整逐字稿`}>
   <div class="crumbs">
@@ -46,9 +48,11 @@ const yt = l.video_id ? `https://www.youtube.com/watch?v=${l.video_id}` : null;
     ? <p class="raw-note" style="margin:16px 0">這是字幕辨識的原始稿，尚未整理，錯字較多，也還沒有時間對照。</p>
     : <p class="muted" style="font-size:.85rem;margin:12px 0 20px">點左側時間點，影片從該處播放；播放時，目前講到的段落會標示出來並自動捲動。把滑鼠移到段落上會顯示行號（筆記中的出處行號）。</p>}
   {l.video_id && (
-    <div class="player open" id="player" data-video={l.video_id}>
+    <div class="player open" id="player" data-video={l.video_id}
+      data-next={next ? transcriptUrl(`${c.slug}/${s.slug}/${next.no}`) : undefined} data-next-title={next ? lessonTitle(s, next) : undefined}>
       <div class="player-frame"><div data-yt></div></div>
-      <PlayerBar follow={l.raw ? undefined : "自動捲動到目前段落"} />
+      <PlayerBar current="transcript" note={l.has_note ? lessonUrl(key) : undefined} transcript="./"
+        follow={l.raw ? undefined : "逐字稿自動跟隨影片"} />
     </div>
   )}
   <div class="ts" data-pagefind-body>
@@ -97,7 +101,7 @@ const yt = l.video_id ? `https://www.youtube.com/watch?v=${l.video_id}` : null;
 
       const btn = box.querySelector("[data-toggle-follow]");
       if (!btn) return;
-      let follow = true, userScrolled = 0;
+      let follow = true;
       try { follow = localStorage.getItem("follow-ts") !== "0"; } catch (e) {}
       const setFollow = (on) => {
         follow = on;
@@ -105,29 +109,15 @@ const yt = l.video_id ? `https://www.youtube.com/watch?v=${l.video_id}` : null;
         try { localStorage.setItem("follow-ts", on ? "1" : "0"); } catch (e) {}
       };
       setFollow(follow);
-      btn.addEventListener("click", () => setFollow(!follow));
-      notesOnManualScroll(window, () => { userScrolled = Date.now(); });
-
       const rows = [...ts.querySelectorAll("p")]
-        .map((p) => ({ p, t: Number(p.querySelector("a.tc")?.dataset.t ?? NaN) }))
+        .map((p) => ({ el: p, t: Number(p.querySelector("a.tc")?.dataset.t ?? NaN), len: p.textContent.length }))
         .filter((r) => !Number.isNaN(r.t));
-      let active = [];
-      player.onTime((now) => {
-        let lo = 0, hi = rows.length - 1, k = -1;
-        while (lo <= hi) { const m = (lo + hi) >> 1; if (rows[m].t <= now) { k = m; lo = m + 1; } else hi = m - 1; }
-        if (k < 0) return;
-        let s = k; while (s > 0 && rows[s - 1].t === rows[k].t) s--;
-        if (active[0] === rows[s].p) return;
-        active.forEach((p) => p.classList.remove("now"));
-        active = rows.slice(s, k + 1).map((r) => r.p);
-        active.forEach((p) => p.classList.add("now"));
-        if (follow && Date.now() - userScrolled > 5000) {
-          const top = active[0].getBoundingClientRect().top;
-          const under = box.getBoundingClientRect().bottom;
-          const y = top - under - (innerHeight - under) / 4;
-          scrollBy({ top: y, behavior: notesScroll() });
-        }
+      if (!rows.length) return;
+      const tracker = notesFollow(player, rows, {
+        scroller: window, cls: "now", enabled: () => follow,
+        top: () => Math.max(0, box.getBoundingClientRect().bottom),
       });
+      btn.addEventListener("click", () => { setFollow(!follow); tracker.resume(); });
     })();
   </script>
 </Base>

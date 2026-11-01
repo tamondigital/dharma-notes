@@ -1,15 +1,29 @@
 ---
-// Controls under the docked player: an optional jump back to the note on the left, icon toggles on the right.
-// follow: the follow-along toggle's name, or omitted for none; hint: help text revealed by the ? button.
-interface Props { toNote?: boolean; follow?: string; hint?: string }
-const { toNote = false, follow, hint } = Astro.props;
+// Controls under the docked player: the 筆記／逐字稿 switch and the jump back to the note on the left,
+// icon toggles on the right.
+// note/transcript: hrefs of the two views (the current one is `current`); panel: the note page's
+// follow-along transcript can be shown or hidden; follow: the auto-scroll toggle's name, or omitted for none;
+// hint: help text revealed by the ? button.
+interface Props {
+  note?: string; transcript?: string; current: "note" | "transcript";
+  toNote?: boolean; panel?: boolean; follow?: string; hint?: string;
+}
+const { note, transcript, current, toNote = false, panel = false, follow, hint } = Astro.props;
 const svg = 'width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+const views = note && transcript ? [["note", "筆記", note], ["transcript", "逐字稿", transcript]] : [];
 ---
 <div class="player-bar">
-  <span>
+  <span class="pb-left">
+    {views.length > 0 && (
+      <nav class="pb-views" aria-label="切換筆記或逐字稿（影片不中斷）">
+        {views.map(([k, label, href]) => k === current
+          ? <span aria-current="page">{label}</span>
+          : <a href={href}>{label}</a>)}
+      </nav>
+    )}
     {toNote && (
-      <button type="button" class="pb-note" data-to-note title="捲到筆記中對應目前影片的段落">
-        <Fragment set:html={`<svg ${svg}><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`} />筆記
+      <button type="button" class="pb-note" data-to-note title="捲到筆記中對應目前影片的段落；再點一下跳到下一處">
+        <Fragment set:html={`<svg ${svg}><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`} />對應段落<span class="pb-n" data-to-note-n></span>
       </button>
     )}
   </span>
@@ -19,17 +33,23 @@ const svg = 'width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="curr
         <Fragment set:html={`<svg ${svg}><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>`} />
       </button>
     )}
-    {follow && (
-      <button type="button" class="pb-i" data-toggle-follow aria-pressed="true" aria-label={follow} title={follow}>
+    {panel && (
+      <button type="button" class="pb-i" data-toggle-panel aria-pressed="true" aria-label="顯示逐字稿" title="顯示逐字稿">
         <Fragment set:html={`<svg ${svg}><path d="M4 6h16M4 12h16M4 18h10"/></svg>`} />
       </button>
     )}
-    <button type="button" class="pb-i" data-mini aria-pressed="false" aria-label="縮小播放器" title="縮小播放器">
+    {follow && (
+      <button type="button" class="pb-i" data-toggle-follow aria-pressed="true" aria-label={follow} title={follow}>
+        <Fragment set:html={`<svg ${svg}><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>`} />
+      </button>
+    )}
+    <button type="button" class="pb-i pb-mini" data-mini aria-pressed="false" aria-label="縮小播放器" title="縮小播放器">
       <Fragment set:html={`<svg ${svg} class="ic-shrink"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg><svg ${svg} class="ic-grow"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>`} />
     </button>
-    <button type="button" class="pb-i" data-close-player aria-label="關閉播放器" title="關閉播放器">
-      <Fragment set:html={`<svg ${svg}><path d="M18 6 6 18M6 6l12 12"/></svg>`} />
+    <button type="button" class="pb-i" data-close-player aria-label="關閉影片" title="關閉影片">
+      <Fragment set:html={`<svg ${svg} class="ic-close"><path d="M18 6 6 18M6 6l12 12"/></svg><svg ${svg} class="ic-show"><path d="M7 4v16l13-8z"/></svg>`} /><span class="ic-show">顯示影片</span>
     </button>
   </span>
 </div>
+<p class="pb-status" data-status role="status" aria-live="polite"></p>
 {hint && <p class="player-hint" id="player-hint" hidden>{hint}</p>}

@@ -20,25 +20,33 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet" />
     <script is:inline>
-      try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+      try {
+        const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t;
+        const f = Number(localStorage.getItem("font-scale")); if (f) document.documentElement.style.fontSize = Math.round(f * 100) + "%";
+      } catch (e) {}
     </script>
   </head>
   <body>
+    <a class="skip" href="#main">跳到主要內容</a>
     <header class="site-head">
       <div class="site-head-inner">
         <a class="brand" href={url("/")}>{site.title}</a>
-        <nav>
+        <nav aria-label="主選單">
           <a href={url("/")}>系列</a>
           <a href={url("e/")}>名相</a>
           <a href={url("sutra/")}>經論</a>
           <a href={url("search/")}>搜尋</a>
           <a href={url("guide/")}>說明</a>
           <a href={url("about/")}>關於</a>
-          <button class="theme-toggle" type="button" aria-label="切換深淺色">◐</button>
+          <span class="font-size" role="group" aria-label="字體大小">
+            <button type="button" data-font="-1" aria-label="縮小字體" title="縮小字體">A<small>−</small></button>
+            <button type="button" data-font="1" aria-label="放大字體" title="放大字體">A<small>+</small></button>
+          </span>
+          <button class="theme-toggle" type="button" aria-label="切換深淺色" title="切換深淺色">◐</button>
         </nav>
       </div>
     </header>
-    <main class:list={["page", { wide }]}>
+    <main id="main" tabindex="-1" class:list={["page", { wide }]}>
       <slot />
     </main>
     <footer class="site-foot">
@@ -53,6 +61,24 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         root.dataset.theme = dark ? "light" : "dark";
         try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
       });
+      // text size for every page: steps of the root font size, remembered on this device
+      (() => {
+        const steps = [0.9, 1, 1.12, 1.25, 1.4, 1.6], root = document.documentElement;
+        const cur = () => Math.round(parseFloat(root.style.fontSize || "100")) / 100;
+        const btns = document.querySelectorAll("[data-font]");
+        const sync = () => {
+          const i = steps.indexOf(cur());
+          btns[0].disabled = i === 0; btns[1].disabled = i === steps.length - 1;
+        };
+        btns.forEach((b) => b.addEventListener("click", () => {
+          const i = Math.max(0, steps.indexOf(cur()));
+          const f = steps[Math.min(steps.length - 1, Math.max(0, i + Number(b.dataset.font)))];
+          root.style.fontSize = Math.round(f * 100) + "%";
+          try { f === 1 ? localStorage.removeItem("font-scale") : localStorage.setItem("font-scale", String(f)); } catch (e) {}
+          sync();
+        }));
+        sync();
+      })();
     </script>
   </body>
 </html>
