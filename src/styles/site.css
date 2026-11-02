@@ -190,6 +190,12 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 .player.mini .player-frame { flex: none; }
 /* leave room to read while the transcript shows */
 .player:not(.mini):not(.no-ts) .player-body .player-frame { max-height: 34vh; }
+/* the note page showing its transcript in place (reader.js): one column, the note's own parts put away */
+.reader.ts-mode { display: block; max-width: 1048px; margin: 0 auto; }
+.reader.ts-mode :is(.toc, .aside, .prose, .proof, .pager, .scope),
+.reader.ts-mode .player :is(.follow-wrap, .pb-note, [data-toggle-panel], [data-hint], .player-hint) { display: none !important; }
+.reader.ts-mode .player.no-ts [data-toggle-follow] { display: inline-flex; }
+.reader.ts-mode .player:not(.mini) .player-body .player-frame { max-height: 42vh; }
 .ts p.now { background: var(--accent-soft); }
 .ts p.now .tc { color: var(--accent); }
 

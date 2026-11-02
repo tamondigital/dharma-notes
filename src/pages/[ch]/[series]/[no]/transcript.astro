@@ -45,8 +45,8 @@ const next = withVideo[withVideo.findIndex((y) => y.no === l.no) + 1];
     {l.has_note && <a href={lessonUrl(key)}>← 回到筆記</a>}
   </div>
   {l.raw
-    ? <p class="raw-note" style="margin:16px 0">這是字幕辨識的原始稿，尚未整理，錯字較多，也還沒有時間對照。</p>
-    : <p class="muted" style="font-size:.85rem;margin:12px 0 20px">點左側時間點，影片從該處播放；播放時，目前講到的段落會標示出來並自動捲動。把滑鼠移到段落上會顯示行號（筆記中的出處行號）。</p>}
+    ? <p class="raw-note" style="margin:16px 0" data-ts-intro>這是字幕辨識的原始稿，尚未整理，錯字較多，也還沒有時間對照。</p>
+    : <p class="muted" style="font-size:.85rem;margin:12px 0 20px" data-ts-intro>點左側時間點，影片從該處播放；播放時，目前講到的段落會標示出來並自動捲動。把滑鼠移到段落上會顯示行號（筆記中的出處行號）。</p>}
   {l.video_id && (
     <div class="player open" id="player" data-video={l.video_id}
       data-next={next ? transcriptUrl(`${c.slug}/${s.slug}/${next.no}`) : undefined} data-next-title={next ? lessonTitle(s, next) : undefined}>
@@ -72,52 +72,33 @@ const next = withVideo[withVideo.findIndex((y) => y.no === l.no) + 1];
       );
     })}
   </div>
+  <script is:inline src={url("scripts/player.js")}></script>
   <script is:inline>
-    // 〔行N〕 counts physical lines, so N may be a blank one: snap to the nearest paragraph before it
+    // a #L link to a blank line: snap to the nearest paragraph before it
     (() => {
       const m = location.hash.match(/^#L(\d+)$/);
       if (!m || document.getElementById(location.hash.slice(1))) return;
-      for (let n = Number(m[1]); n > 0; n--) {
-        const el = document.getElementById("L" + n);
-        if (el) { el.classList.add("hl"); el.scrollIntoView({ block: "center" }); break; }
-      }
+      const el = notesLine(Number(m[1]));
+      if (el) { el.classList.add("hl"); el.scrollIntoView({ block: "center" }); }
     })();
-  </script>
-  <script is:inline src={url("scripts/player.js")}></script>
-  <script is:inline>
     // in-page player: time links seek it; the paragraphs being spoken are marked and kept in view
     (() => {
       const box = document.getElementById("player");
       if (!box) return;
       const player = window.notesPlayer(box, box.dataset.video);
       player.ensure();
-      const ts = document.querySelector(".ts");
-      ts.addEventListener("click", (ev) => {
-        const a = ev.target.closest("a.tc[data-t]");
-        if (!a || ev.metaKey || ev.ctrlKey || ev.shiftKey) return;
-        ev.preventDefault();
-        player.play(Number(a.dataset.t));
-      });
-
       const btn = box.querySelector("[data-toggle-follow]");
+      let follow = !!btn;
+      try { if (btn) follow = localStorage.getItem("follow-ts") !== "0"; } catch (e) {}
+      const tracker = notesTranscript(player, box, document.querySelector(".ts"), () => follow);
       if (!btn) return;
-      let follow = true;
-      try { follow = localStorage.getItem("follow-ts") !== "0"; } catch (e) {}
       const setFollow = (on) => {
         follow = on;
         btn.setAttribute("aria-pressed", String(on));
         try { localStorage.setItem("follow-ts", on ? "1" : "0"); } catch (e) {}
       };
       setFollow(follow);
-      const rows = [...ts.querySelectorAll("p")]
-        .map((p) => ({ el: p, t: Number(p.querySelector("a.tc")?.dataset.t ?? NaN), len: p.textContent.length }))
-        .filter((r) => !Number.isNaN(r.t));
-      if (!rows.length) return;
-      const tracker = notesFollow(player, rows, {
-        scroller: window, cls: "now", enabled: () => follow,
-        top: () => Math.max(0, box.getBoundingClientRect().bottom),
-      });
-      btn.addEventListener("click", () => { setFollow(!follow); tracker.resume(); });
+      btn.addEventListener("click", () => { setFollow(!follow); tracker?.resume(); });
     })();
   </script>
 </Base>

@@ -3,6 +3,7 @@
   const art = document.querySelector("article[data-transcript]");
   if (!art) return;
   const videoId = art.dataset.video;
+  const reader = art.closest(".reader");
 
   // ---------- transcript data (lazy) ----------
   let dataP = null;
@@ -122,8 +123,8 @@
     toggle(box.querySelector("[data-toggle-panel]"), "no-ts", "ts-panel");
     const followBtn = box.querySelector("[data-toggle-follow]");
     toggle(followBtn, "no-follow", "ts-follow");
-    let tracker = null;
-    followBtn.addEventListener("click", () => tracker?.resume());
+    let tracker = null, tsTracker = null;
+    followBtn.addEventListener("click", () => { tracker?.resume(); tsTracker?.resume(); });
 
     // panel height: drag the grip under it, or arrow keys on the grip
     const grip = box.querySelector("[data-grip]");
@@ -174,7 +175,8 @@
       rows.forEach((r, i) => { r.el = follow.children[i]; });
       tracker = notesFollow(player, rows, {
         scroller: follow, cls: "on",
-        enabled: () => !box.classList.contains("no-follow") && !box.classList.contains("no-ts"),
+        enabled: () => !box.classList.contains("no-follow") && !box.classList.contains("no-ts")
+          && !reader.classList.contains("ts-mode"),
       });
     });
     follow.addEventListener("click", (ev) => {
@@ -226,6 +228,77 @@
       nTimer = setTimeout(() => { toNoteN.textContent = ""; }, 8000);
       player.status(`已跳到筆記${h ? "「" + h.textContent.replace(/〔[^〕]*〕/g, "").trim() + "」" : ""}${n ? `，第 ${n} 處，再點跳下一處` : ""}`);
     });
+
+    // 筆記 <-> 逐字稿 without leaving the page, so the video never reloads: the transcript page is fetched
+    // once, its paragraphs shown here, and the address bar moves to transcript/ (a reload there gets the
+    // standalone page). Any link to transcript/ switches in place, including 〔行N〕 and 在逐字稿中看.
+    const tsView = art.querySelector("[data-ts-view]");
+    if (tsView) {
+      const noteUrl = location.pathname, tsUrl = new URL(art.dataset.tsSrc, location.href).pathname;
+      const noteTitle = document.title;
+      let tsTitle = noteTitle, mode = "note", mounted = false, tsP = null;
+      // where each view was left, to come back to it
+      const y = { note: 0, ts: 0 };
+      addEventListener("scroll", () => { y[mode] = scrollY; }, { passive: true });
+      const loadTs = () => (tsP ??= fetch(tsUrl)
+        .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
+        .then((html) => {
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          const ts = doc.querySelector(".ts");
+          if (!ts) throw new Error("no transcript");
+          tsTitle = doc.title;
+          tsView.append(...[doc.querySelector("[data-ts-intro]"), ts].filter(Boolean));
+          tsTracker = notesTranscript(player, box, ts, () => mode === "ts" && !box.classList.contains("no-follow"));
+          mounted = true;
+        })
+        .catch(() => { tsP = null; }));
+
+      const nav = box.querySelector(".pb-views");
+      nav.innerHTML = `<a href="${noteUrl}">筆記</a><a href="${tsUrl}">逐字稿</a>`;
+      const links = { note: nav.children[0], ts: nav.children[1] };
+      function show(m) {
+        mode = m;
+        reader.classList.toggle("ts-mode", m === "ts");
+        tsView.hidden = m !== "ts";
+        document.title = m === "ts" ? tsTitle : noteTitle;
+        for (const [k, a] of Object.entries(links)) k === m ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current");
+        closePop();
+      }
+      show("note");
+      async function go(m, line) {
+        if (m === "ts") await loadTs();
+        // the fetch failed: fall back to the standalone page
+        if (m === "ts" && !mounted) { location.href = tsUrl + (line ? "#L" + line : ""); return; }
+        history.pushState(null, "", m === "ts" ? tsUrl + (line ? "#L" + line : "") : noteUrl);
+        show(m);
+        if (m === "note") { scrollTo(0, y.note); return; }
+        tsView.querySelector(".hl")?.classList.remove("hl");
+        const el = line && notesLine(line);
+        if (el) { el.classList.add("hl"); el.scrollIntoView(); }
+        else { scrollTo(0, 0); tsTracker?.sync(player.now()); }
+      }
+      const target = (a) => a?.origin === location.origin && { [tsUrl]: "ts", [noteUrl]: "note" }[a.pathname];
+      document.addEventListener("click", (ev) => {
+        const a = ev.target.closest("a[href]"), m = target(a);
+        if (!m || ev.defaultPrevented || ev.button || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || a.target) return;
+        // same view: anchors within it scroll as usual; the view's own link does nothing
+        if (m === mode) { if (!a.hash) ev.preventDefault(); return; }
+        ev.preventDefault();
+        go(m, Number(a.hash.match(/^#L(\d+)$/)?.[1]) || 0);
+      });
+      // fetch ahead when the reader points at a way in
+      const warm = (ev) => { if (target(ev.target.closest?.("a[href]")) === "ts") loadTs(); };
+      document.addEventListener("pointerover", warm);
+      document.addEventListener("focusin", warm);
+      // back/forward between the two views
+      addEventListener("popstate", () => {
+        const m = location.pathname === tsUrl ? "ts" : "note";
+        if (m === mode) return;
+        if (m === "ts" && !mounted) { location.reload(); return; }
+        show(m);
+        scrollTo(0, y[m]);
+      });
+    }
   }
 
   // ---------- TOC highlight ----------

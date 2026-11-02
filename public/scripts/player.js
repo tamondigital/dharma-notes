@@ -1,6 +1,7 @@
 // Docked YouTube player shared by the note reader and the transcript page.
-// window.notesPlayer(box, videoId) -> { ensure, play, onTime, status }
+// window.notesPlayer(box, videoId) -> { ensure, play, onTime, status, now }
 // window.notesFollow(player, rows, opt): mark the row being spoken and keep it in view
+// window.notesTranscript(player, box, ts, enabled): wire the transcript page's paragraphs to the player
 // scrolls the reader triggers itself: instant when the user asks for reduced motion
 window.notesScroll = () => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
 // the reader moved the page or panel by hand: wheel, touch, scroll keys
@@ -158,7 +159,10 @@ window.notesPlayer = (box, videoId) => {
     hintBtn.setAttribute("aria-expanded", String(!hint.hidden));
   });
 
-  return { ensure, play, onTime: (f) => listeners.push(f), status, resumeAt, started: () => started };
+  return {
+    ensure, play, onTime: (f) => listeners.push(f), status, resumeAt, started: () => started,
+    now: () => (started ? yt?.getCurrentTime?.() ?? 0 : resumeAt),
+  };
 };
 
 // rows: [{ el, t, len }] in reading order, t = the row's own time or the last one before it.
@@ -180,7 +184,7 @@ window.notesFollow = (player, rows, opt) => {
   let active = -1, shown = -1, userScrolled = 0;
   notesOnManualScroll(opt.scroller, () => { userScrolled = Date.now(); });
 
-  function follow(now) {
+  function follow(now, behavior = notesScroll()) {
     let lo = 0, hi = n - 1, k = -1;
     while (lo <= hi) { const m = (lo + hi) >> 1; if (s[m] <= now) { k = m; lo = m + 1; } else hi = m - 1; }
     if (k < 0) return;
@@ -197,9 +201,37 @@ window.notesFollow = (player, rows, opt) => {
     shown = k;
     const el = rows[k].el;
     const top = win ? el.getBoundingClientRect().top + scrollY - opt.top() - 8 : el.offsetTop - 4;
-    win ? scrollTo({ top, behavior: notesScroll() }) : opt.scroller.scrollTo({ top, behavior: notesScroll() });
+    win ? scrollTo({ top, behavior }) : opt.scroller.scrollTo({ top, behavior });
   }
   player.onTime(follow);
   if (player.resumeAt) follow(player.resumeAt);
-  return { resume: () => { userScrolled = 0; shown = -1; } };
+  return {
+    resume: () => { userScrolled = 0; shown = -1; },
+    // jump straight to the row at `now`, as if the reader had just arrived
+    sync: (now) => { userScrolled = 0; shown = -1; follow(now, "auto"); },
+  };
+};
+
+// the transcript page's paragraphs (.ts), on that page or shown inside the note page:
+// time links seek the player; the paragraph being spoken is marked and, while enabled(), kept in view
+window.notesTranscript = (player, box, ts, enabled) => {
+  ts.addEventListener("click", (ev) => {
+    const a = ev.target.closest("a.tc[data-t]");
+    if (!a || ev.metaKey || ev.ctrlKey || ev.shiftKey) return;
+    ev.preventDefault();
+    player.play(Number(a.dataset.t));
+  });
+  const rows = [...ts.querySelectorAll("p")]
+    .map((p) => ({ el: p, t: Number(p.querySelector("a.tc")?.dataset.t ?? NaN), len: p.textContent.length }))
+    .filter((r) => !Number.isNaN(r.t));
+  if (!rows.length) return null;
+  return notesFollow(player, rows, {
+    scroller: window, cls: "now", enabled,
+    top: () => Math.max(0, box.getBoundingClientRect().bottom),
+  });
+};
+// 〔行N〕 counts physical lines, so N may be a blank one: the nearest paragraph at or before it
+window.notesLine = (n) => {
+  for (; n > 0; n--) { const el = document.getElementById("L" + n); if (el) return el; }
+  return null;
 };

@@ -36,7 +36,8 @@ const sutraTitle = (id: string) => sutraData.sutras[id]?.title ?? id;
     </nav>
 
     <article class="reader-main" data-pagefind-body
-      data-transcript={url(`data/${key}.json`)} data-video={l.video_id ?? ""}>
+      data-transcript={url(`data/${key}.json`)} data-video={l.video_id ?? ""}
+      data-ts-src={l.video_id && l.has_transcript ? "transcript/" : undefined}>
       <div class="crumbs">
         <a href={url("/")}>首頁</a> ›{multiChannel && <> <a href={url(`${c.slug}/`)}>{channelLabel(c)}</a> ›</>}
         <a href={seriesUrl(c, s)}>{s.name}</a> › 第{Number(l.no)}講
@@ -68,9 +69,11 @@ const sutraTitle = (id: string) => sutraData.sutras[id]?.title ?? id;
           </div>
           <PlayerBar current="note" note={lessonUrl(key)} transcript={l.has_transcript ? "transcript/" : undefined}
             toNote panel follow="逐字稿自動跟隨影片"
-            hint="點筆記中的 ● 出處標記或逐字稿段落，影片跳到該處；「↓ 對應段落」捲到筆記中講到這裡的地方，有多處時再點一下跳到下一處。拖曳逐字稿下緣可調整高度。播放位置會記住，切換到逐字稿或下次再來都從原處接著播。" />
+            hint="點筆記中的 ● 出處標記或逐字稿段落，影片跳到該處；「↓ 對應段落」捲到筆記中講到這裡的地方，有多處時再點一下跳到下一處。拖曳逐字稿下緣可調整高度。切換筆記／逐字稿時影片不中斷；播放位置也會記住，下次再來從原處接著播。" />
         </div>
       )}
+      {/* 逐字稿 shown in place by reader.js, so the video keeps playing */}
+      {l.video_id && l.has_transcript && <div class="ts-view" data-ts-view hidden />}
 
       <div class="prose" set:html={html} />
 
