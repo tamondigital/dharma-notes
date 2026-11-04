@@ -56,6 +56,9 @@ INLINE = [
      lambda m: "出處補註"),
     (re.compile(r"出處誤(?:繫|標|植|記|稱|述)?"), lambda m: "出處另見"),
     (re.compile(r"(?<!錯)誤(稱|記|引|標|繫)"), lambda m: m.group(1)),
+    # 用以校正法師「燃燈佛」之誤 → 用以對照法師「燃燈佛」之說
+    (re.compile(r"(?:校正|更正|訂正)" + TEACHER + r"(「[^」\n]{1,20}」)之誤"),
+     lambda m: "對照" + m.group(1) + m.group(2) + "之說"),
     (re.compile(r"訂正(?=法師|教師|講師)"), lambda m: "對照"),
     (re.compile(r"誤述"), lambda m: "所述"),
     (re.compile(r"口誤"), lambda m: "口語"),
