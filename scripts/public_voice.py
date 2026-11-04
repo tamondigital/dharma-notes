@@ -59,6 +59,9 @@ INLINE = [
     # 用以校正法師「燃燈佛」之誤 → 用以對照法師「燃燈佛」之說
     (re.compile(r"(?:校正|更正|訂正)" + TEACHER + r"(「[^」\n]{1,20}」)之誤"),
      lambda m: "對照" + m.group(1) + m.group(2) + "之說"),
+    # 法師年代誤置 → 法師所述年代與史載不同
+    (re.compile(TEACHER + r"(年代|時代|地點|朝代)誤置"),
+     lambda m: m.group(1) + "所述" + m.group(2) + "與史載不同"),
     (re.compile(r"訂正(?=法師|教師|講師)"), lambda m: "對照"),
     (re.compile(r"誤述"), lambda m: "所述"),
     (re.compile(r"口誤"), lambda m: "口語"),
