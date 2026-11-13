@@ -5,6 +5,7 @@ import {
   allLessons, url, lessonUrl, transcriptUrl, seriesUrl, lessonTitle, transcript, fmtTime, channelLabel, multiChannel, type Located,
 } from "../../../../lib/data";
 import { renderLine } from "../../../../lib/render";
+import { graph, breadcrumbs, metaDesc, abs, video, type Crumb } from "../../../../lib/seo";
 
 export function getStaticPaths() {
   return allLessons().filter((x) => x.l.has_transcript)
@@ -30,8 +31,21 @@ const timed = rows.map((r) => {
 const yt = l.video_id ? `https://www.youtube.com/watch?v=${l.video_id}` : null;
 const withVideo = s.lessons.filter((y) => y.has_transcript && y.video_id);
 const next = withVideo[withVideo.findIndex((y) => y.no === l.no) + 1];
+const description = metaDesc(`${title}完整逐字稿${l.raw ? "（字幕辨識原始稿）" : "，逐段對照影片時間"}。${l.scope ?? ""}`);
+const crumbs: Crumb[] = [["首頁", url("/")], ...(multiChannel ? [[channelLabel(c), url(`${c.slug}/`)] as Crumb] : []),
+  [s.name, seriesUrl(c, s)], ...(l.has_note ? [[`第${Number(l.no)}講`, lessonUrl(key)] as Crumb] : []), ["逐字稿", transcriptUrl(key)]];
+const jsonld = graph(
+  {
+    "@type": "WebPage",
+    name: `${title}・逐字稿`,
+    url: abs(transcriptUrl(key)),
+    inLanguage: "zh-Hant",
+    ...(l.video_id && { about: video(l.video_id, title) }),
+  },
+  breadcrumbs(crumbs),
+);
 ---
-<Base title={`${title}・逐字稿`} description={`${title} 完整逐字稿`}>
+<Base title={`${title}・逐字稿`} description={description} jsonld={jsonld}>
   <div class="crumbs">
     <a href={url("/")}>首頁</a> ›{multiChannel && <> <a href={url(`${c.slug}/`)}>{channelLabel(c)}</a> ›</>}
     <a href={seriesUrl(c, s)}>{s.name}</a> ›

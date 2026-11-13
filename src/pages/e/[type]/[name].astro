@@ -4,6 +4,7 @@ import {
   entities, ENTITY_TYPES, url, lessonUrl, lessonByKey, lessonTitle, seriesUrl, channelLabel, multiChannel,
   type EntityEntry,
 } from "../../../lib/data";
+import { graph, breadcrumbs, metaDesc, abs } from "../../../lib/seo";
 
 export function getStaticPaths() {
   return ENTITY_TYPES.flatMap((type) =>
@@ -22,8 +23,17 @@ for (const t of rows) {
 const ordered = [...groups.values()].sort((a, b) => b.total - a.total);
 for (const g of ordered) g.talks.sort((a, b) => Number(a.x.l.no) - Number(b.x.l.no));
 const gloss = e.gloss && e.gloss.length > 420 ? e.gloss.slice(0, 420) + "…" : e.gloss;
+// without a dictionary gloss, say where it is discussed instead of a bare count
+const where = ordered.slice(0, 3).map((g) => `《${g.label}》`).join("") + (ordered.length > 3 ? "等" : "");
+const description = metaDesc(`${name}（${type}）：${rows.length} 講談到，見${where}。${e.gloss ?? ""}`);
+const page = url(`e/${type}/${name}/`);
+const thing = { 名相: "DefinedTerm", 人物: "Person", 地名: "Place" }[type] ?? "Thing";
 ---
-<Base title={name} description={`${name}：${rows.length} 講談到${e.gloss ? "。" + e.gloss.slice(0, 60) : ""}`}>
+<Base title={name} description={description}
+  jsonld={graph(
+    { "@type": "WebPage", url: abs(page), name, about: { "@type": thing, name, ...(e.gloss && { description: metaDesc(e.gloss, 160) }) } },
+    breadcrumbs([["名相・人物・地名", url("e/")], [type, url(`e/#${type}`)], [name, page]]),
+  )}>
   <div class="crumbs"><a href={url("e/")}>名相・人物・地名</a> › {type}</div>
   <h1>{name}</h1>
   <p class="muted">{type}・{rows.length} 講談到・共 {e.talks.reduce((a, t) => a + t.n, 0)} 處</p>

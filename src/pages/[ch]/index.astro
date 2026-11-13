@@ -8,7 +8,8 @@ export function getStaticPaths() {
 }
 const { c } = Astro.props as { c: Channel };
 ---
-<Base title={`${channelLabel(c)}・${c.name}`}>
+<Base title={`${channelLabel(c)}・${c.name}`}
+  description={`${c.teacher ?? channelLabel(c)}・${c.name}的講經系列：${c.series.map((s) => `《${s.name}》`).slice(0, 6).join("")}${c.series.length > 6 ? `等 ${c.series.length} 部` : ""}。`}>
   <div class="crumbs"><a href={url("/")}>首頁</a> ›</div>
   <h1>{channelLabel(c)}・{c.name}</h1>
   {c.teacher && <p class="muted">{c.teacher}</p>}

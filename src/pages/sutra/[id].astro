@@ -4,6 +4,7 @@ import {
   sutraData, url, lessonUrl, transcriptUrl, lessonByKey, lessonTitle, seriesUrl, cbetaUrl, channelLabel, multiChannel,
   type SutraEntry,
 } from "../../lib/data";
+import { graph, breadcrumbs } from "../../lib/seo";
 
 export function getStaticPaths() {
   return Object.entries(sutraData.sutras).map(([id, s]) => ({ params: { id }, props: { id, s } }));
@@ -16,7 +17,9 @@ const citing = rows.filter((t) => !t.quotes.length);
 const homeSeries = [...new Map(rows.filter((t) => t.home).map((t) => [t.x.s.slug, t.x])).values()];
 const label = (t: (typeof rows)[number]) => (multiChannel ? channelLabel(t.x.c) + "・" : "") + lessonTitle(t.x.s, t.x.l);
 ---
-<Base title={title} description={`《${title}》${id}：${rows.length} 講引用`}>
+<Base title={`${title} ${id}`}
+  description={`《${title}》${s.by ? `（${s.by}）` : ""}${id}：${rows.length} 講引用${quoting.length ? `，收錄 ${quoting.reduce((a, t) => a + t.quotes.length, 0)} 段引用經文` : ""}${homeSeries.length ? `；講經系列：${homeSeries.map((x) => x.s.name).join("、")}` : ""}。`}
+  jsonld={graph(breadcrumbs([["引用經論", url("sutra/")], [`${title} ${id}`, url(`sutra/${id}/`)]]))}>
   <div class="crumbs"><a href={url("sutra/")}>引用經論</a> › {id}</div>
   <h1>《{title}》</h1>
   <div class="note-meta">

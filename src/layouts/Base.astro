@@ -2,18 +2,29 @@
 import "../styles/site.css";
 import { url, site } from "../lib/data";
 
-interface Props { title: string; description?: string; wide?: boolean }
-const { title, description = site.tagline, wide = false } = Astro.props;
+interface Props { title: string; description?: string; wide?: boolean; type?: "website" | "article"; jsonld?: object }
+const { title, description = site.tagline, wide = false, type = "website", jsonld } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title === site.title ? site.title : `${title}｜${site.title}`;
+// JSON inside <script>: keep "</script>" and "<!--" from closing or confusing the element
+const ld = jsonld && JSON.stringify(jsonld).replace(/</g, "\\u003c");
 ---
 <!doctype html>
 <html lang="zh-Hant">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title === site.title ? site.title : `${title}｜${site.title}`}</title>
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={site.title} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="zh_TW" />
+    <meta name="twitter:card" content="summary" />
+    {ld && <script type="application/ld+json" set:html={ld} />}
     <link rel="sitemap" href={url("sitemap-index.xml")} />
     <link rel="icon" href={url("favicon.svg")} type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

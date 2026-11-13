@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import SeriesCards from "../components/SeriesCards.astro";
 import { site, url, lessonUrl, lessonTitle, allLessons, entities, sutraData, channelLabel } from "../lib/data";
+import { graph, websiteRef } from "../lib/seo";
 
 const lessons = allLessons();
 const nNotes = lessons.filter((x) => x.l.has_note).length;
@@ -11,7 +12,7 @@ const nNames = Object.values(entities).reduce((a, d) => a + Object.keys(d).lengt
 const latest = lessons.filter((x) => x.l.has_note && x.l.date)
   .sort((a, b) => (b.l.date! > a.l.date! ? 1 : -1)).slice(0, 6);
 ---
-<Base title={site.title}>
+<Base title={site.title} jsonld={graph({ ...websiteRef(), description: site.tagline, inLanguage: "zh-Hant" })}>
   <section class="hero">
     <h1>{site.channels.length === 1 ? `${channelLabel(site.channels[0])}${site.title}` : site.title}</h1>
     <p>{site.channels.length === 1 && site.channels[0].teacher ? `${site.channels[0].teacher}` : ""}{site.tagline}</p>

@@ -7,6 +7,7 @@ import {
   sutraData, sutraUrl, plain, entityUrl, hasEntity, cbetaUrl, channelLabel, multiChannel, type Located,
 } from "../../../../lib/data";
 import { renderNote } from "../../../../lib/render";
+import { graph, breadcrumbs, metaDesc, abs, video, type Crumb } from "../../../../lib/seo";
 
 export function getStaticPaths() {
   return allLessons().filter((x) => x.l.has_note)
@@ -27,8 +28,24 @@ const sameTopic = rel.same_topic.filter((r) => !linkedKeys.has(r.key)).slice(0, 
 const refScope = (k: string) => clip(lessonByKey(k)?.l.scope ?? "", 34);
 const names = extra.names.filter((n) => hasEntity(n.type, n.name));
 const sutraTitle = (id: string) => sutraData.sutras[id]?.title ?? id;
+const description = metaDesc(plain(l.scope)) || `${title}學習筆記`;
+const crumbs: Crumb[] = [["首頁", url("/")], ...(multiChannel ? [[channelLabel(c), url(`${c.slug}/`)] as Crumb] : []),
+  [s.name, seriesUrl(c, s)], [`第${Number(l.no)}講`, lessonUrl(key)]];
+const jsonld = graph(
+  {
+    "@type": "Article",
+    headline: title,
+    description,
+    url: abs(lessonUrl(key)),
+    inLanguage: "zh-Hant",
+    isPartOf: { "@type": "CreativeWorkSeries", name: s.name, url: abs(seriesUrl(c, s)) },
+    ...(l.video_id && { isBasedOn: video(l.video_id, title) }),
+    ...(names.length > 0 && { mentions: names.slice(0, 20).map((n) => ({ "@type": "Thing", name: n.name, url: abs(entityUrl(n.type, n.name)) })) }),
+  },
+  breadcrumbs(crumbs),
+);
 ---
-<Base title={title} description={plain(l.scope) || title} wide>
+<Base title={title} description={description} type="article" jsonld={jsonld} wide>
   <div class="reader">
     <nav class="toc" aria-label="目次">
       <p class="toc-h">目次</p>

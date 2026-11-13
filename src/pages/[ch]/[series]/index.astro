@@ -1,14 +1,19 @@
 ---
 import Base from "../../../layouts/Base.astro";
-import { allSeries, url, lessonUrl, transcriptUrl, channelLabel, multiChannel, type Series, type Channel, plain } from "../../../lib/data";
+import { allSeries, url, lessonUrl, transcriptUrl, channelLabel, multiChannel, seriesUrl, type Series, type Channel, plain } from "../../../lib/data";
+import { graph, breadcrumbs, type Crumb } from "../../../lib/seo";
 
 export function getStaticPaths() {
   return allSeries().map(({ c, s }) => ({ params: { ch: c.slug, series: s.slug }, props: { c, s } }));
 }
 const { c, s } = Astro.props as { c: Channel; s: Series };
 const hasNotes = s.lessons.some((l) => l.has_note);
+// the bare sutra name is also the title of its /sutra/ page, so name the speaker here
+const pageTitle = `${channelLabel(c)}講《${s.name}》`;
+const crumbs: Crumb[] = [["首頁", url("/")], ...(multiChannel ? [[channelLabel(c), url(`${c.slug}/`)] as Crumb] : []), [s.name, seriesUrl(c, s)]];
 ---
-<Base title={s.name} description={`${channelLabel(c)}講《${s.name}》，共 ${s.lessons.length} 講`}>
+<Base title={pageTitle} description={`${pageTitle}，共 ${s.lessons.length} 講${hasNotes ? "，每講附學習筆記與完整逐字稿" : "的逐字稿"}。`}
+  jsonld={graph(breadcrumbs(crumbs))}>
   <div class="crumbs"><a href={url("/")}>首頁</a> ›{multiChannel && <> <a href={url(`${c.slug}/`)}>{channelLabel(c)}</a> ›</>}</div>
   <h1>{s.name}</h1>
   <div class="note-meta">
