@@ -44,6 +44,16 @@ window.notesPlayer = (box, videoId) => {
   function ensure() {
     showVideo(true);
     if (ready) return ready;
+    // the frame stays black until YouTube is ready: show a waiting spinner over it
+    const frame = box.querySelector(".player-frame");
+    const loader = document.createElement("div");
+    loader.className = "player-loading";
+    loader.setAttribute("role", "status");
+    loader.innerHTML = `<span class="spinner" aria-hidden="true"></span><span data-msg>影片載入中…</span>`;
+    frame.appendChild(loader);
+    const msg = (text) => { loader.querySelector("[data-msg]").textContent = text; };
+    const slow = setTimeout(() => msg("影片載入較慢，請稍候…"), 12000);
+    const done = () => { clearTimeout(slow); loader.remove(); };
     ready = new Promise((resolve) => {
       const make = () => {
         yt = new YT.Player(box.querySelector("[data-yt]"), {
@@ -51,6 +61,7 @@ window.notesPlayer = (box, videoId) => {
           playerVars: { rel: 0, modestbranding: 1, playsinline: 1, start: resumeAt || undefined },
           events: {
             onReady: () => {
+              done();
               resolve(yt);
               if (resumeAt) {
                 emit(resumeAt);
@@ -79,6 +90,7 @@ window.notesPlayer = (box, videoId) => {
       if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
         const s = document.createElement("script");
         s.src = "https://www.youtube.com/iframe_api";
+        s.onerror = () => { clearTimeout(slow); loader.classList.add("failed"); msg("影片無法載入，請檢查網路或改用 YouTube 原影片"); };
         document.head.appendChild(s);
       }
     });
