@@ -2,10 +2,10 @@
 import Base from "../../../../layouts/Base.astro";
 import PlayerBar from "../../../../components/PlayerBar.astro";
 import {
-  allLessons, url, lessonUrl, transcriptUrl, seriesUrl, lessonTitle, transcript, fmtTime, channelLabel, multiChannel, type Located,
+  allLessons, url, lessonUrl, transcriptUrl, seriesUrl, lessonTitle, transcript, fmtTime, channelLabel, multiChannel, notesName, type Located,
 } from "../../../../lib/data";
 import { renderLine } from "../../../../lib/render";
-import { graph, breadcrumbs, metaDesc, abs, video, type Crumb } from "../../../../lib/seo";
+import { graph, breadcrumbs, metaDesc, abs, video, websiteRef, teacherNode, type Crumb } from "../../../../lib/seo";
 
 export function getStaticPaths() {
   return allLessons().filter((x) => x.l.has_transcript)
@@ -40,51 +40,54 @@ const jsonld = graph(
     name: `${title}・逐字稿`,
     url: abs(transcriptUrl(key)),
     inLanguage: "zh-Hant",
-    ...(l.video_id && { about: video(l.video_id, title) }),
+    isPartOf: { "@id": websiteRef()["@id"] },
+    ...(l.video_id && { about: video(l.video_id, title, { date: l.date, duration: l.duration, creator: teacherNode(c, s) }) }),
   },
   breadcrumbs(crumbs),
 );
 ---
-<Base title={`${title}・逐字稿`} description={description} jsonld={jsonld}>
-  <div class="crumbs">
-    <a href={url("/")}>首頁</a> ›{multiChannel && <> <a href={url(`${c.slug}/`)}>{channelLabel(c)}</a> ›</>}
-    <a href={seriesUrl(c, s)}>{s.name}</a> ›
-    {l.has_note ? <a href={lessonUrl(key)}>第{Number(l.no)}講</a> : <>第{Number(l.no)}講</>} › 逐字稿
-  </div>
-  <h1 style="font-size:1.5rem;margin:4px 0 8px">{title}・逐字稿</h1>
-  <div class="note-meta">
-    {l.date && <span>{l.date}</span>}
-    {l.duration && <span>時長 {l.duration}</span>}
-    {yt && <a href={yt} target="_blank" rel="noopener">YouTube 原影片</a>}
-    {l.has_note && <a href={lessonUrl(key)}>← 回到筆記</a>}
-  </div>
-  {l.raw
-    ? <p class="raw-note" style="margin:16px 0" data-ts-intro>這是字幕辨識的原始稿，尚未整理，錯字較多，也還沒有時間對照。</p>
-    : <p class="muted" style="font-size:.85rem;margin:12px 0 20px" data-ts-intro>點左側時間點，影片從該處播放；播放時，目前講到的段落會標示出來並自動捲動。把滑鼠移到段落上會顯示行號（筆記中的出處行號）。</p>}
-  {l.video_id && (
-    <div class="player open" id="player" data-video={l.video_id}
-      data-next={next ? transcriptUrl(`${c.slug}/${s.slug}/${next.no}`) : undefined} data-next-title={next ? lessonTitle(s, next) : undefined}>
-      <div class="player-frame"><div data-yt></div></div>
-      <PlayerBar current="transcript" note={l.has_note ? lessonUrl(key) : undefined} transcript="./"
-        follow={l.raw ? undefined : "逐字稿自動跟隨影片"} />
+<Base title={`${title}・逐字稿`} siteName={notesName(s)} description={description} jsonld={jsonld}>
+  <div class="ts-page">
+    <div class="crumbs">
+      <a href={url("/")}>首頁</a> ›{multiChannel && <> <a href={url(`${c.slug}/`)}>{channelLabel(c)}</a> ›</>}
+      <a href={seriesUrl(c, s)}>{s.name}</a> ›
+      {l.has_note ? <a href={lessonUrl(key)}>第{Number(l.no)}講</a> : <>第{Number(l.no)}講</>} › 逐字稿
     </div>
-  )}
-  <div class="ts" data-pagefind-body>
-    <span hidden data-pagefind-filter="系列">{s.name}</span>
-    <span hidden data-pagefind-filter="類型">逐字稿</span>
-    {multiChannel && <span hidden data-pagefind-filter="講者">{channelLabel(c)}</span>}
-    {timed.map((r) => {
-      const t = r.t ?? r.inherited;
-      const href = yt && t ? `${yt}&t=${t[0]}s` : `#L${r.n}`;
-      return (
-        <p id={`L${r.n}`} class={r.text.startsWith("> ") ? "q" : undefined}>
-          <a class="tc" href={href} target={yt && t ? "_blank" : undefined} rel="noopener" data-t={t ? t[0] : undefined}>
-            <span class="tm">{t && r.t ? (t[1] ? "≈" : "") + fmtTime(t[0]) : ""}</span><span class="ln">行{r.n}</span>
-          </a>
-          <Fragment set:html={renderLine(r.text.replace(/^> /, ""))} />
-        </p>
-      );
-    })}
+    <h1 style="font-size:1.5rem;margin:4px 0 8px">{title}・逐字稿</h1>
+    <div class="note-meta">
+      {l.date && <span>{l.date}</span>}
+      {l.duration && <span>時長 {l.duration}</span>}
+      {yt && <a href={yt} target="_blank" rel="noopener">YouTube 原影片</a>}
+      {l.has_note && <a href={lessonUrl(key)}>← 回到筆記</a>}
+    </div>
+    {l.raw
+      ? <p class="raw-note" style="margin:16px 0" data-ts-intro>這是字幕辨識的原始稿，尚未整理，錯字較多，也還沒有時間對照。</p>
+      : <p class="muted" style="font-size:.85rem;margin:12px 0 20px" data-ts-intro>點左側時間點，影片從該處播放；播放時，目前講到的段落會標示出來並自動捲動。把滑鼠移到段落上會顯示行號（筆記中的出處行號）。</p>}
+    {l.video_id && (
+      <div class="player open" id="player" data-video={l.video_id}
+        data-next={next ? transcriptUrl(`${c.slug}/${s.slug}/${next.no}`) : undefined} data-next-title={next ? lessonTitle(s, next) : undefined}>
+        <div class="player-frame"><div data-yt></div></div>
+        <PlayerBar current="transcript" note={l.has_note ? lessonUrl(key) : undefined} transcript="./"
+          follow={l.raw ? undefined : "逐字稿自動跟隨影片"} />
+      </div>
+    )}
+    <div class="ts" data-pagefind-body>
+      <span hidden data-pagefind-filter="系列">{s.name}</span>
+      <span hidden data-pagefind-filter="類型">逐字稿</span>
+      {multiChannel && <span hidden data-pagefind-filter="講者">{channelLabel(c)}</span>}
+      {timed.map((r) => {
+        const t = r.t ?? r.inherited;
+        const href = yt && t ? `${yt}&t=${t[0]}s` : `#L${r.n}`;
+        return (
+          <p id={`L${r.n}`} class={r.text.startsWith("> ") ? "q" : undefined}>
+            <a class="tc" href={href} target={yt && t ? "_blank" : undefined} rel="noopener" data-t={t ? t[0] : undefined}>
+              <span class="tm">{t && r.t ? (t[1] ? "≈" : "") + fmtTime(t[0]) : ""}</span><span class="ln">行{r.n}</span>
+            </a>
+            <Fragment set:html={renderLine(r.text.replace(/^> /, ""))} />
+          </p>
+        );
+      })}
+    </div>
   </div>
   <script is:inline src={url("scripts/player.js")}></script>
   <script is:inline src={url("scripts/hl.js")} defer></script>

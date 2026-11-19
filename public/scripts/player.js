@@ -3,12 +3,17 @@
 // window.notesFollow(player, rows, opt): mark the row being spoken and keep it in view
 // window.notesTranscript(player, box, ts, enabled): wire the transcript page's paragraphs to the player
 // scrolls the reader triggers itself: instant when the user asks for reduced motion
+// wide landscape screens: the player sits in a panel beside the text instead of over it.
+// Keep in step with the matching @media block in src/styles/site.css.
+window.notesWide = matchMedia("(min-width: 1180px) and (orientation: landscape) and (min-height: 600px)");
+// how much of the text the docked player covers at the top of the screen
+window.notesCover = (box) => (notesWide.matches ? 0 : box.offsetHeight);
 window.notesScroll = () => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
-// the reader moved the page or panel by hand: wheel, touch, scroll keys
+// the reader moved the page or panel by hand: wheel, touch, scroll keys (f gets the event)
 window.notesOnManualScroll = (el, f) => {
   for (const ev of ["wheel", "touchmove"]) el.addEventListener(ev, f, { passive: true });
   el.addEventListener("keydown", (e) => {
-    if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(e.key)) f();
+    if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(e.key)) f(e);
   });
 };
 window.notesFmt = (sec) => {
@@ -145,9 +150,10 @@ window.notesPlayer = (box, videoId) => {
 
   // anchors (#heading, #L123) scroll to just below the docked player, not behind it
   const root = document.documentElement;
-  const setH = () => root.style.setProperty("--player-h", box.offsetHeight + "px");
+  const setH = () => root.style.setProperty("--player-h", notesCover(box) + "px");
   setH();
   new ResizeObserver(setH).observe(box);
+  notesWide.addEventListener("change", setH);
   if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
 
   // ✕ closes the video down to the bar; the same button, now ▶, shows it again
@@ -178,7 +184,8 @@ window.notesPlayer = (box, videoId) => {
 };
 
 // rows: [{ el, t, len }] in reading order, t = the row's own time or the last one before it.
-// opt: { scroller: element | window, cls, enabled(), top() = px hidden under the player (window only) }
+// opt: { scroller: element | window | () => either (when it changes with the layout), cls, enabled(),
+//        top() = px hidden under the player (window only) }
 window.notesFollow = (player, rows, opt) => {
   // each row gets a start time: rows sharing one time split it by text length up to the next time
   const n = rows.length, s = new Array(n);
@@ -192,9 +199,14 @@ window.notesFollow = (player, rows, opt) => {
     for (let k = i, acc = 0; k < j; k++) { s[k] = t0 + (t1 - t0) * acc / total; acc += rows[k].len; }
     prev = t0; i = j;
   }
-  const win = opt.scroller === window;
+  const dyn = typeof opt.scroller === "function";
+  const scroller = dyn ? opt.scroller : () => opt.scroller;
   let active = -1, shown = -1, userScrolled = 0;
-  notesOnManualScroll(opt.scroller, () => { userScrolled = Date.now(); });
+  // a scroller that changes: listen on the window, count only what happens in the current one
+  notesOnManualScroll(dyn ? window : opt.scroller, (e) => {
+    const sc = scroller();
+    if (!dyn || sc === window || sc.contains(e?.target)) userScrolled = Date.now();
+  });
 
   function follow(now, behavior = notesScroll()) {
     let lo = 0, hi = n - 1, k = -1;
@@ -206,6 +218,7 @@ window.notesFollow = (player, rows, opt) => {
       active = k;
     }
     if (!opt.enabled() || Date.now() - userScrolled < 5000) return;
+    const sc = scroller(), win = sc === window;
     // not yet played: only the resume point moves the view, and never past a #L link
     if (!player.started() && (!player.resumeAt || (win && location.hash))) return;
     // when a new row starts, bring it to the top of the view
@@ -213,7 +226,7 @@ window.notesFollow = (player, rows, opt) => {
     shown = k;
     const el = rows[k].el;
     const top = win ? el.getBoundingClientRect().top + scrollY - opt.top() - 8 : el.offsetTop - 4;
-    win ? scrollTo({ top, behavior }) : opt.scroller.scrollTo({ top, behavior });
+    sc.scrollTo({ top, behavior });
   }
   player.onTime(follow);
   if (player.resumeAt) follow(player.resumeAt);
@@ -225,8 +238,9 @@ window.notesFollow = (player, rows, opt) => {
 };
 
 // the transcript page's paragraphs (.ts), on that page or shown inside the note page:
-// time links seek the player; the paragraph being spoken is marked and, while enabled(), kept in view
-window.notesTranscript = (player, box, ts, enabled) => {
+// time links seek the player; the paragraph being spoken is marked and, while enabled(), kept in view.
+// scroller: what scrolls them (see notesFollow), the window unless they sit in the side panel
+window.notesTranscript = (player, box, ts, enabled, scroller = window) => {
   ts.addEventListener("click", (ev) => {
     const a = ev.target.closest("a.tc[data-t]");
     if (!a || ev.metaKey || ev.ctrlKey || ev.shiftKey) return;
@@ -238,8 +252,8 @@ window.notesTranscript = (player, box, ts, enabled) => {
     .filter((r) => !Number.isNaN(r.t));
   if (!rows.length) return null;
   return notesFollow(player, rows, {
-    scroller: window, cls: "now", enabled,
-    top: () => Math.max(0, box.getBoundingClientRect().bottom),
+    scroller, cls: "now", enabled,
+    top: () => (notesWide.matches ? 0 : Math.max(0, box.getBoundingClientRect().bottom)),
   });
 };
 // 〔行N〕 counts physical lines, so N may be a blank one: the nearest paragraph at or before it

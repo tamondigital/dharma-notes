@@ -109,12 +109,17 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 /* ---------- reader ---------- */
 .reader { display: grid; grid-template-columns: 200px minmax(0, 1fr) 250px; gap: 40px; align-items: start; }
 .reader-main { min-width: 0; }
+/* .side wraps 目次 and the related links; only the wide layout treats it as one column */
+.side { display: contents; }
+.toc { grid-column: 1; grid-row: 1; }
+.reader-main { grid-column: 2; grid-row: 1; }
+.aside { grid-column: 3; grid-row: 1; }
 .toc, .aside { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; font-size: .84rem; }
 .toc ol { list-style: none; margin: 0; padding: 0; }
 .toc a { display: block; padding: 4px 8px; color: var(--ink-3); border-left: 2px solid transparent; line-height: 1.45; }
 .toc a:hover { color: var(--ink); text-decoration: none; }
 .toc a.on { color: var(--accent); border-left-color: var(--accent); }
-.toc-h, .aside h4 { font-size: .75rem; letter-spacing: .08em; color: var(--ink-3); margin: 0 0 8px; font-weight: 600; }
+.toc-h, .aside-h { font-size: .75rem; letter-spacing: .08em; color: var(--ink-3); margin: 0 0 8px; font-weight: 600; }
 
 .note-head h1 { font-size: 1.7rem; margin: 4px 0 10px; }
 .note-meta { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--ink-3); font-size: .85rem; }
@@ -321,10 +326,12 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
 @media (max-width: 1100px) {
   .reader { grid-template-columns: minmax(0, 1fr) 240px; }
   .toc { display: none; }
+  .reader-main { grid-column: 1; }
+  .aside { grid-column: 2; }
 }
 @media (max-width: 820px) {
   .reader { grid-template-columns: minmax(0, 1fr); }
-  .aside { position: static; max-height: none; border-top: 1px solid var(--line); padding-top: 20px; }
+  .aside { grid-column: 1; grid-row: 2; position: static; max-height: none; border-top: 1px solid var(--line); padding-top: 20px; }
   .note-head h1 { font-size: 1.4rem; }
   .prose { font-size: 1.02rem; line-height: 1.9; }
   .ts p { padding-left: 3.6em; }
@@ -342,6 +349,52 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
   .pb-views > * { padding: 0 9px; }
   .pb-icons .pb-i { min-width: 38px; }
   .pb-note { padding: 0 4px 0 2px !important; }
+}
+/* ---------- wide landscape screens: the player and its transcript become a panel on the right ----------
+   Keep this query in step with notesWide in public/scripts/player.js. Below it (phones, portrait tablets,
+   short landscape screens) the layouts above apply unchanged. */
+@media (min-width: 1180px) and (orientation: landscape) and (min-height: 600px) {
+  .page.wide { max-width: 1680px; }
+  body:has(.page.wide) .site-head-inner { max-width: 1680px; }
+  .reader { grid-template-columns: 190px minmax(0, 1fr); gap: 32px; }
+  .side { display: block; grid-column: 1; grid-row: 1; position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; }
+  .side > .toc, .side > .aside { position: static; max-height: none; overflow: visible; }
+  .side > .toc:has(li) + .aside:has(section) { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .reader-main { grid-column: 2; }
+  .reader-main:not(:has(> .player)) { max-width: 860px; }
+
+  /* the note on the left, the panel on the right, stuck to the screen for the note's whole length */
+  .reader-main:has(> .player), .ts-page { display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 30vw, 520px);
+    column-gap: 28px; align-items: start; }
+  :is(.reader-main, .ts-page) > * { grid-column: 1; }
+  :is(.reader-main, .ts-page) > .player { grid-column: 2; grid-row: 1 / span 60; position: sticky; top: 0; margin: 0; padding: 12px 0; }
+  .player .player-frame { width: 100%; max-height: none !important; margin: 0 !important; }
+  .pb-mini { display: none !important; }
+
+  /* note page: video, controls, then the follow-along transcript filling the rest of the height */
+  .reader-main > .player { height: 100vh; height: 100dvh; display: flex; flex-direction: column; }
+  .reader-main > .player.no-ts { height: auto; }
+  .reader-main > .player > .player-body, .reader-main > .player:not(.open) > .player-body { display: contents; }
+  .reader-main > .player:not(.open) .player-frame { display: none; }
+  .reader-main > .player:not(.open) :is(.pb-note, .pb-i) { display: inline-flex; }
+  .reader-main > .player .player-frame { flex: none; }
+  .reader-main > .player .player-bar { order: 1; flex: none; flex-wrap: wrap; }
+  .reader-main > .player .player-hint { order: 2; flex: none; }
+  .reader-main > .player:not(.no-ts) .follow-wrap { order: 3; flex: 1; min-height: 0; display: flex; }
+  .reader-main > .player .follow { flex: 1; height: auto; max-height: none; margin-top: 8px; }
+  .reader-main > .player .follow-grip { display: none; }
+
+  /* 逐字稿 opens in the panel (reader.js moves .ts-view there) and the note stays in view */
+  .reader.ts-side .player, .reader.ts-side .player.no-ts { height: 100vh; height: 100dvh; }
+  .reader.ts-side .player :is(.follow-wrap, [data-toggle-panel]) { display: none !important; }
+  .reader.ts-side .player.no-ts [data-toggle-follow] { display: inline-flex; }
+  .reader.ts-side .player > .ts-view:not([hidden]) { order: 3; display: block; flex: 1; min-height: 0; overflow-y: auto;
+    position: relative; margin-top: 8px; padding: 4px 12px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 8px; overscroll-behavior: contain; }
+  .reader.ts-side .ts-view [data-ts-intro] { margin: 8px 0 !important; font-size: .8rem !important; }
+  .reader.ts-side .ts-view .ts { font-size: .95rem; line-height: 1.85; }
+  .reader.ts-side .ts-view .ts p { padding-left: 4.2em; }
+  .reader.ts-side .ts-view .ts .tc { width: 3.6em; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
 .ts p.q { color: var(--ink-2); }
