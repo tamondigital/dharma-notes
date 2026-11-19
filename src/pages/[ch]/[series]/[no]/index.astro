@@ -4,10 +4,10 @@ import Notice from "../../../../components/Notice.astro";
 import PlayerBar from "../../../../components/PlayerBar.astro";
 import {
   allLessons, url, lessonUrl, seriesUrl, lessonTitle, refTitle, lessonByKey, clip, noteMarkdown, lessonExtra,
-  sutraData, sutraUrl, plain, entityUrl, hasEntity, cbetaUrl, channelLabel, multiChannel, notesName, type Located,
+  sutraData, sutraUrl, plain, entityUrl, hasEntity, cbetaUrl, channelLabel, multiChannel, type Located,
 } from "../../../../lib/data";
 import { renderNote } from "../../../../lib/render";
-import { graph, breadcrumbs, metaDesc, abs, video, websiteRef, teacherNode, entityType, type Crumb } from "../../../../lib/seo";
+import { graph, breadcrumbs, metaDesc, abs, video, type Crumb } from "../../../../lib/seo";
 
 export function getStaticPaths() {
   return allLessons().filter((x) => x.l.has_note)
@@ -31,31 +31,21 @@ const sutraTitle = (id: string) => sutraData.sutras[id]?.title ?? id;
 const description = metaDesc(plain(l.scope)) || `${title}學習筆記`;
 const crumbs: Crumb[] = [["首頁", url("/")], ...(multiChannel ? [[channelLabel(c), url(`${c.slug}/`)] as Crumb] : []),
   [s.name, seriesUrl(c, s)], [`第${Number(l.no)}講`, lessonUrl(key)]];
-const page = abs(lessonUrl(key));
-const teacher = teacherNode(c, s);
-const sutra = s.home_sutra_id && sutraData.sutras[s.home_sutra_id] ? s.home_sutra_id : null;
 const jsonld = graph(
   {
     "@type": "Article",
-    "@id": `${page}#article`,
     headline: title,
     description,
-    url: page,
-    mainEntityOfPage: page,
+    url: abs(lessonUrl(key)),
     inLanguage: "zh-Hant",
-    image: abs(url("og.png")),
-    // the notes are drawn from this 法師's talk; the site, not the 法師, wrote them
-    ...(teacher && { contributor: teacher }),
-    isPartOf: [{ "@type": "CreativeWorkSeries", name: s.name, url: abs(seriesUrl(c, s)) }, { "@id": websiteRef()["@id"] }],
-    ...(sutra && { about: { "@type": "CreativeWork", name: sutraTitle(sutra), identifier: sutra, sameAs: cbetaUrl(sutra) } }),
-    ...(l.video_id && { isBasedOn: video(l.video_id, title, { date: l.date, duration: l.duration, description, creator: teacher }) }),
-    ...(names.length > 0 && { mentions: names.slice(0, 20).map((n) => ({ "@type": entityType(n.type), name: n.name, url: abs(entityUrl(n.type, n.name)) })) }),
-    breadcrumb: { "@id": `${page}#breadcrumb` },
+    isPartOf: { "@type": "CreativeWorkSeries", name: s.name, url: abs(seriesUrl(c, s)) },
+    ...(l.video_id && { isBasedOn: video(l.video_id, title) }),
+    ...(names.length > 0 && { mentions: names.slice(0, 20).map((n) => ({ "@type": "Thing", name: n.name, url: abs(entityUrl(n.type, n.name)) })) }),
   },
-  { ...breadcrumbs(crumbs), "@id": `${page}#breadcrumb` },
+  breadcrumbs(crumbs),
 );
 ---
-<Base title={title} siteName={notesName(s)} description={description} type="article" jsonld={jsonld} wide>
+<Base title={title} description={description} type="article" jsonld={jsonld} wide>
   <div class="reader">
     {/* left column: 目次 and the related links; on a wide screen one sticky column, otherwise its two parts
         sit in the reader grid on their own (.side is display: contents) */}
@@ -67,13 +57,13 @@ const jsonld = graph(
       <aside class="aside" data-pagefind-ignore>
         {rel.linked.length > 0 && (
           <section>
-            <p class="aside-h">筆記提到的講次</p>
+            <h4>筆記提到的講次</h4>
             <ul>{rel.linked.map((r) => <li><a href={lessonUrl(r.key)}>{refTitle(r.key)}</a><small>{refScope(r.key)}</small></li>)}</ul>
           </section>
         )}
         {sameTopic.length > 0 && (
           <section>
-            <p class="aside-h">相關講次</p>
+            <h4>相關講次</h4>
             <ul>{sameTopic.map((r) => (
               <li><a href={lessonUrl(r.key)} title={lessonByKey(r.key)?.l.scope}>{refTitle(r.key)}</a><small>{r.shared.length ? `同談：${r.shared.join("、")}` : refScope(r.key)}</small></li>
             ))}</ul>
@@ -81,7 +71,7 @@ const jsonld = graph(
         )}
         {rel.same_passage.length > 0 && (
           <section>
-            <p class="aside-h">同段經文，他講亦講</p>
+            <h4>同段經文，他講亦講</h4>
             <ul>{rel.same_passage.slice(0, 6).map((r) => (
               <li><a href={lessonUrl(r.key)}>{refTitle(r.key)}</a><small>「{clip(r.quote, 22)}」・{sutraTitle(r.cbeta)}</small></li>
             ))}</ul>
@@ -89,13 +79,13 @@ const jsonld = graph(
         )}
         {names.length > 0 && (
           <section>
-            <p class="aside-h">本講名相・人物</p>
+            <h4>本講名相・人物</h4>
             <p class="chips">{names.map((n) => <a href={entityUrl(n.type, n.name)}>{n.name}</a>)}</p>
           </section>
         )}
         {extra.canon_cited.length > 0 && (
           <section>
-            <p class="aside-h">本講引用經論（{extra.canon_cited.length}）</p>
+            <h4>本講引用經論（{extra.canon_cited.length}）</h4>
             <ul>{extra.canon_cited.slice(0, 12).map((id) => (
               <li><a href={sutraUrl(id)}>{sutraTitle(id)}</a><small>{id}</small></li>
             ))}</ul>
@@ -127,7 +117,7 @@ const jsonld = graph(
       </header>
 
       {l.video_id && (
-        <div class="player open" id="player" data-pagefind-ignore data-nosnippet
+        <div class="player open" id="player" data-pagefind-ignore
           data-next={next ? lessonUrl(sibling(next.no)) : undefined} data-next-title={next ? lessonTitle(s, next) : undefined}>
           <div class="player-body">
             <div class="player-frame"><div data-yt></div></div>
@@ -142,7 +132,7 @@ const jsonld = graph(
         </div>
       )}
       {/* 逐字稿 shown in place by reader.js, so the video keeps playing */}
-      {l.video_id && l.has_transcript && <div class="ts-view" data-ts-view data-nosnippet hidden />}
+      {l.video_id && l.has_transcript && <div class="ts-view" data-ts-view hidden />}
 
       <div class="prose" set:html={html} />
 
