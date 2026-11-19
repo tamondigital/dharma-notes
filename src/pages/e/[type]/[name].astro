@@ -50,7 +50,8 @@ const thing = { 名相: "DefinedTerm", 人物: "Person", 地名: "Place" }[type]
       <ul class="mention-list">
         {g.talks.map((t) => (
           <li>
-            <a href={lessonUrl(t.key)}>{lessonTitle(t.x.s, t.x.l)}</a><span class="muted">・{t.n} 處</span>
+            {/* #hl: the page (scripts/hl.js) scrolls to the first mention and marks it */}
+            <a href={`${lessonUrl(t.key)}#hl=${encodeURIComponent(name)}`}>{lessonTitle(t.x.s, t.x.l)}</a><span class="muted">・{t.n} 處</span>
             {t.snip && <p>{t.snip}</p>}
           </li>
         ))}

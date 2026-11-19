@@ -5,26 +5,14 @@ import { url } from "../lib/data";
 <Base title="搜尋" description="在全部學習筆記與逐字稿中搜尋經名、名相、人名，可依系列與類型篩選。">
   <div class="search-wrap">
     <h1 style="font-size:1.5rem">搜尋筆記與逐字稿</h1>
-    <div id="search"></div>
+    <form class="sx-form" role="search" onsubmit="return false">
+      <input id="sx-q" type="search" placeholder="輸入經名、名相、人名…" aria-label="搜尋" autocomplete="off" />
+    </form>
+    <div class="sx-filters" id="sx-filters" hidden></div>
+    <p class="sx-hint muted">只列出含有完整詞語的頁面；用空格分開多個詞，則每個詞都要出現。點結果會跳到該處並標示出來。</p>
+    <p class="sx-status muted" id="sx-status" aria-live="polite"></p>
+    <ol class="sx-results" id="sx-results"></ol>
+    <p><button class="btn" id="sx-more" type="button" hidden>顯示更多</button></p>
   </div>
-  <link href={url("pagefind/pagefind-ui.css")} rel="stylesheet" />
-  <script is:inline src={url("pagefind/pagefind-ui.js")}></script>
-  <script is:inline>
-    window.addEventListener("DOMContentLoaded", () => {
-      // the index is made by `npm run build`; `npm run dev` has none until `npm run index:dev`
-      if (typeof PagefindUI === "undefined") {
-        document.getElementById("search").innerHTML =
-          '<p class="raw-note">搜尋索引尚未產生。本機開發請先執行 <code>npm run build && npm run index:dev</code>，或用 <code>npm run preview</code> 預覽建置結果。</p>';
-        return;
-      }
-      const ui = new PagefindUI({
-        element: "#search", showSubResults: true,
-        // the zh index holds single characters, so space them out to require every one (AND)
-        processTerm: (t) => t.replace(/([\u3400-\u9fff\uf900-\ufaff])(?=[\u3400-\u9fff\uf900-\ufaff])/g, "$1 "), showImages: false, resetStyles: false,
-        translations: { placeholder: "輸入經名、名相、人名…", zero_results: "找不到「[SEARCH_TERM]」", filters_label: "篩選" },
-      });
-      const q = new URLSearchParams(location.search).get("q");
-      if (q) { ui.triggerSearch(q); const i = document.querySelector("#search input"); if (i) i.value = q; }
-    });
-  </script>
+  <script is:inline type="module" src={url("scripts/search.js")} data-pagefind={url("pagefind/pagefind.js")}></script>
 </Base>

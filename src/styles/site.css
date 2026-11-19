@@ -239,13 +239,15 @@ a.c::before {
 a.c:hover::before, a.c.on::before { opacity: 1; transform: scale(1.5); }
 a.c:focus-visible { outline: 2px solid var(--accent); border-radius: 3px; }
 /* a paragraph reached from the video: a strong mark that fades, with a left bar that stays a while longer */
-.prose .flash { animation: flash 4s ease-out; border-radius: 4px; }
+.prose .flash, .ts p.flash { animation: flash 4s ease-out; border-radius: 4px; }
+/* a word reached from search or a 名相 page (scripts/hl.js) */
+mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 600; border-radius: 2px; box-shadow: 0 0 0 2px var(--accent-soft); }
 @keyframes flash {
   0%, 50% { background: var(--accent-soft); box-shadow: inset 4px 0 0 var(--accent), 0 0 0 6px var(--accent-soft); }
   80% { background: transparent; box-shadow: inset 4px 0 0 var(--accent), 0 0 0 6px transparent; }
   100% { background: transparent; box-shadow: inset 4px 0 0 transparent, 0 0 0 6px transparent; }
 }
-@media (prefers-reduced-motion: reduce) { .prose .flash { animation-duration: 4s; animation-timing-function: steps(1, end); } }
+@media (prefers-reduced-motion: reduce) { .prose .flash, .ts p.flash { animation-duration: 4s; animation-timing-function: steps(1, end); } }
 
 .pop {
   position: absolute; z-index: 20; width: min(380px, calc(100vw - 32px)); background: var(--surface);
@@ -297,9 +299,23 @@ a.c:focus-visible { outline: 2px solid var(--accent); border-radius: 3px; }
 
 /* ---------- search ---------- */
 .search-wrap { max-width: 760px; }
-.pagefind-ui { --pagefind-ui-scale: .9; --pagefind-ui-primary: var(--accent); --pagefind-ui-text: var(--ink);
-  --pagefind-ui-background: var(--surface); --pagefind-ui-border: var(--line); --pagefind-ui-tag: var(--surface-2);
-  --pagefind-ui-font: var(--sans); }
+.sx-form input { width: 100%; padding: 10px 14px; font-size: 1.05rem; font-family: var(--sans); color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.sx-form input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: var(--accent); }
+.sx-filters { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 12px 0 0; font-size: .88rem; color: var(--ink-2); }
+.sx-filters label { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; }
+.sx-filters select { max-width: 16em; padding: 4px 8px; font: inherit; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 6px; }
+.sx-hint { font-size: .8rem; margin: 10px 0 0; }
+.sx-status { font-size: .88rem; margin: 14px 0 4px; }
+.sx-results { list-style: none; margin: 0; padding: 0; }
+.sx-results li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.sx-results .sx-title { font-family: var(--serif); font-weight: 600; color: var(--ink); }
+.sx-results li > .muted { font-size: .82rem; }
+.sx-snip { display: block; margin: 6px 0 0; color: var(--ink-2); font-size: .9rem; font-family: var(--serif); line-height: 1.8;
+  overflow-wrap: anywhere; }
+.sx-snip:hover { color: var(--ink); text-decoration: none; }
+.sx-results mark { background: var(--accent-soft); color: var(--accent); font-weight: 600; padding: 0 1px; border-radius: 2px; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 1100px) {
