@@ -2,10 +2,11 @@
 import "../styles/site.css";
 import { url, site } from "../lib/data";
 
-interface Props { title: string; description?: string; wide?: boolean; type?: "website" | "article"; jsonld?: object }
-const { title, description = site.tagline, wide = false, type = "website", jsonld } = Astro.props;
+interface Props { title: string; description?: string; wide?: boolean; type?: "website" | "article"; jsonld?: object; noSuffix?: boolean }
+const { title, description = site.tagline, wide = false, type = "website", jsonld, noSuffix = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const fullTitle = title === site.title ? site.title : `${title}｜${site.title}`;
+// noSuffix: the title already names the site (the home page)
+const fullTitle = noSuffix || title === site.title ? title : `${title}｜${site.title}`;
 // JSON inside <script>: keep "</script>" and "<!--" from closing or confusing the element
 const ld = jsonld && JSON.stringify(jsonld).replace(/</g, "\\u003c");
 ---

@@ -1,5 +1,5 @@
 // Metadata for search engines and link previews: meta descriptions, JSON-LD.
-import { site } from "./data";
+import { site, channelLabel } from "./data";
 
 // Search results show roughly 80–100 CJK characters; cut at a sentence end when one falls in range.
 export function metaDesc(text: string, n = 100): string {
@@ -19,7 +19,11 @@ export const breadcrumbs = (items: Crumb[]) => ({
   itemListElement: items.map(([name, path], i) => ({ "@type": "ListItem", position: i + 1, name, item: abs(path) })),
 });
 
-export const websiteRef = () => ({ "@type": "WebSite", name: site.title, url: abs(import.meta.env.BASE_URL) });
+// with one teacher the site is also known as 「<teacher>講經筆記」
+const altName = site.channels.length === 1 ? `${channelLabel(site.channels[0])}${site.title}` : undefined;
+export const websiteRef = () => ({
+  "@type": "WebSite", name: site.title, ...(altName && { alternateName: altName }), url: abs(import.meta.env.BASE_URL),
+});
 
 export const video = (id: string, name: string) => ({
   "@type": "VideoObject",

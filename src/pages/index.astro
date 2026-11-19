@@ -9,10 +9,14 @@ const nNotes = lessons.filter((x) => x.l.has_note).length;
 const nTr = lessons.filter((x) => x.l.has_transcript).length;
 const nSeries = site.channels.reduce((a, c) => a + c.series.filter((s) => s.lessons.some((l) => l.has_note)).length, 0);
 const nNames = Object.values(entities).reduce((a, d) => a + Object.keys(d).length, 0);
+const one = site.channels.length === 1 ? site.channels[0] : null;
+const homeTitle = one ? `${channelLabel(one)}${site.title}・${one.name}` : site.title;
+const sutraNames = site.channels.flatMap((c) => c.series.filter((s) => s.lessons.some((l) => l.has_note)).map((s) => `《${s.name}》`));
+const homeDesc = `${one ? `${channelLabel(one)}於${one.name}` : ""}歷年講經的學習筆記與完整逐字稿：${sutraNames.slice(0, 3).join("")}等 ${nSeries} 部經論、${nNotes} 講。每篇筆記的論點都附逐字稿出處，可直接跳到影片對應的時間點聽法師原講。`;
 const latest = lessons.filter((x) => x.l.has_note && x.l.date)
   .sort((a, b) => (b.l.date! > a.l.date! ? 1 : -1)).slice(0, 6);
 ---
-<Base title={site.title} jsonld={graph({ ...websiteRef(), description: site.tagline, inLanguage: "zh-Hant" })}>
+<Base title={homeTitle} noSuffix description={homeDesc} jsonld={graph({ ...websiteRef(), description: homeDesc, inLanguage: "zh-Hant" })}>
   <section class="hero">
     <h1>{site.channels.length === 1 ? `${channelLabel(site.channels[0])}${site.title}` : site.title}</h1>
     <p>{site.channels.length === 1 && site.channels[0].teacher ? `${site.channels[0].teacher}` : ""}{site.tagline}</p>
