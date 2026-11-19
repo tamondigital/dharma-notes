@@ -48,7 +48,9 @@ jobs:
     continue-on-error: true
     steps:
       - name: Submit sitemap URLs to IndexNow
+        # right after deploy the key file can still 403 while Pages switches over
         run: |
+          sleep 60
           python3 - <<'PY'
           import json, re, urllib.request
           base = "https://tamondigital.github.io/dharma-notes/"
