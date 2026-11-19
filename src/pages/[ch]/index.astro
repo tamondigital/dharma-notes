@@ -1,17 +1,44 @@
 ---
 import Base from "../../layouts/Base.astro";
 import SeriesCards from "../../components/SeriesCards.astro";
-import { allChannels, url, channelLabel, type Channel } from "../../lib/data";
+import { allChannels, url, seriesUrl, channelLabel, type Channel } from "../../lib/data";
+import { graph, breadcrumbs, websiteRef, abs, type Crumb } from "../../lib/seo";
 
 export function getStaticPaths() {
   return allChannels().map((c) => ({ params: { ch: c.slug }, props: { c } }));
 }
 const { c } = Astro.props as { c: Channel };
+const label = channelLabel(c);
+const pageTitle = `${label}・${c.name}`;
+const pagePath = url(`${c.slug}/`);
+// the same series SeriesCards shows: those with at least one note
+const noted = c.series.filter((s) => s.lessons.some((l) => l.has_note));
+const nLessons = noted.reduce((a, s) => a + s.lessons.filter((l) => l.has_note).length, 0);
+const names = noted.map((s) => `《${s.name}》`);
+const description = `${label}於${c.name}的講經系列：${names.slice(0, 6).join("")}${names.length > 6 ? `等 ${names.length} 部` : ""}。`;
+const crumbs: Crumb[] = [["首頁", url("/")], [pageTitle, pagePath]];
+const jsonld = graph(
+  {
+    "@type": "CollectionPage",
+    "@id": abs(pagePath),
+    url: abs(pagePath),
+    name: pageTitle,
+    description,
+    inLanguage: "zh-Hant",
+    isPartOf: websiteRef(),
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: noted.length,
+      itemListElement: noted.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s.name, url: abs(seriesUrl(c, s)) })),
+    },
+  },
+  breadcrumbs(crumbs),
+);
 ---
-<Base title={`${channelLabel(c)}・${c.name}`}
-  description={`${c.teacher ?? channelLabel(c)}・${c.name}的講經系列：${c.series.map((s) => `《${s.name}》`).slice(0, 6).join("")}${c.series.length > 6 ? `等 ${c.series.length} 部` : ""}。`}>
+<Base title={pageTitle} description={description} jsonld={jsonld}>
   <div class="crumbs"><a href={url("/")}>首頁</a> ›</div>
-  <h1>{channelLabel(c)}・{c.name}</h1>
-  {c.teacher && <p class="muted">{c.teacher}</p>}
+  <h1>{pageTitle}</h1>
+  <p class="muted">{label}於{c.name}講經的學習筆記，共 {noted.length} 部經論系列、{nLessons} 講。每篇筆記的論點都附逐字稿出處，可直接跳到影片對應的時間點聽法師原講；經文字句以 CBETA 為準。</p>
+  <h2 class="section-title">經論系列</h2>
   <SeriesCards c={c} />
 </Base>
