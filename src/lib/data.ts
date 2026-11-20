@@ -92,6 +92,10 @@ export const refTitle = (key: string) => {
 export const multiChannel = site.channels.length > 1;
 export const channelLabel = (c: Channel) => teacherShort(c.teacher) ?? c.name;
 export const teacherShort = (t: string | null) => t?.split(/[（(；;，,]/)[0].trim() ?? null;
+// the 法師 who gave a series' talks; null when it is someone else, e.g. students sharing
+export const lecturer = (s: Series) => { const t = teacherShort(s.teacher); return t?.endsWith("法師") ? t : null; };
+// the site named after that 法師 (「體佛法師講經筆記」), as the suffix of lesson titles
+export const notesName = (s: Series) => `${lecturer(s) ?? ""}${site.title}`;
 
 // notes metadata can carry markdown bold; shown as plain text
 export const plain = (text: string) => (text || "").replace(/\*\*/g, "");

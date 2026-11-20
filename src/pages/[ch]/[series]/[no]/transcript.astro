@@ -2,10 +2,10 @@
 import Base from "../../../../layouts/Base.astro";
 import PlayerBar from "../../../../components/PlayerBar.astro";
 import {
-  allLessons, url, lessonUrl, transcriptUrl, seriesUrl, lessonTitle, transcript, fmtTime, channelLabel, multiChannel, type Located,
+  allLessons, url, lessonUrl, transcriptUrl, seriesUrl, lessonTitle, transcript, fmtTime, channelLabel, multiChannel, notesName, type Located,
 } from "../../../../lib/data";
 import { renderLine } from "../../../../lib/render";
-import { graph, breadcrumbs, metaDesc, abs, video, type Crumb } from "../../../../lib/seo";
+import { graph, breadcrumbs, metaDesc, abs, video, websiteRef, teacherNode, type Crumb } from "../../../../lib/seo";
 
 export function getStaticPaths() {
   return allLessons().filter((x) => x.l.has_transcript)
@@ -40,12 +40,13 @@ const jsonld = graph(
     name: `${title}・逐字稿`,
     url: abs(transcriptUrl(key)),
     inLanguage: "zh-Hant",
-    ...(l.video_id && { about: video(l.video_id, title) }),
+    isPartOf: { "@id": websiteRef()["@id"] },
+    ...(l.video_id && { about: video(l.video_id, title, { date: l.date, duration: l.duration, creator: teacherNode(c, s) }) }),
   },
   breadcrumbs(crumbs),
 );
 ---
-<Base title={`${title}・逐字稿`} description={description} jsonld={jsonld}>
+<Base title={`${title}・逐字稿`} siteName={notesName(s)} description={description} jsonld={jsonld}>
   <div class="ts-page">
     <div class="crumbs">
       <a href={url("/")}>首頁</a> ›{multiChannel && <> <a href={url(`${c.slug}/`)}>{channelLabel(c)}</a> ›</>}
@@ -54,7 +55,7 @@ const jsonld = graph(
     </div>
     <h1 style="font-size:1.5rem;margin:4px 0 8px">{title}・逐字稿</h1>
     <div class="note-meta">
-      {l.date && <span>{l.date}</span>}
+      {l.date && <span>上傳 <time datetime={l.date}>{l.date}</time></span>}
       {l.duration && <span>時長 {l.duration}</span>}
       {yt && <a href={yt} target="_blank" rel="noopener">YouTube 原影片</a>}
       {l.has_note && <a href={lessonUrl(key)}>← 回到筆記</a>}
