@@ -6,8 +6,10 @@
 // wide landscape screens: the player sits in a panel beside the text instead of over it.
 // Keep in step with the matching @media block in src/styles/site.css.
 window.notesWide = matchMedia("(min-width: 1180px) and (orientation: landscape) and (min-height: 600px)");
+// the player sits beside the text: the note page on a wide screen (the transcript page always docks it on top)
+window.notesBeside = (box) => notesWide.matches && !box.closest(".ts-page");
 // how much of the text the docked player covers at the top of the screen
-window.notesCover = (box) => (notesWide.matches ? 0 : box.offsetHeight);
+window.notesCover = (box) => (notesBeside(box) ? 0 : box.offsetHeight);
 window.notesScroll = () => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
 // the reader moved the page or panel by hand: wheel, touch, scroll keys (f gets the event)
 window.notesOnManualScroll = (el, f) => {
@@ -183,7 +185,7 @@ window.notesPlayer = (box, videoId) => {
     mini.setAttribute("aria-pressed", String(on));
     mini.setAttribute("aria-label", label); mini.title = label;
   });
-  panelGrip(box);
+  if (!box.closest(".ts-page")) panelGrip(box);
   const hintBtn = box.querySelector("[data-hint]"), hint = box.querySelector(".player-hint");
   hintBtn?.addEventListener("click", () => {
     hint.hidden = !hint.hidden;
@@ -338,7 +340,7 @@ window.notesTranscript = (player, box, ts, enabled, scroller = window) => {
   if (!rows.length) return null;
   return notesFollow(player, rows, {
     scroller, cls: "now", enabled,
-    top: () => (notesWide.matches ? 0 : Math.max(0, box.getBoundingClientRect().bottom)),
+    top: () => (notesBeside(box) ? 0 : Math.max(0, box.getBoundingClientRect().bottom)),
   });
 };
 // 〔行N〕 counts physical lines, so N may be a blank one: the nearest paragraph at or before it

@@ -414,14 +414,16 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
   .reader-main { grid-column: 2; }
   .reader-main:not(:has(> .player)) { max-width: 860px; }
 
-  /* the note on the left, the panel on the right, stuck to the screen for the note's whole length */
-  .reader-main:has(> .player), .ts-page { display: grid; grid-template-columns: minmax(0, 1fr)
+  /* the note on the left, the panel on the right, stuck to the screen for the note's whole length.
+     The standalone transcript page keeps the stacked layout (video docked above one wide column of text):
+     with nothing else to read beside it, a side panel only narrows the transcript. */
+  .reader-main:has(> .player) { display: grid; grid-template-columns: minmax(0, 1fr)
     min(var(--panel-w, clamp(340px, 30vw, 520px)), calc(100% - 468px));
     column-gap: 28px; align-items: start; }
-  :is(.reader-main, .ts-page) > * { grid-column: 1; }
-  :is(.reader-main, .ts-page) > .player { grid-column: 2; grid-row: 1 / span 60; position: sticky; top: 0; margin: 0; padding: 12px 0; }
-  .player .player-frame { width: 100%; max-height: none !important; margin: 0 !important; }
-  .pb-mini { display: none !important; }
+  .reader-main > * { grid-column: 1; }
+  .reader-main > .player { grid-column: 2; grid-row: 1 / span 60; position: sticky; top: 0; margin: 0; padding: 12px 0; }
+  .reader-main > .player .player-frame { width: 100%; max-height: none !important; margin: 0 !important; }
+  .reader-main .pb-mini { display: none !important; }
   /* the handle on the panel's left edge (player.js) */
   .panel-grip { display: flex; position: absolute; z-index: 6; left: -20px; top: 0; bottom: 0; width: 16px;
     cursor: ew-resize; touch-action: none; align-items: center; justify-content: center; }
