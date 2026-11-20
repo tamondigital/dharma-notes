@@ -106,7 +106,7 @@
   const player = box && videoId ? window.notesPlayer(box, videoId) : null;
   const play = (sec) => player?.play(sec);
   if (player) {
-    player.ensure();
+    player.poster();
 
     // two separate switches: show the transcript panel; let it follow the video
     const follow = box.querySelector("[data-follow]");

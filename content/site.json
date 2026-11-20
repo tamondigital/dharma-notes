@@ -23,7 +23,9 @@
        "video_id": "Y2AE1SnkoLA",
        "date": "2023-09-30",
        "duration": "1:58:33",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-19",
+       "modified": "2026-10-19"
       },
       {
        "no": "02",
@@ -34,7 +36,9 @@
        "video_id": "XOP1JUw8l8g",
        "date": "2023-10-07",
        "duration": "2:57:24",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-11",
+       "modified": "2026-10-26"
       },
       {
        "no": "03",
@@ -45,7 +49,9 @@
        "video_id": "HWYb-DMhnG4",
        "date": "2023-10-14",
        "duration": "2:49:20",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-25"
       },
       {
        "no": "04",
@@ -56,7 +62,9 @@
        "video_id": "AJ3AqLqnVo0",
        "date": "2023-10-21",
        "duration": "2:49:47",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-24"
       },
       {
        "no": "05",
@@ -67,7 +75,9 @@
        "video_id": "3zjprP0z3Cw",
        "date": "2023-10-28",
        "duration": "2:31:16",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-19",
+       "modified": "2026-10-19"
       },
       {
        "no": "06",
@@ -78,7 +88,9 @@
        "video_id": "gikNBHxG3lI",
        "date": "2023-11-04",
        "duration": "2:52:09",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-25"
       },
       {
        "no": "07",
@@ -89,7 +101,9 @@
        "video_id": "Qj2CYH_S8ao",
        "date": "2023-11-11",
        "duration": "2:52:12",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-24"
       },
       {
        "no": "08",
@@ -100,7 +114,9 @@
        "video_id": "MmBYgGJL3CU",
        "date": "2023-11-18",
        "duration": "2:53:10",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-24"
       },
       {
        "no": "09",
@@ -122,7 +138,9 @@
        "video_id": "_-4P9_f8-Xo",
        "date": "2023-12-02",
        "duration": "2:34:09",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-25"
       },
       {
        "no": "11",
@@ -133,7 +151,9 @@
        "video_id": "KAh_nCzXylA",
        "date": "2023-12-09",
        "duration": "2:38:06",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-24"
       },
       {
        "no": "12",
@@ -177,7 +197,9 @@
        "video_id": "dblhYX6NRbQ",
        "date": "2024-01-06",
        "duration": "2:54:21",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-26",
+       "modified": "2026-10-26"
       },
       {
        "no": "16",
@@ -199,7 +221,9 @@
        "video_id": "LPThv79w5y4",
        "date": "2024-01-20",
        "duration": "2:28:16",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-04",
+       "modified": "2026-10-24"
       },
       {
        "no": "18",
@@ -221,7 +245,9 @@
        "video_id": "UxdNPPQYZaw",
        "date": "2024-02-03",
        "duration": "3:06:12",
-       "raw": false
+       "raw": false,
+       "published": "2026-08-21",
+       "modified": "2026-10-25"
       },
       {
        "no": "20",
@@ -232,7 +258,9 @@
        "video_id": "Y1K1ZyjDC5A",
        "date": "2024-03-02",
        "duration": "3:02:54",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-25",
+       "modified": "2026-10-25"
       },
       {
        "no": "21",
@@ -243,7 +271,9 @@
        "video_id": "sgNS56c1K30",
        "date": "2024-03-09",
        "duration": "2:30:43",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-10",
+       "modified": "2026-10-26"
       },
       {
        "no": "22",
@@ -254,7 +284,9 @@
        "video_id": "otbSdT1V73I",
        "date": "2024-03-16",
        "duration": "2:52:59",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-10",
+       "modified": "2026-10-26"
       },
       {
        "no": "23",
@@ -276,7 +308,9 @@
        "video_id": "spcc5KQ1rKU",
        "date": "2024-03-30",
        "duration": "2:56:10",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-05",
+       "modified": "2026-10-24"
       },
       {
        "no": "25",
@@ -287,7 +321,9 @@
        "video_id": "aNjRBF2ivac",
        "date": "2024-04-06",
        "duration": "3:19:48",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-05",
+       "modified": "2026-10-26"
       },
       {
        "no": "26",
@@ -298,7 +334,9 @@
        "video_id": "ZpcRV2-_6nU",
        "date": "2024-04-13",
        "duration": "2:52:33",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-05",
+       "modified": "2026-10-24"
       },
       {
        "no": "27",
@@ -309,7 +347,9 @@
        "video_id": "s1Q2FPrgW3I",
        "date": "2024-04-20",
        "duration": "3:15:44",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-26",
+       "modified": "2026-10-26"
       },
       {
        "no": "28",
@@ -320,7 +360,9 @@
        "video_id": "IDqvkkK8cl8",
        "date": "2024-04-27",
        "duration": "3:09:39",
-       "raw": false
+       "raw": false,
+       "published": "2026-08-21",
+       "modified": "2026-10-25"
       },
       {
        "no": "29",
@@ -331,7 +373,9 @@
        "video_id": "Wl16aj-BHBs",
        "date": "2024-05-04",
        "duration": "3:09:12",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-06",
+       "modified": "2026-10-23"
       },
       {
        "no": "30",
@@ -342,7 +386,9 @@
        "video_id": "gia_K7bLl2I",
        "date": "2024-05-11",
        "duration": "3:10:08",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-06",
+       "modified": "2026-10-25"
       },
       {
        "no": "31",
@@ -364,7 +410,9 @@
        "video_id": "rKtuuJOvxOw",
        "date": "2024-05-25",
        "duration": "2:47:52",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-25",
+       "modified": "2026-10-25"
       },
       {
        "no": "33",
@@ -386,7 +434,9 @@
        "video_id": "6A5oqpR32Ns",
        "date": "2024-06-08",
        "duration": "3:07:28",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-09",
+       "modified": "2026-10-23"
       },
       {
        "no": "35",
@@ -397,7 +447,9 @@
        "video_id": "w44SvzBqIO0",
        "date": "2024-06-15",
        "duration": "3:25:05",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-09",
+       "modified": "2026-10-23"
       },
       {
        "no": "36",
@@ -408,7 +460,9 @@
        "video_id": "OSZyOQZ87O0",
        "date": "2024-06-22",
        "duration": "3:13:34",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-09",
+       "modified": "2026-10-24"
       },
       {
        "no": "37",
@@ -441,7 +495,9 @@
        "video_id": "S5FmzyYCMoU",
        "date": "2024-07-13",
        "duration": "2:57:43",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-10",
+       "modified": "2026-10-25"
       },
       {
        "no": "40",
@@ -452,7 +508,9 @@
        "video_id": "OM5lfF63Gr0",
        "date": "2024-07-20",
        "duration": "2:58:19",
-       "raw": false
+       "raw": false,
+       "published": "2026-11-05",
+       "modified": "2026-11-05"
       },
       {
        "no": "41",
@@ -463,7 +521,9 @@
        "video_id": "XupW65qSdEU",
        "date": "2024-07-27",
        "duration": "2:57:59",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-11",
+       "modified": "2026-10-05"
       },
       {
        "no": "42",
@@ -474,7 +534,9 @@
        "video_id": "VwCWyoeXmzI",
        "date": "2024-08-03",
        "duration": "3:03:02",
-       "raw": false
+       "raw": false,
+       "published": "2026-06-30",
+       "modified": "2026-10-26"
       },
       {
        "no": "43",
@@ -518,7 +580,9 @@
        "video_id": "4NtPeENKtLU",
        "date": "2024-08-31",
        "duration": "2:40:53",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-26",
+       "modified": "2026-10-26"
       },
       {
        "no": "47",
@@ -529,7 +593,9 @@
        "video_id": "zLnO_7B_eNg",
        "date": "2024-09-07",
        "duration": "3:18:14",
-       "raw": false
+       "raw": false,
+       "published": "2026-06-30",
+       "modified": "2026-10-25"
       },
       {
        "no": "48",
@@ -551,7 +617,9 @@
        "video_id": "Xtc8M8FPgec",
        "date": "2024-09-21",
        "duration": "3:16:37",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-01",
+       "modified": "2026-10-24"
       },
       {
        "no": "50",
@@ -573,7 +641,9 @@
        "video_id": "ReuOCO502EU",
        "date": "2024-10-05",
        "duration": "2:58:01",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-01",
+       "modified": "2026-11-05"
       },
       {
        "no": "52",
@@ -584,7 +654,9 @@
        "video_id": "NeqZvpLpZxk",
        "date": "2024-10-12",
        "duration": "3:05:01",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-01",
+       "modified": "2026-10-25"
       },
       {
        "no": "53",
@@ -595,7 +667,9 @@
        "video_id": "mEFJS2NRTDM",
        "date": "2024-10-19",
        "duration": "3:33:52",
-       "raw": false
+       "raw": false,
+       "published": "2026-08-08",
+       "modified": "2026-10-24"
       },
       {
        "no": "54",
@@ -606,7 +680,9 @@
        "video_id": "4LkcDNiUBiQ",
        "date": "2024-10-26",
        "duration": "4:02:05",
-       "raw": false
+       "raw": false,
+       "published": "2026-11-03",
+       "modified": "2026-11-04"
       },
       {
        "no": "55",
@@ -639,7 +715,9 @@
        "video_id": "_1jy-isMVmw",
        "date": "2024-11-16",
        "duration": "3:23:36",
-       "raw": false
+       "raw": false,
+       "published": "2026-11-03",
+       "modified": "2026-11-03"
       },
       {
        "no": "58",
@@ -650,7 +728,9 @@
        "video_id": "eEqjJtRv01Q",
        "date": "2024-11-23",
        "duration": "3:32:06",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-02",
+       "modified": "2026-10-26"
       },
       {
        "no": "59",
@@ -661,7 +741,9 @@
        "video_id": "NANB_iCkQGc",
        "date": "2024-11-30",
        "duration": "3:00:54",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-02",
+       "modified": "2026-10-25"
       },
       {
        "no": "60",
@@ -672,7 +754,9 @@
        "video_id": "t7pHsFOEQ7Q",
        "date": "2024-12-07",
        "duration": "3:34:34",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-24"
       },
       {
        "no": "61",
@@ -683,7 +767,9 @@
        "video_id": "GqTOtRXjuqA",
        "date": "2024-12-14",
        "duration": "2:57:09",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-24"
       },
       {
        "no": "62",
@@ -694,7 +780,9 @@
        "video_id": "qIXRadnu8kQ",
        "date": "2024-12-21",
        "duration": "3:36:30",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-25"
       },
       {
        "no": "63",
@@ -705,7 +793,9 @@
        "video_id": "EfAMncENqYY",
        "date": "2024-12-28",
        "duration": "2:59:22",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-03",
+       "modified": "2026-10-26"
       }
      ]
     },
@@ -725,7 +815,9 @@
        "video_id": "vkvZ7ohx-84",
        "date": "2022-04-23",
        "duration": "2:30:20",
-       "raw": false
+       "raw": false,
+       "published": "2026-08-03",
+       "modified": "2026-10-05"
       },
       {
        "no": "02",
@@ -736,7 +828,9 @@
        "video_id": "bfyQpHA86c4",
        "date": "2022-04-30",
        "duration": "2:33:01",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-25",
+       "modified": "2026-10-05"
       },
       {
        "no": "03",
@@ -747,7 +841,9 @@
        "video_id": "9X1pHUTdzPE",
        "date": "2022-05-07",
        "duration": "2:27:45",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-25",
+       "modified": "2026-10-05"
       },
       {
        "no": "04",
@@ -758,7 +854,9 @@
        "video_id": "16y1tu1mjLg",
        "date": "2022-05-14",
        "duration": "2:19:04",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-25",
+       "modified": "2026-10-05"
       },
       {
        "no": "05",
@@ -769,7 +867,9 @@
        "video_id": "FDVFKHa79JA",
        "date": "2022-05-21",
        "duration": "2:40:25",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-25",
+       "modified": "2026-10-05"
       },
       {
        "no": "06",
@@ -780,7 +880,9 @@
        "video_id": "PCg_PbAw2n0",
        "date": "2022-05-28",
        "duration": "2:42:56",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-25",
+       "modified": "2026-10-05"
       },
       {
        "no": "07",
@@ -791,7 +893,9 @@
        "video_id": "Z5O7tF3d0Ls",
        "date": "2022-06-04",
        "duration": "2:44:06",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-25",
+       "modified": "2026-10-05"
       },
       {
        "no": "08",
@@ -802,7 +906,9 @@
        "video_id": "ujMomAFYfqA",
        "date": "2022-06-11",
        "duration": "2:53:14",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-26",
+       "modified": "2026-10-05"
       },
       {
        "no": "09",
@@ -813,7 +919,9 @@
        "video_id": "yC17lIV5usw",
        "date": "2022-06-18",
        "duration": "2:19:04",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-26",
+       "modified": "2026-10-05"
       },
       {
        "no": "10",
@@ -824,7 +932,9 @@
        "video_id": "_RTaf6BkZQM",
        "date": "2022-06-25",
        "duration": "2:36:07",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-26",
+       "modified": "2026-10-05"
       },
       {
        "no": "11",
@@ -835,7 +945,9 @@
        "video_id": "JL8CrCr0pnU",
        "date": "2022-07-02",
        "duration": "2:38:46",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-27",
+       "modified": "2026-10-05"
       },
       {
        "no": "12",
@@ -846,7 +958,9 @@
        "video_id": "DjAWXH1j_Ys",
        "date": "2022-07-09",
        "duration": "2:18:54",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-27",
+       "modified": "2026-10-05"
       },
       {
        "no": "13",
@@ -857,7 +971,9 @@
        "video_id": "9_opphvsfgg",
        "date": "2022-07-16",
        "duration": "2:14:57",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-27",
+       "modified": "2026-10-05"
       },
       {
        "no": "14",
@@ -879,7 +995,9 @@
        "video_id": "HM2SoD7W8e4",
        "date": "2022-07-30",
        "duration": "2:04:53",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-28",
+       "modified": "2026-10-05"
       },
       {
        "no": "16",
@@ -890,7 +1008,9 @@
        "video_id": "s1_LApZ2LG0",
        "date": "2022-08-06",
        "duration": "2:07:53",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-28",
+       "modified": "2026-10-05"
       },
       {
        "no": "17",
@@ -901,7 +1021,9 @@
        "video_id": "gQwi_xRfYlI",
        "date": "2022-08-13",
        "duration": "2:15:54",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-28",
+       "modified": "2026-10-05"
       },
       {
        "no": "18",
@@ -912,7 +1034,9 @@
        "video_id": "zU50iOVMV0Y",
        "date": "2022-08-20",
        "duration": "1:59:54",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-29",
+       "modified": "2026-10-05"
       },
       {
        "no": "19",
@@ -923,7 +1047,9 @@
        "video_id": "0GsBlyD7Kg8",
        "date": "2022-08-27",
        "duration": "2:13:47",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-29",
+       "modified": "2026-10-05"
       },
       {
        "no": "20",
@@ -934,7 +1060,9 @@
        "video_id": "9S1Nkmk0QSQ",
        "date": "2022-09-03",
        "duration": "2:18:04",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-29",
+       "modified": "2026-10-05"
       },
       {
        "no": "21",
@@ -945,7 +1073,9 @@
        "video_id": "-DcAapjjyTQ",
        "date": "2022-09-10",
        "duration": "2:02:38",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-29",
+       "modified": "2026-10-05"
       },
       {
        "no": "22",
@@ -956,7 +1086,9 @@
        "video_id": "NBsZqV4QYzs",
        "date": "2022-09-17",
        "duration": "2:08:13",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-29",
+       "modified": "2026-10-05"
       },
       {
        "no": "23",
@@ -967,7 +1099,9 @@
        "video_id": "o0ljqPJYeCE",
        "date": "2022-09-24",
        "duration": "2:32:36",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-29",
+       "modified": "2026-10-05"
       },
       {
        "no": "24",
@@ -978,7 +1112,9 @@
        "video_id": "AL3r9Cg9yg4",
        "date": "2022-10-01",
        "duration": "2:07:55",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-29",
+       "modified": "2026-10-05"
       },
       {
        "no": "25",
@@ -989,7 +1125,9 @@
        "video_id": "QvcNPYdKl5Y",
        "date": "2022-10-08",
        "duration": "2:37:43",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-30",
+       "modified": "2026-10-05"
       },
       {
        "no": "26",
@@ -1000,7 +1138,9 @@
        "video_id": "yh3736FK4pw",
        "date": "2022-10-15",
        "duration": "2:06:04",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-30",
+       "modified": "2026-10-05"
       },
       {
        "no": "27",
@@ -1011,7 +1151,9 @@
        "video_id": "tfL7p_f63tM",
        "date": "2022-10-22",
        "duration": "2:01:31",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-17",
+       "modified": "2026-10-17"
       },
       {
        "no": "28",
@@ -1033,7 +1175,9 @@
        "video_id": "UwvGssh0LjU",
        "date": "2022-11-05",
        "duration": "2:19:51",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-30",
+       "modified": "2026-10-05"
       },
       {
        "no": "30",
@@ -1044,7 +1188,9 @@
        "video_id": "YbX7LiPvAhA",
        "date": "2022-11-12",
        "duration": "2:28:38",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-30",
+       "modified": "2026-10-05"
       },
       {
        "no": "31",
@@ -1066,7 +1212,9 @@
        "video_id": "_CszvtIthUU",
        "date": "2022-11-26",
        "duration": "1:57:17",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-30",
+       "modified": "2026-10-05"
       },
       {
        "no": "33",
@@ -1077,7 +1225,9 @@
        "video_id": "ykz1Ch-WU_E",
        "date": "2022-12-03",
        "duration": "2:10:46",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-30",
+       "modified": "2026-10-05"
       },
       {
        "no": "34",
@@ -1088,7 +1238,9 @@
        "video_id": "Z4G1TbRbgpM",
        "date": "2022-12-10",
        "duration": "2:17:45",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-31",
+       "modified": "2026-10-05"
       },
       {
        "no": "35",
@@ -1099,7 +1251,9 @@
        "video_id": "DLt74bHZ3TE",
        "date": "2022-12-17",
        "duration": "2:35:35",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-31",
+       "modified": "2026-10-05"
       },
       {
        "no": "36",
@@ -1110,7 +1264,9 @@
        "video_id": "NYgVT1cq8zg",
        "date": "2022-12-24",
        "duration": "2:23:35",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-31",
+       "modified": "2026-10-05"
       }
      ]
     },
@@ -1130,7 +1286,9 @@
        "video_id": "v93jyh3TgIs",
        "date": "2020-12-23",
        "duration": "2:04:36",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-18",
+       "modified": "2026-10-05"
       },
       {
        "no": "02",
@@ -1141,7 +1299,9 @@
        "video_id": "kzq0bYGpniU",
        "date": "2020-12-23",
        "duration": "2:04:10",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-17",
+       "modified": "2026-10-05"
       },
       {
        "no": "03",
@@ -1163,7 +1323,9 @@
        "video_id": "f2lQoJfFajs",
        "date": "2020-12-24",
        "duration": "2:08:33",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-18",
+       "modified": "2026-10-05"
       },
       {
        "no": "05",
@@ -1174,7 +1336,9 @@
        "video_id": "oh63gsy_M5c",
        "date": "2020-12-25",
        "duration": "2:05:28",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-18",
+       "modified": "2026-10-05"
       },
       {
        "no": "06",
@@ -1218,7 +1382,9 @@
        "video_id": "OPRgyQBCi_Y",
        "date": "2020-12-28",
        "duration": "2:06:27",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-18",
+       "modified": "2026-10-05"
       },
       {
        "no": "10",
@@ -1240,7 +1406,9 @@
        "video_id": "JRI9bRIkJ9c",
        "date": "2020-12-30",
        "duration": "2:11:07",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-18",
+       "modified": "2026-10-05"
       },
       {
        "no": "12",
@@ -1262,7 +1430,9 @@
        "video_id": "rLtalyOBGqo",
        "date": "2021-01-01",
        "duration": "2:12:36",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-19",
+       "modified": "2026-10-05"
       },
       {
        "no": "14",
@@ -1273,7 +1443,9 @@
        "video_id": "oK4e-B0QH3o",
        "date": "2021-01-01",
        "duration": "2:08:50",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-19",
+       "modified": "2026-10-05"
       },
       {
        "no": "15",
@@ -1284,7 +1456,9 @@
        "video_id": "9becwwdaJ4Y",
        "date": "2021-01-04",
        "duration": "2:14:15",
-       "raw": false
+       "raw": false,
+       "published": "2026-11-03",
+       "modified": "2026-11-03"
       },
       {
        "no": "16",
@@ -1295,7 +1469,9 @@
        "video_id": "RJcLPNJjoGI",
        "date": "2021-01-04",
        "duration": "2:08:51",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-19",
+       "modified": "2026-10-05"
       },
       {
        "no": "17",
@@ -1306,7 +1482,9 @@
        "video_id": "AM3wi-LCo7k",
        "date": "2021-01-06",
        "duration": "2:16:30",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-19",
+       "modified": "2026-10-05"
       },
       {
        "no": "18",
@@ -1339,7 +1517,9 @@
        "video_id": "9Ng-fskCOHA",
        "date": "2021-01-06",
        "duration": "2:11:54",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-19",
+       "modified": "2026-10-05"
       },
       {
        "no": "21",
@@ -1350,7 +1530,9 @@
        "video_id": "Ijqieowiu_c",
        "date": "2021-01-06",
        "duration": "2:03:42",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-19",
+       "modified": "2026-10-05"
       },
       {
        "no": "22",
@@ -1372,7 +1554,9 @@
        "video_id": "L_QMCk5pPCs",
        "date": "2021-01-20",
        "duration": "1:58:39",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-19",
+       "modified": "2026-10-05"
       },
       {
        "no": "24",
@@ -1383,7 +1567,9 @@
        "video_id": "GUYPJbbCLd0",
        "date": "2021-01-29",
        "duration": "2:01:24",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-20",
+       "modified": "2026-10-05"
       },
       {
        "no": "25",
@@ -1394,7 +1580,9 @@
        "video_id": "y6qqxDomfHY",
        "date": "2021-02-05",
        "duration": "2:07:57",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-20",
+       "modified": "2026-10-05"
       },
       {
        "no": "26",
@@ -1416,7 +1604,9 @@
        "video_id": "MJrHEgInLw8",
        "date": "2021-03-05",
        "duration": "2:12:12",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-20",
+       "modified": "2026-10-05"
       },
       {
        "no": "28",
@@ -1427,7 +1617,9 @@
        "video_id": "XdPaHXEl0Dg",
        "date": "2021-05-04",
        "duration": "2:12:06",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-20",
+       "modified": "2026-10-05"
       },
       {
        "no": "29",
@@ -1438,7 +1630,9 @@
        "video_id": "huNQv_F7OM0",
        "date": "2021-03-19",
        "duration": "2:05:54",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-20",
+       "modified": "2026-10-05"
       },
       {
        "no": "30",
@@ -1449,7 +1643,9 @@
        "video_id": "SbPl4DvmT7g",
        "date": "2021-03-26",
        "duration": "2:09:27",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-20",
+       "modified": "2026-10-05"
       },
       {
        "no": "31",
@@ -1460,7 +1656,9 @@
        "video_id": "wqHftV65inM",
        "date": "2021-04-16",
        "duration": "2:08:35",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-20",
+       "modified": "2026-10-05"
       },
       {
        "no": "32",
@@ -1471,7 +1669,9 @@
        "video_id": "8ETrX47z2bw",
        "date": "2021-05-07",
        "duration": "2:14:35",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-21",
+       "modified": "2026-10-05"
       },
       {
        "no": "33",
@@ -1482,7 +1682,9 @@
        "video_id": "ahVTclPX2G4",
        "date": "2021-05-04",
        "duration": "2:19:54",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-21",
+       "modified": "2026-10-05"
       },
       {
        "no": "34",
@@ -1493,7 +1695,9 @@
        "video_id": "K2OrjDHQkeo",
        "date": "2021-05-06",
        "duration": "2:23:38",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-25",
+       "modified": "2026-10-05"
       },
       {
        "no": "35",
@@ -1504,7 +1708,9 @@
        "video_id": "pUjslgpvagc",
        "date": "2021-05-15",
        "duration": "2:11:12",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-21",
+       "modified": "2026-10-05"
       },
       {
        "no": "36",
@@ -1515,7 +1721,9 @@
        "video_id": "l1lgyTmfrkQ",
        "date": "2021-05-22",
        "duration": "2:29:52",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-21",
+       "modified": "2026-10-05"
       }
      ]
     },
@@ -1535,7 +1743,9 @@
        "video_id": "qU8-_gOnaQg",
        "date": "2023-02-04",
        "duration": "1:21:44",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-16",
+       "modified": "2026-10-05"
       },
       {
        "no": "02",
@@ -1546,7 +1756,9 @@
        "video_id": "6LO8PvVk9F0",
        "date": "2023-02-11",
        "duration": "1:38:31",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-16",
+       "modified": "2026-10-05"
       },
       {
        "no": "03",
@@ -1579,7 +1791,9 @@
        "video_id": "ok2-rr4RTQ8",
        "date": "2023-03-04",
        "duration": "2:00:22",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-16",
+       "modified": "2026-10-05"
       },
       {
        "no": "06",
@@ -1612,7 +1826,9 @@
        "video_id": "Urs3qWlIrVs",
        "date": "2023-03-25",
        "duration": "1:08:07",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-16",
+       "modified": "2026-10-25"
       },
       {
        "no": "09",
@@ -1623,7 +1839,9 @@
        "video_id": "765YLRAyA6s",
        "date": "2023-04-01",
        "duration": "2:10:16",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-26",
+       "modified": "2026-10-26"
       },
       {
        "no": "10",
@@ -1634,7 +1852,9 @@
        "video_id": "bAsxgj4BO-I",
        "date": "2023-04-08",
        "duration": "1:45:14",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-17",
+       "modified": "2026-10-26"
       },
       {
        "no": "11",
@@ -1645,7 +1865,9 @@
        "video_id": "0EMR9tddTaE",
        "date": "2023-04-15",
        "duration": "1:48:26",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-17",
+       "modified": "2026-10-25"
       },
       {
        "no": "12",
@@ -1656,7 +1878,9 @@
        "video_id": "8-ApAQa3DIs",
        "date": "2023-04-22",
        "duration": "1:57:25",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-17",
+       "modified": "2026-10-24"
       },
       {
        "no": "13",
@@ -1667,7 +1891,9 @@
        "video_id": "QUnR2541G28",
        "date": "2023-04-29",
        "duration": "1:51:37",
-       "raw": false
+       "raw": false,
+       "published": "2026-08-03",
+       "modified": "2026-10-25"
       },
       {
        "no": "14",
@@ -1678,7 +1904,9 @@
        "video_id": "EC5fC-Hw4_w",
        "date": "2023-05-06",
        "duration": "1:43:41",
-       "raw": false
+       "raw": false,
+       "published": "2026-08-21",
+       "modified": "2026-10-25"
       },
       {
        "no": "15",
@@ -1689,7 +1917,9 @@
        "video_id": "TsfGUVpnM3k",
        "date": "2023-05-13",
        "duration": "2:05:53",
-       "raw": false
+       "raw": false,
+       "published": "2026-08-21",
+       "modified": "2026-10-24"
       },
       {
        "no": "16",
@@ -1711,7 +1941,9 @@
        "video_id": "iFExnAW5nxU",
        "date": "2023-05-27",
        "duration": "2:27:11",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-17",
+       "modified": "2026-10-25"
       },
       {
        "no": "18",
@@ -1722,7 +1954,9 @@
        "video_id": "z8H6mDjRDEw",
        "date": "2023-06-03",
        "duration": "1:40:28",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-17",
+       "modified": "2026-10-24"
       },
       {
        "no": "19",
@@ -1733,7 +1967,9 @@
        "video_id": "nmBAxHkKGyY",
        "date": "2023-06-10",
        "duration": "2:11:36",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-17",
+       "modified": "2026-10-24"
       },
       {
        "no": "20",
@@ -1744,7 +1980,9 @@
        "video_id": "8Pqsb8livuw",
        "date": "2023-06-17",
        "duration": "2:28:16",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-17",
+       "modified": "2026-10-05"
       },
       {
        "no": "21",
@@ -1755,7 +1993,9 @@
        "video_id": "ane8cjK2tQM",
        "date": "2023-06-24",
        "duration": "2:12:29",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-25",
+       "modified": "2026-10-25"
       },
       {
        "no": "22",
@@ -1766,7 +2006,9 @@
        "video_id": "E4sHGs_ZYJE",
        "date": "2023-07-01",
        "duration": "2:31:20",
-       "raw": false
+       "raw": false,
+       "published": "2026-07-17",
+       "modified": "2026-11-05"
       },
       {
        "no": "23",
@@ -1797,7 +2039,9 @@
        "video_id": "5uKUOHYGtWg",
        "date": "2025-03-01",
        "duration": "3:08:23",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-29",
+       "modified": "2026-09-29"
       },
       {
        "no": "02",
@@ -1808,7 +2052,9 @@
        "video_id": "ayt_zne4SR4",
        "date": "2025-03-08",
        "duration": "4:02:37",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-29",
+       "modified": "2026-09-29"
       },
       {
        "no": "03",
@@ -1819,7 +2065,9 @@
        "video_id": "TZneDqV_EIg",
        "date": "2025-03-15",
        "duration": "3:13:25",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-29",
+       "modified": "2026-09-29"
       },
       {
        "no": "04",
@@ -1830,7 +2078,9 @@
        "video_id": "CSy46nR_iz4",
        "date": "2025-03-22",
        "duration": "3:15:37",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "05",
@@ -1841,7 +2091,9 @@
        "video_id": "qLZzzEyY9xA",
        "date": "2025-03-29",
        "duration": "3:46:48",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "06",
@@ -1852,7 +2104,9 @@
        "video_id": "hD-wpGCRLwc",
        "date": "2025-04-05",
        "duration": "3:40:49",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "07",
@@ -1863,7 +2117,9 @@
        "video_id": "Kw39XUv7u1Q",
        "date": "2025-04-12",
        "duration": "3:10:09",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "08",
@@ -1874,7 +2130,9 @@
        "video_id": "nppnrI5Q8Q8",
        "date": "2025-04-19",
        "duration": "3:33:39",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "09",
@@ -1885,7 +2143,9 @@
        "video_id": "GIw1VoI5dJs",
        "date": "2025-04-26",
        "duration": "3:21:28",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "10",
@@ -1896,7 +2156,9 @@
        "video_id": "H_KHErbd0dk",
        "date": "2025-05-03",
        "duration": "2:15:51",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "11",
@@ -1907,7 +2169,9 @@
        "video_id": "3tgusy_h0Q0",
        "date": "2025-05-10",
        "duration": "2:46:36",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "12",
@@ -1918,7 +2182,9 @@
        "video_id": "wV7MgDo_Kk8",
        "date": "2025-05-17",
        "duration": "2:25:09",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "13",
@@ -1929,7 +2195,9 @@
        "video_id": "ipIKBGRnaaA",
        "date": "2025-05-24",
        "duration": "2:30:41",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "14",
@@ -1940,7 +2208,9 @@
        "video_id": "jdkYE6DcELE",
        "date": "2025-05-31",
        "duration": "3:19:23",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "15",
@@ -1951,7 +2221,9 @@
        "video_id": "qPxdzzmPdV4",
        "date": "2025-06-07",
        "duration": "2:49:59",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "16",
@@ -1962,7 +2234,9 @@
        "video_id": "ZMPaC6eYytI",
        "date": "2025-06-14",
        "duration": "3:09:41",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-30",
+       "modified": "2026-09-30"
       },
       {
        "no": "17",
@@ -1973,7 +2247,9 @@
        "video_id": "CgXISm2lBK0",
        "date": "2025-06-21",
        "duration": "2:46:47",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-01",
+       "modified": "2026-10-01"
       },
       {
        "no": "18",
@@ -1984,7 +2260,9 @@
        "video_id": "O33XR1GsjH4",
        "date": "2025-06-28",
        "duration": "2:36:44",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-01",
+       "modified": "2026-10-01"
       },
       {
        "no": "19",
@@ -1995,7 +2273,9 @@
        "video_id": "0w_ThoZcKCM",
        "date": "2025-07-05",
        "duration": "1:48:32",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-04",
+       "modified": "2026-10-04"
       }
      ]
     },
@@ -2015,7 +2295,9 @@
        "video_id": "6_5j3Dh5mnk",
        "date": "2025-11-08",
        "duration": "3:12:52",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-22",
+       "modified": "2026-09-25"
       },
       {
        "no": "02",
@@ -2026,7 +2308,9 @@
        "video_id": "NkTReqGduwo",
        "date": "2025-11-15",
        "duration": "2:54:30",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-25",
+       "modified": "2026-09-25"
       },
       {
        "no": "03",
@@ -2037,7 +2321,9 @@
        "video_id": "JHAeQ0bCyaY",
        "date": "2025-11-22",
        "duration": "2:26:52",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-26",
+       "modified": "2026-09-26"
       },
       {
        "no": "04",
@@ -2048,7 +2334,9 @@
        "video_id": "8v9E2uem3Xg",
        "date": "2025-11-29",
        "duration": "2:49:29",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-26",
+       "modified": "2026-09-26"
       },
       {
        "no": "05",
@@ -2059,7 +2347,9 @@
        "video_id": "CCmGBwq_JRw",
        "date": "2025-12-06",
        "duration": "2:57:37",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-26",
+       "modified": "2026-09-26"
       },
       {
        "no": "06",
@@ -2070,7 +2360,9 @@
        "video_id": "nNUn2lnSl1Y",
        "date": "2025-12-13",
        "duration": "2:30:24",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-26",
+       "modified": "2026-09-26"
       },
       {
        "no": "07",
@@ -2081,7 +2373,9 @@
        "video_id": "Pwk7PKJZUUU",
        "date": "2025-12-20",
        "duration": "2:38:50",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-26",
+       "modified": "2026-09-26"
       },
       {
        "no": "08",
@@ -2092,7 +2386,9 @@
        "video_id": "uT_ssng1k0c",
        "date": "2025-12-27",
        "duration": "3:14:14",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-26",
+       "modified": "2026-09-26"
       },
       {
        "no": "09",
@@ -2103,7 +2399,9 @@
        "video_id": "CZ9Sc5HrhdI",
        "date": "2026-01-03",
        "duration": "2:44:26",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-26",
+       "modified": "2026-09-26"
       },
       {
        "no": "10",
@@ -2114,7 +2412,9 @@
        "video_id": "IDfVmAy9ZFI",
        "date": "2026-01-10",
        "duration": "3:10:43",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-26",
+       "modified": "2026-09-26"
       },
       {
        "no": "11",
@@ -2125,7 +2425,9 @@
        "video_id": "Jzqe4ELgpbU",
        "date": "2026-01-17",
        "duration": "3:19:35",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-27",
+       "modified": "2026-09-27"
       },
       {
        "no": "12",
@@ -2136,7 +2438,9 @@
        "video_id": "g8gFI3EFOz4",
        "date": "2026-01-24",
        "duration": "3:06:44",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-27",
+       "modified": "2026-09-27"
       },
       {
        "no": "13",
@@ -2147,7 +2451,9 @@
        "video_id": "p7BB3KC-urs",
        "date": "2026-01-31",
        "duration": "2:33:56",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-27",
+       "modified": "2026-09-27"
       },
       {
        "no": "14",
@@ -2158,7 +2464,9 @@
        "video_id": "MAMkgLkeb8A",
        "date": "2026-02-07",
        "duration": "3:48:20",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-27",
+       "modified": "2026-09-27"
       },
       {
        "no": "15",
@@ -2169,7 +2477,9 @@
        "video_id": "TcB7ypoaVT4",
        "date": "2026-02-14",
        "duration": "3:03:54",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-27",
+       "modified": "2026-09-27"
       },
       {
        "no": "16",
@@ -2180,7 +2490,9 @@
        "video_id": "svKvZQNn7SI",
        "date": "2026-02-28",
        "duration": "4:02:20",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-27",
+       "modified": "2026-09-27"
       },
       {
        "no": "17",
@@ -2191,7 +2503,9 @@
        "video_id": "znCfX4MWtbQ",
        "date": "2026-03-07",
        "duration": "1:58:07",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-27",
+       "modified": "2026-09-27"
       },
       {
        "no": "18",
@@ -2202,7 +2516,9 @@
        "video_id": "Q3qZm15pdJk",
        "date": "2026-03-14",
        "duration": "46:40",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-04",
+       "modified": "2026-10-04"
       }
      ]
     },
@@ -2233,7 +2549,9 @@
        "video_id": "YNfDYjSWxM0",
        "date": "2021-06-30",
        "duration": "2:21:31",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-27",
+       "modified": "2026-09-27"
       },
       {
        "no": "03",
@@ -2255,7 +2573,9 @@
        "video_id": "GS-zOH5A6I4",
        "date": "2021-07-13",
        "duration": "2:17:31",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-28",
+       "modified": "2026-09-28"
       },
       {
        "no": "05",
@@ -2266,7 +2586,9 @@
        "video_id": "dRHE0-hr9VM",
        "date": "2021-07-21",
        "duration": "2:21:37",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-28",
+       "modified": "2026-09-28"
       },
       {
        "no": "06",
@@ -2277,7 +2599,9 @@
        "video_id": "evIXcfTNGK8",
        "date": "2021-07-27",
        "duration": "2:07:19",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-28",
+       "modified": "2026-09-28"
       },
       {
        "no": "07",
@@ -2299,7 +2623,9 @@
        "video_id": "MI9EBDlg6Zg",
        "date": "2021-08-11",
        "duration": "2:19:56",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-28",
+       "modified": "2026-09-28"
       },
       {
        "no": "09",
@@ -2310,7 +2636,9 @@
        "video_id": "IKVbkBg5_ps",
        "date": "2021-08-18",
        "duration": "2:10:06",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-28",
+       "modified": "2026-09-28"
       },
       {
        "no": "10",
@@ -2321,7 +2649,9 @@
        "video_id": "2SV2r9PgenY",
        "date": "2021-08-26",
        "duration": "2:13:47",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-28",
+       "modified": "2026-09-28"
       },
       {
        "no": "11",
@@ -2332,7 +2662,9 @@
        "video_id": "3U11gemd7wo",
        "date": "2021-09-01",
        "duration": "2:22:28",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-28",
+       "modified": "2026-09-28"
       },
       {
        "no": "12",
@@ -2343,7 +2675,9 @@
        "video_id": "nRrBodoFqZ4",
        "date": "2021-09-08",
        "duration": "2:09:10",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-28",
+       "modified": "2026-09-28"
       },
       {
        "no": "13",
@@ -2354,7 +2688,9 @@
        "video_id": "o_RV_lsqocY",
        "date": "2021-09-15",
        "duration": "2:42:11",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-29",
+       "modified": "2026-09-29"
       },
       {
        "no": "14",
@@ -2365,7 +2701,9 @@
        "video_id": "oaW2dQaG3ow",
        "date": "2021-09-23",
        "duration": "2:26:34",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-29",
+       "modified": "2026-09-29"
       },
       {
        "no": "15",
@@ -2387,7 +2725,9 @@
        "video_id": "MhRlmTg0hrc",
        "date": "2021-10-06",
        "duration": "2:33:07",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-29",
+       "modified": "2026-09-29"
       },
       {
        "no": "17",
@@ -2398,7 +2738,9 @@
        "video_id": "RqzJTeZhKwU",
        "date": "2021-10-12",
        "duration": "2:46:59",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-29",
+       "modified": "2026-09-29"
       },
       {
        "no": "18",
@@ -2409,7 +2751,9 @@
        "video_id": "B4SHCbxDGlE",
        "date": "2021-10-19",
        "duration": "2:44:49",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-29",
+       "modified": "2026-09-29"
       }
      ]
     },
@@ -2429,7 +2773,9 @@
        "video_id": "Jjo479pftDc",
        "date": "2026-07-04",
        "duration": "2:30:37",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "03",
@@ -2440,7 +2786,9 @@
        "video_id": "GvBfvk--z0E",
        "date": "2026-07-11",
        "duration": "3:29:40",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "04",
@@ -2451,7 +2799,9 @@
        "video_id": "3K4ErcEWMqo",
        "date": "2026-07-18",
        "duration": "3:47:15",
-       "raw": false
+       "raw": false,
+       "published": null,
+       "modified": "2026-10-23"
       },
       {
        "no": "05",
@@ -2462,7 +2812,9 @@
        "video_id": "ZRDgws6_g0Y",
        "date": "2026-07-25",
        "duration": "3:32:02",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "06",
@@ -2473,7 +2825,9 @@
        "video_id": "7ZZnHKnq-kU",
        "date": "2026-08-01",
        "duration": "3:31:25",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "07",
@@ -2484,7 +2838,9 @@
        "video_id": "1yLVT4ck5CE",
        "date": "2026-08-08",
        "duration": "3:06:39",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "08",
@@ -2495,7 +2851,9 @@
        "video_id": "GdToiaowwsg",
        "date": "2026-08-15",
        "duration": "3:12:32",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "09",
@@ -2506,7 +2864,9 @@
        "video_id": "Q1Lf9gepvzM",
        "date": "2026-08-22",
        "duration": "2:54:22",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "10",
@@ -2517,7 +2877,9 @@
        "video_id": "uNuzw-aWBcY",
        "date": "2026-08-29",
        "duration": "3:21:38",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "11",
@@ -2528,7 +2890,9 @@
        "video_id": "e5mPjATlzBk",
        "date": "2026-09-05",
        "duration": "3:17:51",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "12",
@@ -2539,7 +2903,9 @@
        "video_id": "v7HX9vDHSGU",
        "date": "2026-09-12",
        "duration": "3:08:33",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "13",
@@ -2550,7 +2916,9 @@
        "video_id": "YyFNawE0yH0",
        "date": "2026-09-19",
        "duration": "2:47:12",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "14",
@@ -2561,7 +2929,9 @@
        "video_id": "lOUeXWGqX-k",
        "date": "2026-09-26",
        "duration": "3:49:57",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "15",
@@ -2572,7 +2942,9 @@
        "video_id": "eut_V6KOOBw",
        "date": "2026-10-03",
        "duration": "3:33:01",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "17",
@@ -2583,7 +2955,9 @@
        "video_id": "RXdsZPEFYgs",
        "date": "2026-10-17",
        "duration": "3:29:39",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       }
      ]
     },
@@ -2603,7 +2977,9 @@
        "video_id": "dWXfGgMFwQ8",
        "date": "2025-08-09",
        "duration": "3:08:32",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-20",
+       "modified": "2026-09-25"
       },
       {
        "no": "02",
@@ -2614,7 +2990,9 @@
        "video_id": "raq4zk_cbV0",
        "date": "2025-08-16",
        "duration": "3:14:45",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-20",
+       "modified": "2026-09-25"
       },
       {
        "no": "03",
@@ -2625,7 +3003,9 @@
        "video_id": "Fb5RTvYdQRg",
        "date": "2025-08-23",
        "duration": "3:09:50",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-20",
+       "modified": "2026-09-25"
       },
       {
        "no": "04",
@@ -2636,7 +3016,9 @@
        "video_id": "sd_RFDzcG9g",
        "date": "2025-08-30",
        "duration": "3:07:06",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-21",
+       "modified": "2026-09-25"
       },
       {
        "no": "05",
@@ -2713,7 +3095,9 @@
        "video_id": "-wOKlfFkFgQ",
        "date": "2025-10-18",
        "duration": "3:16:48",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-21",
+       "modified": "2026-09-25"
       }
      ]
     },
@@ -2733,7 +3117,9 @@
        "video_id": "5eQH7284YNo",
        "date": "2022-01-22",
        "duration": "2:23:39",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-21",
+       "modified": "2026-09-25"
       },
       {
        "no": "02",
@@ -2744,7 +3130,9 @@
        "video_id": "eU7JnucqBRk",
        "date": "2022-01-29",
        "duration": "2:44:48",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-22",
+       "modified": "2026-09-25"
       },
       {
        "no": "03",
@@ -2755,7 +3143,9 @@
        "video_id": "FQPsaitSGg0",
        "date": "2022-02-05",
        "duration": "2:10:33",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-22",
+       "modified": "2026-09-25"
       },
       {
        "no": "04",
@@ -2810,7 +3200,9 @@
        "video_id": "b1fKdUHwoAI",
        "date": "2022-03-13",
        "duration": "2:51:07",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-22",
+       "modified": "2026-09-25"
       },
       {
        "no": "09",
@@ -2832,7 +3224,9 @@
        "video_id": "MtZAetU3Rnw",
        "date": "2022-03-26",
        "duration": "2:57:14",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-22",
+       "modified": "2026-09-25"
       },
       {
        "no": "11",
@@ -2874,7 +3268,9 @@
        "video_id": "1-Ro7YESwMA",
        "date": "2023-08-05",
        "duration": "2:14:47",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-08",
+       "modified": "2026-09-25"
       },
       {
        "no": "03",
@@ -2949,7 +3345,9 @@
        "video_id": "EqEhjW-W_4U",
        "date": "2024-08-21",
        "duration": "2:52:59",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-03",
+       "modified": "2026-10-03"
       },
       {
        "no": "03",
@@ -2960,7 +3358,9 @@
        "video_id": "lociGkvzvCI",
        "date": "2024-08-21",
        "duration": "3:14:35",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-03",
+       "modified": "2026-10-03"
       },
       {
        "no": "04",
@@ -2971,7 +3371,9 @@
        "video_id": "fddkfW1Pzkk",
        "date": "2024-08-21",
        "duration": "2:56:10",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-03",
+       "modified": "2026-10-03"
       },
       {
        "no": "05",
@@ -2982,7 +3384,9 @@
        "video_id": "XHEZzaMpR_Y",
        "date": "2024-08-21",
        "duration": "3:19:48",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-03",
+       "modified": "2026-10-03"
       }
      ]
     },
@@ -3002,7 +3406,9 @@
        "video_id": "sgxAC4jGzC8",
        "date": "2025-02-08",
        "duration": "1:33:21",
-       "raw": false
+       "raw": false,
+       "published": null,
+       "modified": "2026-10-03"
       },
       {
        "no": "02",
@@ -3013,7 +3419,9 @@
        "video_id": "d_-w8__YCbQ",
        "date": "2025-02-15",
        "duration": "1:32:40",
-       "raw": false
+       "raw": false,
+       "published": null,
+       "modified": "2026-10-03"
       },
       {
        "no": "03",
@@ -3024,7 +3432,9 @@
        "video_id": "XOLpLYFK7lY",
        "date": "2025-02-22",
        "duration": "1:30:24",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-03",
+       "modified": "2026-11-02"
       }
      ]
     },
@@ -3044,7 +3454,9 @@
        "video_id": "10UiEc5eSX0",
        "date": "2026-04-11",
        "duration": "1:54:31",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       },
       {
        "no": "03",
@@ -3055,7 +3467,9 @@
        "video_id": "fFH1-tJbX7I",
        "date": "2026-04-25",
        "duration": "1:55:47",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-23",
+       "modified": "2026-10-23"
       }
      ]
     },
@@ -3075,7 +3489,9 @@
        "video_id": "kxafo0dTyQw",
        "date": "2026-05-02",
        "duration": "1:38:15",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-04",
+       "modified": "2026-10-04"
       },
       {
        "no": "02",
@@ -3086,7 +3502,9 @@
        "video_id": "sDu8ynx8e_0",
        "date": "2026-05-09",
        "duration": "1:02:12",
-       "raw": false
+       "raw": false,
+       "published": "2026-10-04",
+       "modified": "2026-10-04"
       }
      ]
     },
@@ -3106,7 +3524,9 @@
        "video_id": "6Djm7HvWxMc",
        "date": "2021-10-26",
        "duration": "2:49:51",
-       "raw": false
+       "raw": false,
+       "published": "2026-09-07",
+       "modified": "2026-09-25"
       },
       {
        "no": "02",
@@ -3137,7 +3557,9 @@
        "video_id": "aaufKWDIz3A",
        "date": "2021-06-10",
        "duration": "2:20:33",
-       "raw": false
+       "raw": false,
+       "published": "2026-08-05",
+       "modified": "2026-10-05"
       },
       {
        "no": "02",

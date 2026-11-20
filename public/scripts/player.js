@@ -1,5 +1,5 @@
 // Docked YouTube player shared by the note reader and the transcript page.
-// window.notesPlayer(box, videoId) -> { ensure, play, onTime, status, now }
+// window.notesPlayer(box, videoId) -> { ensure, poster, play, onTime, status, now }
 // window.notesFollow(player, rows, opt): mark the row being spoken and keep it in view
 // window.notesTranscript(player, box, ts, enabled): wire the transcript page's paragraphs to the player
 // scrolls the reader triggers itself: instant when the user asks for reduced motion
@@ -46,9 +46,21 @@ window.notesPlayer = (box, videoId) => {
     sessionStorage.removeItem("autoplay");
   } catch (e) {}
 
+  // the frame opens on the video's thumbnail (.player-poster, a link to the video on YouTube); YouTube's
+  // player (about 1 MB of script) loads on the first tap, or at once when playback carries on from the
+  // previous page
+  function poster() {
+    const b = box.querySelector(".player-poster");
+    if (ready || autoplay || !b) return void ensure();
+    showVideo(true);
+    if (resumeAt) b.setAttribute("aria-label", `播放影片（從 ${notesFmt(resumeAt)} 繼續）`);
+    b.addEventListener("click", (e) => { e.preventDefault(); ensure().then((p) => p.playVideo()); });
+  }
+
   function ensure() {
     showVideo(true);
     if (ready) return ready;
+    box.querySelector(".player-poster")?.remove();
     // the frame stays black until YouTube is ready: show a waiting spinner over it
     const frame = box.querySelector(".player-frame");
     const loader = document.createElement("div");
@@ -179,7 +191,7 @@ window.notesPlayer = (box, videoId) => {
   });
 
   return {
-    ensure, play, onTime: (f) => listeners.push(f), status, resumeAt, started: () => started,
+    ensure, poster, play, onTime: (f) => listeners.push(f), status, resumeAt, started: () => started,
     now: () => (started ? yt?.getCurrentTime?.() ?? 0 : resumeAt),
   };
 };

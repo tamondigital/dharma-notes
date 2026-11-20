@@ -66,7 +66,7 @@ const jsonld = graph(
     {l.video_id && (
       <div class="player open" id="player" data-video={l.video_id}
         data-next={next ? transcriptUrl(`${c.slug}/${s.slug}/${next.no}`) : undefined} data-next-title={next ? lessonTitle(s, next) : undefined}>
-        <div class="player-frame"><div data-yt></div></div>
+        <div class="player-frame"><div data-yt></div><a class="player-poster" href={`https://www.youtube.com/watch?v=${l.video_id}`} aria-label="播放影片"><img src={`https://i.ytimg.com/vi/${l.video_id}/hqdefault.jpg`} alt="" width="480" height="360" fetchpriority="high" /><span class="play-icon" aria-hidden="true"></span></a></div>
         <PlayerBar current="transcript" note={l.has_note ? lessonUrl(key) : undefined} transcript="./"
           follow={l.raw ? undefined : "逐字稿自動跟隨影片"} />
       </div>
@@ -104,7 +104,7 @@ const jsonld = graph(
       const box = document.getElementById("player");
       if (!box) return;
       const player = window.notesPlayer(box, box.dataset.video);
-      player.ensure();
+      player.poster();
       const btn = box.querySelector("[data-toggle-follow]");
       let follow = !!btn;
       try { if (btn) follow = localStorage.getItem("follow-ts") !== "0"; } catch (e) {}

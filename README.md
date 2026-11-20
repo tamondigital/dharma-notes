@@ -45,12 +45,24 @@ The teacher speaks without notes, so a quotation recalled from memory can differ
 
 Every export ends by printing any line that still pairs the teacher with 誤 (`public voice? …`), so new wording can be caught and a rule added.
 
+### `scripts/subset_font.py`
+
+The body serif, Noto Serif TC (variable weight, `fonts/NotoSerifTC[wght].ttf`, SIL OFL in `fonts/OFL.txt`), is cut down at build time to the characters the built pages use. That makes one woff2 of about 2 MB that every page shares, written to `dist/fonts/` with its `@font-face` CSS. A new character in the notes is in the font from the next build. On a first visit the page loads the font after the page itself has loaded, and once the font is cached it is applied at once. `npm run dev` has no font file, so text shows in the fallback serif.
+
+It needs `fontTools` (`requirements.txt`). Run once per clone: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`. The script re-runs itself under `.venv`. CI installs the same requirements.
+
+### Search-engine metadata
+
+- **Lesson pages** carry an `Article` (author and publisher: the site) with `datePublished` (the note's `generated.at`) and `dateModified` (its latest `verified` gate run). `export.py` copies both into `content/site.json` as `published` and `modified`.
+- **The sitemap** gives a lesson and its transcript that date as `<lastmod>`, and a series its newest lesson's date (`astro.config.mjs`).
+- **The video** shows its thumbnail, a link to YouTube, until the reader presses play. Only then does YouTube's player load (`public/scripts/player.js`).
+
 ## Commands
 
 ```sh
 npm run export    # re-snapshot from mani (path in site.config.json; uses mani's venv)
-npm run dev       # local dev server
-npm run build     # astro build + sitemap + pagefind index → dist/
+npm run dev       # local dev server (no subset font: fallback serif)
+npm run build     # astro build + font subset + sitemap + pagefind index → dist/
 npm run preview   # serve dist/ at http://localhost:4321/dharma-notes/
 npm run index:dev # after a build: copy the search index into public/ so search works under `npm run dev`
 ```

@@ -16,6 +16,8 @@ export interface Lesson {
   video_id?: string | null;
   date?: string | null;
   duration?: string | null;
+  published?: string | null; // the note's generation date, YYYY-MM-DD
+  modified?: string | null;  // its latest verification date
 }
 
 export interface Series {

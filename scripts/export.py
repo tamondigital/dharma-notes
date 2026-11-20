@@ -198,6 +198,15 @@ def clean_sutra_name(name: str) -> str:
 
 # ---------------------------------------------------------------- per channel
 
+def note_dates(meta: dict) -> tuple[str | None, str | None]:
+    """(published, modified) as YYYY-MM-DD: when the note was generated, and its latest gate run."""
+    day = lambda v: str(v)[:10] if v and DATE_RE.match(str(v)) else None
+    gen = meta.get("generated")
+    published = day(gen.get("at")) if isinstance(gen, dict) else None
+    runs = [d for v in meta.get("verified") or [] if isinstance(v, dict) and (d := day(v.get("at")))]
+    return published, max([*runs, *([published] if published else [])], default=None)
+
+
 def export_channel(ch: str, mani: Path, lesson_key, lessons: dict) -> dict:
     notes_root = mani / "notes" / ch
     art_root = mani / "notes-artifacts" / ch
@@ -225,12 +234,14 @@ def export_channel(ch: str, mani: Path, lesson_key, lessons: dict) -> dict:
             s["teacher"] = s["teacher"] or bullets.get("講師") or meta.get("teacher")
             s["home_sutra"] = s["home_sutra"] or bullets.get("本經")
             s["home_sutra_id"] = s["home_sutra_id"] or meta.get("home_sutra")
+            published, modified = note_dates(meta)
             index[nn(no)] = {
                 "no": nn(no), "title": meta.get("title") or f.stem,
                 "scope": public_voice.apply(bullets.get("本講範圍", "")).strip(),
                 "has_note": True, "has_transcript": False,
                 "video_id": vm.group(1) if vm else None,
                 "date": dm.group(0) if dm else None, "duration": durm.group(1) if durm else None,
+                "published": published, "modified": modified,
                 "_note": f, "_meta": meta, "_body": public_voice.apply(body), "_pl": pl,
             }
         # 2. cleaned transcripts

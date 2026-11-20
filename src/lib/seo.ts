@@ -25,6 +25,9 @@ export const websiteRef = () => ({
   "@type": "WebSite", "@id": abs(import.meta.env.BASE_URL) + "#website", name: site.title, ...(altName && { alternateName: altName }), url: abs(import.meta.env.BASE_URL),
 });
 
+// the site as the author and publisher of the notes
+export const siteOrg = () => ({ "@type": "Organization", "@id": abs(import.meta.env.BASE_URL) + "#org", name: site.title, url: abs(import.meta.env.BASE_URL) });
+
 // "1:58:33" or "58:33" as ISO 8601 ("PT1H58M33S")
 export function isoDuration(d?: string | null): string | undefined {
   const p = (d ?? "").split(":").map(Number);

@@ -5,7 +5,7 @@
   "scripts": {
     "export": "python3 scripts/export.py",
     "dev": "astro dev",
-    "build": "astro build && pagefind --site dist --force-language zh",
+    "build": "astro build && python3 scripts/subset_font.py && pagefind --site dist --force-language zh",
     "index:dev": "pagefind --site dist --output-path public/pagefind --force-language zh",
     "preview": "astro preview"
   },
