@@ -375,10 +375,15 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
   .follow { height: var(--follow-h, 4.4em); margin-top: 6px; }
   .player-bar { flex-wrap: wrap; row-gap: 2px; gap: 4px; }
   .pb-left { gap: 2px; }
-  .pb-views > * { padding: 0 9px; }
+  .pb-views > * { padding: 0 7px; }
   .pb-note { padding: 0 4px 0 2px !important; }
+  /* one row of controls on a 390px phone at any A+ size: "對應段落" → "對應" (the title says the rest), the
+     controls' text grows with A+ only up to 14px, and the icon buttons are 40px wide (still 44px tall) */
+  .pb-long { display: none; }
+  .player-bar button, .pb-views { font-size: min(.82rem, 14px); }
 }
 @media (max-width: 820px) and (pointer: fine) { .pb-icons .pb-i { min-width: 38px; } }
+@media (max-width: 820px) and (pointer: coarse) { .pb-icons .pb-i { min-width: 40px; } }
 /* ---------- short landscape screens (a phone turned sideways): the stuck player would cover most of the
    screen stacked, so the video sits on the left and the controls and follow-along transcript beside it ---------- */
 @media (orientation: landscape) and (max-height: 500px) {

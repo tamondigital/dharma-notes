@@ -23,7 +23,7 @@ const views = note && transcript ? [["note", "筆記", note], ["transcript", "�
     )}
     {toNote && (
       <button type="button" class="pb-note" data-to-note title="捲到筆記中對應目前影片的段落；再點一下跳到下一處">
-        <Fragment set:html={`<svg ${svg}><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`} />對應段落<span class="pb-n" data-to-note-n></span>
+        <Fragment set:html={`<svg ${svg}><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`} />對應<span class="pb-long">段落</span><span class="pb-n" data-to-note-n></span>
       </button>
     )}
   </span>
