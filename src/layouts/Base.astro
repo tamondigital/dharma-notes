@@ -33,11 +33,10 @@ const ld = jsonld && JSON.stringify(jsonld).replace(/</g, "\\u003c");
     {ld && <script type="application/ld+json" set:html={ld} />}
     <link rel="sitemap" href={url("sitemap-index.xml")} />
     <link rel="icon" href={url("favicon.svg")} type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    {/* loaded without blocking the first paint: text shows in the fallback serif (--serif) until it arrives */}
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet" /></noscript>
+    {/* self-hosted (public/fonts), loaded without blocking the first paint: text shows in the fallback
+        serif (--serif) until it arrives; the browser fetches only the slices a page's characters need */}
+    <link href={url("fonts/noto-serif-tc.css")} rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href={url("fonts/noto-serif-tc.css")} rel="stylesheet" /></noscript>
     <script is:inline>
       try {
         const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t;
