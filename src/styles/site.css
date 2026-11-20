@@ -177,6 +177,7 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 .end-card .btn:hover { color: #fff; border-color: #fff; }
 .player-bar .ic-grow, .player.mini .ic-shrink { display: none; }
 .player.mini .ic-grow { display: block; }
+.panel-grip { display: none; }
 .player-hint { margin: 4px 0 0; font-size: .8rem; color: var(--ink-2); line-height: 1.6; }
 @media (pointer: coarse) { .player-bar button, .pb-views > * { min-width: 44px; min-height: 44px; } .pb-views > * { justify-content: center; } }
 .player.mini .player-frame { max-height: 22vh; aspect-ratio: 16 / 9; width: min(100%, 39vh); margin: 0 0 0 auto; }
@@ -364,12 +365,23 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
   .reader-main:not(:has(> .player)) { max-width: 860px; }
 
   /* the note on the left, the panel on the right, stuck to the screen for the note's whole length */
-  .reader-main:has(> .player), .ts-page { display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 30vw, 520px);
+  .reader-main:has(> .player), .ts-page { display: grid; grid-template-columns: minmax(0, 1fr)
+    min(var(--panel-w, clamp(340px, 30vw, 520px)), calc(100% - 468px));
     column-gap: 28px; align-items: start; }
   :is(.reader-main, .ts-page) > * { grid-column: 1; }
   :is(.reader-main, .ts-page) > .player { grid-column: 2; grid-row: 1 / span 60; position: sticky; top: 0; margin: 0; padding: 12px 0; }
   .player .player-frame { width: 100%; max-height: none !important; margin: 0 !important; }
   .pb-mini { display: none !important; }
+  /* the handle on the panel's left edge (player.js) */
+  .panel-grip { display: flex; position: absolute; z-index: 6; left: -20px; top: 0; bottom: 0; width: 16px;
+    cursor: ew-resize; touch-action: none; align-items: center; justify-content: center; }
+  .panel-grip::before { content: ""; width: 4px; height: 40px; border-radius: 2px; background: var(--line); transition: background .15s, height .15s; }
+  .panel-grip:hover::before, .panel-grip:focus-visible::before, .panel-dragging .panel-grip::before { background: var(--accent); height: 64px; }
+  .panel-grip:focus-visible { outline: none; }
+  .player:not(.open) > .panel-grip { display: flex; }
+  /* while dragging: no text selection, and the video frame can't swallow the pointer */
+  .panel-dragging, .panel-dragging * { cursor: ew-resize !important; user-select: none; }
+  .panel-dragging iframe { pointer-events: none; }
 
   /* note page: video, controls, then the follow-along transcript filling the rest of the height */
   .reader-main > .player { height: 100vh; height: 100dvh; display: flex; flex-direction: column; }

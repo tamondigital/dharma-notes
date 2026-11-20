@@ -171,6 +171,7 @@ window.notesPlayer = (box, videoId) => {
     mini.setAttribute("aria-pressed", String(on));
     mini.setAttribute("aria-label", label); mini.title = label;
   });
+  panelGrip(box);
   const hintBtn = box.querySelector("[data-hint]"), hint = box.querySelector(".player-hint");
   hintBtn?.addEventListener("click", () => {
     hint.hidden = !hint.hidden;
@@ -182,6 +183,56 @@ window.notesPlayer = (box, videoId) => {
     now: () => (started ? yt?.getCurrentTime?.() ?? 0 : resumeAt),
   };
 };
+
+// wide screens: a handle on the side panel's left edge sets its width (drag, or arrow keys; a double-click
+// goes back to the default). The width is kept for every page; CSS still leaves the text at least 440px.
+function panelGrip(box) {
+  const root = document.documentElement, KEY = "panel-w", MIN = 320;
+  const grip = document.createElement("div");
+  grip.className = "panel-grip";
+  grip.tabIndex = 0;
+  grip.setAttribute("role", "separator");
+  grip.setAttribute("aria-orientation", "vertical");
+  grip.setAttribute("aria-label", "拖曳或用左右鍵調整右側面板寬度，按兩下恢復預設");
+  grip.title = "拖曳調整面板寬度（按兩下恢復預設）";
+  box.appendChild(grip);
+  // widest the panel may be: what leaves the text column its 440px (plus the 28px gap)
+  const max = () => Math.max(MIN, box.parentElement.clientWidth - 468);
+  const set = (px, keep) => {
+    const w = Math.round(Math.min(Math.max(px, MIN), max()));
+    root.style.setProperty("--panel-w", w + "px");
+    grip.setAttribute("aria-valuenow", String(w));
+    if (keep) try { localStorage.setItem(KEY, String(w)); } catch (e) {}
+  };
+  try { const w = Number(localStorage.getItem(KEY)); if (w) root.style.setProperty("--panel-w", w + "px"); } catch (e) {}
+  grip.addEventListener("pointerdown", (ev) => {
+    ev.preventDefault();
+    grip.setPointerCapture(ev.pointerId);
+    const x0 = ev.clientX, w0 = box.offsetWidth;
+    root.classList.add("panel-dragging");
+    // the handle is on the panel's left edge: dragging left widens it
+    const move = (e) => set(w0 + x0 - e.clientX);
+    const up = () => {
+      root.classList.remove("panel-dragging");
+      set(box.offsetWidth, true);
+      grip.removeEventListener("pointermove", move); grip.removeEventListener("pointerup", up);
+      grip.removeEventListener("pointercancel", up);
+    };
+    grip.addEventListener("pointermove", move); grip.addEventListener("pointerup", up);
+    grip.addEventListener("pointercancel", up);
+  });
+  grip.addEventListener("keydown", (ev) => {
+    const d = { ArrowLeft: 1, ArrowRight: -1 }[ev.key];
+    if (!d) return;
+    ev.preventDefault();
+    set(box.offsetWidth + d * 24, true);
+  });
+  grip.addEventListener("dblclick", () => {
+    root.style.removeProperty("--panel-w");
+    grip.removeAttribute("aria-valuenow");
+    try { localStorage.removeItem(KEY); } catch (e) {}
+  });
+}
 
 // rows: [{ el, t, len }] in reading order, t = the row's own time or the last one before it.
 // opt: { scroller: element | window | () => either (when it changes with the layout), cls, enabled(),
