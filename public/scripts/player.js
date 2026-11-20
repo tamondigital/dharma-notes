@@ -288,8 +288,30 @@ window.notesFollow = (player, rows, opt) => {
     if (k === shown) return;
     shown = k;
     const el = rows[k].el;
-    const top = win ? el.getBoundingClientRect().top + scrollY - opt.top() - 8 : el.offsetTop - 4;
+    const top = win ? el.getBoundingClientRect().top + scrollY - opt.top() - 8
+      : el.getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop - 4;
     sc.scrollTo({ top, behavior });
+    if (!win) settle(sc, k);
+  }
+  // panel rows in blocks not yet laid out hold estimated heights (reader.js), so a long scroll can land
+  // off the row, and blocks that render beside it can move it again: once the scroll ends, put the row
+  // back at the top until it stays there
+  function settle(sc, k) {
+    let started = false;
+    const fix = (tries) => {
+      if (shown !== k || Date.now() - userScrolled < 5000) return;
+      const d = rows[k].el.getBoundingClientRect().top - sc.getBoundingClientRect().top - 4;
+      if (Math.abs(d) > 4) sc.scrollTo({ top: sc.scrollTop + d, behavior: "auto" });
+      if (Math.abs(d) > 4 && tries > 1) requestAnimationFrame(() => requestAnimationFrame(() => fix(tries - 1)));
+    };
+    const start = () => {
+      if (started) return;
+      started = true;
+      sc.removeEventListener("scrollend", start);
+      fix(6);
+    };
+    sc.addEventListener("scrollend", start);
+    setTimeout(start, 1200);
   }
   player.onTime(follow);
   if (player.resumeAt) follow(player.resumeAt);

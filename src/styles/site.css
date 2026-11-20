@@ -198,6 +198,7 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 .follow p.on { color: var(--ink); background: var(--accent-soft); box-shadow: inset 2px 0 0 var(--accent); }
 .follow .tm { position: absolute; left: 0; width: 3.4em; text-align: right; font-family: var(--sans); font-size: .7rem; top: 6px; font-variant-numeric: tabular-nums; }
 .follow p.muted { padding-left: 6px; cursor: default; }
+.follow .fg { content-visibility: auto; }
 /* drag handle under the panel to make it taller or shorter */
 .follow-grip { height: 14px; margin-bottom: -6px; cursor: ns-resize; touch-action: none; display: flex; align-items: center; justify-content: center; }
 .follow-grip::before { content: ""; width: 40px; height: 4px; border-radius: 2px; background: var(--line); }
@@ -230,6 +231,10 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 .prose strong { font-weight: 700; color: var(--ink); }
 .prose blockquote { margin: 1em 0; padding: .4em 1em; border-left: 3px solid var(--mark); background: var(--surface); color: var(--ink-2); }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
+/* a note section is laid out and painted only near the view; its height until then: contain-intrinsic-size,
+   set per section by src/lib/render.ts. Contained, its margins no longer collapse with the next section's. */
+.prose > .ns { content-visibility: auto; }
+.prose > .ns > :last-child { margin-bottom: 0; }
 .prose code { font-size: .85em; background: var(--surface-2); padding: 1px 4px; border-radius: 3px; }
 /* text diagrams can't wrap: scroll inside their own box instead of widening the page */
 .prose pre { max-width: 100%; overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 6px;

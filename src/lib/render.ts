@@ -52,7 +52,21 @@ export function renderNote(md: string): { html: string; toc: TocItem[] } {
     return `<h2 id="${id}">${inner}</h2>`;
   });
   html = html.replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, "</table></div>");
-  return { html: decorate(html), toc };
+  return { html: sections(decorate(html)), toc };
+}
+
+// each h2 and what follows it becomes a <section class="ns">, which the browser lays out only near the
+// view (content-visibility in site.css). Until then it holds a height estimated from its text, so the
+// page's length and the place of each heading are close before it renders.
+function sections(html: string): string {
+  const parts = html.split(/(?=<h2 id=")/);
+  return parts.map((part) => {
+    if (!part.startsWith("<h2")) return part;
+    const text = part.replace(/<[^>]+>/g, "");
+    const blocks = (part.match(/<(?:p|li|h3|h4|tr|pre|blockquote|hr)\b/g) ?? []).length;
+    const est = Math.round(Math.ceil(text.length / 30) * 34 + blocks * 18 + 80);
+    return `<section class="ns" style="contain-intrinsic-size:auto ${est}px">${part}</section>`;
+  }).join("");
 }
 
 // one transcript line: keep the preprocessor's **entity** bold, escape the rest

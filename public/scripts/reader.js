@@ -159,8 +159,16 @@
       if (!data) { follow.innerHTML = '<p class="muted">逐字稿載入失敗。</p>'; return; }
       const title = data.lines.findIndex((x) => x.startsWith("# "));
       const start = data.lines.findIndex((x, i) => i > title && x.trim() === "---") + 1;
-      let last = null, html = "";
+      let last = null, html = "", group = "", lines = 0;
       rows = [];
+      // rows go in blocks of 40 (.fg), each laid out only near the panel's view (content-visibility in
+      // site.css); until then a block holds a height estimated from its rows' length at the panel's width
+      const fs = parseFloat(getComputedStyle(follow).fontSize) || 15;
+      const perLine = Math.max(8, Math.floor((follow.clientWidth - 26) / fs - 4));
+      const flush = () => {
+        if (group) html += `<div class="fg" style="contain-intrinsic-size:auto ${Math.round(lines * fs * 1.75 + ((rows.length - 1) % 40 + 1) * 6)}px">${group}</div>`;
+        group = ""; lines = 0;
+      };
       data.lines.forEach((raw, i) => {
         const text = raw.trim().replace(/^> /, "").replace(/\*\*/g, "");
         if (i < start || !text) return;
@@ -168,11 +176,14 @@
         if (own) last = own[0];
         if (last == null) return;
         rows.push({ t: last, len: text.length });
-        html += `<p data-i="${rows.length - 1}"><span class="tm">${own ? fmt(own[0]) : ""}</span>${esc(text)}</p>`;
+        group += `<p data-i="${rows.length - 1}"><span class="tm">${own ? fmt(own[0]) : ""}</span>${esc(text)}</p>`;
+        lines += Math.ceil(text.length / perLine);
+        if (rows.length % 40 === 0) flush();
       });
+      flush();
       follow.innerHTML = html || '<p class="muted">這一講沒有時間對照的逐字稿。</p>';
       if (!rows.length) return;
-      rows.forEach((r, i) => { r.el = follow.children[i]; });
+      follow.querySelectorAll("p[data-i]").forEach((el, i) => { rows[i].el = el; });
       tracker = notesFollow(player, rows, {
         scroller: follow, cls: "on",
         enabled: () => !box.classList.contains("no-follow") && !box.classList.contains("no-ts")
