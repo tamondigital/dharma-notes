@@ -63,7 +63,20 @@ main:focus { outline: none; }
 .font-size button:hover { color: var(--accent); }
 .font-size button:disabled { color: var(--line); cursor: default; }
 .font-size small { font-family: var(--sans); font-size: .75em; margin-left: 1px; }
-@media (pointer: coarse) { .font-size button, .theme-toggle { min-height: 44px; min-width: 44px; } }
+@media (pointer: coarse) {
+  .font-size button, .theme-toggle { min-height: 44px; min-width: 44px; }
+  .site-head nav a, .brand { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; }
+  .site-head nav { gap: 0 6px; }
+  .site-head-inner { padding-top: 4px; padding-bottom: 4px; }
+  .btn { min-height: 44px; }
+  .chips { gap: 8px; }
+  .chips a { display: inline-flex; align-items: center; min-height: 36px; }
+  .aside li { margin: 0 0 4px; }
+  .aside li a { display: inline-block; padding: 6px 0; }
+  /* the ● citation dot: a finger-sized hit area around it, without moving the text */
+  a.c::after { content: ""; position: absolute; inset: -14px -14px; }
+  .pop-head .play { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; }
+}
 .page { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
 .page.wide { max-width: 1280px; }
 .site-foot { border-top: 1px solid var(--line); color: var(--ink-3); font-size: .82rem; }
@@ -361,8 +374,30 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
   .player-bar { flex-wrap: wrap; row-gap: 2px; gap: 4px; }
   .pb-left { gap: 2px; }
   .pb-views > * { padding: 0 9px; }
-  .pb-icons .pb-i { min-width: 38px; }
   .pb-note { padding: 0 4px 0 2px !important; }
+}
+@media (max-width: 820px) and (pointer: fine) { .pb-icons .pb-i { min-width: 38px; } }
+/* ---------- short landscape screens (a phone turned sideways): the stuck player would cover most of the
+   screen stacked, so the video sits on the left and the controls and follow-along transcript beside it ---------- */
+@media (orientation: landscape) and (max-height: 500px) {
+  .player.open { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr);
+    column-gap: 12px; height: calc(40vh + 8px); padding: 4px 0; }
+  .player.open > .player-body, .player.mini > .player-body { display: contents; }
+  .player.open .player-frame, .player.mini .player-frame { grid-column: 1; grid-row: 1 / -1; height: 40vh; width: auto;
+    max-height: none !important; aspect-ratio: 16 / 9; margin: 0; }
+  .player.open > .player-bar { grid-column: 2; grid-row: 1; padding-top: 0; }
+  .player.open .follow-wrap { grid-column: 2; grid-row: 2; min-height: 0; display: flex; }
+  .player.open.no-ts .follow-wrap { display: none; }
+  .player.open .follow, .player.mini .follow { flex: 1; height: auto; max-height: none; margin-top: 4px; }
+  .player.open .follow-grip { display: none; }
+  .player.open > .player-hint { position: absolute; left: 0; right: 0; top: 100%; z-index: 4; margin: 0; padding: 8px 12px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+  .player-bar { flex-wrap: wrap; row-gap: 2px; gap: 4px; }
+  .pb-mini { display: none !important; }
+}
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 1100px) {
+  .reader { grid-template-columns: minmax(0, 1fr); }
+  .aside { grid-column: 1; grid-row: 2; position: static; max-height: none; border-top: 1px solid var(--line); padding-top: 20px; }
 }
 /* ---------- wide landscape screens: the player and its transcript become a panel on the right ----------
    Keep this query in step with notesWide in public/scripts/player.js. Below it (phones, portrait tablets,
