@@ -116,6 +116,12 @@ export const transcriptUrl = (key: string) => url(`${key}/transcript/`);
 export const seriesUrl = (c: Channel, s: Series) => url(`${c.slug}/${s.slug}/`);
 export const entityUrl = (type: string, name: string) => url(`e/${type}/${name}/`);
 export const sutraUrl = (id: string) => url(`sutra/${id}/`);
+// #hl=a&hl=b…[&s=T0670]: scripts/hl.js on the page marks the first of these it finds and brings it into view;
+// with none found, the note's first link to that sutra. Chinese stays as is (the browser encodes it when
+// following the link), which keeps pages listing many passages a third the size.
+const hashPart = (v: string) => v.replace(/[%&=#+\s]/g, encodeURIComponent);
+export const hlHash = (terms: string[], sutra?: string) =>
+  "#" + [...terms.map((t) => "hl=" + hashPart(t)), ...(sutra ? ["s=" + hashPart(sutra)] : [])].join("&");
 export const cbetaUrl = (id: string) => `https://cbetaonline.dila.edu.tw/zh/${id}`;
 // takedown requests and corrections
 export const feedbackUrl = "https://github.com/tamondigital/dharma-notes/issues";

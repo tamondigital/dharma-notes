@@ -4,7 +4,8 @@ import Notice from "../../../../components/Notice.astro";
 import PlayerBar from "../../../../components/PlayerBar.astro";
 import {
   allLessons, url, lessonUrl, seriesUrl, lessonTitle, refTitle, lessonByKey, clip, noteMarkdown, lessonExtra,
-  sutraData, sutraUrl, plain, entityUrl, hasEntity, cbetaUrl, channelLabel, multiChannel, notesName, type Located,
+  sutraData, sutraUrl, plain, entityUrl, hasEntity, cbetaUrl, channelLabel, multiChannel, notesName, hlHash,
+  type Located,
 } from "../../../../lib/data";
 import { renderNote } from "../../../../lib/render";
 import { graph, breadcrumbs, metaDesc, abs, video, websiteRef, siteOrg, teacherNode, entityType, type Crumb } from "../../../../lib/seo";
@@ -79,7 +80,7 @@ const jsonld = graph(
           <section>
             <p class="aside-h">相關講次</p>
             <ul>{sameTopic.map((r) => (
-              <li><a href={lessonUrl(r.key)} title={lessonByKey(r.key)?.l.scope}>{refTitle(r.key)}</a><small>{r.shared.length ? `同談：${r.shared.join("、")}` : refScope(r.key)}</small></li>
+              <li><a href={lessonUrl(r.key) + (r.shared.length ? hlHash(r.shared) : "")} title={lessonByKey(r.key)?.l.scope}>{refTitle(r.key)}</a><small>{r.shared.length ? `同談：${r.shared.join("、")}` : refScope(r.key)}</small></li>
             ))}</ul>
           </section>
         )}
@@ -87,7 +88,7 @@ const jsonld = graph(
           <section>
             <p class="aside-h">同段經文，他講亦講</p>
             <ul>{rel.same_passage.slice(0, 6).map((r) => (
-              <li><a href={lessonUrl(r.key)}>{refTitle(r.key)}</a><small>「{clip(r.quote, 22)}」・{sutraTitle(r.cbeta)}</small></li>
+              <li><a href={lessonUrl(r.key) + hlHash([r.quote], r.cbeta)}>{refTitle(r.key)}</a><small>「{clip(r.quote, 22)}」・{sutraTitle(r.cbeta)}</small></li>
             ))}</ul>
           </section>
         )}

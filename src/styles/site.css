@@ -272,7 +272,9 @@ a.c:hover::before, a.c.on::before { opacity: 1; transform: scale(1.5); }
 a.c:focus-visible { outline: 2px solid var(--accent); border-radius: 3px; }
 /* a paragraph reached from the video: a strong mark that fades, with a left bar that stays a while longer */
 .prose .flash, .ts p.flash { animation: flash 4s ease-out; border-radius: 4px; }
-/* a word reached from search or a 名相 page (scripts/hl.js) */
+/* a place reached from search, a 名相 or sutra page, or a #L link (scripts/hl.js): held longer */
+.prose .flash.found, .ts p.flash.found { animation-duration: 7s; }
+/* a word reached from search or a 名相 or sutra page (scripts/hl.js) */
 mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 600; border-radius: 2px; box-shadow: 0 0 0 2px var(--accent-soft); }
 @keyframes flash {
   0%, 50% { background: var(--accent-soft); box-shadow: inset 4px 0 0 var(--accent), 0 0 0 6px var(--accent-soft); }
@@ -486,6 +488,8 @@ a.ent:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .mention-list li > a { font-family: var(--serif); font-weight: 600; color: var(--ink); }
 .mention-list p { margin: 4px 0 0; color: var(--ink-2); font-size: .9rem; font-family: var(--serif); line-height: 1.8; }
 .mention-list .quote q { quotes: "「" "」"; }
+.mention-list a.q-link { color: inherit; }
+.mention-list a.q-link:hover { color: var(--accent); text-decoration: none; }
 .sutra-list { list-style: none; margin: 0; padding: 0; columns: 2 320px; column-gap: 32px; }
 .sutra-list li { break-inside: avoid; padding: 7px 0; border-bottom: 1px solid var(--line); }
 .sutra-list a { font-family: var(--serif); font-weight: 600; color: var(--ink); }

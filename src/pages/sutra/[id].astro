@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import {
   sutraData, url, lessonUrl, transcriptUrl, lessonByKey, lessonTitle, seriesUrl, cbetaUrl, channelLabel, multiChannel,
+  hlHash,
   type SutraEntry,
 } from "../../lib/data";
 import { graph, breadcrumbs } from "../../lib/seo";
@@ -15,6 +16,8 @@ const rows = s.talks.map((t) => ({ ...t, x: lessonByKey(t.key)! })).filter((t) =
 const quoting = rows.filter((t) => t.quotes.length);
 const citing = rows.filter((t) => !t.quotes.length);
 const homeSeries = [...new Map(rows.filter((t) => t.home).map((t) => [t.x.s.slug, t.x])).values()];
+// each link opens the lesson at the passage (or, failing that, where the note names this sutra) and marks it
+const at = (key: string, quote?: string) => lessonUrl(key) + hlHash(quote ? [quote] : [], id);
 const label = (t: (typeof rows)[number]) => (multiChannel ? channelLabel(t.x.c) + "・" : "") + lessonTitle(t.x.s, t.x.l);
 ---
 <Base title={`${title} ${id}`}
@@ -38,9 +41,9 @@ const label = (t: (typeof rows)[number]) => (multiChannel ? channelLabel(t.x.c) 
       <ul class="mention-list">
         {quoting.map((t) => (
           <li>
-            <a href={lessonUrl(t.key)}>{label(t)}</a>
+            <a href={at(t.key, t.quotes[0].text)}>{label(t)}</a>
             {t.quotes.map((q) => (
-              <p class="quote"><q>{q.text}</q>{q.line && <a class="muted" href={`${transcriptUrl(t.key)}#L${q.line}`}> 逐字稿</a>}</p>
+              <p class="quote"><a class="q-link" href={at(t.key, q.text)}><q>{q.text}</q></a>{q.line && <a class="muted" href={`${transcriptUrl(t.key)}#L${q.line}`}> 逐字稿</a>}</p>
             ))}
           </li>
         ))}
@@ -50,7 +53,7 @@ const label = (t: (typeof rows)[number]) => (multiChannel ? channelLabel(t.x.c) 
   {citing.length > 0 && (
     <section>
       <h2 class="section-title">也提到此經的講次（{citing.length}）</h2>
-      <p class="chips">{citing.map((t) => <a href={lessonUrl(t.key)}>{label(t)}</a>)}</p>
+      <p class="chips">{citing.map((t) => <a href={at(t.key)}>{label(t)}</a>)}</p>
     </section>
   )}
 </Base>

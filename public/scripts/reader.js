@@ -302,10 +302,11 @@
         const el = line && notesLine(line);
         if (el) el.classList.add("hl");
         // in the panel only the panel scrolls; the note keeps its place
+        const reveal = (sc) => (window.notesReveal ? notesReveal(el, sc) : el.scrollIntoView());
         if (side()) {
-          if (el) tsView.scrollTop = el.offsetTop - 8;
+          if (el) reveal(tsView);
           else { tsView.scrollTop = 0; tsTracker?.sync(player.now()); }
-        } else if (el) el.scrollIntoView();
+        } else if (el) reveal();
         else { scrollTo(0, 0); tsTracker?.sync(player.now()); }
       }
       const target = (a) => a?.origin === location.origin && { [tsUrl]: "ts", [noteUrl]: "note" }[a.pathname];
