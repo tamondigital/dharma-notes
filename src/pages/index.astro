@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import SeriesCards from "../components/SeriesCards.astro";
-import { site, url, lessonUrl, lessonTitle, allLessons, entities, sutraData, channelLabel } from "../lib/data";
+import { site, url, allLessons, entities, sutraData, channelLabel } from "../lib/data";
 import { graph, websiteRef } from "../lib/seo";
 
 const lessons = allLessons();
@@ -13,8 +13,6 @@ const one = site.channels.length === 1 ? site.channels[0] : null;
 const homeTitle = one ? `${channelLabel(one)}${site.title}・${one.name}` : site.title;
 const sutraNames = site.channels.flatMap((c) => c.series.filter((s) => s.lessons.some((l) => l.has_note)).map((s) => `《${s.name}》`));
 const homeDesc = `${one ? `${channelLabel(one)}於${one.name}` : ""}歷年講經的學習筆記與完整逐字稿：${sutraNames.slice(0, 3).join("")}等 ${nSeries} 部經論、${nNotes} 講。每篇筆記的論點都附逐字稿出處，可直接跳到影片對應的時間點聽法師原講。`;
-const latest = lessons.filter((x) => x.l.has_note && x.l.date)
-  .sort((a, b) => (b.l.date! > a.l.date! ? 1 : -1)).slice(0, 6);
 ---
 <Base title={homeTitle} noSuffix description={homeDesc} jsonld={graph({ ...websiteRef(), description: homeDesc, inLanguage: "zh-Hant" })}>
   <section class="hero">
@@ -36,16 +34,4 @@ const latest = lessons.filter((x) => x.l.has_note && x.l.date)
     </section>
   ))}
 
-  <h2 class="section-title">最近的講次</h2>
-  <ul class="lesson-list">
-    {latest.map(({ s, l, key, c }) => (
-      <li>
-        <a href={lessonUrl(key)}>
-          <span class="no">{Number(l.no)}</span>
-          <span class="t">{lessonTitle(s, l)}</span>
-          <span class="meta">{site.channels.length > 1 ? `${channelLabel(c)}・` : ""}{l.date}{l.duration ? `・${l.duration}` : ""}</span>
-        </a>
-      </li>
-    ))}
-  </ul>
 </Base>
