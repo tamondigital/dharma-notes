@@ -254,7 +254,7 @@ function addCard(b, x, y, animate = true) {
   if (have) return have;
   const c = { id: b.id, x, y, block: b };
   S.cards.push(c); known.set(b.id, b);
-  drawCard(c, animate); save();
+  drawCard(c, animate); save(); counted();
   return c;
 }
 function link(from, to, label = "") {
@@ -282,6 +282,29 @@ function drawLinks() {
 }
 function redraw() { el.world.querySelectorAll(".bcard").forEach((n) => n.remove()); S.cards.forEach((c) => drawCard(c)); requestAnimationFrame(drawLinks); }
 const pan = () => { el.world.style.transform = `translate(${S.pan.x}px,${S.pan.y}px) scale(${S.pan.k})`; };
+
+// On a phone the cards and the board each take the whole screen; tabs switch between them.
+const phone = matchMedia("(max-width: 800px)");
+function view(v) {
+  el.wrap.dataset.view = v;
+  document.querySelectorAll(".board-tabs [data-view]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === v)));
+  if (v === "board") requestAnimationFrame(() => { if (el.needFit) { fit(); el.needFit = false; } drawLinks(); });
+}
+function counted() {
+  const t = $("board-tab-board");
+  if (t) t.textContent = `白板 ${S.cards.length}`;
+  el.needFit = true;
+}
+// every card in view, at most full size
+function fit() {
+  if (!S.cards.length) return;
+  const bs = S.cards.map(box), r = el.canvas.getBoundingClientRect(), m = 24;
+  const l = Math.min(...bs.map((b) => b.l)), t = Math.min(...bs.map((b) => b.t));
+  const w = Math.max(...bs.map((b) => b.r)) - l, h = Math.max(...bs.map((b) => b.b)) - t;
+  const k = Math.max(0.2, Math.min(1, (r.width - 2 * m) / w, (r.height - 2 * m) / h));
+  S.pan = { k, x: m - l * k + Math.max(0, (r.width - 2 * m - w * k) / 2), y: m - t * k };
+  pan();
+}
 function freeSpot() {
   const r = el.canvas.getBoundingClientRect();
   let x = (r.width / 2 - S.pan.x) / S.pan.k - W / 2, y = (100 - S.pan.y) / S.pan.k;
@@ -306,7 +329,7 @@ function removeCard(id) {
   S.cards = S.cards.filter((c) => c.id !== id);
   S.links = S.links.filter((l) => l.from !== id && l.to !== id);
   if (S.sel === id) S.sel = null;
-  redraw(); save();
+  redraw(); save(); counted();
 }
 const mineBlock = (t) => ({ id: MINE + t, kind: "mine", t, x: "" });
 function addNode(t, x, y) {
@@ -323,6 +346,7 @@ function select(id) {
   S.sel = id;
   el.world.querySelectorAll(".bcard").forEach((n) => n.classList.toggle("on", n.dataset.id === id));
   if (id) id.startsWith(MINE) ? nodePanel(id.slice(MINE.length)) : blockPanel(+id.slice(1));
+  if (id && phone.matches) view("side");
 }
 async function results(terms, fromId) {
   const gs = await search(terms);
@@ -438,7 +462,8 @@ function open(data, name) {
   S.cards = data.cards || []; S.links = data.links || [];
   S.cards.forEach((c) => known.set(c.id, c.block));
   el.current = name || ""; el.name.value = name || "";
-  redraw(); save();
+  redraw(); save(); counted();
+  requestAnimationFrame(fit);
 }
 function download(text, name, type) {
   const a = document.createElement("a");
@@ -481,11 +506,14 @@ async function exportMd() {
 
 // ---------- interaction ----------
 function wire() {
-  ["q", "side", "canvas", "world", "svg", "labels", "name", "load", "status"].forEach((k) => { el[k] = $("board-" + k); });
+  ["q", "side", "canvas", "world", "svg", "labels", "name", "load", "status", "wrap"].forEach((k) => { el[k] = $("board-" + k); });
+  document.querySelectorAll(".board-tabs [data-view]").forEach((b) => b.addEventListener("click", () => view(b.dataset.view)));
+  $("board-fit").onclick = fit;
+  $("board-more").onclick = () => $("board-more").closest(".board-top").classList.toggle("open");
   $("board-go").onclick = start;
   el.q.addEventListener("keydown", (e) => { if (e.key === "Enter") start(); });
   $("board-save").onclick = saveAs;
-  $("board-clear").onclick = () => { S.cards = []; S.links = []; el.current = ""; el.name.value = ""; redraw(); save(); el.side.innerHTML = $("board-help").innerHTML; };
+  $("board-clear").onclick = () => { S.cards = []; S.links = []; el.current = ""; el.name.value = ""; redraw(); save(); counted(); el.side.innerHTML = $("board-help").innerHTML; view("side"); };
   $("board-dl").onclick = () => download(JSON.stringify({ schema: "board/v1", name: el.name.value, cards: S.cards, links: S.links }, null, 1),
     (el.name.value || "白板") + ".json", "application/json");
   $("board-up").onchange = async (e) => {
@@ -526,6 +554,11 @@ function wire() {
 
   // a card moves by its header or footer; its body text selects, kept inside that card
   let drag = null;
+  const touches = new Map();                           // pointerId → {x, y}, for pinch zoom
+  const pinch = () => {
+    const [a, b] = [...touches.values()];
+    return { d: Math.hypot(a.x - b.x, a.y - b.y), x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+  };
   document.addEventListener("selectionchange", () => {
     if (!drag || drag.kind !== "text") return;
     const sel = getSelection(), bodyEl = drag.card.querySelector(".bc-body");
@@ -534,6 +567,15 @@ function wire() {
     sel.extend(bodyEl, after ? bodyEl.childNodes.length : 0);
   });
   el.canvas.addEventListener("pointerdown", (e) => {
+    touches.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (touches.size === 2) {                            // a second finger turns any drag into a pinch
+      if (drag?.card) Object.assign(drag.card.style, { left: drag.ox + "px", top: drag.oy + "px" });
+      if (drag?.c) { drag.c.x = drag.ox; drag.c.y = drag.oy; }
+      const p = pinch();
+      drag = { kind: "pinch", d0: p.d, k0: S.pan.k, px: S.pan.x, py: S.pan.y, x0: p.x, y0: p.y };
+      el.canvas.setPointerCapture(e.pointerId);
+      return;
+    }
     const card = e.target.closest(".bcard");
     if (e.target.closest(".bc-x")) { removeCard(card.dataset.id); return; }
     if (e.target.closest(".bc-src")) { select(card.dataset.id); setTimeout(() => { const bx = el.side.querySelector(".bs-tx"); if (bx) showSource(card.dataset.id, bx); }, 500); return; }
@@ -550,6 +592,18 @@ function wire() {
     el.canvas.setPointerCapture(e.pointerId);
   });
   el.canvas.addEventListener("pointermove", (e) => {
+    if (touches.has(e.pointerId)) touches.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (drag?.kind === "pinch") {
+      if (touches.size < 2) return;
+      const p = pinch(), r = el.canvas.getBoundingClientRect();
+      const k = Math.min(1.6, Math.max(0.2, drag.k0 * p.d / drag.d0));
+      const mx = drag.x0 - r.left, my = drag.y0 - r.top;
+      S.pan.k = k;
+      S.pan.x = mx - (mx - drag.px) * k / drag.k0 + (p.x - drag.x0);
+      S.pan.y = my - (my - drag.py) * k / drag.k0 + (p.y - drag.y0);
+      pan();
+      return;
+    }
     if (!drag || drag.kind === "text") return;
     const dx = e.clientX - drag.sx, dy = e.clientY - drag.sy;
     if (drag.kind === "card") {
@@ -559,7 +613,14 @@ function wire() {
       drawLinks();
     } else { S.pan.x = drag.ox + dx; S.pan.y = drag.oy + dy; pan(); }
   });
-  el.canvas.addEventListener("pointerup", () => {
+  const lift = (e) => {
+    touches.delete(e.pointerId);
+    if (drag?.kind === "pinch") { if (!touches.size) drag = null; return true; }
+    return false;
+  };
+  el.canvas.addEventListener("pointercancel", (e) => { lift(e); if (!touches.size) { drag = null; el.canvas.classList.remove("dragging", "text-select"); } });
+  el.canvas.addEventListener("pointerup", (e) => {
+    if (lift(e)) return;
     if (drag?.kind === "card") { if (!drag.moved) select(drag.c.id); else save(); }
     if (drag?.kind === "text") { drag.card.classList.remove("selecting"); if (getSelection().isCollapsed && S.sel !== drag.id) select(drag.id); }
     el.canvas.classList.remove("dragging", "text-select");
@@ -575,6 +636,7 @@ function wire() {
 }
 
 wire();
+view("side");
 el.side.innerHTML = `<p class="muted">載入索引…</p>`;
 IX = await getJSON("data/board/index.json");
 N = IX.blocks;

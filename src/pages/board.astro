@@ -6,6 +6,7 @@ import { url } from "../lib/data";
   <div class="board-top">
     <input id="board-q" type="search" placeholder="起點：一個名相（例如 本心）或一個問題" aria-label="起點" autocomplete="off" />
     <button class="btn" id="board-go" type="button">放上白板</button>
+    <button class="btn small" id="board-more" type="button" aria-label="白板檔案：儲存、開啟、下載、匯出">⋯</button>
     <span class="board-tools">
       <input id="board-name" placeholder="白板名稱" aria-label="白板名稱" />
       <button class="btn small" id="board-save" type="button" title="存在這個瀏覽器裡">儲存</button>
@@ -17,15 +18,20 @@ import { url } from "../lib/data";
     </span>
     <span id="board-status" class="muted" aria-live="polite"></span>
   </div>
-  <div class="board-wrap">
+  <div class="board-wrap" id="board-wrap" data-view="side">
     <aside id="board-side" aria-label="卡片與路徑"></aside>
     <div id="board-canvas">
+      <button class="btn small" id="board-fit" type="button" title="把所有卡片放進畫面">全部</button>
       <div id="board-world">
         <svg id="board-svg" width="8000" height="6000" aria-hidden="true"></svg>
         <div id="board-labels"></div>
       </div>
     </div>
   </div>
+  <nav class="board-tabs" aria-label="切換卡片與白板">
+    <button type="button" data-view="side" aria-pressed="true">卡片</button>
+    <button type="button" data-view="board" id="board-tab-board" aria-pressed="false">白板 0</button>
+  </nav>
   <template id="board-help">
     <div class="board-help">
       <p><b>怎麼用</b></p>
@@ -33,6 +39,7 @@ import { url } from "../lib/data";
         <li>輸入一個起點（例如 <b>本心</b>），按「放上白板」，它成為你的節點。</li>
         <li>側欄列出筆記裡相關的卡片：拖到白板，或按「＋ 接上」。</li>
         <li>點白板上的卡片，看它的前後文、同一經證與他講同義。</li>
+        <li class="phone-only">手機上用下方「卡片／白板」切換；白板可雙指縮放，按「全部」看整張。</li>
         <li>在「連到」輸入另一個名相（例如 <b>屍羅四義</b>），列出兩者之間的每一條路徑，挑你要的放上白板。</li>
       </ol>
       <p class="muted">卡片內文取自學習筆記，點〔行〕可聽法師原講。白板只存在你的瀏覽器裡；要換裝置，請「下載」後再「開啟檔案」。</p>
@@ -96,5 +103,23 @@ import { url } from "../lib/data";
   .bp-step { border-left: 2px solid var(--line); padding: 2px 0 4px 8px; margin: 4px 0; font-size: .8rem; }
   .bp-step .bm-x { max-height: 70px; }
   .board-help ol { padding-left: 1.2em; }
-  @media (max-width: 800px) { .board-wrap { grid-template-columns: 1fr; height: auto; } #board-canvas { height: 70vh; } }
+  #board-fit { position: absolute; right: 10px; top: 10px; z-index: 5; background: var(--surface, var(--bg)); }
+  #board-more, .board-tabs, .phone-only { display: none; }
+  @media (max-width: 800px) {
+    /* phone: the cards and the board each fill the screen; both stay laid out (visibility, not display)
+       so card sizes and link positions are right whichever is showing */
+    .board-top { gap: 6px; }
+    .board-top #board-q { flex-basis: 100%; }
+    #board-more { display: inline-block; }
+    .board-tools { display: none; width: 100%; }
+    .board-top.open .board-tools { display: flex; }
+    .board-wrap { display: block; position: relative; height: calc(100dvh - 210px); min-height: 360px; }
+    #board-side, #board-canvas { position: absolute; inset: 0; }
+    .board-wrap[data-view="side"] #board-canvas, .board-wrap[data-view="board"] #board-side { visibility: hidden; pointer-events: none; }
+    .board-tabs { display: flex; position: sticky; bottom: 0; z-index: 20; gap: 6px; padding: 8px 0; background: var(--bg); }
+    .board-tabs button { flex: 1; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface, var(--bg)); color: var(--ink-2); font: inherit; font-weight: 700; }
+    .board-tabs button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+    .phone-only { display: list-item; }
+    .bc-body { max-height: 160px; }
+  }
 </style>
