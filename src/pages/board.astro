@@ -1,0 +1,100 @@
+---
+import Base from "../layouts/Base.astro";
+import { url } from "../lib/data";
+---
+<Base title="白板" description="把體佛法師講經筆記裡的一張張卡片放上白板：輸入一個起點，展開相關的教導，再連到另一個名相，看兩者之間怎麼接起來。" wide>
+  <div class="board-top">
+    <input id="board-q" type="search" placeholder="起點：一個名相（例如 本心）或一個問題" aria-label="起點" autocomplete="off" />
+    <button class="btn" id="board-go" type="button">放上白板</button>
+    <span class="board-tools">
+      <input id="board-name" placeholder="白板名稱" aria-label="白板名稱" />
+      <button class="btn small" id="board-save" type="button" title="存在這個瀏覽器裡">儲存</button>
+      <select id="board-load" aria-label="開啟已存的白板"></select>
+      <button class="btn small" id="board-dl" type="button" title="下載白板檔，可在別台裝置開啟">下載</button>
+      <label class="btn small" title="開啟下載過的白板檔">開啟檔案<input id="board-up" type="file" accept=".json,application/json" hidden /></label>
+      <button class="btn small" id="board-md" type="button" title="匯出成 Markdown 講義，附法師原話">匯出講義</button>
+      <button class="btn small" id="board-clear" type="button">清空</button>
+    </span>
+    <span id="board-status" class="muted" aria-live="polite"></span>
+  </div>
+  <div class="board-wrap">
+    <aside id="board-side" aria-label="卡片與路徑"></aside>
+    <div id="board-canvas">
+      <div id="board-world">
+        <svg id="board-svg" width="8000" height="6000" aria-hidden="true"></svg>
+        <div id="board-labels"></div>
+      </div>
+    </div>
+  </div>
+  <template id="board-help">
+    <div class="board-help">
+      <p><b>怎麼用</b></p>
+      <ol>
+        <li>輸入一個起點（例如 <b>本心</b>），按「放上白板」，它成為你的節點。</li>
+        <li>側欄列出筆記裡相關的卡片：拖到白板，或按「＋ 接上」。</li>
+        <li>點白板上的卡片，看它的前後文、同一經證與他講同義。</li>
+        <li>在「連到」輸入另一個名相（例如 <b>屍羅四義</b>），列出兩者之間的每一條路徑，挑你要的放上白板。</li>
+      </ol>
+      <p class="muted">卡片內文取自學習筆記，點〔行〕可聽法師原講。白板只存在你的瀏覽器裡；要換裝置，請「下載」後再「開啟檔案」。</p>
+    </div>
+  </template>
+  <script is:inline type="module" src={url("scripts/board.js")} data-board data-base={url("")} data-pagefind={url("pagefind/pagefind.js")}></script>
+</Base>
+
+<style is:global>
+  main.page.wide:has(#board-canvas) { max-width: none; }
+  .board-top { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .board-top #board-q { flex: 1 1 260px; min-width: 0; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface, var(--bg)); color: var(--ink); font: inherit; }
+  .board-tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .board-tools input, .board-tools select { padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface, var(--bg)); color: var(--ink); font: inherit; font-size: .85rem; max-width: 150px; }
+  .btn.small { font-size: .82rem; padding: 3px 10px; }
+  #board-status { font-size: .8rem; }
+  .board-wrap { display: grid; grid-template-columns: 340px 1fr; gap: 12px; height: calc(100vh - 190px); min-height: 480px; }
+  #board-side { overflow: auto; border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: var(--surface, var(--bg)); font-size: .9rem; }
+  #board-canvas { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; cursor: grab; touch-action: none;
+    background: var(--bg) radial-gradient(circle, var(--line) 1px, transparent 1px) 0 0 / 22px 22px; }
+  #board-canvas.dragging, #board-canvas.dragging * { user-select: none; -webkit-user-select: none; cursor: grabbing; }
+  #board-canvas.text-select .bcard:not(.selecting) { user-select: none; -webkit-user-select: none; }
+  #board-world { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #board-svg { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+  .blink { fill: none; stroke: var(--ink-3); stroke-width: 1.6; }
+  .blabel { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; background: var(--surface, var(--bg)); border: 1px solid var(--line); border-radius: 12px; padding: 0 8px; font-size: .75rem; color: var(--ink-2); pointer-events: none; }
+  .bcard { position: absolute; background: var(--surface, var(--bg)); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: .85rem; line-height: 1.6; box-shadow: 0 3px 12px #0002; }
+  .bcard.on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft), 0 3px 12px #0002; }
+  .bcard.appear { animation: bappear .45s ease-out; }
+  @keyframes bappear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .bcard.mine { border: 1.5px dashed var(--accent); }
+  .bc-hd, .bm-hd { display: flex; gap: 6px; align-items: center; font-size: .75rem; color: var(--ink-3); cursor: move; }
+  .bc-grip { cursor: move; }
+  .bc-x { margin-left: auto; cursor: pointer; }
+  .bc-t, .bm-t { font-weight: 700; color: var(--accent); margin: 4px 0; cursor: move; }
+  .bc-body { max-height: 200px; overflow: auto; cursor: text; }
+  .bc-body p, .bs-full p, .bm-x p { margin: 0 0 4px; }
+  .bc-mine { min-height: 44px; outline: none; border-top: 1px dashed var(--line); padding-top: 6px; white-space: pre-wrap; }
+  .bc-mine:empty::before { content: attr(data-placeholder); color: var(--ink-3); }
+  .bc-ft { font-size: .75rem; margin-top: 6px; color: var(--ink-3); cursor: move; }
+  .bc-ft a { cursor: pointer; }
+  .mine-tag { font-size: .7rem; color: var(--accent); border: 1px solid var(--accent); border-radius: 4px; padding: 0 4px; }
+  .kv { margin-bottom: 4px; } .kv .k { display: block; font-size: .72rem; color: var(--ink-3); }
+  .bcite { font-size: .72rem; color: var(--ink-3); }
+  .bok { font-size: .72rem; color: var(--ink-2); }
+  .bdiag { font-size: .72rem; line-height: 1.35; white-space: pre; overflow: auto; margin: 0; }
+  .bmini { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin: 8px 0; background: var(--bg); cursor: grab; }
+  .bm-x { max-height: 110px; overflow: hidden; font-size: .8rem; }
+  .bm-ft { margin-top: 6px; }
+  .bg-hd { font-weight: 700; font-size: .85rem; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 8px; margin-top: 10px; }
+  .bs-cur { border: 1px solid var(--accent); border-radius: 8px; padding: 10px; margin-bottom: 8px; }
+  .bs-full { max-height: 260px; overflow: auto; margin-bottom: 6px; }
+  .btx { border-left: 2px solid var(--accent); padding: 4px 8px; margin: 6px 0; font-size: .85rem; }
+  .bconcepts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 10px 0; }
+  .chip { border: 1px solid var(--line); border-radius: 99px; padding: 2px 10px; background: none; color: var(--ink-2); cursor: pointer; font: inherit; font-size: .8rem; }
+  .chip.on, .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .bconnect { display: flex; gap: 6px; align-items: center; padding: 8px; border: 1px solid var(--accent); border-radius: 8px; margin-bottom: 10px; }
+  .bconnect input { flex: 1; min-width: 0; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); font: inherit; font-size: .85rem; }
+  .bpath { border: 1px solid var(--line); border-radius: 8px; padding: 8px; margin: 8px 0; background: var(--bg); }
+  .bp-chain { font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+  .bp-step { border-left: 2px solid var(--line); padding: 2px 0 4px 8px; margin: 4px 0; font-size: .8rem; }
+  .bp-step .bm-x { max-height: 70px; }
+  .board-help ol { padding-left: 1.2em; }
+  @media (max-width: 800px) { .board-wrap { grid-template-columns: 1fr; height: auto; } #board-canvas { height: 70vh; } }
+</style>

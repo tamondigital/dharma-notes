@@ -9,4 +9,5 @@ No job in this repo calls a model. `scripts/export.py` and the Astro build are d
 ## Rules
 
 - `export.py` reads `../../mani` and never writes there.
+- `build_board.py` reads the snapshot in `content/` (and mani's block cutter and term list, read-only) and writes only `public/data/board/`; regenerate it after every export. The 白板 page runs entirely in the browser — never add a model call or a server to it.
 - Entity pages (名相, 人物, 地名) are generated from the notes' indexes; do not hand-edit generated pages under `content/` or `public/data/`.

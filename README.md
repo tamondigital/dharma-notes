@@ -51,6 +51,15 @@ The body serif, Noto Serif TC (variable weight, `fonts/NotoSerifTC[wght].ttf`, S
 
 It needs `fontTools` (`requirements.txt`). Run once per clone: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`. The script re-runs itself under `.venv`. CI installs the same requirements.
 
+### `scripts/build_board.py` — 白板 data
+
+The 白板 page (`/board/`) lets a visitor put note cards on a whiteboard, expand them and find every path between two terms, all in the browser: no server, no model. `build_board.py` reads the published snapshot (`content/notes`, `content/site.json`), never mani's live notes, and writes:
+
+- `public/data/board/index.json`: each indexed term's blocks, best first; the curated relations; the CBETA map; the lesson offsets.
+- `public/data/board/b/<channel>/<series>/<NN>.json`: one lesson's blocks (note text cut on its own `〔行NNN〕`), fetched only when a card from it is shown.
+
+Block cutting, ranking and the term vocabulary are mani's (`pipelines/knowledgebase/src/board.py`, `outputs/kb/catalog.db`, `reference/buddhist-terms/concept-relations.txt`), read-only. Only series taught by a teacher in `TEACHERS` are included (now 體佛法師). A term outside the index is found through Pagefind, so it works after `npm run build`, not under `npm run dev`. A visitor's boards stay in their browser (localStorage) and can be downloaded and reopened.
+
 ### Search-engine metadata
 
 - **Lesson pages** carry an `Article` (author and publisher: the site) with `datePublished` (the note's `generated.at`) and `dateModified` (its latest `verified` gate run). `export.py` copies both into `content/site.json` as `published` and `modified`.
@@ -61,13 +70,14 @@ It needs `fontTools` (`requirements.txt`). Run once per clone: `python3 -m venv 
 
 ```sh
 npm run export    # re-snapshot from mani (path in site.config.json; uses mani's venv)
+npm run board     # rebuild the 白板 data from the snapshot (after every export)
 npm run dev       # local dev server (no subset font: fallback serif)
 npm run build     # astro build + font subset + sitemap + pagefind index → dist/
 npm run preview   # serve dist/ at http://localhost:4321/dharma-notes/
 npm run index:dev # after a build: copy the search index into public/ so search works under `npm run dev`
 ```
 
-After `npm run export`, commit `content/` and `public/data/`. CI builds from the committed snapshot.
+After `npm run export` and `npm run board`, commit `content/` and `public/data/`. CI builds from the committed snapshot.
 
 ## Routes
 
@@ -80,6 +90,7 @@ After `npm run export`, commit `content/` and `public/data/`. CI builds from the
 | `/e/`, `/e/<名相\|人物\|地名>/<name>/` | Name index and name pages |
 | `/sutra/`, `/sutra/<CBETA id>/` | Sutra index and sutra pages |
 | `/search/` | Search |
+| `/board/` | 白板: whiteboard of note cards, paths between terms (in the browser, no AI) |
 | `/guide/` | Reading guide (閱讀說明) |
 | `/about/` | About the project (關於本站): principles, pipeline, usage notice |
 | `/sitemap-index.xml` | Sitemap |
