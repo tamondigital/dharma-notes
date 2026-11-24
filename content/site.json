@@ -23,9 +23,9 @@
        "video_id": "Y2AE1SnkoLA",
        "date": "2023-09-30",
        "duration": "1:58:33",
-       "raw": false,
        "published": "2026-10-19",
-       "modified": "2026-10-19"
+       "modified": "2026-10-19",
+       "raw": false
       },
       {
        "no": "02",
@@ -36,9 +36,9 @@
        "video_id": "XOP1JUw8l8g",
        "date": "2023-10-07",
        "duration": "2:57:24",
-       "raw": false,
-       "published": "2026-07-11",
-       "modified": "2026-10-26"
+       "published": "2026-10-26",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "03",
@@ -49,9 +49,9 @@
        "video_id": "HWYb-DMhnG4",
        "date": "2023-10-14",
        "duration": "2:49:20",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "04",
@@ -62,9 +62,9 @@
        "video_id": "AJ3AqLqnVo0",
        "date": "2023-10-21",
        "duration": "2:49:47",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "05",
@@ -75,9 +75,9 @@
        "video_id": "3zjprP0z3Cw",
        "date": "2023-10-28",
        "duration": "2:31:16",
-       "raw": false,
        "published": "2026-10-19",
-       "modified": "2026-10-19"
+       "modified": "2026-10-19",
+       "raw": false
       },
       {
        "no": "06",
@@ -88,9 +88,9 @@
        "video_id": "gikNBHxG3lI",
        "date": "2023-11-04",
        "duration": "2:52:09",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "07",
@@ -101,9 +101,9 @@
        "video_id": "Qj2CYH_S8ao",
        "date": "2023-11-11",
        "duration": "2:52:12",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "08",
@@ -114,9 +114,9 @@
        "video_id": "MmBYgGJL3CU",
        "date": "2023-11-18",
        "duration": "2:53:10",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "09",
@@ -127,6 +127,8 @@
        "video_id": "eWPSQJsPp9I",
        "date": "2023-11-25",
        "duration": "2:13:26",
+       "published": "2026-07-03",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -138,9 +140,9 @@
        "video_id": "_-4P9_f8-Xo",
        "date": "2023-12-02",
        "duration": "2:34:09",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "11",
@@ -151,9 +153,9 @@
        "video_id": "KAh_nCzXylA",
        "date": "2023-12-09",
        "duration": "2:38:06",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "12",
@@ -164,6 +166,8 @@
        "video_id": "kIL_IwFXzMM",
        "date": "2023-12-16",
        "duration": "3:07:08",
+       "published": "2026-07-03",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -175,6 +179,8 @@
        "video_id": "7HJHB9_H1rI",
        "date": "2023-12-23",
        "duration": "2:54:56",
+       "published": "2026-07-04",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -186,6 +192,8 @@
        "video_id": "8yEMk9PTF1Y",
        "date": "2023-12-30",
        "duration": "2:50:33",
+       "published": "2026-07-04",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -197,9 +205,9 @@
        "video_id": "dblhYX6NRbQ",
        "date": "2024-01-06",
        "duration": "2:54:21",
-       "raw": false,
        "published": "2026-10-26",
-       "modified": "2026-10-26"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "16",
@@ -210,6 +218,8 @@
        "video_id": "qIhW2G1igh4",
        "date": "2024-01-13",
        "duration": "2:53:55",
+       "published": "2026-07-04",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -221,9 +231,9 @@
        "video_id": "LPThv79w5y4",
        "date": "2024-01-20",
        "duration": "2:28:16",
-       "raw": false,
-       "published": "2026-07-04",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "18",
@@ -234,33 +244,35 @@
        "video_id": "joVqI3sHyt8",
        "date": "2024-01-27",
        "duration": "2:54:48",
+       "published": "2026-08-21",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
        "no": "19",
        "title": "《維摩詰所說經》 - 19 菩薩品：持世菩薩章（魔女・法樂・無盡燈）",
-       "scope": "先補第18講《楞嚴經》內分外分（純想即飛・純情即墮）；再講〈菩薩品〉第三位受命者持世菩薩全章——魔波旬狀如帝釋、維摩詰受萬二千天女、令發菩提心、說菩薩法樂、波旬索還、無盡燈法門、天女隨魔還宮，至「故我不任詣彼問疾」〔行11–977〕",
+       "scope": "先補第18講《楞嚴經》內分外分（純想即飛・純情即墮）；再講〈菩薩品〉第三位受命者持世菩薩全章——魔波旬狀如帝釋、維摩詰受萬二千天女、令發菩提心、說菩薩法樂、波旬索還、無盡燈法門、天女隨魔還宮，至「故我不任詣彼問疾」〔行11–960〕",
        "has_note": true,
        "has_transcript": true,
        "video_id": "UxdNPPQYZaw",
        "date": "2024-02-03",
        "duration": "3:06:12",
-       "raw": false,
-       "published": "2026-08-21",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "20",
        "title": "《維摩詰所說經》 - 20 菩薩品：善德長者子章（法施之會）",
-       "scope": "開場追念演龍法師《聞經筆記》（「性定魔伏處處樂，妄止心空朝朝安」）；〈菩薩品〉第四位受命者善德長者子全章——父舍大施會、法施之會「無前無後一時供養」、四無量心・六度・三解脫門至「助佛道法」三十餘句、二百婆羅門發心、瓔珞分作二分・難勝如來・四柱寶臺、具足法施、乞人發心，至「如是諸菩薩各各向佛說其本緣」與第21講預告〔行11–852〕",
+       "scope": "開場追念演龍法師《聞經筆記》（「性定魔伏處處樂，妄止心空朝朝安」）；〈菩薩品〉第四位受命者善德長者子全章——父舍大施會、法施之會「無前無後一時供養」、四無量心・六度・三解脫門至「助佛道法」三十餘句、二百婆羅門發心、瓔珞分作二分・難勝如來・四柱寶臺、具足法施、乞人發心，至「如是諸菩薩各各向佛說其本緣」與第21講預告〔行11–820〕",
        "has_note": true,
        "has_transcript": true,
        "video_id": "Y1K1ZyjDC5A",
        "date": "2024-03-02",
        "duration": "3:02:54",
-       "raw": false,
        "published": "2026-10-25",
-       "modified": "2026-10-25"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "21",
@@ -271,9 +283,9 @@
        "video_id": "sgNS56c1K30",
        "date": "2024-03-09",
        "duration": "2:30:43",
-       "raw": false,
-       "published": "2026-07-10",
-       "modified": "2026-10-26"
+       "published": "2026-10-26",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "22",
@@ -284,9 +296,9 @@
        "video_id": "otbSdT1V73I",
        "date": "2024-03-16",
        "duration": "2:52:59",
-       "raw": false,
-       "published": "2026-07-10",
-       "modified": "2026-10-26"
+       "published": "2026-10-26",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "23",
@@ -297,6 +309,8 @@
        "video_id": "1TmC-jGnQ6w",
        "date": "2024-03-23",
        "duration": "3:14:35",
+       "published": "2026-07-05",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -308,9 +322,9 @@
        "video_id": "spcc5KQ1rKU",
        "date": "2024-03-30",
        "duration": "2:56:10",
-       "raw": false,
-       "published": "2026-07-05",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "25",
@@ -321,9 +335,9 @@
        "video_id": "aNjRBF2ivac",
        "date": "2024-04-06",
        "duration": "3:19:48",
-       "raw": false,
-       "published": "2026-07-05",
-       "modified": "2026-10-26"
+       "published": "2026-10-26",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "26",
@@ -334,71 +348,73 @@
        "video_id": "ZpcRV2-_6nU",
        "date": "2024-04-13",
        "duration": "2:52:33",
-       "raw": false,
-       "published": "2026-07-05",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "27",
        "title": "《維摩詰所說經》 - 27 不思議品：借座燈王・脫落身心・心無礙的本質",
-       "scope": "不思議品第六開端。先以「法」的五義（空・無生・無對治・無滅・不可記說）與「大腦（六七兩識）／本心」立全講基礎；逐段講「何等佛土有好上妙功德成就師子之座」至「是名住不思議解脫法門」（借座須彌燈王、上人俱坐、新發意菩薩及大弟子不能昇、為須彌燈王如來作禮乃可得坐、舍利弗歎未曾有、芥子納須彌）；以《圓覺經》《楞嚴經》《華嚴經》《金剛經》立「脫落身心才是菩薩」，以《海慧問經》三種供養釋「作禮」，以脅尊者度馬鳴公案、《起信論》「覺於念異」與六麤釋「新發意菩薩為何坐不上去」；至逐字稿末行〔行917〕止",
+       "scope": "不思議品第六開端。先以「法」的五義（空・無生・無對治・無滅・不可記說）與「大腦（六七兩識）／本心」立全講基礎；逐段講「何等佛土有好上妙功德成就師子之座」至「是名住不思議解脫法門」（借座須彌燈王、上人俱坐、新發意菩薩及大弟子不能昇、為須彌燈王如來作禮乃可得坐、舍利弗歎未曾有、芥子納須彌）；以《圓覺經》《楞嚴經》《華嚴經》《金剛經》立「脫落身心才是菩薩」，以《海慧問經》三種供養釋「作禮」，以脅尊者度馬鳴公案、《起信論》「覺於念異」與六麤釋「新發意菩薩為何坐不上去」；至逐字稿末行〔行868–870〕止",
        "has_note": true,
        "has_transcript": true,
        "video_id": "s1Q2FPrgW3I",
        "date": "2024-04-20",
        "duration": "3:15:44",
-       "raw": false,
        "published": "2026-10-26",
-       "modified": "2026-10-26"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "28",
        "title": "《維摩詰所說經》 - 28 不思議品（續）：攝受正法・本心無礙・三種意生身",
-       "scope": "不思議品第六續講。先以《如來祕密經》《法集經》立「攝受正法＝無所得的本心」，以大腦／六七八識說世間與出世間；再逐段講「四大海水入一毛孔」至「皆於其中普令得聞」、維摩「我今略說…窮劫不盡」，以《楞伽經》三種意生身總結；後講大迦葉歎未曾有、敗種、三萬二千天子發心；「作魔王者多是住不可思議解脫菩薩」只誦未講，留待下講；至逐字稿末行〔行884〕止",
+       "scope": "不思議品第六續講。先以《如來祕密經》《法集經》立「攝受正法＝無所得的本心」，以大腦／六七八識說世間與出世間；再逐段講「四大海水入一毛孔」至「皆於其中普令得聞」、維摩「我今略說…窮劫不盡」，以《楞伽經》三種意生身總結；後講大迦葉歎未曾有、敗種、三萬二千天子發心；「作魔王者多是住不可思議解脫菩薩」只誦未講，留待下講；至逐字稿末行〔行856–858〕止",
        "has_note": true,
        "has_transcript": true,
        "video_id": "IDqvkkK8cl8",
        "date": "2024-04-27",
        "duration": "3:09:39",
-       "raw": false,
-       "published": "2026-08-21",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "29",
        "title": "《維摩詰所說經》 - 29 不思議品（末）與觀眾生品（首）：意生身・寂滅慈・真實慈",
-       "scope": "不思議品後段（意生身與三昧樂正受、覺法自性性意生身、種類俱生無行作，至「住不可思議解脫菩薩智慧方便之門」）；接觀眾生品第七開首（文殊問「菩薩云何觀於眾生」，如芭蕉以下諸喻，「是即真實慈也」，行慈諸門，何謂悲喜捨）；至逐字稿末行〔行1244〕止",
+       "scope": "不思議品後段（意生身與三昧樂正受、覺法自性性意生身、種類俱生無行作，至「住不可思議解脫菩薩智慧方便之門」）；接觀眾生品第七開首（文殊問「菩薩云何觀於眾生」，如芭蕉以下諸喻，「是即真實慈也」，行慈諸門，何謂悲喜捨）；至逐字稿末行〔行1174–1176〕止",
        "has_note": true,
        "has_transcript": true,
        "video_id": "Wl16aj-BHBs",
        "date": "2024-05-04",
        "duration": "3:09:12",
-       "raw": false,
-       "published": "2026-07-06",
-       "modified": "2026-10-23"
+       "published": "2026-10-23",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "30",
        "title": "《維摩詰所說經》 - 30 觀眾生品：慈悲喜捨・十二問・從無住本立一切法",
-       "scope": "觀眾生品第七，由「譬如幻師，見所幻人」之回顧起，講行寂滅慈與悲、喜、捨，再講文殊、維摩十二問答（生死有畏當何所依，至「無住則無本。文殊師利！從無住本，立一切法」）；以《楞伽》空・無生・無二・離自性相開講，以緣生偈、《稻稈喻經》內外緣起、《大日經疏》「如淨虛空」收束，至逐字稿末行〔行978〕止",
+       "scope": "觀眾生品第七，由「譬如幻師，見所幻人」之回顧起，講行寂滅慈與悲、喜、捨，再講文殊、維摩十二問答（生死有畏當何所依，至「無住則無本。文殊師利！從無住本，立一切法」）；以《楞伽》空・無生・無二・離自性相開講，以緣生偈、《稻稈喻經》內外緣起、《大日經疏》「如淨虛空」收束，至逐字稿末行〔行997–999〕止",
        "has_note": true,
        "has_transcript": true,
        "video_id": "gia_K7bLl2I",
        "date": "2024-05-11",
        "duration": "3:10:08",
-       "raw": false,
-       "published": "2026-07-06",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "31",
        "title": "《維摩詰所說經》第31講",
-       "scope": "〈觀眾生品〉自「生死畏 → 依如來功德之力 → …… → 無住為本 → 從無住本立一切法」的逆推法鏈，接續「**維摩詰**丈室天女散花」全段對話，至天女「以聲聞法化眾生故我為聲聞……」處作結。",
+       "scope": "〈觀眾生品〉自「生死畏 → 依如來功德之力 → …… → 無住為本」逆推法鏈的口述推演（法師以「無本為本、能立一切法」收束），接續「**維摩詰**丈室天女散花」對話，至天女答舍利弗「汝何所得？以何為證？」之「我無得無證」處作結（黑板已現「汝於三乘為何志求」，留待下講）。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "_-2spjJkgBw",
        "date": "2024-05-18",
        "duration": "2:44:55",
+       "published": "2026-07-08",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -410,19 +426,21 @@
        "video_id": "rKtuuJOvxOw",
        "date": "2024-05-25",
        "duration": "2:47:52",
-       "raw": false,
        "published": "2026-10-25",
-       "modified": "2026-10-25"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "33",
-       "title": "維摩詰所說經 第33講",
-       "scope": "本講收束〈觀眾生品第七〉，開啟〈佛道品第八〉。",
+       "title": "《維摩詰所說經》 - 33 觀眾生品終・佛道品：行於非道，通達佛道",
+       "scope": "觀眾生品第七末段——舍利弗問天女「汝於此沒，當生何所」至維摩詰語舍利弗「以本願故，隨意能現，教化眾生」（本品圓滿）；佛道品第八開端——文殊問「菩薩云何通達佛道」、維摩答「行於非道」，誦「若菩薩行五無間」至「示行慳貪……不惜身命」，逐句講解至「行色、無色界道，不以為勝」",
        "has_note": true,
        "has_transcript": true,
        "video_id": "gBRDbslCg5U",
        "date": "2024-06-01",
        "duration": "3:06:25",
+       "published": "2026-11-19",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -434,9 +452,9 @@
        "video_id": "6A5oqpR32Ns",
        "date": "2024-06-08",
        "duration": "3:07:28",
-       "raw": false,
-       "published": "2026-07-09",
-       "modified": "2026-10-23"
+       "published": "2026-10-23",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "35",
@@ -447,9 +465,9 @@
        "video_id": "w44SvzBqIO0",
        "date": "2024-06-15",
        "duration": "3:25:05",
-       "raw": false,
-       "published": "2026-07-09",
-       "modified": "2026-10-23"
+       "published": "2026-10-23",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "36",
@@ -460,9 +478,9 @@
        "video_id": "OSZyOQZ87O0",
        "date": "2024-06-22",
        "duration": "3:13:34",
-       "raw": false,
-       "published": "2026-07-09",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "37",
@@ -473,6 +491,8 @@
        "video_id": "sxTiFZuztFo",
        "date": "2024-06-29",
        "duration": "3:10:47",
+       "published": "2026-07-09",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -484,6 +504,8 @@
        "video_id": "qDC9Kib_kMw",
        "date": "2024-07-06",
        "duration": "3:22:38",
+       "published": "2026-07-09",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -495,9 +517,9 @@
        "video_id": "S5FmzyYCMoU",
        "date": "2024-07-13",
        "duration": "2:57:43",
-       "raw": false,
-       "published": "2026-07-10",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "40",
@@ -508,9 +530,9 @@
        "video_id": "OM5lfF63Gr0",
        "date": "2024-07-20",
        "duration": "2:58:19",
-       "raw": false,
        "published": "2026-11-05",
-       "modified": "2026-11-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "41",
@@ -521,9 +543,9 @@
        "video_id": "XupW65qSdEU",
        "date": "2024-07-27",
        "duration": "2:57:59",
-       "raw": false,
        "published": "2026-07-11",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "42",
@@ -534,9 +556,9 @@
        "video_id": "VwCWyoeXmzI",
        "date": "2024-08-03",
        "duration": "3:03:02",
-       "raw": false,
-       "published": "2026-06-30",
-       "modified": "2026-10-26"
+       "published": "2026-10-26",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "43",
@@ -547,6 +569,8 @@
        "video_id": "IeNCAgxy7N8",
        "date": "2024-08-10",
        "duration": "3:05:06",
+       "published": "2026-06-30",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -558,6 +582,8 @@
        "video_id": "3gkXpvsnRaE",
        "date": "2024-08-17",
        "duration": "3:20:59",
+       "published": "2026-06-30",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -569,6 +595,8 @@
        "video_id": "9yqwskjDfzw",
        "date": "2024-08-24",
        "duration": "2:51:42",
+       "published": "2026-07-11",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -580,9 +608,9 @@
        "video_id": "4NtPeENKtLU",
        "date": "2024-08-31",
        "duration": "2:40:53",
-       "raw": false,
        "published": "2026-10-26",
-       "modified": "2026-10-26"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "47",
@@ -593,9 +621,9 @@
        "video_id": "zLnO_7B_eNg",
        "date": "2024-09-07",
        "duration": "3:18:14",
-       "raw": false,
-       "published": "2026-06-30",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "48",
@@ -606,6 +634,8 @@
        "video_id": "DFqR771dNu0",
        "date": "2024-09-14",
        "duration": "3:10:55",
+       "published": "2026-07-01",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -617,9 +647,9 @@
        "video_id": "Xtc8M8FPgec",
        "date": "2024-09-21",
        "duration": "3:16:37",
-       "raw": false,
-       "published": "2026-07-01",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "50",
@@ -630,6 +660,8 @@
        "video_id": "nGKicOh_wUQ",
        "date": "2024-09-28",
        "duration": "2:55:12",
+       "published": "2026-07-01",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -641,9 +673,9 @@
        "video_id": "ReuOCO502EU",
        "date": "2024-10-05",
        "duration": "2:58:01",
-       "raw": false,
-       "published": "2026-07-01",
-       "modified": "2026-11-05"
+       "published": "2026-11-05",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "52",
@@ -654,9 +686,9 @@
        "video_id": "NeqZvpLpZxk",
        "date": "2024-10-12",
        "duration": "3:05:01",
-       "raw": false,
-       "published": "2026-07-01",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "53",
@@ -667,9 +699,9 @@
        "video_id": "mEFJS2NRTDM",
        "date": "2024-10-19",
        "duration": "3:33:52",
-       "raw": false,
-       "published": "2026-08-08",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "54",
@@ -680,9 +712,9 @@
        "video_id": "4LkcDNiUBiQ",
        "date": "2024-10-26",
        "duration": "4:02:05",
-       "raw": false,
        "published": "2026-11-03",
-       "modified": "2026-11-04"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "55",
@@ -693,6 +725,8 @@
        "video_id": "Fu4B82iQi_0",
        "date": "2024-11-02",
        "duration": "2:27:34",
+       "published": "2026-07-02",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -704,6 +738,8 @@
        "video_id": "t3-ZFojvdbw",
        "date": "2024-11-09",
        "duration": "2:55:58",
+       "published": "2026-07-02",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -715,9 +751,9 @@
        "video_id": "_1jy-isMVmw",
        "date": "2024-11-16",
        "duration": "3:23:36",
-       "raw": false,
        "published": "2026-11-03",
-       "modified": "2026-11-03"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "58",
@@ -728,9 +764,9 @@
        "video_id": "eEqjJtRv01Q",
        "date": "2024-11-23",
        "duration": "3:32:06",
-       "raw": false,
-       "published": "2026-07-02",
-       "modified": "2026-10-26"
+       "published": "2026-10-26",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "59",
@@ -741,9 +777,9 @@
        "video_id": "NANB_iCkQGc",
        "date": "2024-11-30",
        "duration": "3:00:54",
-       "raw": false,
-       "published": "2026-07-02",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "60",
@@ -754,9 +790,9 @@
        "video_id": "t7pHsFOEQ7Q",
        "date": "2024-12-07",
        "duration": "3:34:34",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "61",
@@ -767,9 +803,9 @@
        "video_id": "GqTOtRXjuqA",
        "date": "2024-12-14",
        "duration": "2:57:09",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "62",
@@ -780,9 +816,9 @@
        "video_id": "qIXRadnu8kQ",
        "date": "2024-12-21",
        "duration": "3:36:30",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "63",
@@ -793,9 +829,9 @@
        "video_id": "EfAMncENqYY",
        "date": "2024-12-28",
        "duration": "2:59:22",
-       "raw": false,
-       "published": "2026-07-03",
-       "modified": "2026-10-26"
+       "published": "2026-10-26",
+       "modified": "2026-11-22",
+       "raw": false
       }
      ]
     },
@@ -815,9 +851,9 @@
        "video_id": "vkvZ7ohx-84",
        "date": "2022-04-23",
        "duration": "2:30:20",
-       "raw": false,
        "published": "2026-08-03",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "02",
@@ -828,9 +864,9 @@
        "video_id": "bfyQpHA86c4",
        "date": "2022-04-30",
        "duration": "2:33:01",
-       "raw": false,
        "published": "2026-07-25",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "03",
@@ -841,9 +877,9 @@
        "video_id": "9X1pHUTdzPE",
        "date": "2022-05-07",
        "duration": "2:27:45",
-       "raw": false,
        "published": "2026-07-25",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "04",
@@ -854,9 +890,9 @@
        "video_id": "16y1tu1mjLg",
        "date": "2022-05-14",
        "duration": "2:19:04",
-       "raw": false,
        "published": "2026-07-25",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "05",
@@ -867,9 +903,9 @@
        "video_id": "FDVFKHa79JA",
        "date": "2022-05-21",
        "duration": "2:40:25",
-       "raw": false,
        "published": "2026-07-25",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "06",
@@ -880,9 +916,9 @@
        "video_id": "PCg_PbAw2n0",
        "date": "2022-05-28",
        "duration": "2:42:56",
-       "raw": false,
        "published": "2026-07-25",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "07",
@@ -893,9 +929,9 @@
        "video_id": "Z5O7tF3d0Ls",
        "date": "2022-06-04",
        "duration": "2:44:06",
-       "raw": false,
        "published": "2026-07-25",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "08",
@@ -906,9 +942,9 @@
        "video_id": "ujMomAFYfqA",
        "date": "2022-06-11",
        "duration": "2:53:14",
-       "raw": false,
        "published": "2026-07-26",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "09",
@@ -919,9 +955,9 @@
        "video_id": "yC17lIV5usw",
        "date": "2022-06-18",
        "duration": "2:19:04",
-       "raw": false,
        "published": "2026-07-26",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "10",
@@ -932,9 +968,9 @@
        "video_id": "_RTaf6BkZQM",
        "date": "2022-06-25",
        "duration": "2:36:07",
-       "raw": false,
        "published": "2026-07-26",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "11",
@@ -945,9 +981,9 @@
        "video_id": "JL8CrCr0pnU",
        "date": "2022-07-02",
        "duration": "2:38:46",
-       "raw": false,
        "published": "2026-07-27",
-       "modified": "2026-10-05"
+       "modified": "2026-10-05",
+       "raw": false
       },
       {
        "no": "12",
@@ -958,9 +994,9 @@
        "video_id": "DjAWXH1j_Ys",
        "date": "2022-07-09",
        "duration": "2:18:54",
-       "raw": false,
        "published": "2026-07-27",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "13",
@@ -971,9 +1007,9 @@
        "video_id": "9_opphvsfgg",
        "date": "2022-07-16",
        "duration": "2:14:57",
-       "raw": false,
        "published": "2026-07-27",
-       "modified": "2026-10-05"
+       "modified": "2026-10-05",
+       "raw": false
       },
       {
        "no": "14",
@@ -984,6 +1020,8 @@
        "video_id": "xFL0epILnD4",
        "date": "2022-07-23",
        "duration": "2:17:10",
+       "published": "2026-07-28",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -995,9 +1033,9 @@
        "video_id": "HM2SoD7W8e4",
        "date": "2022-07-30",
        "duration": "2:04:53",
-       "raw": false,
        "published": "2026-07-28",
-       "modified": "2026-10-05"
+       "modified": "2026-10-05",
+       "raw": false
       },
       {
        "no": "16",
@@ -1008,9 +1046,9 @@
        "video_id": "s1_LApZ2LG0",
        "date": "2022-08-06",
        "duration": "2:07:53",
-       "raw": false,
        "published": "2026-07-28",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "17",
@@ -1021,9 +1059,9 @@
        "video_id": "gQwi_xRfYlI",
        "date": "2022-08-13",
        "duration": "2:15:54",
-       "raw": false,
        "published": "2026-07-28",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "18",
@@ -1034,9 +1072,9 @@
        "video_id": "zU50iOVMV0Y",
        "date": "2022-08-20",
        "duration": "1:59:54",
-       "raw": false,
        "published": "2026-07-29",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "19",
@@ -1047,9 +1085,9 @@
        "video_id": "0GsBlyD7Kg8",
        "date": "2022-08-27",
        "duration": "2:13:47",
-       "raw": false,
        "published": "2026-07-29",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "20",
@@ -1060,9 +1098,9 @@
        "video_id": "9S1Nkmk0QSQ",
        "date": "2022-09-03",
        "duration": "2:18:04",
-       "raw": false,
        "published": "2026-07-29",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "21",
@@ -1073,9 +1111,9 @@
        "video_id": "-DcAapjjyTQ",
        "date": "2022-09-10",
        "duration": "2:02:38",
-       "raw": false,
        "published": "2026-07-29",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "22",
@@ -1086,9 +1124,9 @@
        "video_id": "NBsZqV4QYzs",
        "date": "2022-09-17",
        "duration": "2:08:13",
-       "raw": false,
        "published": "2026-07-29",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "23",
@@ -1099,9 +1137,9 @@
        "video_id": "o0ljqPJYeCE",
        "date": "2022-09-24",
        "duration": "2:32:36",
-       "raw": false,
        "published": "2026-07-29",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "24",
@@ -1112,9 +1150,9 @@
        "video_id": "AL3r9Cg9yg4",
        "date": "2022-10-01",
        "duration": "2:07:55",
-       "raw": false,
        "published": "2026-07-29",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "25",
@@ -1125,9 +1163,9 @@
        "video_id": "QvcNPYdKl5Y",
        "date": "2022-10-08",
        "duration": "2:37:43",
-       "raw": false,
        "published": "2026-07-30",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "26",
@@ -1138,9 +1176,9 @@
        "video_id": "yh3736FK4pw",
        "date": "2022-10-15",
        "duration": "2:06:04",
-       "raw": false,
        "published": "2026-07-30",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "27",
@@ -1151,9 +1189,9 @@
        "video_id": "tfL7p_f63tM",
        "date": "2022-10-22",
        "duration": "2:01:31",
-       "raw": false,
        "published": "2026-10-17",
-       "modified": "2026-10-17"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "28",
@@ -1164,6 +1202,8 @@
        "video_id": "SIE-epoP9bI",
        "date": "2022-10-29",
        "duration": "2:08:40",
+       "published": "2026-07-30",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -1175,9 +1215,9 @@
        "video_id": "UwvGssh0LjU",
        "date": "2022-11-05",
        "duration": "2:19:51",
-       "raw": false,
        "published": "2026-07-30",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "30",
@@ -1188,9 +1228,9 @@
        "video_id": "YbX7LiPvAhA",
        "date": "2022-11-12",
        "duration": "2:28:38",
-       "raw": false,
        "published": "2026-07-30",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "31",
@@ -1201,6 +1241,8 @@
        "video_id": "-qhZkwBJo5w",
        "date": "2022-11-19",
        "duration": "2:28:58",
+       "published": "2026-07-30",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -1212,9 +1254,9 @@
        "video_id": "_CszvtIthUU",
        "date": "2022-11-26",
        "duration": "1:57:17",
-       "raw": false,
        "published": "2026-07-30",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "33",
@@ -1225,9 +1267,9 @@
        "video_id": "ykz1Ch-WU_E",
        "date": "2022-12-03",
        "duration": "2:10:46",
-       "raw": false,
        "published": "2026-07-30",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "34",
@@ -1238,9 +1280,9 @@
        "video_id": "Z4G1TbRbgpM",
        "date": "2022-12-10",
        "duration": "2:17:45",
-       "raw": false,
        "published": "2026-07-31",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "35",
@@ -1251,9 +1293,9 @@
        "video_id": "DLt74bHZ3TE",
        "date": "2022-12-17",
        "duration": "2:35:35",
-       "raw": false,
        "published": "2026-07-31",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "36",
@@ -1264,9 +1306,9 @@
        "video_id": "NYgVT1cq8zg",
        "date": "2022-12-24",
        "duration": "2:23:35",
-       "raw": false,
        "published": "2026-07-31",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       }
      ]
     },
@@ -1286,9 +1328,9 @@
        "video_id": "v93jyh3TgIs",
        "date": "2020-12-23",
        "duration": "2:04:36",
-       "raw": false,
        "published": "2026-07-18",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "02",
@@ -1299,9 +1341,9 @@
        "video_id": "kzq0bYGpniU",
        "date": "2020-12-23",
        "duration": "2:04:10",
-       "raw": false,
        "published": "2026-07-17",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "03",
@@ -1312,6 +1354,8 @@
        "video_id": "Y-s4kuFhecQ",
        "date": "2020-12-23",
        "duration": "2:07:20",
+       "published": "2026-07-18",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -1323,9 +1367,9 @@
        "video_id": "f2lQoJfFajs",
        "date": "2020-12-24",
        "duration": "2:08:33",
-       "raw": false,
        "published": "2026-07-18",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "05",
@@ -1336,9 +1380,9 @@
        "video_id": "oh63gsy_M5c",
        "date": "2020-12-25",
        "duration": "2:05:28",
-       "raw": false,
        "published": "2026-07-18",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "06",
@@ -1349,6 +1393,8 @@
        "video_id": "FYpmUG5ZT6A",
        "date": "2020-12-25",
        "duration": "2:01:40",
+       "published": "2026-07-18",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -1360,17 +1406,21 @@
        "video_id": "DcF0-3yD7CA",
        "date": "2020-12-28",
        "duration": "2:01:33",
+       "published": "2026-07-18",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
        "no": "08",
        "title": "《修華嚴奧旨妄盡還源觀》第八講",
-       "scope": "六門中「二起二用」之**第二用──法界圓明自在用（華嚴三昧）**〔行146〕",
+       "scope": "六門中「二起二用」之**第二用──法界圓明自在用（華嚴三昧）**〔行157〕",
        "has_note": true,
        "has_transcript": true,
        "video_id": "j2ZfjSQie6I",
        "date": "2020-12-31",
        "duration": "2:09:33",
+       "published": "2026-07-18",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -1382,9 +1432,9 @@
        "video_id": "OPRgyQBCi_Y",
        "date": "2020-12-28",
        "duration": "2:06:27",
-       "raw": false,
        "published": "2026-07-18",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "10",
@@ -1395,6 +1445,8 @@
        "video_id": "t9ZseGkFB1w",
        "date": "2020-12-30",
        "duration": "2:12:33",
+       "published": "2026-07-18",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -1406,9 +1458,9 @@
        "video_id": "JRI9bRIkJ9c",
        "date": "2020-12-30",
        "duration": "2:11:07",
-       "raw": false,
        "published": "2026-07-18",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "12",
@@ -1419,6 +1471,8 @@
        "video_id": "_JnXeh1kaXo",
        "date": "2020-12-31",
        "duration": "2:06:32",
+       "published": "2026-07-19",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -1430,9 +1484,9 @@
        "video_id": "rLtalyOBGqo",
        "date": "2021-01-01",
        "duration": "2:12:36",
-       "raw": false,
        "published": "2026-07-19",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "14",
@@ -1443,9 +1497,9 @@
        "video_id": "oK4e-B0QH3o",
        "date": "2021-01-01",
        "duration": "2:08:50",
-       "raw": false,
        "published": "2026-07-19",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "15",
@@ -1456,9 +1510,9 @@
        "video_id": "9becwwdaJ4Y",
        "date": "2021-01-04",
        "duration": "2:14:15",
-       "raw": false,
        "published": "2026-11-03",
-       "modified": "2026-11-03"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "16",
@@ -1469,9 +1523,9 @@
        "video_id": "RJcLPNJjoGI",
        "date": "2021-01-04",
        "duration": "2:08:51",
-       "raw": false,
        "published": "2026-07-19",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "17",
@@ -1482,9 +1536,9 @@
        "video_id": "AM3wi-LCo7k",
        "date": "2021-01-06",
        "duration": "2:16:30",
-       "raw": false,
        "published": "2026-07-19",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "18",
@@ -1495,6 +1549,8 @@
        "video_id": "l8s9Qvz_MjA",
        "date": "2021-01-06",
        "duration": "2:18:24",
+       "published": "2026-07-19",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -1506,6 +1562,8 @@
        "video_id": "YUIoLX6XGeA",
        "date": "2021-01-06",
        "duration": "2:04:36",
+       "published": "2026-07-19",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -1517,9 +1575,9 @@
        "video_id": "9Ng-fskCOHA",
        "date": "2021-01-06",
        "duration": "2:11:54",
-       "raw": false,
        "published": "2026-07-19",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "21",
@@ -1530,9 +1588,9 @@
        "video_id": "Ijqieowiu_c",
        "date": "2021-01-06",
        "duration": "2:03:42",
-       "raw": false,
        "published": "2026-07-19",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "22",
@@ -1543,6 +1601,8 @@
        "video_id": "kwVpWWSvS24",
        "date": "2021-01-16",
        "duration": "1:58:33",
+       "published": "2026-07-19",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -1554,9 +1614,9 @@
        "video_id": "L_QMCk5pPCs",
        "date": "2021-01-20",
        "duration": "1:58:39",
-       "raw": false,
        "published": "2026-07-19",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "24",
@@ -1567,9 +1627,9 @@
        "video_id": "GUYPJbbCLd0",
        "date": "2021-01-29",
        "duration": "2:01:24",
-       "raw": false,
        "published": "2026-07-20",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "25",
@@ -1580,9 +1640,9 @@
        "video_id": "y6qqxDomfHY",
        "date": "2021-02-05",
        "duration": "2:07:57",
-       "raw": false,
        "published": "2026-07-20",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "26",
@@ -1593,6 +1653,8 @@
        "video_id": "H1Ymj-fLGqc",
        "date": "2021-02-27",
        "duration": "2:11:03",
+       "published": "2026-07-20",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -1604,9 +1666,9 @@
        "video_id": "MJrHEgInLw8",
        "date": "2021-03-05",
        "duration": "2:12:12",
-       "raw": false,
        "published": "2026-07-20",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "28",
@@ -1617,9 +1679,9 @@
        "video_id": "XdPaHXEl0Dg",
        "date": "2021-05-04",
        "duration": "2:12:06",
-       "raw": false,
        "published": "2026-07-20",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "29",
@@ -1630,9 +1692,9 @@
        "video_id": "huNQv_F7OM0",
        "date": "2021-03-19",
        "duration": "2:05:54",
-       "raw": false,
        "published": "2026-07-20",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "30",
@@ -1643,9 +1705,9 @@
        "video_id": "SbPl4DvmT7g",
        "date": "2021-03-26",
        "duration": "2:09:27",
-       "raw": false,
        "published": "2026-07-20",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "31",
@@ -1656,9 +1718,9 @@
        "video_id": "wqHftV65inM",
        "date": "2021-04-16",
        "duration": "2:08:35",
-       "raw": false,
        "published": "2026-07-20",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "32",
@@ -1669,9 +1731,9 @@
        "video_id": "8ETrX47z2bw",
        "date": "2021-05-07",
        "duration": "2:14:35",
-       "raw": false,
        "published": "2026-07-21",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "33",
@@ -1682,9 +1744,9 @@
        "video_id": "ahVTclPX2G4",
        "date": "2021-05-04",
        "duration": "2:19:54",
-       "raw": false,
        "published": "2026-07-21",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "34",
@@ -1695,9 +1757,9 @@
        "video_id": "K2OrjDHQkeo",
        "date": "2021-05-06",
        "duration": "2:23:38",
-       "raw": false,
        "published": "2026-09-25",
-       "modified": "2026-10-05"
+       "modified": "2026-10-05",
+       "raw": false
       },
       {
        "no": "35",
@@ -1708,9 +1770,9 @@
        "video_id": "pUjslgpvagc",
        "date": "2021-05-15",
        "duration": "2:11:12",
-       "raw": false,
        "published": "2026-07-21",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "36",
@@ -1721,9 +1783,9 @@
        "video_id": "l1lgyTmfrkQ",
        "date": "2021-05-22",
        "duration": "2:29:52",
-       "raw": false,
        "published": "2026-07-21",
-       "modified": "2026-10-05"
+       "modified": "2026-11-23",
+       "raw": false
       }
      ]
     },
@@ -1743,9 +1805,9 @@
        "video_id": "qU8-_gOnaQg",
        "date": "2023-02-04",
        "duration": "1:21:44",
-       "raw": false,
        "published": "2026-07-16",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "02",
@@ -1756,9 +1818,9 @@
        "video_id": "6LO8PvVk9F0",
        "date": "2023-02-11",
        "duration": "1:38:31",
-       "raw": false,
        "published": "2026-07-16",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "03",
@@ -1769,17 +1831,21 @@
        "video_id": "OzRNQljl7E4",
        "date": "2023-02-18",
        "duration": "1:51:32",
+       "published": "2026-07-16",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
        "no": "04",
        "title": "《金剛般若波羅蜜經》第四講",
-       "scope": "",
+       "scope": "複習第一～三分（法會因由・善現啟請・大乘正宗）→ 第四分「妙行無住」全分 → 第五分「如理實見」全分；以《金剛般若波羅蜜經論》兩首偈（廣大第一常／檀義攝於六）為解經鑰匙",
        "has_note": true,
        "has_transcript": true,
        "video_id": "heVvl86gK9g",
        "date": "2023-02-25",
        "duration": "1:34:31",
+       "published": "2026-11-19",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -1791,9 +1857,9 @@
        "video_id": "ok2-rr4RTQ8",
        "date": "2023-03-04",
        "duration": "2:00:22",
-       "raw": false,
        "published": "2026-07-16",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "06",
@@ -1804,17 +1870,21 @@
        "video_id": "4t7gjZCuxbk",
        "date": "2023-03-11",
        "duration": "2:10:13",
+       "published": "2026-07-16",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
        "no": "07",
        "title": "《金剛般若波羅蜜經》第七講",
-       "scope": "依法出生分（第八）→ 一相無相分（第九）→ 莊嚴淨土分（第十）——聲聞乘四果 → 菩薩乘（佛法・佛土・心・身四事）",
+       "scope": "一相無相分（第九）→ 莊嚴淨土分（第十）——聲聞乘四果 → 菩薩乘（佛法・佛土・心・身四事）；回溯前文「一切賢聖皆以無為法而有差別」「所謂佛法者，即非佛法」",
        "has_note": true,
        "has_transcript": true,
        "video_id": "U__mssjyBs8",
        "date": "2023-03-18",
        "duration": "2:18:40",
+       "published": "2026-07-16",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -1826,74 +1896,74 @@
        "video_id": "Urs3qWlIrVs",
        "date": "2023-03-25",
        "duration": "1:08:07",
-       "raw": false,
-       "published": "2026-07-16",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "09",
        "title": "《金剛經》第 9 講",
-       "scope": "先論科判（道安三分、昭明太子三十二分之失、改用世親菩薩分段），再依此分段從頭複習序分・善護念分・住分（彌勒偈「廣大第一常」）・如實修行分（三施・三輪體空）・如來無有身相分・如能信者分（彌勒偈「說因果深義」・菩薩三德備），至「以是名字，汝當奉持」；主文自「如來有所說法不」起，經「三千大千世界所有微塵」「可以三十二相見如來不」至「以恒河沙等身命布施」，以「即非・是名」「性相一如」為本講功課〔行79–773〕",
+       "scope": "先論科判（道安三分、昭明太子三十二分之失、改用世親菩薩分段），再依此分段從頭複習序分・善護念分・住分（彌勒偈「廣大第一常」）・如實修行分（三施・三輪體空）・如來無有身相分・如能信者分（彌勒偈「說因果深義」・菩薩三德備），至「以是名字，汝當奉持」；主文自「如來有所說法不」起，經「三千大千世界所有微塵」「可以三十二相見如來不」至「以恒河沙等身命布施」，以「即非・是名」「性相一如」為本講功課〔行79–657〕",
        "has_note": true,
        "has_transcript": true,
        "video_id": "765YLRAyA6s",
        "date": "2023-04-01",
        "duration": "2:10:16",
-       "raw": false,
        "published": "2026-10-26",
-       "modified": "2026-10-26"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "10",
        "title": "《金剛經》第 10 講",
-       "scope": "開場以二十二祖摩拏羅尊者二偈與七佛偈立「心本無心因境有」，再以「即非・是名」「器器皆金」複習第 9 講微塵・世界・三十二相；主文自「若有善男子、善女人，以恒河沙等身命布施」起，以《金剛經總持論》「四空」解四句偈、天子玉璽喻四句偈功德，經「須菩提聞說是經，深解義趣，涕淚悲泣」「信心清淨，則生實相」「是實相者，則是非相」「信解受持」「後五百歲」，至「離一切諸相，則名諸佛」三個「何以故／所以者何」三段，結以「若見諸相非相，則見如來」與「相／像」之辨〔行65–572〕",
+       "scope": "開場以二十二祖摩拏羅尊者二偈與七佛偈立「心本無心因境有」，再以「即非・是名」「器器皆金」複習第 9 講微塵・世界・三十二相；主文自「若有善男子、善女人，以恒河沙等身命布施」起，以《金剛經總持論》「四空」解四句偈、天子玉璽喻四句偈功德，經「須菩提聞說是經，深解義趣，涕淚悲泣」「信心清淨，則生實相」「是實相者，則是非相」「信解受持」「後五百歲」，至「離一切諸相，則名諸佛」三個「何以故／所以者何」三段，結以「若見諸相非相，則見如來」與「相／像」之辨〔行65–555〕",
        "has_note": true,
        "has_transcript": true,
        "video_id": "bAsxgj4BO-I",
        "date": "2023-04-08",
        "duration": "1:45:14",
-       "raw": false,
-       "published": "2026-07-17",
-       "modified": "2026-10-26"
+       "published": "2026-10-26",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "11",
        "title": "《金剛經》第 11 講",
-       "scope": "開場以「若無信高推聖境、若無智起增上慢」與「三空」次第重溫第 10 講「須菩提涕淚悲泣」至「離一切諸相，則名諸佛」；主文自「佛告須菩提：如是，如是！若復有人得聞是經，不驚、不怖、不畏」起，經「第一波羅蜜」、彌勒偈「如人捨船栰」、「忍辱波羅蜜」、「歌利王割截身體」、「五百世作忍辱仙人」，至「是故，須菩提！菩薩應離一切相，發阿耨多羅三藐三菩提心」（只釋「發」字與三段相應，其餘留待下講）〔行68–605〕",
+       "scope": "開場以「若無信高推聖境、若無智起增上慢」與「三空」次第重溫第 10 講「須菩提涕淚悲泣」至「離一切諸相，則名諸佛」；主文自「佛告須菩提：如是，如是！若復有人得聞是經，不驚、不怖、不畏」起，經「第一波羅蜜」、彌勒偈「如人捨船栰」、「忍辱波羅蜜」、「歌利王割截身體」、「五百世作忍辱仙人」，至「是故，須菩提！菩薩應離一切相，發阿耨多羅三藐三菩提心」（只釋「發」字與三段相應，其餘留待下講）〔行67–567〕",
        "has_note": true,
        "has_transcript": true,
        "video_id": "0EMR9tddTaE",
        "date": "2023-04-15",
        "duration": "1:48:26",
-       "raw": false,
-       "published": "2026-07-17",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "12",
        "title": "《金剛經》第 12 講",
-       "scope": "前半小時以上以白板「綜合版面」重新銜接前文——自須菩提「涕淚悲泣…信心清淨，則生實相」、「離一切諸相，則名諸佛」，經「如是，如是…第一波羅蜜」「歌利王割截身體」「五百世作忍辱仙人」；主文自「是故，須菩提！菩薩應離一切相，發阿耨多羅三藐三菩提心」起，至「若菩薩心不住法而行布施，如人有目，日光明照，見種種色」止（「當來之世…皆得成就無量無邊功德」誦出未釋）〔行76-299、302-304、546-627〕",
+       "scope": "前半小時以上以白板「綜合版面」重新銜接前文——自須菩提「涕淚悲泣…信心清淨，則生實相」、「離一切諸相，則名諸佛」，經「如是，如是…第一波羅蜜」「歌利王割截身體」「五百世作忍辱仙人」；主文自「是故，須菩提！菩薩應離一切相，發阿耨多羅三藐三菩提心」起，至「若菩薩心不住法而行布施，如人有目，日光明照，見種種色」止（「當來之世…皆得成就無量無邊功德」誦出未釋）〔行77-318、318-322、558-647〕",
        "has_note": true,
        "has_transcript": true,
        "video_id": "8-ApAQa3DIs",
        "date": "2023-04-22",
        "duration": "1:57:25",
-       "raw": false,
-       "published": "2026-07-17",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "13",
        "title": "《金剛經》第 13 講",
-       "scope": "開場「為何學佛：妄盡還源、般若破妄心」；以世親「一切眾生有真如佛性分」銜接上講「若菩薩心住於法而行布施，如人入闇」；主文自「須菩提！當來之世，若有善男子、善女人，能於此經受持、讀誦」起，經初日分·中日分·後日分以身布施、「以要言之，是經有不可思議、不可稱量、無邊功德」、「荷擔如來」、「若樂小法者，著我見、人見、眾生見、壽者見」，至「在在處處若有此經…以諸華香而散其處」止（第 15 分持經功德分全段）〔行96-101、190-192、261、368-370、497、523〕",
+       "scope": "開場「為何學佛：妄盡還源、般若破妄心」；以世親「一切眾生有真如佛性分」銜接上講「若菩薩心住於法而行布施，如人入闇」；主文自「須菩提！當來之世，若有善男子、善女人，能於此經受持、讀誦」起，經初日分·中日分·後日分以身布施、「以要言之，是經有不可思議、不可稱量、無邊功德」、「荷擔如來」、「若樂小法者，著我見、人見、眾生見、壽者見」，至「在在處處若有此經…以諸華香而散其處」止（第 15 分持經功德分全段）〔行92-99、210-212、270–272、376-380、491–493、513–515〕",
        "has_note": true,
        "has_transcript": true,
        "video_id": "QUnR2541G28",
        "date": "2023-04-29",
        "duration": "1:51:37",
-       "raw": false,
-       "published": "2026-08-03",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "14",
@@ -1904,9 +1974,9 @@
        "video_id": "EC5fC-Hw4_w",
        "date": "2023-05-06",
        "duration": "1:43:41",
-       "raw": false,
-       "published": "2026-08-21",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "15",
@@ -1917,19 +1987,21 @@
        "video_id": "TsfGUVpnM3k",
        "date": "2023-05-13",
        "duration": "2:05:53",
-       "raw": false,
-       "published": "2026-08-21",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "16",
        "title": "《金剛般若波羅蜜經》第16講",
-       "scope": "本講以**世親菩薩（天親）十二分法**科判《金剛經》，進行到**第十分「斷疑分」**〔行56〕。",
+       "scope": "本講以**世親菩薩（天親）十二分法**科判《金剛經》，第16講已進入**第十分「斷疑分」**〔行76〕，講第三疑「大身」與第四疑「菩薩有法可得否」〔行92〕〔行616–622〕。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "ufRzTW_v64g",
        "date": "2023-05-20",
        "duration": "2:00:59",
+       "published": "2026-07-17",
+       "modified": "2026-11-22",
        "raw": false
       },
       {
@@ -1941,9 +2013,9 @@
        "video_id": "iFExnAW5nxU",
        "date": "2023-05-27",
        "duration": "2:27:11",
-       "raw": false,
-       "published": "2026-07-17",
-       "modified": "2026-10-25"
+       "published": "2026-10-25",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "18",
@@ -1954,9 +2026,9 @@
        "video_id": "z8H6mDjRDEw",
        "date": "2023-06-03",
        "duration": "1:40:28",
-       "raw": false,
-       "published": "2026-07-17",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "19",
@@ -1967,9 +2039,9 @@
        "video_id": "nmBAxHkKGyY",
        "date": "2023-06-10",
        "duration": "2:11:36",
-       "raw": false,
-       "published": "2026-07-17",
-       "modified": "2026-10-24"
+       "published": "2026-10-24",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "20",
@@ -1980,9 +2052,9 @@
        "video_id": "8Pqsb8livuw",
        "date": "2023-06-17",
        "duration": "2:28:16",
-       "raw": false,
        "published": "2026-07-17",
-       "modified": "2026-10-05"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "21",
@@ -1993,9 +2065,9 @@
        "video_id": "ane8cjK2tQM",
        "date": "2023-06-24",
        "duration": "2:12:29",
-       "raw": false,
        "published": "2026-10-25",
-       "modified": "2026-10-25"
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "22",
@@ -2006,19 +2078,21 @@
        "video_id": "E4sHGs_ZYJE",
        "date": "2023-07-01",
        "duration": "2:31:20",
-       "raw": false,
-       "published": "2026-07-17",
-       "modified": "2026-11-05"
+       "published": "2026-11-05",
+       "modified": "2026-11-22",
+       "raw": false
       },
       {
        "no": "23",
-       "title": "《金剛經》第23講 圓滿",
-       "scope": "本講釋文骨幹為經文最末段——「一合相 → 四見 → 法相 → 福德較量 → 一切有為法偈 → 流通分」，並以世親菩薩《金剛般若波羅蜜經論》所引**彌勒菩薩偈頌**（T1511）貫串，最後總複習世親十二分科、預告下一部《大乘離文字普光明藏經》。",
+       "title": "《金剛般若波羅蜜經》第23講（圓滿）",
+       "scope": "斷疑分末「若人言佛說我見、人見、眾生見、壽者見」至經末「信受奉行」（世親十二分之第10分末段、第11分不住道分、第12分流通分）；以彌勒偈「世界作微塵」「見我即不見」「二智及三昧」「非有為非離」釋之；再依十二分將全經總複習一遍，並預告下一部《大乘離文字普光明藏經》",
        "has_note": true,
        "has_transcript": true,
        "video_id": "bv2kl4-2AtQ",
        "date": "2023-07-08",
        "duration": "2:13:22",
+       "published": "2026-11-19",
+       "modified": "2026-11-22",
        "raw": false
       }
      ]
@@ -2039,9 +2113,9 @@
        "video_id": "5uKUOHYGtWg",
        "date": "2025-03-01",
        "duration": "3:08:23",
-       "raw": false,
        "published": "2026-09-29",
-       "modified": "2026-09-29"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "02",
@@ -2052,9 +2126,9 @@
        "video_id": "ayt_zne4SR4",
        "date": "2025-03-08",
        "duration": "4:02:37",
-       "raw": false,
        "published": "2026-09-29",
-       "modified": "2026-09-29"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "03",
@@ -2065,9 +2139,9 @@
        "video_id": "TZneDqV_EIg",
        "date": "2025-03-15",
        "duration": "3:13:25",
-       "raw": false,
        "published": "2026-09-29",
-       "modified": "2026-09-29"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "04",
@@ -2078,22 +2152,22 @@
        "video_id": "CSy46nR_iz4",
        "date": "2025-03-22",
        "duration": "3:15:37",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "05",
        "title": "金剛頂瑜伽中發阿耨多羅三藐三菩提心論 05",
-       "scope": "前奏（〔行116〕–〔行940〕）：《法華·普門品》念觀音＝往內念 →〈譬喻品〉舍利弗「真是佛子，從佛口生，從法化生，得佛法分」＝身喜・口喜・意喜義成＝《涅槃》三德祕藏＝真言三密相應 → 顯教的即身成佛（龍女・仁王十千女・達磨）與權實 → 「若人求佛慧」偈與即身成佛三義（理具・加持・顯得）↔ 天台六即 → 三昧耶四戒 → 四種曼荼羅即三密相應（準提・彌陀念佛為例）→ 不空傳 → 脅尊者・摩拏羅二偈；正文（〔行944〕–〔行1200〕）：重誦「初行願者」全段，補講事／理行願菩提心、同體大悲、「不可強度，方便引進」，行願菩提心全部講畢",
+       "scope": "前奏（〔行123〕–〔行853–855〕）：《法華·普門品》念觀音＝往內念 →〈譬喻品〉舍利弗「真是佛子，從佛口生，從法化生，得佛法分」＝身喜・口喜・意喜義成＝《涅槃》三德祕藏＝真言三密相應 → 顯教的即身成佛（龍女・仁王十千女・達磨）與權實 → 「若人求佛慧」偈與即身成佛三義（理具・加持・顯得）↔ 天台六即 → 三昧耶四戒 → 四種曼荼羅即三密相應（準提・彌陀念佛為例）→ 不空傳 → 脅尊者・摩拏羅二偈；正文（〔行857–859〕–〔行1083–1085〕）：重誦「初行願者」全段，補講事／理行願菩提心、同體大悲、「不可強度，方便引進」，行願菩提心全部講畢",
        "has_note": true,
        "has_transcript": true,
        "video_id": "qLZzzEyY9xA",
        "date": "2025-03-29",
        "duration": "3:46:48",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "06",
@@ -2104,87 +2178,87 @@
        "video_id": "hD-wpGCRLwc",
        "date": "2025-04-05",
        "duration": "3:40:49",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-09-30",
+       "raw": false
       },
       {
        "no": "07",
        "title": "金剛頂瑜伽中發阿耨多羅三藐三菩提心論 07",
-       "scope": "前導（〔行103〕–〔行265〕）：僧肇《涅槃無名論》「大患莫若於有身，勞勤莫先於有智」→ 攝心為戒・因戒生定・因定發慧（三即一）→《起信論》正因熏習須佛菩薩善知識為緣（正因・緣因・了因三佛性）；正文（〔行253〕–〔行1031〕）：勝義菩提心後半——重誦外道・二乘段，講「無自性」＝空・不二・無生；二乘之後的**權教菩薩**（「已超三界……經三無數劫難行苦行，然得成佛」「又有眾生發大乘心……斯由所習法散致有次第」）以《壇經》機緣品智常問四乘對照；**真言行人**「如前觀已，復發利益安樂無餘眾生界一切眾生心，以大悲決定……復修瑜伽勝上法，能從凡入佛位者，亦超十地菩薩境界」；誦至「令無退失」；結以瑜伽勝上法：三昧耶戒四戒・三輪身・四曼荼羅",
+       "scope": "前導（〔行109〕–〔行255–257〕）：僧肇《涅槃無名論》「大患莫若於有身，勞勤莫先於有智」→ 攝心為戒・因戒生定・因定發慧（三即一）→《起信論》正因熏習須佛菩薩善知識為緣（正因・緣因・了因三佛性）；正文（〔行241〕–〔行955〕）：勝義菩提心後半——重誦外道・二乘段，講「無自性」＝空・不二・無生；二乘之後的**權教菩薩**（「已超三界……經三無數劫難行苦行，然得成佛」「又有眾生發大乘心……斯由所習法散致有次第」）以《壇經》機緣品智常問四乘對照；**真言行人**「如前觀已，復發利益安樂無餘眾生界一切眾生心，以大悲決定……復修瑜伽勝上法，能從凡入佛位者，亦超十地菩薩境界」；誦至「令無退失」；結以瑜伽勝上法：三昧耶戒四戒・三輪身・四曼荼羅",
        "has_note": true,
        "has_transcript": true,
        "video_id": "Kw39XUv7u1Q",
        "date": "2025-04-12",
        "duration": "3:10:09",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "08",
        "title": "金剛頂瑜伽中發阿耨多羅三藐三菩提心論 08",
-       "scope": "前導（〔行108〕–〔行293〕）：觀經淨業三福「發菩提心，深信因果」→ 三大菩提心配《大日經》「菩提為因，大悲為根，方便為究竟」→ 勝義＝觀一切法無自性（H2O／雙氧水）→ 德山婆子點心公案 → 毗舍浮佛偈・三際求心；正文（〔行295〕–〔行390〕）：誦勝義段「今真言行人，如前觀已……亦超十地菩薩境界。又深知一切法無自性。云何無自性」，逐句講到「亦超十地菩薩境界」；瑜伽勝上法實修（〔行390〕–〔行620〕）：四曼荼羅×三密、臨終阿字觀、阿彌陀 hrīḥ 與上品上生印、即身成佛三義（理具・加持・顯得）；咒語的由來（〔行620〕–〔行876〕）：吠陀→雜阿含→明咒藏・防護藏（雜密）→孔雀明王經→中觀瑜伽入咒（純密）→那爛陀→蓮花生・開元三大士・空海，胎藏界 vs 金剛界；三咒舉例（〔行879〕–〔行1079〕）：楞嚴咒・不動明王與穢跡金剛・大日如來光明真言（毘盧遮那三義、咒的淺・深・秘中深・秘密中深四義）；總結三菩提心（〔行1079〕–〔行1121〕）",
+       "scope": "前導（〔行113〕–〔行304–306〕）：觀經淨業三福「發菩提心，深信因果」→ 三大菩提心配《大日經》「菩提為因，大悲為根，方便為究竟」→ 勝義＝觀一切法無自性（H2O／雙氧水）→ 德山婆子點心公案 → 毗舍浮佛偈・三際求心；正文（〔行306–308〕–〔行392–394〕）：誦勝義段「今真言行人，如前觀已……亦超十地菩薩境界。又深知一切法無自性。云何無自性」，逐句講到「亦超十地菩薩境界」；瑜伽勝上法實修（〔行392–394〕–〔行605–607〕）：四曼荼羅×三密、臨終阿字觀、阿彌陀 hrīḥ 與上品上生印、即身成佛三義（理具・加持・顯得）；咒語的由來（〔行605–607〕–〔行839〕）：吠陀→雜阿含→明咒藏・防護藏（雜密）→孔雀明王經→中觀瑜伽入咒（純密）→那爛陀→蓮花生・開元三大士・空海，胎藏界 vs 金剛界；三咒舉例（〔行839–841〕–〔行1024–1026〕）：楞嚴咒・不動明王與穢跡金剛・大日如來光明真言（毘盧遮那三義、咒的淺・深・秘中深・秘密中深四義）；總結三菩提心（〔行1024–1026〕–〔行1062〕）",
        "has_note": true,
        "has_transcript": true,
        "video_id": "nppnrI5Q8Q8",
        "date": "2025-04-19",
        "duration": "3:33:39",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "09",
        "title": "金剛頂瑜伽中發阿耨多羅三藐三菩提心論 09",
-       "scope": "前導（〔行100〕–〔行636〕）：真言宗在中國的興衰（開元三大士・不空・惠果・會昌毀佛）→ 空海「弘法」與最澄「傳教」・內朝外朝（法與教）→ 蕅益《法海觀瀾》五門（律・教・禪・密・淨）與入壇三條件（嚴持淨戒・發菩提心・解法界理）、三密 → 答出家人來信「持名與三密」：曇鸞與菩提流支、《往生論》五念門、阿彌陀三密修法（上品上生印・南無阿彌陀佛・hrīḥ）、念佛深淺四義、本願 vs 世間願；正文（〔行638〕–〔行1075〕）：複習「今真言行人……又深知一切法無自性」並以《金剛經》印證三菩提心，再誦「云何無自性？前以相說，今以旨陳（CBETA 作『前已指陳』）。夫迷途之法……諸法無相謂虛空相，作是觀已名勝義菩提心」逐句講完；以《解深密經》《成唯識論》《楞伽經》《大乘密嚴經》四部講阿賴耶與如來藏，《釋摩訶衍論》講意根妄執，馬鳴《大莊嚴論經》三事與《妄盡還源觀》四德講「從真起用」；總結行願・勝義二菩提心已講完，船喻三菩提心（〔行1075〕–〔行1088〕）",
+       "scope": "前導（〔行109〕–〔行602–604〕）：真言宗在中國的興衰（開元三大士・不空・惠果・會昌毀佛）→ 空海「弘法」與最澄「傳教」・內朝外朝（法與教）→ 蕅益《法海觀瀾》五門（律・教・禪・密・淨）與入壇三條件（嚴持淨戒・發菩提心・解法界理）、三密 → 答出家人來信「持名與三密」：曇鸞與菩提流支、《往生論》五念門、阿彌陀三密修法（上品上生印・南無阿彌陀佛・hrīḥ）、念佛深淺四義、本願 vs 世間願；正文（〔行604–606〕–〔行987–989〕）：複習「今真言行人……又深知一切法無自性」並以《金剛經》印證三菩提心，再誦「云何無自性？前以相說，今以旨陳（CBETA 作『前已指陳』）。夫迷途之法……諸法無相謂虛空相，作是觀已名勝義菩提心」逐句講完；以《解深密經》《成唯識論》《楞伽經》《大乘密嚴經》四部講阿賴耶與如來藏，《釋摩訶衍論》講意根妄執，馬鳴《大莊嚴論經》三事與《妄盡還源觀》四德講「從真起用」；總結行願・勝義二菩提心已講完，船喻三菩提心（〔行987–989〕–〔行1000〕）",
        "has_note": true,
        "has_transcript": true,
        "video_id": "GIw1VoI5dJs",
        "date": "2025-04-26",
        "duration": "3:21:28",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "10",
        "title": "金剛頂瑜伽中發阿耨多羅三藐三菩提心論 10",
-       "scope": "前導（〔行100〕–〔行303〕）：三大菩提心「一則三」→ 偈「一切法中勝・真言宗最尊・字字真實語・唯菩薩所證・二乘人不說・如來秘密教・演在大乘經」逐句（權實・字相字義・第六識與第八識・覓心不可得）→ 三分鐘複習佛教史（結集→部派→中觀・瑜伽→真言・淨土；那爛陀・義淨・開元三大士・惠果・空海）→ 蕅益入壇三條件・契印如皇帝印璽 → 咒音振動 → 空海《秘藏記》二要（有相入無相・先觀字相次觀字義）與孫堅得傳國璽；正文（〔行303〕–〔行804〕）：誦「如《大毘盧遮那成佛經》云：諸法無相謂虛空相……但具此心者，能轉法輪，自他俱利」，以虛空相為有相入無相之門，插講《金剛經》無「空」字・《道行般若》・玄奘譯「空」、大般若十六空、顯從第六識入・密從第八識入（始覺與本覺）、五方五佛與五智、胎藏中台八葉、金剛界十六大菩薩應十六空；再逐句講「當知一切法空・已悟法本無生・心體自如不見身心・住於寂滅平等究竟真實之智令無退失・妄心若起知而勿隨・妄若息時……以勝義行願為戒・能轉法輪自他俱利」；預告下講《華嚴經》「佛所行處」與《大日經》「菩提為因，大悲為根，方便為究竟」（〔行804〕–〔行811〕）",
+       "scope": "前導（〔行106〕–〔行299–301〕）：三大菩提心「一則三」→ 偈「一切法中勝・真言宗最尊・字字真實語・唯菩薩所證・二乘人不說・如來秘密教・演在大乘經」逐句（權實・字相字義・第六識與第八識・覓心不可得）→ 三分鐘複習佛教史（結集→部派→中觀・瑜伽→真言・淨土；那爛陀・義淨・開元三大士・惠果・空海）→ 蕅益入壇三條件・契印如皇帝印璽 → 咒音振動 → 空海《秘藏記》二要（有相入無相・先觀字相次觀字義）與孫堅得傳國璽；正文（〔行299–301〕–〔行739–741〕）：誦「如《大毘盧遮那成佛經》云：諸法無相謂虛空相……但具此心者，能轉法輪，自他俱利」，以虛空相為有相入無相之門，插講《金剛經》無「空」字・《道行般若》・玄奘譯「空」、大般若十六空、顯從第六識入・密從第八識入（始覺與本覺）、五方五佛與五智、胎藏中台八葉、金剛界十六大菩薩應十六空；再逐句講「當知一切法空・已悟法本無生・心體自如不見身心・住於寂滅平等究竟真實之智令無退失・妄心若起知而勿隨・妄若息時……以勝義行願為戒・能轉法輪自他俱利」；預告下講《華嚴經》「佛所行處」與《大日經》「菩提為因，大悲為根，方便為究竟」（〔行739–741〕–〔行748〕）",
        "has_note": true,
        "has_transcript": true,
        "video_id": "H_KHErbd0dk",
        "date": "2025-05-03",
        "duration": "2:15:51",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "11",
        "title": "金剛頂瑜伽中發阿耨多羅三藐三菩提心論 11",
-       "scope": "前導（〔行84〕–〔行245〕）：《涅槃經》凡有心者悉得菩提 →《金剛經》凡所有相皆是虛妄・不即不離 →《圓覺經》文殊（因地即果覺）・普賢（知幻即離，離幻即覺）・普眼（始知眾生本來成佛）→ 闍夜多尊者犬身五百世；正文複習（〔行245〕–〔行297〕）：金胎二界・勝義段末「住於寂滅……自他俱利」；插講空海《十住心論》十住心全篇（〔行297〕–〔行725〕）；正文逐句（〔行728〕–〔行994〕）：本論引《華嚴經》「悲先慧為主……譬如大山王」・「又准《華嚴經》云：從初地乃至十地，於地地中皆以大悲為主」・《無量壽觀經》「佛心者，大慈悲是」・《涅槃經》「南無純陀，身雖人身，心同佛心」與迦葉讚佛偈「憐愍世間大醫王……是故得名最無上」；勝義菩提心圓滿，「菩提為因，大悲為根，方便為究竟」留待下講（〔行998〕）",
+       "scope": "前導（〔行89〕–〔行216–218〕）：《涅槃經》凡有心者悉得菩提 →《金剛經》凡所有相皆是虛妄・不即不離 →《圓覺經》文殊（因地即果覺）・普賢（知幻即離，離幻即覺）・普眼（始知眾生本來成佛）→ 闍夜多尊者犬身五百世；正文複習（〔行216–218〕–〔行272–274〕）：金胎二界・勝義段末「住於寂滅……自他俱利」；插講空海《十住心論》十住心全篇（〔行272–274〕–〔行702〕）；正文逐句（〔行705–707〕–〔行910–912〕）：本論引《華嚴經》「悲先慧為主……譬如大山王」・「又准《華嚴經》云：從初地乃至十地，於地地中皆以大悲為主」・《無量壽觀經》「佛心者，大慈悲是」・《涅槃經》「南無純陀，身雖人身，心同佛心」與迦葉讚佛偈「憐愍世間大醫王……是故得名最無上」；勝義菩提心圓滿，「菩提為因，大悲為根，方便為究竟」留待下講（〔行914–916〕）",
        "has_note": true,
        "has_transcript": true,
        "video_id": "3tgusy_h0Q0",
        "date": "2025-05-10",
        "duration": "2:46:36",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "12",
        "title": "金剛頂瑜伽中發阿耨多羅三藐三菩提心論 12",
-       "scope": "前導（〔行78〕–〔行255〕）：《佛遺教經》展轉行之・達磨三要（不假外求・即心即佛・放下便得）・《心經》以無所得故・空海「無明客塵・流轉三界・沉溺四生」・《諸法無行經》煩惱即菩提與《法華經》增上慢；正文（〔行257〕–〔行770〕）：勝義段末「菩提為因，大悲為根，方便為究竟」（《大日經》疏種子喻）→ 第三 三摩地段：普賢大菩提心・一切眾生本有薩埵・觀（白）月輪・照見本心・五方佛五智・四波羅蜜・十六大菩薩・三十七尊・月十六分之喻，講至「猶如滿月潔白分明」",
+       "scope": "前導（〔行83〕–〔行235–237〕）：《佛遺教經》展轉行之・達磨三要（不假外求・即心即佛・放下便得）・《心經》以無所得故・空海「無明客塵・流轉三界・沉溺四生」・《諸法無行經》煩惱即菩提與《法華經》增上慢；正文（〔行237–239〕–〔行736–738〕）：勝義段末「菩提為因，大悲為根，方便為究竟」（《大日經》疏種子喻）→ 第三 三摩地段：普賢大菩提心・一切眾生本有薩埵・觀（白）月輪・照見本心・五方佛五智・四波羅蜜・十六大菩薩・三十七尊・月十六分之喻，講至「猶如滿月潔白分明」",
        "has_note": true,
        "has_transcript": true,
        "video_id": "wV7MgDo_Kk8",
        "date": "2025-05-17",
        "duration": "2:25:09",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "13",
@@ -2195,9 +2269,9 @@
        "video_id": "ipIKBGRnaaA",
        "date": "2025-05-24",
        "duration": "2:30:41",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "14",
@@ -2208,9 +2282,9 @@
        "video_id": "jdkYE6DcELE",
        "date": "2025-05-31",
        "duration": "3:19:23",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "15",
@@ -2221,9 +2295,9 @@
        "video_id": "qPxdzzmPdV4",
        "date": "2025-06-07",
        "duration": "2:49:59",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "16",
@@ -2234,9 +2308,9 @@
        "video_id": "ZMPaC6eYytI",
        "date": "2025-06-14",
        "duration": "3:09:41",
-       "raw": false,
        "published": "2026-09-30",
-       "modified": "2026-09-30"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "17",
@@ -2247,9 +2321,9 @@
        "video_id": "CgXISm2lBK0",
        "date": "2025-06-21",
        "duration": "2:46:47",
-       "raw": false,
        "published": "2026-10-01",
-       "modified": "2026-10-01"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "18",
@@ -2260,9 +2334,9 @@
        "video_id": "O33XR1GsjH4",
        "date": "2025-06-28",
        "duration": "2:36:44",
-       "raw": false,
        "published": "2026-10-01",
-       "modified": "2026-10-01"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "19",
@@ -2273,9 +2347,9 @@
        "video_id": "0w_ThoZcKCM",
        "date": "2025-07-05",
        "duration": "1:48:32",
-       "raw": false,
        "published": "2026-10-04",
-       "modified": "2026-10-04"
+       "modified": "2026-11-23",
+       "raw": false
       }
      ]
     },
@@ -2295,9 +2369,9 @@
        "video_id": "6_5j3Dh5mnk",
        "date": "2025-11-08",
        "duration": "3:12:52",
-       "raw": false,
        "published": "2026-09-22",
-       "modified": "2026-09-25"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "02",
@@ -2308,9 +2382,9 @@
        "video_id": "NkTReqGduwo",
        "date": "2025-11-15",
        "duration": "2:54:30",
-       "raw": false,
        "published": "2026-09-25",
-       "modified": "2026-09-25"
+       "modified": "2026-09-25",
+       "raw": false
       },
       {
        "no": "03",
@@ -2321,9 +2395,9 @@
        "video_id": "JHAeQ0bCyaY",
        "date": "2025-11-22",
        "duration": "2:26:52",
-       "raw": false,
        "published": "2026-09-26",
-       "modified": "2026-09-26"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "04",
@@ -2334,9 +2408,9 @@
        "video_id": "8v9E2uem3Xg",
        "date": "2025-11-29",
        "duration": "2:49:29",
-       "raw": false,
        "published": "2026-09-26",
-       "modified": "2026-09-26"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "05",
@@ -2347,9 +2421,9 @@
        "video_id": "CCmGBwq_JRw",
        "date": "2025-12-06",
        "duration": "2:57:37",
-       "raw": false,
        "published": "2026-09-26",
-       "modified": "2026-09-26"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "06",
@@ -2360,9 +2434,9 @@
        "video_id": "nNUn2lnSl1Y",
        "date": "2025-12-13",
        "duration": "2:30:24",
-       "raw": false,
        "published": "2026-09-26",
-       "modified": "2026-09-26"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "07",
@@ -2373,9 +2447,9 @@
        "video_id": "Pwk7PKJZUUU",
        "date": "2025-12-20",
        "duration": "2:38:50",
-       "raw": false,
        "published": "2026-09-26",
-       "modified": "2026-09-26"
+       "modified": "2026-09-26",
+       "raw": false
       },
       {
        "no": "08",
@@ -2386,9 +2460,9 @@
        "video_id": "uT_ssng1k0c",
        "date": "2025-12-27",
        "duration": "3:14:14",
-       "raw": false,
        "published": "2026-09-26",
-       "modified": "2026-09-26"
+       "modified": "2026-09-26",
+       "raw": false
       },
       {
        "no": "09",
@@ -2399,9 +2473,9 @@
        "video_id": "CZ9Sc5HrhdI",
        "date": "2026-01-03",
        "duration": "2:44:26",
-       "raw": false,
        "published": "2026-09-26",
-       "modified": "2026-09-26"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "10",
@@ -2412,9 +2486,9 @@
        "video_id": "IDfVmAy9ZFI",
        "date": "2026-01-10",
        "duration": "3:10:43",
-       "raw": false,
        "published": "2026-09-26",
-       "modified": "2026-09-26"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "11",
@@ -2425,35 +2499,35 @@
        "video_id": "Jzqe4ELgpbU",
        "date": "2026-01-17",
        "duration": "3:19:35",
-       "raw": false,
        "published": "2026-09-27",
-       "modified": "2026-09-27"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "12",
        "title": "佛說觀無量壽佛經 第12講",
-       "scope": "先以觀音頂戴彌陀（報師恩）・勢至頂戴寶瓶（報父母恩）示現淨業三福第一條；略說顯密六觀音與胎藏界諸院；收束第十觀「若欲觀觀世音菩薩當作是觀」至「名為邪觀」，並以《普賢觀經》懺悔偈・《心經》釋「除無數劫生死之罪」、立空觀（奢摩他）與假觀（三摩鉢提・以幻取幻）二門；大勢至＝智慧、理觀事修；解《楞嚴經》四重點與十九字經題、二十五圓通中大勢至念佛圓通章、富樓那「色空相傾相奪」段與起信論三細六粗；宗喀巴三主要道偈・《中論》緣起性空；經文正講第十一觀大勢至菩薩色身觀全段（身・圓光・毛孔・智慧光・天冠・肉髻・行・坐八項，十一位弟子當堂觀述）；《思益經》投足震動魔宮、續法疏鈔「大勢至三德」；都攝六根・舌出耳入的持名念佛法。",
+       "scope": "先以觀音頂戴彌陀（報師恩）・勢至頂戴寶瓶（報父母恩）示現淨業三福第一條；略說顯密六觀音與胎藏界諸院；收束第十觀「若欲觀觀世音菩薩者當作是觀」至「名為邪觀」，並以《普賢觀經》懺悔偈・《心經》釋「除無數劫生死之罪」、立空觀（奢摩他）與假觀（三摩鉢提・以幻取幻）二門；大勢至＝智慧、理觀事修；解《楞嚴經》四重點與十九字經題、二十五圓通中大勢至念佛圓通章、富樓那「空色相傾相奪」段與起信論三細六粗；宗喀巴三主要道偈・《中論》緣起性空；經文正講第十一觀大勢至菩薩色身觀全段（身・圓光・毛孔・智慧光・天冠・肉髻・行・坐八項，十一位弟子當堂觀述）；《思益經》投足震動魔宮、續法疏鈔「大勢至有三德」；都攝六根・舌出耳入的持名念佛法。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "g8gFI3EFOz4",
        "date": "2026-01-24",
        "duration": "3:06:44",
-       "raw": false,
        "published": "2026-09-27",
-       "modified": "2026-09-27"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "13",
        "title": "佛說觀無量壽佛經 第13講",
-       "scope": "以提婆達多一生（嫉妒、五十重刺客、醉象、滾石出佛身血、提婆五法破僧、臨終懺悔、法華授記）引出「懺悔的力量」；圓覺三法＝空假中；真心幻影 vs 妄心妄影、心鏡喻；蕅益六信・第十八願「至心信樂」「唯除誹謗正法」・淨業三福第三福；阿彌陀經讚釋迦・佛三身；中峰國師《三時繫念》「似空合空，如鏡照鏡・萬法是心光」；《楞嚴經》「六解一亡」段配《起信論》三細六粗；經文正講第十二觀（普觀想）全段，並詳解十二部經；第十三觀（雜想觀・丈六像）全段；總結以《壇經》定慧品「真如自性起念」、《維摩經》「能善分別諸法相」、《楞嚴經》六根段（俱生無明・由塵發知・交蘆・知見立知）與毗舍浮佛偈，歸結十三觀皆用六根、顯密入我我入；依正二報觀至此圓滿。",
+       "scope": "以提婆達多一生（嫉妒、五十重刺客、醉象、滾石出佛身血、提婆五法破僧、臨終懺悔、法華授記）引出「懺悔的力量」；圓覺三法＝空假中；真心幻影 vs 妄心妄影、心鏡喻；蕅益六信・第十八願「至心信樂」「唯除誹謗正法」・淨業三福第三福；阿彌陀經讚釋迦・佛三身；中峰國師《三時繫念》「似空合空，如鏡照鏡・萬法是心光」；《楞嚴經》「六解一亡」段配《起信論》三細六粗；經文正講第十二觀（普觀想）全段，並詳解十二部經；第十三觀（雜想觀・丈六像）全段；總結以《壇經》定慧品「真如自性起念」、《維摩經》「善於分別諸法相」（法師語）、《楞嚴經》六根段（俱生無明・由塵發知・交蘆・知見立知）與毗舍浮佛偈，歸結十三觀皆用六根、顯密入我我入；依正二報觀至此圓滿。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "p7BB3KC-urs",
        "date": "2026-01-31",
        "duration": "2:33:56",
-       "raw": false,
        "published": "2026-09-27",
-       "modified": "2026-09-27"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "14",
@@ -2464,9 +2538,9 @@
        "video_id": "MAMkgLkeb8A",
        "date": "2026-02-07",
        "duration": "3:48:20",
-       "raw": false,
        "published": "2026-09-27",
-       "modified": "2026-09-27"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "15",
@@ -2477,9 +2551,9 @@
        "video_id": "TcB7ypoaVT4",
        "date": "2026-02-14",
        "duration": "3:03:54",
-       "raw": false,
        "published": "2026-09-27",
-       "modified": "2026-09-27"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "16",
@@ -2490,9 +2564,9 @@
        "video_id": "svKvZQNn7SI",
        "date": "2026-02-28",
        "duration": "4:02:20",
-       "raw": false,
        "published": "2026-09-27",
-       "modified": "2026-09-27"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "17",
@@ -2503,9 +2577,9 @@
        "video_id": "znCfX4MWtbQ",
        "date": "2026-03-07",
        "duration": "1:58:07",
-       "raw": false,
        "published": "2026-09-27",
-       "modified": "2026-09-27"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "18",
@@ -2516,9 +2590,9 @@
        "video_id": "Q3qZm15pdJk",
        "date": "2026-03-14",
        "duration": "46:40",
-       "raw": false,
        "published": "2026-10-04",
-       "modified": "2026-10-04"
+       "modified": "2026-11-23",
+       "raw": false
       }
      ]
     },
@@ -2538,6 +2612,8 @@
        "video_id": "lSMlLctb1xc",
        "date": "2021-06-23",
        "duration": "2:12:23",
+       "published": "2026-09-27",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -2549,9 +2625,9 @@
        "video_id": "YNfDYjSWxM0",
        "date": "2021-06-30",
        "duration": "2:21:31",
-       "raw": false,
        "published": "2026-09-27",
-       "modified": "2026-09-27"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "03",
@@ -2562,6 +2638,8 @@
        "video_id": "4pb7lTV1hg0",
        "date": "2021-07-06",
        "duration": "2:33:23",
+       "published": "2026-09-27",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -2573,9 +2651,9 @@
        "video_id": "GS-zOH5A6I4",
        "date": "2021-07-13",
        "duration": "2:17:31",
-       "raw": false,
        "published": "2026-09-28",
-       "modified": "2026-09-28"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "05",
@@ -2586,22 +2664,22 @@
        "video_id": "dRHE0-hr9VM",
        "date": "2021-07-21",
        "duration": "2:21:37",
-       "raw": false,
        "published": "2026-09-28",
-       "modified": "2026-09-28"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "06",
        "title": "達磨血脈論06",
-       "scope": "開場（奧運會由來與和平・世間無常・戲論與入法界・大珠「為有緣人」）→ 貫馗法師誦讀「佛不持戒」至「若是智人，不應作如是見解」→ 複習「佛是無作人・佛不是佛」→ 正文「若不見性，擬作無作想」「先須見性，然後息緣慮」「撥無因果，妄言本空」（真空妙有・〈證道歌〉豁達空・百丈野狐・永嘉「惺惺寂寂」）→ 五問之第一問（色身無常，云何不見本心）、第二問（作夢・此身即法身・未曾有生死）→「不生不滅……取不得、捨不得」（插講廓庵〈十牛圖〉・打佛七・阿彌陀佛＝本心）",
+       "scope": "開場（奧運會由來與和平・世間無常・戲論與入法界・大珠著論「讓有緣人能夠開悟」）→ 貫馗法師誦讀「佛不持戒」至「若是智人，不應作如是見解」→ 複習「佛是無作人・佛不是佛」→ 正文「若不見性，擬作無作想」「先須見性，然後息緣慮」「撥無因果，妄言本空」（真空妙有・〈證道歌〉豁達空・百丈野狐・永嘉「惺惺寂寂」）→ 五問之第一問（色身無常，云何不見本心）、第二問（作夢・此身即法身・未曾有生死）→「不生不滅……取不得、捨不得」（插講廓庵〈十牛圖〉・打佛七・阿彌陀佛＝本心）",
        "has_note": true,
        "has_transcript": true,
        "video_id": "evIXcfTNGK8",
        "date": "2021-07-27",
        "duration": "2:07:19",
-       "raw": false,
        "published": "2026-09-28",
-       "modified": "2026-09-28"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "07",
@@ -2612,6 +2690,8 @@
        "video_id": "w-HJSq3Ni90",
        "date": "2021-08-04",
        "duration": "2:02:16",
+       "published": "2026-09-28",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -2623,9 +2703,9 @@
        "video_id": "MI9EBDlg6Zg",
        "date": "2021-08-11",
        "duration": "2:19:56",
-       "raw": false,
        "published": "2026-09-28",
-       "modified": "2026-09-28"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "09",
@@ -2636,9 +2716,9 @@
        "video_id": "IKVbkBg5_ps",
        "date": "2021-08-18",
        "duration": "2:10:06",
-       "raw": false,
        "published": "2026-09-28",
-       "modified": "2026-09-28"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "10",
@@ -2649,9 +2729,9 @@
        "video_id": "2SV2r9PgenY",
        "date": "2021-08-26",
        "duration": "2:13:47",
-       "raw": false,
        "published": "2026-09-28",
-       "modified": "2026-09-28"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "11",
@@ -2662,9 +2742,9 @@
        "video_id": "3U11gemd7wo",
        "date": "2021-09-01",
        "duration": "2:22:28",
-       "raw": false,
        "published": "2026-09-28",
-       "modified": "2026-09-28"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "12",
@@ -2675,22 +2755,22 @@
        "video_id": "nRrBodoFqZ4",
        "date": "2021-09-08",
        "duration": "2:09:10",
-       "raw": false,
        "published": "2026-09-28",
-       "modified": "2026-09-28"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "13",
        "title": "血脈論13",
-       "scope": "開場（第一次坐著講經・了生死先開悟・眾生本成佛・自性清淨圓明體・《金光明經》佛真法身應物現形・性起繁興法爾止）→ 世間法不能解決問題（明朝廢宰相・法會延壽無效）→ 夾山和尚聞偈入山保任・南朝三大士（達磨・寶誌・傅大士）・儒佛之別・傅大士「夜夜抱佛眠」偈 → 師姐誦「貧窮困苦皆從妄想生」至「何用驅驅廣求名利」→ 如是我聞法身常在・不拜色身・韋馱護法與關公護教（隆中對）・法會無用・龐居士・《壇經》但用此心直了成佛・二十二祖「心隨萬境轉」偈 → 逐句解「初發心人神識總不定」至「神識轉昏」（夢境・攀緣心・各各不相知・三昧水懺七種心・《圓覺經》文殊章・夢見光明與不可向人說・永嘉「吾早年來積學問」）→ 「一切眾生但見本性，餘習頓滅」至「不假用功」",
+       "scope": "開場（第一次坐著講經・了生死先開悟・眾生本成佛・自性清淨圓明體・《金光明經》佛真法身應物現形・性起繁興法爾止）→ 世間法不能解決問題（明朝廢宰相・法會延壽無效）→ 夾山和尚聞偈入山保任・南朝三大士（達磨・寶誌・傅大士）・儒佛之別・傅大士「夜夜抱佛眠」偈 → 師姐誦「貧窮困苦皆從妄想生」至「何用驅驅廣求名利」→ 如是我聞法身常在・不拜色身・韋馱護法與關公護教（隆中對）・法會無用・龐居士・《壇經》但用此心直了成佛・二十二祖「心隨萬境轉」偈 → 逐句解「初發心人神識總不定」至「神識轉昏」（夢境・攀緣心・各各不相知・三昧水懺七種心・《圓覺經》文殊章・夢見光明與不可向人說・永嘉〈證道歌〉「我曾早年積學問」）→ 「一切眾生但見本性，餘習頓滅」至「不假用功」",
        "has_note": true,
        "has_transcript": true,
        "video_id": "o_RV_lsqocY",
        "date": "2021-09-15",
        "duration": "2:42:11",
-       "raw": false,
        "published": "2026-09-29",
-       "modified": "2026-09-29"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "14",
@@ -2701,9 +2781,9 @@
        "video_id": "oaW2dQaG3ow",
        "date": "2021-09-23",
        "duration": "2:26:34",
-       "raw": false,
        "published": "2026-09-29",
-       "modified": "2026-09-29"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "15",
@@ -2714,6 +2794,8 @@
        "video_id": "c_zl4lk3IYM",
        "date": "2021-10-01",
        "duration": "2:53:55",
+       "published": "2026-09-29",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
@@ -2725,9 +2807,9 @@
        "video_id": "MhRlmTg0hrc",
        "date": "2021-10-06",
        "duration": "2:33:07",
-       "raw": false,
        "published": "2026-09-29",
-       "modified": "2026-09-29"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "17",
@@ -2738,9 +2820,9 @@
        "video_id": "RqzJTeZhKwU",
        "date": "2021-10-12",
        "duration": "2:46:59",
-       "raw": false,
        "published": "2026-09-29",
-       "modified": "2026-09-29"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "18",
@@ -2751,9 +2833,9 @@
        "video_id": "B4SHCbxDGlE",
        "date": "2021-10-19",
        "duration": "2:44:49",
-       "raw": false,
        "published": "2026-09-29",
-       "modified": "2026-09-29"
+       "modified": "2026-11-23",
+       "raw": false
       }
      ]
     },
@@ -2765,6 +2847,17 @@
      "home_sutra_id": "T2007",
      "lessons": [
       {
+       "no": "01",
+       "title": "南宗頓教最上大乘摩訶般若波羅蜜經 01(六祖壇經 敦煌本 )",
+       "scope": "",
+       "has_note": false,
+       "has_transcript": true,
+       "raw": true,
+       "video_id": "3yK8UgYlMj4",
+       "date": "2026-06-27",
+       "duration": "3:31:20"
+      },
+      {
        "no": "02",
        "title": "六祖壇經（敦煌本） 第02講",
        "scope": "第二講：六祖的授記與示現（風幡、不識字、和光同塵）；講者所述《華嚴經》迴向品菩薩四特質；一花五葉與六祖五大弟子；南陽慧忠持《心經》；不二念佛；壇經經題與序分（大梵寺昇高座、刺史韋據、法海集記）；「善知識！淨心念摩訶般若波羅蜜法」的斷句、第七識與穢跡金剛咒；曹溪本「菩提自性，本來清淨，但用此心，直了成佛」；那爛陀三系判「此心」；「心本無生因境有」與臨終開示",
@@ -2773,9 +2866,9 @@
        "video_id": "Jjo479pftDc",
        "date": "2026-07-04",
        "duration": "2:30:37",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "03",
@@ -2786,9 +2879,9 @@
        "video_id": "GvBfvk--z0E",
        "date": "2026-07-11",
        "duration": "3:29:40",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "04",
@@ -2799,9 +2892,9 @@
        "video_id": "3K4ErcEWMqo",
        "date": "2026-07-18",
        "duration": "3:47:15",
-       "raw": false,
        "published": null,
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "05",
@@ -2812,9 +2905,9 @@
        "video_id": "ZRDgws6_g0Y",
        "date": "2026-07-25",
        "duration": "3:32:02",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "06",
@@ -2825,9 +2918,9 @@
        "video_id": "7ZZnHKnq-kU",
        "date": "2026-08-01",
        "duration": "3:31:25",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "07",
@@ -2838,9 +2931,9 @@
        "video_id": "1yLVT4ck5CE",
        "date": "2026-08-08",
        "duration": "3:06:39",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "08",
@@ -2851,9 +2944,9 @@
        "video_id": "GdToiaowwsg",
        "date": "2026-08-15",
        "duration": "3:12:32",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "09",
@@ -2864,9 +2957,9 @@
        "video_id": "Q1Lf9gepvzM",
        "date": "2026-08-22",
        "duration": "2:54:22",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "10",
@@ -2877,9 +2970,9 @@
        "video_id": "uNuzw-aWBcY",
        "date": "2026-08-29",
        "duration": "3:21:38",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "11",
@@ -2890,9 +2983,9 @@
        "video_id": "e5mPjATlzBk",
        "date": "2026-09-05",
        "duration": "3:17:51",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "12",
@@ -2903,9 +2996,9 @@
        "video_id": "v7HX9vDHSGU",
        "date": "2026-09-12",
        "duration": "3:08:33",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "13",
@@ -2916,9 +3009,9 @@
        "video_id": "YyFNawE0yH0",
        "date": "2026-09-19",
        "duration": "2:47:12",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "14",
@@ -2929,9 +3022,9 @@
        "video_id": "lOUeXWGqX-k",
        "date": "2026-09-26",
        "duration": "3:49:57",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "15",
@@ -2942,9 +3035,20 @@
        "video_id": "eut_V6KOOBw",
        "date": "2026-10-03",
        "duration": "3:33:01",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
+      },
+      {
+       "no": "16",
+       "title": "南宗頓教最上大乘摩訶般若波羅蜜經 16 (六祖壇經 敦煌本)",
+       "scope": "",
+       "has_note": false,
+       "has_transcript": true,
+       "raw": true,
+       "video_id": "ewAF9PAwycI",
+       "date": "2026-10-10",
+       "duration": "3:27:47"
       },
       {
        "no": "17",
@@ -2955,9 +3059,53 @@
        "video_id": "RXdsZPEFYgs",
        "date": "2026-10-17",
        "duration": "3:29:39",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
+      },
+      {
+       "no": "18",
+       "title": "南宗頓教最上大乘摩訶般若波羅蜜經 18 (六祖壇經 敦煌本)",
+       "scope": "",
+       "has_note": false,
+       "has_transcript": true,
+       "raw": true,
+       "video_id": "bxcP6uIUNYU",
+       "date": "2026-10-24",
+       "duration": "3:08:03"
+      },
+      {
+       "no": "19",
+       "title": "南宗頓教最上大乘摩訶般若波羅蜜經 19 (六祖壇經 敦煌本)",
+       "scope": "",
+       "has_note": false,
+       "has_transcript": true,
+       "raw": true,
+       "video_id": "w5JvMUW-oG0",
+       "date": "2026-10-31",
+       "duration": "3:20:13"
+      },
+      {
+       "no": "20",
+       "title": "南宗頓教最上大乘摩訶般若波羅蜜經 20 (六祖壇經 敦煌本)",
+       "scope": "",
+       "has_note": false,
+       "has_transcript": true,
+       "raw": true,
+       "video_id": "YdcIcsfLrIQ",
+       "date": "2026-11-07",
+       "duration": "3:45:35"
+      },
+      {
+       "no": "21",
+       "title": "南宗頓教最上大乘摩訶般若波羅蜜經 21 (六祖壇經 敦煌本)",
+       "scope": "",
+       "has_note": false,
+       "has_transcript": true,
+       "raw": true,
+       "video_id": "19VVvaKbqcI",
+       "date": "2026-11-14",
+       "duration": "4:01:49"
       }
      ]
     },
@@ -2977,9 +3125,9 @@
        "video_id": "dWXfGgMFwQ8",
        "date": "2025-08-09",
        "duration": "3:08:32",
-       "raw": false,
        "published": "2026-09-20",
-       "modified": "2026-09-25"
+       "modified": "2026-11-24",
+       "raw": false
       },
       {
        "no": "02",
@@ -2990,9 +3138,9 @@
        "video_id": "raq4zk_cbV0",
        "date": "2025-08-16",
        "duration": "3:14:45",
-       "raw": false,
        "published": "2026-09-20",
-       "modified": "2026-09-25"
+       "modified": "2026-11-24",
+       "raw": false
       },
       {
        "no": "03",
@@ -3003,9 +3151,9 @@
        "video_id": "Fb5RTvYdQRg",
        "date": "2025-08-23",
        "duration": "3:09:50",
-       "raw": false,
        "published": "2026-09-20",
-       "modified": "2026-09-25"
+       "modified": "2026-11-24",
+       "raw": false
       },
       {
        "no": "04",
@@ -3016,9 +3164,9 @@
        "video_id": "sd_RFDzcG9g",
        "date": "2025-08-30",
        "duration": "3:07:06",
-       "raw": false,
        "published": "2026-09-21",
-       "modified": "2026-09-25"
+       "modified": "2026-11-24",
+       "raw": false
       },
       {
        "no": "05",
@@ -3029,6 +3177,8 @@
        "video_id": "8ZcvaesdBB8",
        "date": "2025-09-06",
        "duration": "3:13:57",
+       "published": "2026-09-21",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
@@ -3040,17 +3190,21 @@
        "video_id": "girjZl0jGj8",
        "date": "2025-09-13",
        "duration": "3:19:39",
+       "published": "2026-09-21",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
        "no": "07",
        "title": "最上乘論 第07講",
-       "scope": "先複習十四問後四問「守心」的四重理由（涅槃之體・入道要門・十二部經之宗・三世諸佛之祖），以《法華經》七喻、《永嘉證道歌》摩尼珠句貫串；再以不空大師三句話「菩提為因・大悲為根本・方便為究竟」引出三種菩提心（行願・勝義・三摩地），插入《大寶積經》「四法失菩提心」與玄奘大師、鳩摩羅什的史傳；最後用近全講一半的篇幅逐句細講《最上乘論》第十問下半段「若有初心學坐禪者⋯即自見佛性也」，並教授四種實修禪觀法（法相宗知而不隨・四祖智觀如來禪・五祖日輪觀・真言宗月輪觀），以憨山大師夢遊記與四祖道信吉州退敵公案印證",
+       "scope": "先總複習「守心四義」（涅槃之根本・入道之要門・十二部經之宗・三世諸佛之祖）與法華七喻、金剛頂三種菩提心、《大寶積經》四法失菩提心；再誦讀論文「若有初心學坐禪者，依觀無量壽經端坐正念」至「若能自識本心，念念磨鍊莫住者即自見佛性也」，並以此段為綱，詳授賢首禪苑四種實修觀法（唯識無境・知而不隨／四祖智觀／五祖日落觀／真言三摩地觀）",
        "has_note": true,
        "has_transcript": true,
        "video_id": "wRFCKeE9_eY",
        "date": "2025-09-20",
        "duration": "3:47:03",
+       "published": "2026-11-19",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
@@ -3062,28 +3216,34 @@
        "video_id": "lQzAAmhHtLU",
        "date": "2025-09-27",
        "duration": "3:10:47",
+       "published": "2026-09-21",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
        "no": "09",
        "title": "最上乘論 第09講",
-       "scope": "複習第一至十一問架構後，正式開講第十二問「云何是我所心滅」全文——以《涅槃經》虛空喻、提婆達多授記公案、《景德傳燈錄》青原行思見六祖公案、《楞伽經》四門五法架構、《文殊般若經》與《六祖壇經》之「一行三昧」層層展開；並讀誦、初步詮釋第十三問「諸行人求真常寂者」的提問全文（五祖之答留待第十講）。穿插《圓覺經》如來因地修圓覺者一段（四度誦讀）、《心經》全文、《金剛經》忍辱波羅蜜歌利王段、善星比丘公案",
+       "scope": "複習第一至十一問架構後，正式開講第十二問「云何是我所心滅」全文——以《涅槃經》虛空喻、提婆達多授記公案、《景德傳燈錄》青原行思見六祖公案、《楞伽經》四門五法架構、《文殊般若經》與《六祖壇經》之「一行三昧」層層展開；並讀誦、初步詮釋第十三問「諸行人求真常寂者」的提問全文（五祖之答留待第十講）。穿插《圓覺經》如來因地修圓覺者一段（四度誦讀）、《心經》首句與「無苦集滅道」至「大神咒」段、《金剛經》如夢幻泡影偈與四相、善星比丘公案",
        "has_note": true,
        "has_transcript": true,
        "video_id": "HXxadxCK9r0",
        "date": "2025-10-04",
        "duration": "2:56:31",
+       "published": "2026-09-21",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
        "no": "10",
        "title": "最上乘論 第10講",
-       "scope": "以《六祖壇經》「何期自性」五句貫串開篇，總說大乘《起信論》一心開二門（真如門／生滅門）及體相用三大，並列出五祖教授的四種禪觀（知而不隨的唯識觀、落日觀、月輪觀、四祖智觀）；正式進入五祖對第十三問「諸行人求真常寂者」的答語全文——從「答曰。會是信心具足志願成就」逐句詳解至「究竟不受生死之身」，其中援引《涅槃經》第三卷金剛身品（迦葉問佛身）全段作為核心闡釋，並以《金剛經》三心不可得、《心經》五蘊皆空收攝，最後以八風考驗印證修行成就。",
+       "scope": "以《六祖壇經》「何期自性」五句貫串開篇，總說大乘《起信論》一心開二門（真如門／生滅門）及體相用三大，並列出五祖教授的四種禪觀（知而不隨的唯識觀、落日觀、月輪觀、四祖智觀）；正式進入五祖對第十三問「諸行人求真常寂者」的答語全文——從「答曰。會是信心具足志願成就」逐句詳解至「究竟不受生死之身」，其中援引《涅槃經》第三卷金剛身品開頭「迦葉問佛身」一段作為核心闡釋，並以《金剛經》三心不可得、《心經》色空不異收攝，最後以八風考驗印證修行成就。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "krZjIOX7Jms",
        "date": "2025-10-11",
        "duration": "3:00:21",
+       "published": "2026-09-21",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
@@ -3095,9 +3255,9 @@
        "video_id": "-wOKlfFkFgQ",
        "date": "2025-10-18",
        "duration": "3:16:48",
-       "raw": false,
        "published": "2026-09-21",
-       "modified": "2026-09-25"
+       "modified": "2026-11-24",
+       "raw": false
       }
      ]
     },
@@ -3111,15 +3271,15 @@
       {
        "no": "01",
        "title": "佛說阿彌陀經 第01講",
-       "scope": "全經開題／緒論——淨土三經／五經一論的架構、譯者鳩摩羅什的一生、慧遠大師與東林蓮社、《大乘大義章》夢中見佛／定中見佛問答、自性彌陀・唯心淨土的總綱；經文本身僅略提及「七寶池，八功德水」與「不可以少善根、福德因緣，得生彼國」，尚未逐句進入經文本文",
+       "scope": "全經開題／緒論——淨土三經／五經一論的架構、譯者鳩摩羅什的一生、慧遠大師與東林蓮社、《大乘大義章》夢中見佛／定中見佛問答、自性彌陀・唯心淨土的總綱；經文本身僅點名「八功德水、七寶池」與「不可以少善根、福德、因緣得生彼國」，尚未逐句進入經文本文",
        "has_note": true,
        "has_transcript": true,
        "video_id": "5eQH7284YNo",
        "date": "2022-01-22",
        "duration": "2:23:39",
-       "raw": false,
        "published": "2026-09-21",
-       "modified": "2026-09-25"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "02",
@@ -3130,113 +3290,125 @@
        "video_id": "eU7JnucqBRk",
        "date": "2022-01-29",
        "duration": "2:44:48",
-       "raw": false,
        "published": "2026-09-22",
-       "modified": "2026-09-25"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "03",
        "title": "佛說阿彌陀經 第03講",
-       "scope": "承接上講序分之末，正式進入正宗分——「從是西方過十萬億佛土，有世界名曰極樂，其土有佛，號阿彌陀，今現在說法」至「其國眾生無有眾苦，但受諸樂，故名極樂」的逐句闡釋；穿插開講前的四十八願（善導大師五願）概說、法藏比丘本願教理、三轉法輪與淨土五經一論法門對照，最後以「執持名號」四字為全講重心——從唐密嗡阿吽三字咒、阿字本無生講到事一心・理一心・三學（戒定慧）圓具，並帶出「若有善男子、善女人，聞說阿彌陀佛，執持名號……一心不亂」一段核心經文；終場以極樂梵文 Sumati 詞源、三苦（苦苦・壞苦・行苦）與法界超越世界之義作結",
+       "scope": "承接上講序分之末，正式進入正宗分——師姐誦讀「爾時，佛告長老舍利弗：從是西方過十萬億佛土，有世界名曰極樂，其土有佛，號阿彌陀，今現在說法。舍利弗！彼土何故名為極樂？其國眾生無有眾苦，但受諸樂，故名極樂」一段並逐句闡釋；穿插開講前的四十八願（善導大師五願）概說、法藏比丘本願教理、三轉法輪與淨土五經一論法門對照，以「執持名號」四字為全講重心——從唐密嗡阿吽三字咒、阿字本無生講到都攝六根、事一心・理一心・三學（戒定慧）圓具；終場以極樂梵文 Sumati、三苦（苦苦・壞苦・行苦）與法界超越世界之義作結",
        "has_note": true,
        "has_transcript": true,
        "video_id": "FQPsaitSGg0",
        "date": "2022-02-05",
        "duration": "2:10:33",
-       "raw": false,
        "published": "2026-09-22",
-       "modified": "2026-09-25"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "04",
        "title": "佛說阿彌陀經 第04講",
-       "scope": "以永明延壽禪師「四料簡」（無禪無淨土／有禪無淨土／無禪有淨土／有禪有淨土）貫串淨土十三祖法脈與善導大師遺教作為前半講前導，後半講正式請師姐誦讀經文，逐句講解「爾時，佛告長老舍利弗：從是西方過十萬億佛土，有世界名曰極樂」至「彼佛有無量無邊聲聞弟子，皆阿羅漢，非是算數之所能知」一段依正莊嚴經文（七寶池・八功德水・黃金為地・天樂曼陀羅華・眾鳥說法・名號二義由來）；終場以慧誠師兄念佛往生、燒出舍利花的真實示現作結。",
+       "scope": "以永明延壽禪師「四料簡」（無禪無淨土／有禪無淨土／無禪有淨土／有禪有淨土）貫串淨土十三祖法脈與善導大師遺教作為前半講前導，後半講請師姐誦讀經文，從「爾時，佛告長老舍利弗：從是西方過十萬億佛土，有世界名曰極樂」誦至「即以食時，還到本國，飯食經行。舍利弗！極樂國土成就如是功德莊嚴」，逐句講解此段依正莊嚴經文（七重欄楯・七寶池・八功德水・黃金為地・天樂曼陀羅華・供養他方十萬億佛），法師自言「到這邊主文已經一半了」；終場以慧誠師兄念佛往生、燒出舍利花的真實示現作結。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "glNlGF7mYxM",
        "date": "2022-02-12",
        "duration": "1:57:25",
+       "published": "2026-09-22",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
        "no": "05",
        "title": "佛說阿彌陀經 第05講",
-       "scope": "前半講（〔行83-341〕）以中峰國師《三時繫念》第一時「世界何緣稱極樂，只因眾苦不能侵」一段開示為引，貫串真如自性、無念為宗、海印森羅、法藏比丘本願等教理鋪陳；後半講（〔行341-913〕）正式請師姐誦經，逐句講解依報三段（七寶樓閣蓮花、天樂黃金曼陀羅華、眾鳥說法）成就如是功德莊嚴，並以《大智度論》四悉檀貫串依報何以先說世間珍寶；再由福報與功德之辨過渡到正報「彼佛何故號阿彌陀」名號二義（無量光・無量壽），末段比較淨土三經方法之異同（十六觀・發菩提心一向專念・信願持名）並列出淨土十三祖法脈，以「今天大概是阿彌陀經的一半了」作結。",
+       "scope": "前半講（〔行86-233〕）以中峰國師《三時繫念》第一時「世界何緣稱極樂，只因眾苦不能侵」一段開示為引，貫串真如自性、無念為宗、海印森羅、法藏比丘本願等教理鋪陳；後半講（〔行231-616〕）正式請師姐誦經，逐句講解依報三段（七寶樓閣蓮花、天樂黃金曼陀羅華、眾鳥說法）成就如是功德莊嚴，並以《大智度論》四悉檀貫串依報何以先說世間珍寶；再由福報與功德之辨過渡到正報「彼佛何故號阿彌陀」名號二義（無量光・無量壽），末段比較淨土三經方法之異同（十六觀・發菩提心一向專念・信願持名）並列出淨土十三祖法脈，以「今天大概是阿彌陀經的一半了」作結。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "JINFYWomLfI",
        "date": "2022-02-19",
        "duration": "2:14:20",
+       "published": "2026-09-22",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
        "no": "06",
        "title": "佛說阿彌陀經 第06講",
-       "scope": "前三分之一（〔行96-374〕）延續上一講依報，以《大智度論》四悉檀（世界・為人・對治・第一義）收束依報教理，中間插入《金剛經》五眼公案、COVID-19／兩次世界大戰之常與無常，以及法師自身罹癌示現、《彌陀要解》空假中一心三觀；〔行375〕起正式請師姐誦經進入正報，讀「彼佛何故號阿彌陀」至六方佛讚嘆（東方段，讀到「好先到這裡」）；後三分之二（〔行444-1109〕）以父親閩南語偈「日亦夢夜也夢」起，逐層講解阿彌陀名號二義（無量光橫遍十方・無量壽豎窮三際）、因德而名、《無量壽經》四十八願中善導大師所立五願核心（必生願・光明無量願・壽命無量願・諸佛讚嘆願・十念必生願），以蕅益大師六信（信自・信他・信因・信果・信事・信理）貫串全講，末以持名入本心、一心不亂與迴向作結。",
+       "scope": "前三分之一（〔行104-287〕）延續上一講依報，以《大智度論》四悉檀（世界・為人・對治・第一義）收束依報教理，中間插入《金剛經》五眼公案、COVID-19／兩次世界大戰之常與無常，以及法師自身罹癌示現、《彌陀要解》空假中一心三觀；〔行287〕起正式請師姐誦經進入正報，讀「彼佛何故號阿彌陀」至六方佛讚嘆（東方段，讀到「好先到這裡」）；後三分之二（〔行299-905〕）以父親閩南語偈「日亦夢夜也夢」起，逐層講解阿彌陀名號二義（無量光橫遍十方・無量壽豎窮三際）、因德而名、《無量壽經》四十八願中善導大師所立五願核心（必生願・光明無量願・壽命無量願・諸佛讚嘆願・十念必生願），以蕅益大師六信（信自・信他・信因・信果・信事・信理）貫串全講，末以持名入本心、一心不亂與迴向作結。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "hdgyWxHIPsY",
        "date": "2022-02-26",
        "duration": "3:07:50",
+       "published": "2026-09-22",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
        "no": "07",
        "title": "佛說阿彌陀經 第07講",
-       "scope": "開場複習依報收尾與四智本願，插入《楞嚴經》虛空喻、摩尼寶珠《法華經》譬喻品；以蕅益大師六信（信自・信他・信因信果・信事信理）為主軸展開，中間插入《永嘉證道歌》兩段、八難詳解、誹謗正法不可往生之教理；〔行359〕起正式請師姐誦經，全篇覆誦正報名號段、阿鞞跋致段、不可少善根福德因緣段、執持名號一心不亂段；後半段以《悲華經》無諍念王・寶海梵志、《法華經》大通智勝王十六王子、《大乘方廣總持經》法比丘・淨命比丘三則因果故事，說明阿彌陀佛與釋迦牟尼佛累劫因緣；再以曇鸞大師《往生論註》、黃金金礦譬喻、阿鞞跋致三不退、永明延壽禪師《宗鏡錄》《萬善同歸集》四料簡、道綽大師《大集經》三時期說、《大集月藏經》五個五百年說貫串末法淨土成就之理，末以「不可少善根福德因緣」三種解釋、南無如意釋義、執持名號一心不亂作結。",
+       "scope": "正宗分後半——先以蕅益《彌陀要解》六信・正願・正行總攝信願行三資糧，再誦講「彼佛何故號阿彌陀」至「聞說阿彌陀佛，執持名號，若一日…若七日」（一心不亂・心不顛倒留待下講）",
        "has_note": true,
        "has_transcript": true,
        "video_id": "k5Y-ENdErgs",
        "date": "2022-03-05",
        "duration": "2:47:10",
+       "published": "2026-11-19",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
        "no": "08",
        "title": "佛說阿彌陀經 第08講",
-       "scope": "承接第07講依報收尾，法師先以蕅益大師「萬法無自性，盡從心轉」、《金剛經》即非是名的邏輯（手指喻）、龍樹菩薩隱身宮中遇劫求道公案作前導；〔行311〕起正式請師姐誦讀正宗分正報全文（名號段・阿鞞跋致段・不可少善根福德因緣段・執持名號一心不亂段），此後全篇以蕅益大師《彌陀要解》一心不亂之義為骨幹，逐句展開四土辨析、蕅益六信、信願行三資糧、三了知；中段插入含元殿公案、《涅槃經》文成印壞・蘇美楔形文字喻、廣欽老和尚往生示現、鏡子現十層樓閣喻、中峰國師《三時繫念》第二時、張善和屠夫臨終念佛往生公案；後段法師自述九歲立志出家因緣（日月禪寺・陳國恩捐款），並引述淨空老和尚三位老師（方東美教授・章嘉活佛・廣欽老和尚）說明看破放下；末段詳述一心不亂之具體修法：玄奘大師「繫念不亂」譯詞・印光大師十念法・法師自身呼吸念佛法與穢跡金剛咒持誦經驗，以《楞嚴經》大勢至菩薩念佛圓通章都攝六根作結；〔行1027-1029〕正宗分正式圓滿，預告下一講進入流通分。",
+       "scope": "承接第07講依報收尾，法師先以蕅益大師「萬法無自性，盡從心轉」、《金剛經》即非是名的邏輯（手指喻）、龍樹菩薩隱身宮中遇劫求道公案作前導；〔行286〕起正式請師姐誦讀正宗分正報全文（名號段・阿鞞跋致段・不可少善根福德因緣段・執持名號一心不亂段），此後全篇以蕅益大師《彌陀要解》一心不亂之義為骨幹，逐句展開四土辨析、蕅益六信、信願行三資糧、三了知；中段插入含元殿公案、《涅槃經》文成印壞・蘇美楔形文字喻、廣欽老和尚往生示現、鏡子現十層樓閣喻、中峰國師《三時繫念》第二時、張善和屠夫臨終念佛往生公案；後段法師自述九歲立志出家因緣（日月禪寺・陳國恩捐款），並引述淨空老和尚三位老師（方東美教授・章嘉活佛・廣欽老和尚）說明看破放下；末段詳述一心不亂之具體修法：玄奘大師「繫念不亂」譯詞・印光大師十念法・法師自身呼吸念佛法與穢跡金剛咒持誦經驗，以《楞嚴經》大勢至菩薩念佛圓通章都攝六根作結；〔行888-892〕正宗分正式圓滿，預告下一講進入流通分。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "b1fKdUHwoAI",
        "date": "2022-03-13",
        "duration": "2:51:07",
-       "raw": false,
        "published": "2026-09-22",
-       "modified": "2026-09-25"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "09",
        "title": "佛說阿彌陀經 第09講",
-       "scope": "正宗分收尾（〔行94-376〕）——以《楞嚴經》文殊菩薩選圓通偈「此方真教體，清淨在音聞」、《觀佛三昧海經》窮人寶瓶喻（印心不壞）、《楞嚴經》大勢至菩薩念佛圓通章三重舉例（一人專念一人專忘・母子相憶・都攝六根）作結，〔行374-376〕正宗分正式圓滿，轉入流通分；此後全篇（〔行378-967〕）是流通分六方佛段的完整開展：先請師姐誦讀鳩摩羅什意譯的六方佛全文，法師再以唐密五方五佛（金剛界曼荼羅）、毘盧遮那內心自受用成於五智為骨幹，逐尊解釋六方佛名號皆是自性功德的異名——這是全系列第一次把阿彌陀經與唐密教理正面會通的一講。",
+       "scope": "補足正宗分結文「一心不亂・心不顛倒」（以《楞嚴經》大勢至念佛圓通章收束正宗分），進入流通分——誦講六方佛「出廣長舌相…一切諸佛所護念經」全段，並以《彌陀疏鈔》五方五佛五智、唐密金剛界曼荼羅會通十方諸佛同源毘盧遮那",
        "has_note": true,
        "has_transcript": true,
        "video_id": "SgNrlolISX4",
        "date": "2022-03-19",
        "duration": "2:43:06",
+       "published": "2026-11-19",
+       "modified": "2026-11-23",
        "raw": false
       },
       {
        "no": "10",
        "title": "佛說阿彌陀經 第10講",
-       "scope": "延續第09講進入的流通分，法師先複習五智／五方佛理論架構（毘盧遮那法界體性智流出四智，東方阿閦佛即大圓鏡智）〔行96-142〕，再請師姐與自己反覆誦讀六方佛流通分全文並逐段複述〔行396-742〕，中段以興教大師向日本天皇說法（阿彌陀＝毘盧遮那）、密勒日巴與馬爾巴、慧遠大師與道安法師東林寺結社等多則公案穿插；後半段（〔行953-1467〕）整段轉入「什麼是菩提心」的專題──依序引毘婆沙論、大般若經射箭喻、《六祖壇經》、《華嚴經》、不空譯《發菩提心論》、《大日經》金剛手菩薩三問、維摩經文殊問疾品、《金剛經》、馬鳴菩薩《大乘起信論》、曇鸞大師《往生論註》、蕅益大師《彌陀要解》十家經論，層層論證「信願＝菩提心」，是全系列篇幅最大、引證最密的一講。",
+       "scope": "延續第09講進入的流通分，法師先複習五智／五方佛理論架構（毘盧遮那法界體性智流出四智，東方阿閦佛即大圓鏡智）〔行105-152〕，再請師姐與自己反覆誦讀六方佛流通分全文並逐段複述〔行350-546〕，中段以興教大師向日本天皇說法（阿彌陀＝毘盧遮那）、密勒日巴與馬爾巴、慧遠大師與道安法師東林寺結社等多則公案穿插；後半段（〔行789-1213〕）整段轉入「什麼是菩提心」的專題──依序引毘婆沙論、大般若經射箭喻、《六祖壇經》、《華嚴經》、不空譯《發菩提心論》、《大日經》金剛手菩薩三問、維摩經文殊問疾品、《金剛經》、馬鳴菩薩《大乘起信論》、曇鸞大師《往生論註》、蕅益大師《彌陀要解》十家經論，層層論證「信願＝菩提心」，是全系列篇幅最大、引證最密的一講。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "MtZAetU3Rnw",
        "date": "2022-03-26",
        "duration": "2:57:14",
-       "raw": false,
        "published": "2026-09-22",
-       "modified": "2026-09-25"
+       "modified": "2026-11-23",
+       "raw": false
       },
       {
        "no": "11",
        "title": "佛說阿彌陀經 第11講（圓滿）",
-       "scope": "全系列最終講。先複誦流通分發願段落並延伸信願義理，再依五濁（劫濁・見濁・煩惱濁・眾生濁・命濁）逐濁展開帶業橫生・信願持名之法，最後以天台智者大師「五重玄義」（釋名・明體・明宗・明力用・判教）逐重總結全經，並以普賢十大願迴向偈與善財童子五十三參作結。",
+       "scope": "流通分最後三段——「信受我語」「已今當發願」「若有信者」「諸佛互讚・五濁惡世說難信之法」「歡喜信受作禮而去」，以《悲華經》寶海梵志因緣開篇、五濁逐一解說與「四非」對治、天台五重玄義總結全經，末附持名・發願・心香實修法",
        "has_note": true,
        "has_transcript": true,
        "video_id": "h1RkutuvH80",
        "date": "2022-04-02",
        "duration": "2:53:28",
+       "published": "2026-11-19",
+       "modified": "2026-11-23",
        "raw": false
       }
      ]
@@ -3257,6 +3429,8 @@
        "video_id": "gQv-9woM9z4",
        "date": "2023-07-29",
        "duration": "2:17:14",
+       "published": "2026-09-08",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
@@ -3268,30 +3442,34 @@
        "video_id": "1-Ro7YESwMA",
        "date": "2023-08-05",
        "duration": "2:14:47",
-       "raw": false,
        "published": "2026-09-08",
-       "modified": "2026-09-25"
+       "modified": "2026-11-24",
+       "raw": false
       },
       {
        "no": "03",
        "title": "大乘離文字普光明藏經 第03講",
-       "scope": "（前段）承第一、二講複習經題——大乘離文字（莊子得魚忘筌）、普光明藏＝法性（鏡子／電視喻申論法化報三身一則三）、《華嚴經》「三世一切佛，應觀法界性，一切唯心造」。（中段）續入**序分**：觀自在菩薩以下第二波當機眾悉數登場（諸大菩薩・天帝釋・梵天・諸佛現菩薩像・聲聞・天龍八部），逐一釋觀自在（蓮花部・般若部・唵嘛呢唄咪吽・《心經》全文）、五蘊、不執著、大勢至、文殊（遍吉祥）、普賢、不空見、星宿王、息諸蓋、藥王藥上、聲聞三尊者、那羅延、龍王・乾闥婆・迦樓羅，序分終結於「來入此會⋯即於會中坐蓮華座」。（後段）正式入**正宗分**：勝思惟菩薩起座請「二字之義」（如來），佛答三問之第一問——菩薩九種所應永離（貪瞋癡我取疑惑憍慢懈怠惛眠愛著），法師以五蓋（貪欲・瞋恚・掉舉・惛眠・疑）貫通九離，再以十二因緣「齊識而還，不能越彼」開展生滅門／還滅門，指出還滅門所推回之「識」已挾帶第六・第七識之法執・我執，破二執即證《金剛經》「通達無我法」之真菩薩；末以《圓覺經》金剛藏三問、摩尼寶珠喻、準提咒與《心經》咒語之「頻率相應」收束。菩薩應常護持、如來現所覺了（第二、三問）留待第四講。",
+       "scope": "（前段）承第一、二講複習經題——大乘離文字（莊子得魚忘筌）、普光明藏＝法性（鏡子／電視喻申論法化報三身一則三）、《華嚴經》「三世一切佛，應觀法界性，一切唯心造」。（中段）續入**序分**：觀自在菩薩以下第二波當機眾悉數登場（諸大菩薩・天帝釋・梵天・諸佛現菩薩像・聲聞・天龍八部），逐一釋觀自在（蓮花部・般若部・唵嘛呢唄咪吽・《心經》選讀與咒語）、五蘊、不執著、大勢至、文殊（遍吉祥）、普賢、不空見、星宿王、息諸蓋、藥王藥上、聲聞三尊者、那羅延、龍王・乾闥婆・迦樓羅，序分終結於「來入此會⋯即於會中坐蓮華座」。（後段）正式入**正宗分**：勝思惟菩薩起座請「二字之義」（如來），佛答三問之第一問——菩薩九種所應永離（貪瞋癡我取疑惑憍慢懈怠惛眠愛著），法師以五蓋（貪欲・瞋恚・掉舉・惛眠・疑）貫通九離，再以十二因緣「齊識而還，不能越彼」開展生滅門／還滅門，指出還滅門所推回之「識」已挾帶第六・第七識之法執・我執，破二執即證《金剛經》「通達無我法」之真菩薩；末以《圓覺經》金剛藏三問（「圓覺淨性現於身心，隨類各應」）、準提咒與《心經》咒語之「頻率相應」收束。菩薩應常護持、如來現所覺了（第二、三問）留待第四講。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "jO5U5lKjN2U",
        "date": "2023-08-12",
        "duration": "2:31:36",
+       "published": "2026-09-20",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
        "no": "04",
        "title": "大乘離文字普光明藏經 第04講",
-       "scope": "（前段）複習「如來」二字——《金剛經》全經 88 次言「如來」；如＝理（性），來＝事（相），理事不二即如來；引華嚴五祖傳承（杜順・智儼・賢首・清涼・宗密）與永明延壽＝彌陀化身、《宗鏡錄》之說；轉入華嚴《法界觀門》「色不即空，以即空故」逐句釋義，以《心經》《楞嚴經》《金剛經》引證，申論真空妙有、如來不動而隨緣。（中段）正式讀誦 T0829 本文：複習第一問「九離」，正答第二問「何者一法是諸菩薩應常護持」——非己所安不加於物；以《永嘉證道歌》申論自性五智（法界體性智／大圓鏡智／平等性智／妙觀察智／成所作智）與五方佛（毘盧遮那／阿閦／寶生／阿彌陀／不空成就）本自具足，因隨緣執取五蘊為實而五佛變五毒，以準提咒、念佛為對治；重讀「非己所安不加於物」，以儒家「己所不欲勿施於人」＋「己所欲施於人」雙義申論，帶出華嚴「悲智雙運」（普賢悲・文殊智）。（後段）引大乘《起信論》「一念不覺生三細（業相・轉相・境界相），境界遇緣長六粗（智相・相續相・執取相・計名字相・業起相・業繫苦相）」，對應生住異滅四種無明與《華嚴經》十信・三賢・十地位；以《維摩詰經》文殊問疾、維摩詰「無病」公案全篇說明「計名字相」如何造作。第三問「何者一法是諸如來現所覺了」留待第五講。",
+       "scope": "（前段）複習「如來」二字——《金剛經》全經 88 次言「如來」；如＝理（性），來＝事（相），理事不二即如來；引華嚴五祖傳承（杜順・智儼・賢首・清涼・宗密）與永明延壽＝彌陀化身、《宗鏡錄》之說；轉入華嚴《法界觀門》「色不即空，以即空故」逐句釋義，以《心經》《楞嚴經》《金剛經》引證，申論真空妙有、如來不動而隨緣。（中段）正式讀誦 T0829 本文：複習第一問「九離」，正答第二問（何者一法，是諸菩薩應常護持）——非己所安不加於物；以《永嘉證道歌》申論自性五智（法界體性智／大圓鏡智／平等性智／妙觀察智／成所作智）與五方佛（毘盧遮那／阿閦／寶生／阿彌陀／不空成就）本自具足，因隨緣執取五蘊為實而五佛變五毒，以準提咒、念佛為對治；重讀「非己所安不加於物」，以儒家「己所不欲勿施於人」＋「己所欲施於人」雙義申論，帶出華嚴「悲智雙運」（普賢悲・文殊智）。（後段）引大乘《起信論》一念不覺生三細相（業相・轉相・境界相）、境界遇緣長六粗（智相・相續相・執取相・計名字相・業起相・業繫苦相），對應生住異滅四種無明與《華嚴經》十信・三賢・十地位；以《維摩詰經》文殊問疾、維摩詰「無病」公案全篇說明「計名字相」如何造作。第三問（如來所覺）留待下一講。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "m62bDbAD-9Q",
        "date": "2023-08-19",
        "duration": "2:22:58",
+       "published": "2026-09-20",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
@@ -3303,6 +3481,8 @@
        "video_id": "yFu_2PNP-M8",
        "date": "2023-08-26",
        "duration": "1:46:58",
+       "published": "2026-09-20",
+       "modified": "2026-11-24",
        "raw": false
       },
       {
@@ -3314,6 +3494,8 @@
        "video_id": "t_-TjQwS2dE",
        "date": "2023-09-02",
        "duration": "2:59:02",
+       "published": "2026-09-20",
+       "modified": "2026-11-22",
        "raw": false
       }
      ]
@@ -3334,6 +3516,8 @@
        "video_id": "XuhzIZEvD6g",
        "date": "2024-08-21",
        "duration": "2:30:43",
+       "published": "2026-10-03",
+       "modified": "2026-10-03",
        "raw": false
       },
       {
@@ -3345,9 +3529,9 @@
        "video_id": "EqEhjW-W_4U",
        "date": "2024-08-21",
        "duration": "2:52:59",
-       "raw": false,
        "published": "2026-10-03",
-       "modified": "2026-10-03"
+       "modified": "2026-10-03",
+       "raw": false
       },
       {
        "no": "03",
@@ -3358,9 +3542,9 @@
        "video_id": "lociGkvzvCI",
        "date": "2024-08-21",
        "duration": "3:14:35",
-       "raw": false,
        "published": "2026-10-03",
-       "modified": "2026-10-03"
+       "modified": "2026-10-03",
+       "raw": false
       },
       {
        "no": "04",
@@ -3371,9 +3555,9 @@
        "video_id": "fddkfW1Pzkk",
        "date": "2024-08-21",
        "duration": "2:56:10",
-       "raw": false,
        "published": "2026-10-03",
-       "modified": "2026-10-03"
+       "modified": "2026-10-03",
+       "raw": false
       },
       {
        "no": "05",
@@ -3384,9 +3568,9 @@
        "video_id": "XHEZzaMpR_Y",
        "date": "2024-08-21",
        "duration": "3:19:48",
-       "raw": false,
        "published": "2026-10-03",
-       "modified": "2026-10-03"
+       "modified": "2026-10-03",
+       "raw": false
       }
      ]
     },
@@ -3406,9 +3590,9 @@
        "video_id": "sgxAC4jGzC8",
        "date": "2025-02-08",
        "duration": "1:33:21",
-       "raw": false,
        "published": null,
-       "modified": "2026-10-03"
+       "modified": "2026-10-03",
+       "raw": false
       },
       {
        "no": "02",
@@ -3419,9 +3603,9 @@
        "video_id": "d_-w8__YCbQ",
        "date": "2025-02-15",
        "duration": "1:32:40",
-       "raw": false,
        "published": null,
-       "modified": "2026-10-03"
+       "modified": "2026-10-03",
+       "raw": false
       },
       {
        "no": "03",
@@ -3432,9 +3616,9 @@
        "video_id": "XOLpLYFK7lY",
        "date": "2025-02-22",
        "duration": "1:30:24",
-       "raw": false,
        "published": "2026-10-03",
-       "modified": "2026-11-02"
+       "modified": "2026-11-02",
+       "raw": false
       }
      ]
     },
@@ -3454,9 +3638,9 @@
        "video_id": "10UiEc5eSX0",
        "date": "2026-04-11",
        "duration": "1:54:31",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       },
       {
        "no": "03",
@@ -3467,9 +3651,9 @@
        "video_id": "fFH1-tJbX7I",
        "date": "2026-04-25",
        "duration": "1:55:47",
-       "raw": false,
        "published": "2026-10-23",
-       "modified": "2026-10-23"
+       "modified": "2026-10-23",
+       "raw": false
       }
      ]
     },
@@ -3489,9 +3673,9 @@
        "video_id": "kxafo0dTyQw",
        "date": "2026-05-02",
        "duration": "1:38:15",
-       "raw": false,
        "published": "2026-10-04",
-       "modified": "2026-10-04"
+       "modified": "2026-10-04",
+       "raw": false
       },
       {
        "no": "02",
@@ -3502,9 +3686,9 @@
        "video_id": "sDu8ynx8e_0",
        "date": "2026-05-09",
        "duration": "1:02:12",
-       "raw": false,
        "published": "2026-10-04",
-       "modified": "2026-10-04"
+       "modified": "2026-10-04",
+       "raw": false
       }
      ]
     },
@@ -3518,25 +3702,27 @@
       {
        "no": "01",
        "title": "般若波羅蜜多心經 第01講",
-       "scope": "經題破題（摩訶／般若／波羅蜜多／心／經＝陀羅尼＝總持）＋玄奘取經史＋《心經》序分流通分背景＋主文首段逐句：「觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。舍利子！色不異空……受、想、行、識，亦復如是。舍利子！是諸法空相，不生不滅，不垢不淨，不增不減。是故，空中無色，無受、想、行、識；無眼、耳、鼻、舌、身、意」為止（全經二講，本講約講至此）",
+       "scope": "經題破題（摩訶／般若／波羅蜜多／心／經＝陀羅尼＝總持）＋玄奘取經史＋《心經》序分流通分背景＋主文首段逐句：自「觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄」至「舍利子！是諸法空相，不生不滅，不垢不淨，不增不減」為止（開講主文前全眾同誦全經；全經二講）",
        "has_note": true,
        "has_transcript": true,
        "video_id": "6Djm7HvWxMc",
        "date": "2021-10-26",
        "duration": "2:49:51",
-       "raw": false,
        "published": "2026-09-07",
-       "modified": "2026-09-25"
+       "modified": "2026-11-24",
+       "raw": false
       },
       {
        "no": "02",
        "title": "般若波羅蜜多心經 第02講（圓滿）",
-       "scope": "承第一講「是故，空中無色，無受、想、行、識；無眼、耳、鼻、舌、身、意」續講至全經竟——「是諸法空相，不生不滅，不垢不淨，不增不減」六不複講→「空中無色，無受、想、行、識」（五蘊皆空↔空中無五蘊之邏輯對照）→「無眼、耳、鼻、舌、身、意；無色、聲、香、味、觸、法」（六根六塵）→「無眼界，乃至無意識界」（十八界＝法界，破煩惱障）→「無無明亦無無明盡，乃至無老死亦無老死盡」（十二因緣，本無無明）→「無苦、集、滅、道」（阿含四聖諦＝次第法）→「無智，亦無得」（破所知障、頭上安頭）→「以無所得故，菩提薩埵依般若波羅蜜多故，心無罣礙；無罣礙故，無有恐怖，遠離顛倒夢想，究竟涅槃」→「三世諸佛依般若波羅蜜多故，得阿耨多羅三藐三菩提」→「故知般若波羅蜜多是大神咒、是大明咒、是無上咒、是無等等咒，能除一切苦，真實不虛」→「即說咒曰：揭諦揭諦……」＋以《圓覺經》普眼章「圓覺淨性現於身心隨類各應」講菩薩定義＋唐密穢跡金剛／唵阿吽表法。",
+       "scope": "承第一講（止於「是諸法空相，不生不滅，不垢不淨，不增不減」）續講至全經竟——六不複講→「是故，空中無色，無受、想、行、識」（五蘊皆空↔空中無五蘊之邏輯對照）→「無眼、耳、鼻、舌、身、意；無色、聲、香、味、觸、法」（六根六塵）→「無眼界，乃至無意識界」（十八界＝法界，破煩惱障）→「無無明亦無無明盡，乃至無老死亦無老死盡」（十二因緣，本無無明）→「無苦、集、滅、道」（阿含四聖諦＝次第法）→「無智，亦無得」（破所知障、頭上安頭）→「以無所得故，菩提薩埵依般若波羅蜜多故，心無罣礙；無罣礙故，無有恐怖，遠離顛倒夢想，究竟涅槃」→「三世諸佛依般若波羅蜜多故，得阿耨多羅三藐三菩提」→「故知般若波羅蜜多是大神咒、是大明咒、是無上咒、是無等等咒，能除一切苦，真實不虛」→「即說咒曰：揭諦揭諦……」＋以《圓覺經》普眼章「圓覺淨性現於身心隨類各應」講菩薩定義＋唐密穢跡金剛／唵阿吽表法。",
        "has_note": true,
        "has_transcript": true,
        "video_id": "P7WUVjIagRA",
        "date": "2021-11-03",
        "duration": "2:50:24",
+       "published": "2026-09-07",
+       "modified": "2026-11-24",
        "raw": false
       }
      ]
@@ -3557,9 +3743,9 @@
        "video_id": "aaufKWDIz3A",
        "date": "2021-06-10",
        "duration": "2:20:33",
-       "raw": false,
        "published": "2026-08-05",
-       "modified": "2026-10-05"
+       "modified": "2026-11-24",
+       "raw": false
       },
       {
        "no": "02",
@@ -3570,6 +3756,8 @@
        "video_id": "ZQHNTNOXlnU",
        "date": "2021-06-17",
        "duration": "2:13:40",
+       "published": "2026-08-06",
+       "modified": "2026-11-24",
        "raw": false
       }
      ]
