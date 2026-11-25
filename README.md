@@ -97,4 +97,4 @@ After `npm run export` and `npm run board`, commit `content/` and `public/data/`
 
 ## Deploy
 
-`.github/workflows/deploy.yml` builds and deploys to GitHub Pages on every push to `main`. To set it up, go to Settings → Pages and set Source to "GitHub Actions". The base path is `/dharma-notes` (see `astro.config.mjs`).
+`.github/workflows/deploy.yml` builds and deploys to GitHub Pages on every push to `main`. To set it up, go to Settings → Pages and set Source to "GitHub Actions". The base path is `/dharma-notes` (see `astro.config.mjs`). The site is served at https://tiedy.com/dharma-notes/: `tiedy.com` is the custom domain of the `tamondigital.github.io` root repo, so every project site appears under it, and old github.io URLs redirect there.

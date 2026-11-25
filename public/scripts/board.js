@@ -12,7 +12,7 @@ const PF = me.dataset.pagefind;
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const W = 300, GAP = 110, LANE_H = 420, PER_LESSON = 2, MINE = "my:";
-// GitHub Pages shares one origin across tamondigital.github.io sites: keys carry the site name
+// every site under tiedy.com shares one origin: keys carry the site name
 const STORE = "dharma-notes:board:current", SAVED = "dharma-notes:board:saved";
 
 let IX, N;                                           // index, block count

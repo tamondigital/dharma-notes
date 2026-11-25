@@ -58,14 +58,14 @@ jobs:
           sleep 60
           python3 - <<'PY'
           import json, re, urllib.request
-          base = "https://tamondigital.github.io/dharma-notes/"
+          base = "https://tiedy.com/dharma-notes/"
           key = "06404ff4ad864ec6b1b48ec3226a92bb"
           get = lambda u: urllib.request.urlopen(u, timeout=30).read().decode()
           locs = lambda xml: re.findall(r"<loc>([^<]+)</loc>", xml)
           urls = [u for sm in locs(get(base + "sitemap-index.xml")) for u in locs(get(sm))]
           print(f"{len(urls)} URLs")
           for i in range(0, len(urls), 10000):
-              body = json.dumps({"host": "tamondigital.github.io", "key": key,
+              body = json.dumps({"host": "tiedy.com", "key": key,
                                  "keyLocation": f"{base}{key}.txt", "urlList": urls[i:i + 10000]}).encode()
               req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
                                            headers={"Content-Type": "application/json; charset=utf-8"})

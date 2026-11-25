@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-const SITE = "https://tamondigital.github.io", BASE = "/dharma-notes";
+const SITE = "https://tiedy.com", BASE = "/dharma-notes";
 
 // <lastmod> per page from the notes' dates: a lesson and its transcript take the note's date,
 // a series its newest lesson. Pages without a dated note get none.
@@ -24,7 +24,7 @@ function lastmods() {
 }
 const dated = lastmods();
 
-// GitHub Pages project site: https://tamondigital.github.io/dharma-notes/
+// GitHub Pages project site at https://tiedy.com/dharma-notes/ (custom domain on the tamondigital.github.io root repo)
 export default defineConfig({
   site: SITE,
   base: BASE,
