@@ -548,6 +548,14 @@ a.ent:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .guide h1 { font-size: 1.8rem; }
 .demo-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--mark); vertical-align: middle; }
 
+/* ---------- old-browser notice (src/layouts/Base.astro) ---------- */
+.compat { margin: 0 0 16px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2);
+  font-family: var(--sans); font-size: .86rem; line-height: 1.75; color: var(--ink-2); }
+.compat p { margin: 0 0 8px; }
+.compat a { color: inherit; text-decoration: underline; }
+.compat button { font: inherit; padding: 4px 14px; min-height: 32px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--surface); color: var(--ink); cursor: pointer; }
+
 /* ---------- notice ---------- */
 .notice { margin-top: 32px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2);
   font-family: var(--sans); font-size: .84rem; line-height: 1.75; color: var(--ink-2); }
