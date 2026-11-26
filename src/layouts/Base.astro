@@ -100,9 +100,10 @@ const ld = jsonld && JSON.stringify(jsonld).replace(/</g, "\\u003c");
       <p>內容整理自法師公開講經影片。筆記為學習輔助：法義以法師原講為準，經文字句以 CBETA 為準。本站內容免費流通，請勿用於商業用途。<a href={url("about/")}>關於本站</a>・<a href={url("guide/")}>閱讀說明</a></p>
     </footer>
     <script is:inline>
-      // Old-browser notice. Written in ES5 on purpose: it must still run where the site's other scripts
-      // fail to parse (Safari 12 and older has no ?. or ??=). Shown only on pages that load player.js when
-      // that script did not start (it defines window.notesPlayer) or the browser cannot parse reader.js.
+      // Old-browser mode. Written in ES5 on purpose: it must still run where the site's other scripts
+      // fail to parse (Safari 12 and older has no ?. or ??=). On pages that load player.js, when that script
+      // did not start (it defines window.notesPlayer) or the browser cannot parse reader.js, the page gets
+      // html.compat-mode (the video, follow-along panel and 筆記/逐字稿 switch are hidden in site.css) and a notice.
       (function () {
         function check() {
           try {
@@ -112,24 +113,26 @@ const ld = jsonld && JSON.stringify(jsonld).replace(/</g, "\\u003c");
               try { new Function("var a=null;a??=1;return a?.b"); } catch (e) { ok = false; }
             }
             if (ok) return;
+            document.documentElement.className += " compat-mode";
             try { if (localStorage.getItem("compat-dismissed") === "1") return; } catch (e) {}
             var d = document.createElement("div");
             d.className = "compat";
             d.setAttribute("role", "status");
-            d.innerHTML = '<p><b>此瀏覽器或系統版本較舊，部分功能可能無法使用</b>（影片播放、跟讀逐字稿、筆記與逐字稿切換）。'
-              + '筆記與逐字稿的文字仍可閱讀；影片請直接到 YouTube 觀看。若可以，請更新瀏覽器或系統，或改用較新的裝置。</p>'
-              + '<button type="button">知道了</button>';
-            d.querySelector("button").onclick = function () {
+            d.innerHTML = '<button type="button" class="compat-x" aria-label="關閉提示">✕</button>'
+              + '<p class="compat-h">此瀏覽器版本較舊，已關閉部分功能</p>'
+              + '<p>影片播放、跟讀逐字稿與筆記／逐字稿切換在此版本無法使用，已先隱藏；筆記與逐字稿的文字仍可正常閱讀。'
+              + '若要看影片，請到 YouTube。建議更新瀏覽器或系統，或改用較新的裝置。</p>';
+            var yt = document.querySelector('a[href*="youtube.com/watch"]');
+            if (yt) {
+              var p = document.createElement("p"), a = document.createElement("a");
+              p.className = "compat-act";
+              a.className = "compat-btn"; a.href = yt.href; a.target = "_blank"; a.rel = "noopener"; a.textContent = "在 YouTube 觀看影片 ↗";
+              p.appendChild(a); d.appendChild(p);
+            }
+            d.querySelector(".compat-x").onclick = function () {
               d.parentNode.removeChild(d);
               try { localStorage.setItem("compat-dismissed", "1"); } catch (e) {}
             };
-            var yt = document.querySelector('a[href*="youtube.com/watch"]');
-            if (yt) {
-              var a = document.createElement("a");
-              a.href = yt.href; a.target = "_blank"; a.rel = "noopener"; a.textContent = "在 YouTube 觀看";
-              d.firstChild.appendChild(document.createTextNode(" "));
-              d.firstChild.appendChild(a);
-            }
             var main = document.getElementById("main");
             main.insertBefore(d, main.firstChild);
           } catch (e) {}

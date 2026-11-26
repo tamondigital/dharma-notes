@@ -548,13 +548,20 @@ a.ent:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .guide h1 { font-size: 1.8rem; }
 .demo-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--mark); vertical-align: middle; }
 
-/* ---------- old-browser notice (src/layouts/Base.astro) ---------- */
-.compat { margin: 0 0 16px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2);
-  font-family: var(--sans); font-size: .86rem; line-height: 1.75; color: var(--ink-2); }
-.compat p { margin: 0 0 8px; }
-.compat a { color: inherit; text-decoration: underline; }
-.compat button { font: inherit; padding: 4px 14px; min-height: 32px; border: 1px solid var(--line); border-radius: 8px;
-  background: var(--surface); color: var(--ink); cursor: pointer; }
+/* ---------- old-browser mode (src/layouts/Base.astro adds html.compat-mode when the player scripts cannot run) ---------- */
+.compat-mode #player, .compat-mode .ts-view, .compat-mode .muted[data-ts-intro] { display: none !important; }
+.compat { position: relative; margin: 0 0 20px; padding: 14px 52px 14px 18px; border: 1px solid var(--line); border-left: 4px solid var(--accent);
+  border-radius: 10px; background: var(--surface-2); font-family: var(--sans); font-size: .88rem; line-height: 1.75; color: var(--ink-2); }
+.compat p { margin: 0; }
+.compat p + p { margin-top: 6px; }
+.compat .compat-h { font-weight: 600; font-size: .95rem; color: var(--ink); }
+.compat-x { position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 8px;
+  background: none; color: var(--ink-3); font-size: 1.05rem; line-height: 1; cursor: pointer; }
+.compat-x:hover { color: var(--ink); background: var(--surface); }
+.compat .compat-act { margin-top: 10px; }
+.compat-btn { display: inline-block; padding: 8px 16px; border: 1px solid var(--accent); border-radius: 8px; color: var(--accent);
+  text-decoration: none; font-weight: 600; }
+.compat-btn:hover { background: var(--accent); color: var(--on-accent); }
 
 /* ---------- notice ---------- */
 .notice { margin-top: 32px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2);
