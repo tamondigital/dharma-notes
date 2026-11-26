@@ -35,8 +35,8 @@ const ld = jsonld && JSON.stringify(jsonld).replace(/</g, "\\u003c");
     <link rel="sitemap" href={url("sitemap-index.xml")} />
     <link rel="icon" href={url("favicon.svg")} type="image/svg+xml" />
     {/* self-hosted, written by scripts/subset_font.py at build time (absent under `npm run dev`). Text shows in
-        the fallback serif (--serif) until it arrives. A first visit fetches it after the page has loaded, so its
-        2 MB do not hold up the page itself; once it is in the browser's cache it is applied at once. */}
+        the fallback serif (--serif) until it arrives. A first visit fetches it after the page has loaded, so it does not
+        hold up the page itself; once it is in the browser's cache it is applied at once. */}
     <script is:inline define:vars={{ fontCss: url("fonts/noto-serif-tc.css") }}>
       const addFont = () => {
         const l = document.createElement("link");
@@ -48,8 +48,11 @@ const ld = jsonld && JSON.stringify(jsonld).replace(/</g, "\\u003c");
       if (cached) addFont();
       else addEventListener("load", () => {
         addFont();
-        document.fonts?.load('1em "Noto Serif TC"', "法").then((f) => {
-          if (f.length) try { localStorage.setItem("font-cached", fontCss); } catch (e) {}
+        // the font comes in slices fetched only for text on the page; once one has arrived, the stylesheet
+        // is in the cache and later pages add it at once (forcing a slice here would fetch one the page may not use)
+        document.fonts?.addEventListener("loadingdone", (e) => {
+          if (e.fontfaces.some((f) => f.family.includes("Noto Serif TC")))
+            try { localStorage.setItem("font-cached", fontCss); } catch (err) {}
         });
       });
     </script>
