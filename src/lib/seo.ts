@@ -3,7 +3,9 @@ import { site, channelLabel, lecturer, type Series, type Channel } from "./data"
 
 // Search results show roughly 80–100 CJK characters; cut at a sentence end when one falls in range.
 export function metaDesc(text: string, n = 100): string {
-  const t = (text || "").replace(/\*\*/g, "").replace(/\s+/g, " ").trim();
+  // 〔行N〕 transcript citations are markers on the page, noise in a search result; drop any bracket left empty
+  const t = (text || "").replace(/\*\*/g, "").replace(/〔行[^〕]*〕/g, "").replace(/[（(][\s–—\-~～、，,]*[）)]/g, "")
+    .replace(/\s+/g, " ").trim();
   if (t.length <= n) return t;
   const head = t.slice(0, n);
   const stop = Math.max(head.lastIndexOf("。"), head.lastIndexOf("；"), head.lastIndexOf("！"), head.lastIndexOf("？"));

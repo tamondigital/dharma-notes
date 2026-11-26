@@ -132,6 +132,9 @@
     const setH = (px, keep) => {
       const h = Math.round(Math.min(Math.max(px, lineH() * 1.5), innerHeight * 0.6));
       box.style.setProperty("--follow-h", h + "px");
+      // the separator's value for assistive tech: the height as a share of its allowed range
+      const lo = lineH() * 1.5, hi = innerHeight * 0.6;
+      grip.setAttribute("aria-valuenow", String(Math.round(hi > lo ? ((h - lo) / (hi - lo)) * 100 : 50)));
       if (keep) try { localStorage.setItem("ts-h", String(h)); } catch (e) {}
     };
     try { const h = Number(localStorage.getItem("ts-h")); if (h) setH(h); } catch (e) {}

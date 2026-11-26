@@ -141,7 +141,7 @@ const jsonld = graph(
             <div class="player-frame"><div data-yt></div><a class="player-poster" href={`https://www.youtube.com/watch?v=${l.video_id}`} aria-label="播放影片"><img src={`https://i.ytimg.com/vi/${l.video_id}/hqdefault.jpg`} alt="" width="480" height="360" fetchpriority="high" /><span class="play-icon" aria-hidden="true"></span></a></div>
             <div class="follow-wrap">
               <div class="follow" data-follow tabindex="0" role="region" aria-label="逐字稿跟讀"><p class="muted">逐字稿載入中…</p></div>
-              <div class="follow-grip" data-grip role="separator" tabindex="0" aria-orientation="horizontal" aria-label="拖曳或用上下鍵調整逐字稿高度"></div>
+              <div class="follow-grip" data-grip role="separator" tabindex="0" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="拖曳或用上下鍵調整逐字稿高度"></div>
             </div>
           </div>
           <PlayerBar current="note" note={lessonUrl(key)} transcript={l.has_transcript ? "transcript/" : undefined}
