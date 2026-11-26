@@ -381,6 +381,8 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
 /* ---------- transcript ---------- */
 .ts { font-family: var(--serif); font-size: 1.04rem; line-height: 1.95; }
 .ts p { position: relative; margin: 0; padding: 6px 0 6px 4.6em; border-radius: 4px; scroll-margin-top: calc(var(--player-h, 0px) + 24px); }
+/* off-screen paragraphs skip layout and paint; the remembered height (auto) keeps scrolling stable */
+.ts p { content-visibility: auto; contain-intrinsic-size: auto 3.5em; }
 .ts p:target, .ts p.hl { background: var(--accent-soft); }
 .ts .tc {
   position: absolute; left: 0; top: 9px; width: 4em; text-align: right; font-family: var(--sans);

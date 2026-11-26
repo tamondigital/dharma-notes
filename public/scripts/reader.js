@@ -309,6 +309,8 @@
       const warm = (ev) => { if (target(ev.target.closest?.("a[href]")) === "ts") loadTs(); };
       document.addEventListener("pointerover", warm);
       document.addEventListener("focusin", warm);
+      // and on idle, for touch screens that never hover; skipped when the user asks to save data
+      if (!navigator.connection?.saveData) (window.requestIdleCallback || ((f) => setTimeout(f, 2500)))(() => loadTs(), { timeout: 5000 });
       // back/forward between the two views
       addEventListener("popstate", () => {
         const m = location.pathname === tsUrl ? "ts" : "note";
