@@ -486,17 +486,12 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
   .reader-main > .player .follow { flex: 1; height: auto; max-height: none; margin-top: 8px; }
   .reader-main > .player .follow-grip { display: none; }
 
-  /* 逐字稿 opens in the panel (reader.js moves .ts-view there) and the note stays in view */
-  .reader.ts-side .player, .reader.ts-side .player.no-ts { height: 100vh; height: 100dvh; }
-  .reader.ts-side .player :is(.follow-wrap, [data-toggle-panel]) { display: none !important; }
-  .reader.ts-side .player.no-ts [data-toggle-follow] { display: inline-flex; }
-  .reader.ts-side .player > .ts-view:not([hidden]) { order: 3; display: block; flex: 1; min-height: 0; overflow-y: auto;
-    position: relative; margin-top: 8px; padding: 4px 12px; background: var(--surface); border: 1px solid var(--line);
-    border-radius: 8px; overscroll-behavior: contain; }
-  .reader.ts-side .ts-view [data-ts-intro] { margin: 8px 0 !important; font-size: .8rem !important; }
-  .reader.ts-side .ts-view .ts { font-size: .95rem; line-height: 1.85; }
-  .reader.ts-side .ts-view .ts p { padding-left: 4.2em; }
-  .reader.ts-side .ts-view .ts .tc { width: 3.6em; }
+  /* 逐字稿 shown in place (reader.js .ts-mode): the standalone transcript page's layout, the video docked
+     on top of one wide column, so switching looks the same as reloading there */
+  .reader.ts-mode .side, .reader.ts-mode .panel-grip { display: none !important; }
+  .reader.ts-mode .reader-main { display: block; max-width: none; }
+  .reader.ts-mode .reader-main > .player { position: sticky; top: 0; height: auto; display: block; padding: 8px 0; margin: 0 0 8px; }
+  .reader.ts-mode .reader-main > .player .player-frame { width: auto; max-height: 42vh !important; margin: 0 auto !important; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
 .ts p.q { color: var(--ink-2); }

@@ -6,8 +6,9 @@
 // wide landscape screens: the player sits in a panel beside the text instead of over it.
 // Keep in step with the matching @media block in src/styles/site.css.
 window.notesWide = matchMedia("(min-width: 1180px) and (orientation: landscape) and (min-height: 600px)");
-// the player sits beside the text: the note page on a wide screen (the transcript page always docks it on top)
-window.notesBeside = (box) => notesWide.matches && !box.closest(".ts-page");
+// the player sits beside the text: the note page on a wide screen (a transcript, standalone or shown in place
+// on the note page, always docks it on top)
+window.notesBeside = (box) => notesWide.matches && !box.closest(".ts-page, .ts-mode");
 // how much of the text the docked player covers at the top of the screen
 window.notesCover = (box) => (notesBeside(box) ? 0 : box.offsetHeight);
 window.notesScroll = () => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");

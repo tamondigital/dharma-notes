@@ -246,17 +246,16 @@
     // 筆記 <-> 逐字稿 without leaving the page, so the video never reloads: the transcript page is fetched
     // once, its paragraphs shown here, and the address bar moves to transcript/ (a reload there gets the
     // standalone page). Any link to transcript/ switches in place, including 〔行N〕 and 在逐字稿中看.
-    // On a wide screen the transcript opens in the side panel under the video and the note stays in view
-    // (.ts-side); otherwise it takes the page's place (.ts-mode).
+    // The transcript takes the note's place (.ts-mode) on every screen, laid out like the standalone page,
+    // so switching looks the same as reloading there; on a wide screen the video docks on top meanwhile.
     const tsView = art.querySelector("[data-ts-view]");
     if (tsView) {
       const noteUrl = location.pathname, tsUrl = new URL(art.dataset.tsSrc, location.href).pathname;
       const noteTitle = document.title;
       let tsTitle = noteTitle, mode = "note", mounted = false, tsP = null;
-      const side = () => notesWide.matches;
-      // where each view was left, to come back to it (with the side panel the window always shows the note)
+      // where each view was left, to come back to it
       const y = { note: 0, ts: 0 };
-      addEventListener("scroll", () => { y[side() ? "note" : mode] = scrollY; }, { passive: true });
+      addEventListener("scroll", () => { y[mode] = scrollY; }, { passive: true });
       const loadTs = () => (tsP ??= fetch(tsUrl)
         .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
         .then((html) => {
@@ -266,7 +265,7 @@
           tsTitle = doc.title;
           tsView.append(...[doc.querySelector("[data-ts-intro]"), ts].filter(Boolean));
           tsTracker = notesTranscript(player, box, ts, () => mode === "ts" && !box.classList.contains("no-follow"),
-            () => (side() ? tsView : window));
+            () => window);
           mounted = true;
         })
         .catch(() => { tsP = null; }));
@@ -276,40 +275,25 @@
       const links = { note: nav.children[0], ts: nav.children[1] };
       function show(m) {
         mode = m;
-        reader.classList.toggle("ts-mode", m === "ts" && !side());
-        reader.classList.toggle("ts-side", m === "ts" && side());
+        reader.classList.toggle("ts-mode", m === "ts");
         tsView.hidden = m !== "ts";
         document.title = m === "ts" ? tsTitle : noteTitle;
         for (const [k, a] of Object.entries(links)) k === m ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current");
         closePop();
       }
-      // the transcript lives in the panel on a wide screen, under the player otherwise
-      const place = () => { side() ? box.append(tsView) : box.after(tsView); };
-      place();
+      box.after(tsView);
       show("note");
-      notesWide.addEventListener("change", () => {
-        place();
-        show(mode);
-        if (mode !== "ts") return;
-        if (side()) scrollTo(0, y.note);
-        else { scrollTo(0, 0); tsTracker?.sync(player.now()); }
-      });
       async function go(m, line) {
         if (m === "ts") await loadTs();
         // the fetch failed: fall back to the standalone page
         if (m === "ts" && !mounted) { location.href = tsUrl + (line ? "#L" + line : ""); return; }
         history.pushState(null, "", m === "ts" ? tsUrl + (line ? "#L" + line : "") : noteUrl);
         show(m);
-        if (m === "note") { if (!side()) scrollTo(0, y.note); return; }
+        if (m === "note") { scrollTo(0, y.note); return; }
         tsView.querySelector(".hl")?.classList.remove("hl");
         const el = line && notesLine(line);
         if (el) el.classList.add("hl");
-        // in the panel only the panel scrolls; the note keeps its place
-        const reveal = (sc) => (window.notesReveal ? notesReveal(el, sc) : el.scrollIntoView());
-        if (side()) {
-          if (el) reveal(tsView);
-          else { tsView.scrollTop = 0; tsTracker?.sync(player.now()); }
-        } else if (el) reveal();
+        if (el) window.notesReveal ? notesReveal(el) : el.scrollIntoView();
         else { scrollTo(0, 0); tsTracker?.sync(player.now()); }
       }
       const target = (a) => a?.origin === location.origin && { [tsUrl]: "ts", [noteUrl]: "note" }[a.pathname];
@@ -331,7 +315,7 @@
         if (m === mode) return;
         if (m === "ts" && !mounted) { location.reload(); return; }
         show(m);
-        if (!side()) scrollTo(0, y[m]);
+        scrollTo(0, y[m]);
       });
     }
   }
