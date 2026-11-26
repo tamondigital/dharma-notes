@@ -2,8 +2,8 @@
 import "../styles/site.css";
 import { url, site } from "../lib/data";
 
-interface Props { title: string; description?: string; wide?: boolean; type?: "website" | "article"; jsonld?: object; noSuffix?: boolean; siteName?: string }
-const { title, description = site.tagline, wide = false, type = "website", jsonld, noSuffix = false, siteName = site.title } = Astro.props;
+interface Props { title: string; description?: string; wide?: boolean; type?: "website" | "article"; jsonld?: object; noSuffix?: boolean; siteName?: string; noindex?: boolean }
+const { title, description = site.tagline, wide = false, type = "website", jsonld, noSuffix = false, siteName = site.title, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 // noSuffix: the title already names the site (the home page)
 // siteName: a longer form of the site name for the suffix, e.g. 「體佛法師講經筆記」 on a lesson
@@ -19,6 +19,7 @@ const ld = jsonld && JSON.stringify(jsonld).replace(/</g, "\\u003c");
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content={site.title} />
     <meta property="og:title" content={fullTitle} />

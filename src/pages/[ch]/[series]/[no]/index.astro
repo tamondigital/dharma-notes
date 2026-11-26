@@ -4,7 +4,7 @@ import Notice from "../../../../components/Notice.astro";
 import PlayerBar from "../../../../components/PlayerBar.astro";
 import {
   allLessons, url, lessonUrl, seriesUrl, lessonTitle, refTitle, lessonByKey, clip, noteMarkdown, lessonExtra,
-  sutraData, sutraUrl, plain, entityUrl, hasEntity, cbetaUrl, channelLabel, multiChannel, notesName, hlHash,
+  sutraData, sutraUrl, plain, entityUrl, hasEntity, cbetaUrl, channelLabel, multiChannel, notesName, hlHash, lecturer,
   type Located,
 } from "../../../../lib/data";
 import { renderNote } from "../../../../lib/render";
@@ -29,7 +29,10 @@ const sameTopic = rel.same_topic.filter((r) => !linkedKeys.has(r.key)).slice(0, 
 const refScope = (k: string) => clip(lessonByKey(k)?.l.scope ?? "", 34);
 const names = extra.names.filter((n) => hasEntity(n.type, n.name));
 const sutraTitle = (id: string) => sutraData.sutras[id]?.title ?? id;
-const description = metaDesc(plain(l.scope)) || `${title}學習筆記`;
+// lead with who and which talk, so a search result reads on its own: 「體佛法師講《妄盡還源觀》第17講：…」
+const speaker = lecturer(s);
+const lead = s.lessons.length === 1 ? `${speaker ? speaker + "講" : ""}《${l.title}》` : `${speaker ? speaker + "講" : ""}《${s.name}》第${Number(l.no)}講`;
+const description = metaDesc(l.scope ? `${lead}：${plain(l.scope)}` : `${lead}學習筆記`, 110);
 const crumbs: Crumb[] = [["首頁", url("/")], ...(multiChannel ? [[channelLabel(c), url(`${c.slug}/`)] as Crumb] : []),
   [s.name, seriesUrl(c, s)], [`第${Number(l.no)}講`, lessonUrl(key)]];
 const page = abs(lessonUrl(key));

@@ -539,3 +539,6 @@ a.ent:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .notice p { margin: 0; }
 .notice p + p { margin-top: 6px; }
 .notice .notice-h { font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+
+/* visually hidden, still read by screen readers and search engines */
+.vh { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
