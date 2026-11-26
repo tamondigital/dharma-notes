@@ -72,42 +72,43 @@ const jsonld = graph(
         <p class="toc-h">目次</p>
         <ol>{toc.map((t) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol>
       </nav>
-      <aside class="aside" data-pagefind-ignore>
+      {/* related links: every group folded by default, its count on the summary, so the left column stays a quiet map */}
+      <aside class="aside" aria-label="相關連結" data-pagefind-ignore>
         {rel.linked.length > 0 && (
-          <section>
-            <p class="aside-h">筆記提到的講次</p>
+          <details class="rel">
+            <summary>筆記提到的講次<span class="n">{rel.linked.length}</span></summary>
             <ul>{rel.linked.map((r) => <li><a href={lessonUrl(r.key)}>{refTitle(r.key)}</a><small>{refScope(r.key)}</small></li>)}</ul>
-          </section>
+          </details>
         )}
         {sameTopic.length > 0 && (
-          <section>
-            <p class="aside-h">相關講次</p>
+          <details class="rel">
+            <summary>相關講次<span class="n">{sameTopic.length}</span></summary>
             <ul>{sameTopic.map((r) => (
               <li><a href={lessonUrl(r.key) + (r.shared.length ? hlHash(r.shared) : "")} title={lessonByKey(r.key)?.l.scope}>{refTitle(r.key)}</a><small>{r.shared.length ? `同談：${r.shared.join("、")}` : refScope(r.key)}</small></li>
             ))}</ul>
-          </section>
+          </details>
         )}
         {rel.same_passage.length > 0 && (
-          <section>
-            <p class="aside-h">同段經文，他講亦講</p>
+          <details class="rel">
+            <summary>同段經文，他講亦講<span class="n">{Math.min(rel.same_passage.length, 6)}</span></summary>
             <ul>{rel.same_passage.slice(0, 6).map((r) => (
               <li><a href={lessonUrl(r.key) + hlHash([r.quote], r.cbeta)}>{refTitle(r.key)}</a><small>「{clip(r.quote, 22)}」・{sutraTitle(r.cbeta)}</small></li>
             ))}</ul>
-          </section>
+          </details>
         )}
         {names.length > 0 && (
-          <section>
-            <p class="aside-h">本講名相・人物</p>
+          <details class="rel">
+            <summary>本講名相・人物<span class="n">{names.length}</span></summary>
             <p class="chips">{names.map((n) => <a href={entityUrl(n.type, n.name)}>{n.name}</a>)}</p>
-          </section>
+          </details>
         )}
         {extra.canon_cited.length > 0 && (
-          <section>
-            <p class="aside-h">本講引用經論（{extra.canon_cited.length}）</p>
+          <details class="rel">
+            <summary>本講引用經論<span class="n">{extra.canon_cited.length}</span></summary>
             <ul>{extra.canon_cited.slice(0, 12).map((id) => (
               <li><a href={sutraUrl(id)}>{sutraTitle(id)}</a><small>{id}</small></li>
             ))}</ul>
-          </section>
+          </details>
         )}
       </aside>
     </div>

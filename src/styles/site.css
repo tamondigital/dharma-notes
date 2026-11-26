@@ -9,6 +9,9 @@
   --accent: #8a3b2a;
   --accent-soft: #f3e2da;
   --mark: #b9773c;
+  --on-accent: #ffffff;
+  --shadow: rgba(40, 30, 20, .14);
+  --dot: .55;
   --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
   --sans: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   color-scheme: light;
@@ -17,12 +20,14 @@
   :root:not([data-theme="light"]) {
     --bg: #1a1816; --surface: #23201d; --surface-2: #2c2824; --ink: #e9e3d8; --ink-2: #b8afa2;
     --ink-3: #9a9185; --line: #3a3530; --accent: #e09a7f; --accent-soft: #3d2a23; --mark: #d39a5f;
+    --on-accent: #1a1816; --shadow: rgba(0, 0, 0, .55); --dot: .8;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #1a1816; --surface: #23201d; --surface-2: #2c2824; --ink: #e9e3d8; --ink-2: #b8afa2;
   --ink-3: #9a9185; --line: #3a3530; --accent: #e09a7f; --accent-soft: #3d2a23; --mark: #d39a5f;
+  --on-accent: #1a1816; --shadow: rgba(0, 0, 0, .55); --dot: .8;
   color-scheme: dark;
 }
 
@@ -70,7 +75,7 @@ main:focus { outline: none; }
   .site-head.menu-open nav {
     display: flex; flex-direction: column; align-items: stretch; gap: 0;
     position: absolute; left: 0; right: 0; top: 100%; padding: 6px 16px 12px;
-    background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px #0002;
+    background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px var(--shadow);
   }
   .site-head.menu-open nav a { display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid var(--line); font-size: 1.05rem; color: var(--ink); }
   .site-head.menu-open nav a.nav-search { display: none; }
@@ -152,19 +157,27 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 .lesson-list .meta { grid-column: 2; color: var(--ink-3); font-size: .78rem; }
 
 /* ---------- reader ---------- */
-.reader { display: grid; grid-template-columns: 200px minmax(0, 1fr) 250px; gap: 40px; align-items: start; }
-.reader-main { min-width: 0; }
-/* .side wraps 目次 and the related links; only the wide layout treats it as one column */
+/* one left column (目次, then the related links, each group folded) and the note: the note keeps the width.
+   Narrow screens: a single column, the related links below the note and no 目次. */
+.reader { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: start; }
+.reader-main { min-width: 0; grid-column: 1; grid-row: 1; }
 .side { display: contents; }
-.toc { grid-column: 1; grid-row: 1; }
-.reader-main { grid-column: 2; grid-row: 1; }
-.aside { grid-column: 3; grid-row: 1; }
-.toc, .aside { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; font-size: .84rem; }
+.toc { display: none; }
+.aside { grid-column: 1; grid-row: 2; border-top: 1px solid var(--line); padding-top: 12px; font-size: .84rem; }
+@media (min-width: 960px) and (min-height: 501px) {
+  .reader { grid-template-columns: 210px minmax(0, 1fr); gap: 40px; }
+  .side { display: block; grid-column: 1; grid-row: 1; position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto;
+    font-size: .84rem; padding-right: 4px; }
+  .toc { display: block; margin-bottom: 18px; }
+  .toc:not(:has(li)) { display: none; }
+  .aside { border-top: 0; padding-top: 0; }
+  .reader-main { grid-column: 2; }
+}
 .toc ol { list-style: none; margin: 0; padding: 0; }
 .toc a { display: block; padding: 4px 8px; color: var(--ink-3); border-left: 2px solid transparent; line-height: 1.45; }
 .toc a:hover { color: var(--ink); text-decoration: none; }
 .toc a.on { color: var(--accent); border-left-color: var(--accent); }
-.toc-h, .aside-h { font-size: .75rem; letter-spacing: .08em; color: var(--ink-3); margin: 0 0 8px; font-weight: 600; }
+.toc-h { font-size: .75rem; letter-spacing: .08em; color: var(--ink-3); margin: 0 0 8px; font-weight: 600; }
 
 .note-head h1 { font-size: 1.7rem; margin: 4px 0 10px; }
 .note-meta { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--ink-3); font-size: .85rem; }
@@ -199,6 +212,7 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 .player-poster .play-icon::after { content: ""; position: absolute; left: 27px; top: 14px;
   border-style: solid; border-width: 10px 0 10px 17px; border-color: transparent transparent transparent #fff; }
 .player-poster:hover .play-icon, .player-poster:focus-visible .play-icon { background: var(--accent); }
+.player-poster:hover .play-icon::after, .player-poster:focus-visible .play-icon::after { border-left-color: var(--on-accent); }
 .player-poster:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
 .player-bar { display: flex; justify-content: space-between; align-items: center; gap: 8px; color: var(--ink-3); padding-top: 4px; }
 .player-bar button { display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: none; border: 0; color: var(--ink-3);
@@ -226,8 +240,9 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 .end-card[hidden] { display: none; }
 .end-card p { margin: 0; font-size: .9rem; }
 .end-card .btn { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .6); }
-.end-card .btn-next { background: var(--accent); border-color: var(--accent); color: #fff; font-size: 1rem; padding: 8px 18px; max-width: 100%; }
+.end-card .btn-next { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-size: 1rem; padding: 8px 18px; max-width: 100%; }
 .end-card .btn:hover { color: #fff; border-color: #fff; }
+.end-card .btn-next:hover { color: var(--on-accent); }
 .player-bar .ic-grow, .player.mini .ic-shrink { display: none; }
 .player.mini .ic-grow { display: block; }
 .panel-grip { display: none; }
@@ -259,6 +274,7 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 .player:not(.mini):not(.no-ts) .player-body .player-frame { max-height: 34vh; }
 /* the note page showing its transcript in place (reader.js): one column, the note's own parts put away */
 .reader.ts-mode { display: block; max-width: 1048px; margin: 0 auto; }
+.reader.ts-mode .side { display: none; }
 .reader.ts-mode :is(.toc, .aside, .prose, .proof, .pager, .scope),
 .reader.ts-mode .player :is(.follow-wrap, .pb-note, [data-toggle-panel], [data-hint], .player-hint) { display: none !important; }
 .reader.ts-mode .player.no-ts [data-toggle-follow] { display: inline-flex; }
@@ -299,7 +315,7 @@ a.c {
 }
 a.c::before {
   content: ""; position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px;
-  border-radius: 50%; background: var(--mark); opacity: .55; transition: transform .12s, opacity .12s;
+  border-radius: 50%; background: var(--mark); opacity: var(--dot); transition: transform .12s, opacity .12s;
 }
 a.c:hover::before, a.c.on::before { opacity: 1; transform: scale(1.5); }
 a.c:focus-visible { outline: 2px solid var(--accent); border-radius: 3px; }
@@ -318,7 +334,7 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
 
 .pop {
   position: absolute; z-index: 20; width: min(380px, calc(100vw - 32px)); background: var(--surface);
-  border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,.14);
+  border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 28px var(--shadow);
   font-family: var(--sans); font-size: .85rem; line-height: 1.6; padding: 10px 12px; color: var(--ink);
 }
 .pop-row + .pop-row { border-top: 1px dashed var(--line); margin-top: 8px; padding-top: 8px; }
@@ -342,9 +358,23 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
 .pager .next { text-align: right; }
 .pager small { display: block; color: var(--ink-3); }
 
-.aside section { margin-bottom: 22px; }
-.aside ul { list-style: none; margin: 0; padding: 0; }
+.aside ul { list-style: none; margin: 0; padding: 2px 0 6px; }
 .aside li { margin: 0 0 9px; line-height: 1.45; }
+/* related links: folded until asked for */
+.rel { border-top: 1px solid var(--line); }
+.rel:last-child { border-bottom: 1px solid var(--line); }
+.rel > summary { display: flex; align-items: center; gap: 8px; min-height: 38px; padding: 6px 4px; cursor: pointer; color: var(--ink-2);
+  list-style: none; line-height: 1.4; }
+.rel > summary::-webkit-details-marker { display: none; }
+.rel > summary::after { content: "›"; margin-left: auto; color: var(--ink-3); font-size: 1.1rem; line-height: 1; transition: transform .15s; }
+.rel[open] > summary::after { transform: rotate(90deg); }
+.rel > summary:hover { color: var(--accent); }
+.rel[open] > summary { color: var(--ink); font-weight: 600; }
+.rel .n { flex: none; min-width: 1.6em; padding: 0 6px; border-radius: 99px; background: var(--surface-2); color: var(--ink-3);
+  font-size: .72rem; line-height: 1.6; text-align: center; font-weight: 400; font-variant-numeric: tabular-nums; }
+.rel > .chips { padding: 2px 0 10px; }
+@media (pointer: coarse) { .rel > summary { min-height: 44px; } }
+@media (prefers-reduced-motion: reduce) { .rel > summary::after { transition: none; } }
 .aside li a { color: var(--ink); }
 .aside li small { display: block; color: var(--ink-3); font-size: .74rem; margin-top: 1px; }
 
@@ -385,15 +415,7 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
 .sx-results mark { background: var(--accent-soft); color: var(--accent); font-weight: 600; padding: 0 1px; border-radius: 2px; }
 
 /* ---------- responsive ---------- */
-@media (max-width: 1100px) {
-  .reader { grid-template-columns: minmax(0, 1fr) 240px; }
-  .toc { display: none; }
-  .reader-main { grid-column: 1; }
-  .aside { grid-column: 2; }
-}
 @media (max-width: 820px) {
-  .reader { grid-template-columns: minmax(0, 1fr); }
-  .aside { grid-column: 1; grid-row: 2; position: static; max-height: none; border-top: 1px solid var(--line); padding-top: 20px; }
   .note-head h1 { font-size: 1.4rem; }
   .prose { font-size: 1.02rem; line-height: 1.9; }
   .ts p { padding-left: 3.6em; }
@@ -435,21 +457,13 @@ mark.hit { background: var(--accent-soft); color: var(--accent); font-weight: 60
   .player-bar { flex-wrap: wrap; row-gap: 2px; gap: 4px; }
   .pb-mini { display: none !important; }
 }
-@media (orientation: landscape) and (max-height: 500px) and (max-width: 1100px) {
-  .reader { grid-template-columns: minmax(0, 1fr); }
-  .aside { grid-column: 1; grid-row: 2; position: static; max-height: none; border-top: 1px solid var(--line); padding-top: 20px; }
-}
 /* ---------- wide landscape screens: the player and its transcript become a panel on the right ----------
    Keep this query in step with notesWide in public/scripts/player.js. Below it (phones, portrait tablets,
    short landscape screens) the layouts above apply unchanged. */
 @media (min-width: 1180px) and (orientation: landscape) and (min-height: 600px) {
   .page.wide { max-width: 1680px; }
   body:has(.page.wide) .site-head-inner { max-width: 1680px; }
-  .reader { grid-template-columns: 190px minmax(0, 1fr); gap: 32px; }
-  .side { display: block; grid-column: 1; grid-row: 1; position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; }
-  .side > .toc, .side > .aside { position: static; max-height: none; overflow: visible; }
-  .side > .toc:has(li) + .aside:has(section) { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
-  .reader-main { grid-column: 2; }
+  .reader { gap: 32px; }
   .reader-main:not(:has(> .player)) { max-width: 860px; }
 
   /* the note on the left, the panel on the right, stuck to the screen for the note's whole length.
