@@ -118,6 +118,26 @@ def split_note(text: str):
     return meta, bullets, "\n".join(lines[i:]).rstrip() + "\n"
 
 
+def scope_from_summary(body: str, n: int = 120) -> str:
+    """A note without a 本講範圍 bullet: the first sentence of its 本講概要, as mani's 目錄 does.
+
+    Copied from the note, never written: 〔行N〕 citations dropped, cut at a sentence end within n chars.
+    """
+    m = re.search(r"^##\s*(?:\d+[.、]\s*)?本講概要\s*\n(.*?)(?=^##\s|\Z)", body, re.S | re.M)
+    if not m:
+        return ""
+    para = next((p.strip() for p in re.split(r"\n\s*\n", m.group(1))
+                 if p.strip() and not p.lstrip().startswith((">", "-", "|", "#"))), "")
+    text = re.sub(r"〔行[^〕]*〕", "", " ".join(para.split()))
+    end = text.find("。")
+    first = text[:end] if 0 < end <= n else text
+    if len(first) > n:
+        head = first[:n]
+        stop = max(head.rfind(c) for c in "；，、")
+        first = head[:stop] if stop >= n // 2 else head + "…"
+    return first.rstrip("，、；：: ")
+
+
 def teacher_short(teacher: str | None) -> str | None:
     return re.split(r"[（(；;，,]", teacher)[0].strip() if teacher else None
 
@@ -237,7 +257,8 @@ def export_channel(ch: str, mani: Path, lesson_key, lessons: dict) -> dict:
             published, modified = note_dates(meta)
             index[nn(no)] = {
                 "no": nn(no), "title": meta.get("title") or f.stem,
-                "scope": public_voice.apply(bullets.get("本講範圍", "")).strip(),
+                "scope": public_voice.apply(bullets.get("本講範圍", "")).strip()
+                or scope_from_summary(public_voice.apply(body)),
                 "has_note": True, "has_transcript": False,
                 "video_id": vm.group(1) if vm else None,
                 "date": dm.group(0) if dm else None, "duration": durm.group(1) if durm else None,
@@ -433,7 +454,7 @@ def main():
             shared = [(t, idf[t] * math.log1p(min(mine[t], oc[t]))) for t in mine.keys() & oc.keys() if t in idf]
             if not shared:
                 continue
-            top = [t.split(":", 1)[1] for t, _ in sorted(shared, key=lambda x: -x[1])
+            top = [t.split(":", 1)[1] for t, _ in sorted(shared, key=lambda x: (-x[1], x[0]))
                    if not t.startswith("藏:")][:3]
             scores.append((sum(w for _, w in shared), other, top))
         scores.sort(key=lambda x: (-x[0], x[1]))
