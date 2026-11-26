@@ -62,7 +62,7 @@ const crumbs: Crumb[] = [["首頁", url("/")], ...(multiChannel ? [[channelLabel
           <a href={lessonHref(l.no, l.has_note)}>
             <span class="no">{Number(l.no)}</span>
             <span class="t">{s.lessons.length === 1 ? l.title : `第${Number(l.no)}講`}{!l.has_note && <> <span class="pill">逐字稿</span></>}</span>
-            {l.scope && <span class="scope">{plain(l.scope)}</span>}
+            {l.scope && <span class="scope"><span class="clamp">{plain(l.scope)}</span></span>}
             <span class="meta">{[l.date, l.duration].filter(Boolean).join("・")}</span>
           </a>
         </li>

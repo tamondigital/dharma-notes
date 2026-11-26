@@ -145,8 +145,10 @@ h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
 .lesson-list a:hover { background: var(--surface); text-decoration: none; }
 .lesson-list .no { font-family: var(--serif); color: var(--ink-3); font-size: 1.1rem; text-align: right; }
 .lesson-list .t { font-family: var(--serif); font-weight: 600; }
-.lesson-list .scope { grid-column: 2; color: var(--ink-2); font-size: .88rem; line-height: 1.6;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+/* the clamp lives on an inner span: on the padded .scope box, overflow clips at the padding edge
+   and the bottom padding shows the top half of line 3 */
+.lesson-list .scope { grid-column: 2; color: var(--ink-2); font-size: .88rem; line-height: 1.6; }
+.lesson-list .scope .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .lesson-list .meta { grid-column: 2; color: var(--ink-3); font-size: .78rem; }
 
 /* ---------- reader ---------- */
