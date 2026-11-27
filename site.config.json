@@ -5,6 +5,9 @@
   "channels": [
     "賢首禪苑"
   ],
+  "exclude_playlists": [
+    "與佛有曰"
+  ],
   "entity_min_talks": 2,
   "entity_max_share": 0.5,
   "entity_stoplist": [

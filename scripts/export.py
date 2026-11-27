@@ -227,7 +227,7 @@ def note_dates(meta: dict) -> tuple[str | None, str | None]:
     return published, max([*runs, *([published] if published else [])], default=None)
 
 
-def export_channel(ch: str, mani: Path, lesson_key, lessons: dict) -> dict:
+def export_channel(ch: str, mani: Path, lesson_key, lessons: dict, exclude=()) -> dict:
     notes_root = mani / "notes" / ch
     art_root = mani / "notes-artifacts" / ch
     out_root = mani / "outputs" / ch
@@ -237,7 +237,8 @@ def export_channel(ch: str, mani: Path, lesson_key, lessons: dict) -> dict:
     teachers = Counter()
 
     playlists = sorted({p.name for root in (notes_root, out_root, raw_root) if root.is_dir()
-                        for p in root.iterdir() if p.is_dir() and not p.name.startswith("_")})
+                        for p in root.iterdir()
+                        if p.is_dir() and not p.name.startswith("_") and p.name not in exclude})
     for pl in playlists:
         s = {"slug": slugify(pl), "name": pl, "teacher": None,
              "home_sutra": None, "home_sutra_id": None, "lessons": []}
@@ -390,7 +391,7 @@ def main():
         d.mkdir(parents=True)
 
     lessons: dict = {}
-    channels = [export_channel(ch, mani, lesson_key, lessons) for ch in cfg["channels"]]
+    channels = [export_channel(ch, mani, lesson_key, lessons, cfg.get("exclude_playlists", ())) for ch in cfg["channels"]]
     noted = {k: e for k, e in lessons.items() if e.get("has_note")}
     stem_to_key = {e["_note"].stem: k for k, e in noted.items()}
 

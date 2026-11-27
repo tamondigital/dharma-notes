@@ -16,6 +16,7 @@ mani  ──scripts/export.py──▶  content/ + public/data/  ──astro bui
 | `title` | Site name |
 | `tagline` | Home-page intro |
 | `channels` | Which mani channels to publish. Any channel with notes works. |
+| `exclude_playlists` | Playlist names the export skips even inside a published channel, for talks that are not 講經 (an interview such as 與佛有曰). |
 | `entity_min_talks` | A name gets its own page only if it appears in at least this many talks. |
 | `entity_max_share` | A name that appears in more than this share of talks gets no page (it would just list everything). |
 | `entity_stoplist` | Dictionary words that are ambiguous in these notes, such as 會通 or 法寶 being typed as people. |
