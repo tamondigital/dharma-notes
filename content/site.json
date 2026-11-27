@@ -2852,7 +2852,7 @@
        "scope": "",
        "has_note": false,
        "has_transcript": true,
-       "raw": true,
+       "raw": false,
        "video_id": "3yK8UgYlMj4",
        "date": "2026-06-27",
        "duration": "3:31:20"
@@ -3045,7 +3045,7 @@
        "scope": "",
        "has_note": false,
        "has_transcript": true,
-       "raw": true,
+       "raw": false,
        "video_id": "ewAF9PAwycI",
        "date": "2026-10-10",
        "duration": "3:27:47"
@@ -3069,7 +3069,7 @@
        "scope": "",
        "has_note": false,
        "has_transcript": true,
-       "raw": true,
+       "raw": false,
        "video_id": "bxcP6uIUNYU",
        "date": "2026-10-24",
        "duration": "3:08:03"
@@ -3080,7 +3080,7 @@
        "scope": "",
        "has_note": false,
        "has_transcript": true,
-       "raw": true,
+       "raw": false,
        "video_id": "w5JvMUW-oG0",
        "date": "2026-10-31",
        "duration": "3:20:13"
@@ -3102,7 +3102,7 @@
        "scope": "",
        "has_note": false,
        "has_transcript": true,
-       "raw": true,
+       "raw": false,
        "video_id": "19VVvaKbqcI",
        "date": "2026-11-14",
        "duration": "4:01:49"
@@ -3570,54 +3570,6 @@
        "duration": "3:19:48",
        "published": "2026-10-03",
        "modified": "2026-10-03",
-       "raw": false
-      }
-     ]
-    },
-    {
-     "slug": "與佛有曰",
-     "name": "與佛有曰",
-     "teacher": "體佛法師（賢首禪苑）；訪談者：宗月居士",
-     "home_sutra": "無單一本經——《與佛有曰》訪談第一集（法師口述，非藏經講經，無 CBETA 編號）；所引藏經全段列於 §9",
-     "home_sutra_id": null,
-     "lessons": [
-      {
-       "no": "01",
-       "title": "與佛有曰 01",
-       "scope": "宗月居士專訪第一集——法師學佛到出家的因緣（胎裡素・台南彌陀寺・千手千眼觀音造像・白衣觀音示現・台大聽華嚴・見印順導師與李炳南居士・廣欽老和尚賜名「傳禪」・宣化上人要背《楞嚴經》・母親骨灰灑普陀山・發願得癌症・多發性骨髓瘤瀕死見「現出比丘相」）；以病身用法（自性功德・業與業障・癌症是無常的警訊與禮物・普賢十大願・畢陵伽婆蹉「覺痛無痛」・身受心不受・知幻即離・持名念佛制心一處）；講經何以無稿而流暢（六七兩識遮蔽本心・遍計所執・打破第七意識・穢跡金剛咒・法界一心・三般若・諦聽）",
-       "has_note": true,
-       "has_transcript": true,
-       "video_id": "sgxAC4jGzC8",
-       "date": "2025-02-08",
-       "duration": "1:33:21",
-       "published": null,
-       "modified": "2026-10-03",
-       "raw": false
-      },
-      {
-       "no": "02",
-       "title": "與佛有曰 02",
-       "scope": "宗月居士專訪第二集——聽經而病癒、自在往生、燒舍利的力量從何而來（佛菩薩加持力＋自性功德力・體相用・諦聽・憂鬱症是遍計所執・人生如夢・臨終一刻）；淨土在哪裡、怎樣往生（十萬億佛土在心・理事真信・信願行・不可以少善根福德因緣・世親《往生論》五念門）；自力他力（法藏比丘本願・第十八願・自他不二・不識本心學法無益）；一心不亂（都攝六根・六根六塵皆幻）；中陰與《西藏度亡經》（藍光・五方五佛）；失智者能否往生；臨終助念的方法（穢跡金剛安冤親債主・每二十分鐘開示）；演龍法師坐化；四阿含・四悉檀・中觀瑜伽・禪淨密律皆歸本心；真言宗何以必須灌頂（自受用・他受用・三密相應・三昧耶戒）",
-       "has_note": true,
-       "has_transcript": true,
-       "video_id": "d_-w8__YCbQ",
-       "date": "2025-02-15",
-       "duration": "1:32:40",
-       "published": null,
-       "modified": "2026-10-03",
-       "raw": false
-      },
-      {
-       "no": "03",
-       "title": "與佛有曰 03",
-       "scope": "宗月居士專訪第三集（新春）——迎請佛陀真身舍利的因緣（南林繞塔二十一匝・身骨舍利與法句舍利・斯里蘭卡何以保存舍利・法雲法師與僧王・龍鳳呈祥・一顆變兩顆＝福慧雙修）；媒體與網路弘法（一彈指三十二億百千念・波旬天羅地網・正負能量）；法師回應不實報導（依法不依人・破和合僧）；2025 災難預言（依報隨正報轉・貪瞋癡慢疑與五災）；本心是什麼、如何入（楞伽四句・謗佛經四淨法）；開悟與證悟（衣裏明珠・行於非道通達佛道・始覺本覺）；佛陀何以先說苦（權實二諦・四諦十二因緣・心經無苦集滅道・無我）；法執如何破（心是根法是塵）；人間佛教（太虛大師・六字大明・二十二祖偈）",
-       "has_note": true,
-       "has_transcript": true,
-       "video_id": "XOLpLYFK7lY",
-       "date": "2025-02-22",
-       "duration": "1:30:24",
-       "published": "2026-10-03",
-       "modified": "2026-11-02",
        "raw": false
       }
      ]
