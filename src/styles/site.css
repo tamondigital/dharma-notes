@@ -1,106 +1,10 @@
-:root {
-  --bg: #faf7f0;
-  --surface: #ffffff;
-  --surface-2: #f2ede2;
-  --ink: #2a2622;
-  --ink-2: #5c554c;
-  --ink-3: #736b60;
-  --line: #e4ddcf;
-  --accent: #8a3b2a;
-  --accent-soft: #f3e2da;
-  --mark: #b9773c;
-  --on-accent: #ffffff;
-  --shadow: rgba(40, 30, 20, .14);
-  --dot: .55;
-  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
-  --sans: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #1a1816; --surface: #23201d; --surface-2: #2c2824; --ink: #e9e3d8; --ink-2: #b8afa2;
-    --ink-3: #9a9185; --line: #3a3530; --accent: #e09a7f; --accent-soft: #3d2a23; --mark: #d39a5f;
-    --on-accent: #1a1816; --shadow: rgba(0, 0, 0, .55); --dot: .8;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #1a1816; --surface: #23201d; --surface-2: #2c2824; --ink: #e9e3d8; --ink-2: #b8afa2;
-  --ink-3: #9a9185; --line: #3a3530; --accent: #e09a7f; --accent-soft: #3d2a23; --mark: #d39a5f;
-  --on-accent: #1a1816; --shadow: rgba(0, 0, 0, .55); --dot: .8;
-  color-scheme: dark;
-}
-
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0; background: var(--bg); color: var(--ink);
-  font-family: var(--sans); font-size: 1rem; line-height: 1.7;
-}
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-button { font: inherit; color: inherit; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.skip { position: absolute; left: 8px; top: -60px; z-index: 50; padding: 8px 14px; background: var(--surface); border: 2px solid var(--accent); border-radius: 6px; }
-.skip:focus { top: 8px; }
-main:focus { outline: none; }
-
-/* ---------- chrome ---------- */
-.site-head { border-bottom: 1px solid var(--line); background: var(--bg); }
-.site-head-inner {
-  max-width: 1280px; margin: 0 auto; padding: 10px 16px;
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-}
-.brand { font-family: var(--serif); font-weight: 700; font-size: 1.15rem; color: var(--ink); }
-.brand span { font-weight: 400; color: var(--ink-3); margin-left: .5em; font-size: .9em; }
-.site-head nav { display: flex; gap: 18px; align-items: center; }
-.site-head nav a { color: var(--ink-2); white-space: nowrap; }
-.brand { white-space: nowrap; }
-.nav-settings { display: contents; }
-.head-search, .menu-toggle, .nav-label { display: none; }
-/* phones: one row — brand, 搜尋, 選單; the nav opens as a panel under the header */
-@media (max-width: 640px) {
-  .site-head { position: relative; z-index: 40; }
-  .site-head-inner { gap: 4px; }
-  .brand { margin-right: auto; }
-  .head-search { display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; color: var(--ink-2); }
-  .menu-toggle { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; background: none;
-    border: 1px solid var(--line); border-radius: 99px; color: var(--ink-2); font: inherit; cursor: pointer; }
-  .menu-toggle:hover, .menu-open .menu-toggle { color: var(--accent); border-color: var(--accent); }
-  .menu-icon, .menu-icon::before, .menu-icon::after { display: block; width: 14px; height: 1.5px; background: currentColor; border-radius: 1px; }
-  .menu-icon { position: relative; }
-  .menu-icon::before, .menu-icon::after { content: ""; position: absolute; left: 0; }
-  .menu-icon::before { top: -4.5px; } .menu-icon::after { top: 4.5px; }
-  .site-head nav { display: none; }
-  .site-head.menu-open nav {
-    display: flex; flex-direction: column; align-items: stretch; gap: 0;
-    position: absolute; left: 0; right: 0; top: 100%; padding: 6px 16px 12px;
-    background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px var(--shadow);
-  }
-  .site-head.menu-open nav a { display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid var(--line); font-size: 1.05rem; color: var(--ink); }
-  .site-head.menu-open nav a.nav-search { display: none; }
-  .nav-settings { display: flex; align-items: center; gap: 10px; padding-top: 12px; }
-  .nav-label { display: inline; color: var(--ink-3); font-size: .9rem; }
-  .nav-settings .theme-toggle { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; border: 1px solid var(--line); border-radius: 99px; padding: 0 14px; }
-  .nav-settings .theme-toggle .nav-label { color: var(--ink-2); }
-}
-@media (prefers-reduced-motion: no-preference) and (max-width: 640px) {
-  .site-head.menu-open nav { animation: menu-in .16s ease-out; }
-  @keyframes menu-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
-}
-.theme-toggle { background: none; border: 0; cursor: pointer; color: var(--ink-3); font-size: 1.1rem; padding: 4px; min-width: 32px; min-height: 32px; }
-.font-size { display: inline-flex; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; }
-.font-size button { background: none; border: 0; cursor: pointer; color: var(--ink-2); padding: 2px 10px; min-height: 32px; font-family: var(--serif); }
-.font-size button + button { border-left: 1px solid var(--line); font-size: 1.15em; }
-.font-size button:hover { color: var(--accent); }
-.font-size button:disabled { color: var(--line); cursor: default; }
-.font-size small { font-family: var(--sans); font-size: .75em; margin-left: 1px; }
+/* The shared look (tokens, base, header, page widths, pills) comes from the synced tiedy theme (src/styles/theme/);
+   this file holds what is specific to the notes site. */
+:root { --dot: .55; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --dot: .8; } }
+:root[data-theme="dark"] { --dot: .8; }
+@media (max-width: 640px) { .site-head.menu-open nav a.nav-search { display: none; } }
 @media (pointer: coarse) {
-  .font-size button, .theme-toggle { min-height: 44px; min-width: 44px; }
-  .site-head nav a, .brand { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; }
-  .site-head nav { gap: 0 6px; }
-  .site-head-inner { padding-top: 4px; padding-bottom: 4px; }
-  .btn { min-height: 44px; }
   .chips { gap: 8px; }
   .chips a { display: inline-flex; align-items: center; min-height: 36px; }
   .aside li { margin: 0 0 4px; }
@@ -108,22 +12,6 @@ main:focus { outline: none; }
   /* the ● citation dot: a finger-sized hit area around it, without moving the text */
   a.c::after { content: ""; position: absolute; inset: -14px -14px; }
   .pop-head .play { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; }
-}
-.page { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
-.page.wide { max-width: 1280px; }
-.site-foot { border-top: 1px solid var(--line); color: var(--ink-3); font-size: .82rem; }
-.site-foot p { max-width: 1080px; margin: 0 auto; padding: 18px 16px 32px; }
-
-.crumbs { font-size: .85rem; color: var(--ink-3); margin-bottom: 8px; }
-.crumbs a { color: var(--ink-2); }
-/* links inside running text need more than colour to stand out (WCAG 1.4.1) */
-.crumbs a, .notice a, .site-foot a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em;
-  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); }
-h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
-.muted { color: var(--ink-3); }
-.pill {
-  display: inline-block; font-size: .75rem; padding: 1px 8px; border-radius: 99px;
-  background: var(--surface-2); color: var(--ink-2); vertical-align: middle;
 }
 
 /* ---------- home ---------- */

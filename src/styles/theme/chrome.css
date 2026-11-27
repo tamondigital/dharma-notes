@@ -1,0 +1,131 @@
+/* tiedy theme — the shared page chrome: base, header with phone menu, text size and light/dark controls, page
+   widths, 目次 rail, cards, pills, notice, footer. Markup contract: README.md. Behaviour: chrome.js. */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 1rem; line-height: 1.7; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.skip { position: absolute; left: 8px; top: -60px; z-index: 50; padding: 8px 14px; background: var(--surface); border: 2px solid var(--accent); border-radius: 6px; }
+.skip:focus { top: 8px; }
+main:focus { outline: none; }
+h1, h2, h3 { font-family: var(--serif); line-height: 1.4; }
+.muted { color: var(--ink-3); }
+
+/* ---------- header ---------- */
+.site-head { border-bottom: 1px solid var(--line); background: var(--bg); }
+.site-head-inner { max-width: var(--page-wide); margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { font-family: var(--serif); font-weight: 700; font-size: 1.15rem; color: var(--ink); white-space: nowrap; }
+.brand:hover { text-decoration: none; }
+.brand span { font-weight: 400; color: var(--ink-3); margin-left: .5em; font-size: .9em; }
+.site-head nav { display: flex; gap: 18px; align-items: center; }
+.site-head nav a { color: var(--ink-2); white-space: nowrap; }
+.nav-settings { display: contents; }
+.head-search, .menu-toggle, .nav-label { display: none; }
+.theme-toggle { background: none; border: 0; cursor: pointer; color: var(--ink-3); font-size: 1.1rem; padding: 4px; min-width: 32px; min-height: 32px; }
+.font-size { display: inline-flex; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; }
+.font-size button { background: none; border: 0; cursor: pointer; color: var(--ink-2); padding: 2px 10px; min-height: 32px; font-family: var(--serif); }
+.font-size button + button { border-left: 1px solid var(--line); font-size: 1.15em; }
+.font-size button:hover { color: var(--accent); }
+.font-size button:disabled { color: var(--line); cursor: default; }
+.font-size small { font-family: var(--sans); font-size: .75em; margin-left: 1px; }
+/* phones: one row — brand, the optional quick link, 選單; the nav opens as a panel under the header */
+@media (max-width: 640px) {
+  .site-head { position: relative; z-index: 40; }
+  .site-head-inner { gap: 4px; }
+  .brand { margin-right: auto; }
+  .head-search { display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; color: var(--ink-2); }
+  .menu-toggle { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; background: none;
+    border: 1px solid var(--line); border-radius: 99px; color: var(--ink-2); font: inherit; cursor: pointer; }
+  .menu-toggle:hover, .menu-open .menu-toggle { color: var(--accent); border-color: var(--accent); }
+  .menu-icon, .menu-icon::before, .menu-icon::after { display: block; width: 14px; height: 1.5px; background: currentColor; border-radius: 1px; }
+  .menu-icon { position: relative; }
+  .menu-icon::before, .menu-icon::after { content: ""; position: absolute; left: 0; }
+  .menu-icon::before { top: -4.5px; } .menu-icon::after { top: 4.5px; }
+  .site-head nav { display: none; }
+  .site-head.menu-open nav {
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    position: absolute; left: 0; right: 0; top: 100%; padding: 6px 16px 12px;
+    background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px var(--shadow);
+  }
+  .site-head.menu-open nav a { display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid var(--line); font-size: 1.05rem; color: var(--ink); }
+  .site-head.menu-open nav a.head-dup { display: none; }
+  .nav-settings { display: flex; align-items: center; gap: 10px; padding-top: 12px; }
+  .nav-label { display: inline; color: var(--ink-3); font-size: .9rem; }
+  .nav-settings .theme-toggle { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; border: 1px solid var(--line); border-radius: 99px; padding: 0 14px; }
+  .nav-settings .theme-toggle .nav-label { color: var(--ink-2); }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 640px) {
+  .site-head.menu-open nav { animation: menu-in .16s ease-out; }
+  @keyframes menu-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+}
+@media (pointer: coarse) {
+  .font-size button, .theme-toggle { min-height: 44px; min-width: 44px; }
+  .site-head nav a, .brand { display: inline-flex; align-items: center; min-height: 44px; }
+  .site-head nav { gap: 0 6px; }
+  .site-head-inner { padding-top: 4px; padding-bottom: 4px; }
+  .btn { min-height: 44px; }
+}
+
+/* ---------- page ---------- */
+.page { max-width: var(--page); margin: 0 auto; padding: 24px 16px 64px; }
+.page.wide { max-width: var(--page-wide); }
+.site-foot { border-top: 1px solid var(--line); color: var(--ink-3); font-size: .82rem; }
+.site-foot p { max-width: var(--page); margin: 0 auto; padding: 18px 16px 0; }
+.site-foot p:last-child { padding-bottom: 32px; }
+/* links inside running text need more than colour to stand out (WCAG 1.4.1) */
+.crumbs a, .notice a, .site-foot a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); }
+.crumbs { font-size: .85rem; color: var(--ink-3); margin-bottom: 8px; }
+.crumbs a { color: var(--ink-2); }
+
+/* ---------- reader: 目次 rail beside the text on a wide screen; on a narrow one the rail is hidden and the app
+   offers the same list from its toolbar (README "目次") ---------- */
+.reader { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: start; }
+.reader-main { min-width: 0; grid-column: 1; grid-row: 1; }
+.side { display: none; }
+@media (min-width: 960px) and (min-height: 501px) {
+  .reader { grid-template-columns: var(--rail) minmax(0, 1fr); }
+  .side { display: block; grid-column: 1; grid-row: 1; position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto;
+    font-size: .84rem; padding-right: 4px; }
+  .reader-main { grid-column: 2; }
+  .narrow-only { display: none !important; }
+}
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc a { display: block; padding: 4px 8px; color: var(--ink-3); border-left: 2px solid transparent; line-height: 1.45; }
+.toc a:hover { color: var(--ink); text-decoration: none; }
+.toc a.on { color: var(--accent); border-left-color: var(--accent); }
+.toc-h { font-size: .75rem; letter-spacing: .08em; color: var(--ink-3); margin: 0 0 8px; font-weight: 600; }
+.toc li.toc-sep { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 6px; }
+
+/* ---------- components ---------- */
+.hero { padding: 24px 0 28px; }
+.hero h1 { font-size: 2rem; margin: 0 0 8px; }
+.hero p { color: var(--ink-2); max-width: 40em; margin: 0; }
+.hero p + p { margin-top: 8px; }
+.pill { display: inline-block; font-size: .75rem; padding: 1px 8px; border-radius: 99px; background: var(--surface-2); color: var(--ink-2); vertical-align: middle; }
+.pill.accent { background: var(--accent-soft); color: var(--accent); }
+.pill.warn { background: var(--warn-soft); color: var(--warn); }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 99px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); font-size: .88rem; cursor: pointer; }
+.btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; list-style: none; padding: 0; }
+.card { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 18px; color: var(--ink); transition: border-color .15s, transform .15s; }
+a.card:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-1px); }
+.card h3 { margin: 0 0 4px; font-size: 1.08rem; }
+.card p { margin: 0; color: var(--ink-3); font-size: .85rem; }
+.section-title { font-family: var(--serif); font-size: 1.2rem; margin: 36px 0 12px; }
+.notice { padding: 14px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-2);
+  font-family: var(--sans); font-size: .88rem; line-height: 1.75; color: var(--ink-2); }
+.notice p { margin: 0; }
+.notice p + p { margin-top: 6px; }
+.notice .notice-h { font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+/* a segmented switch between views of the same content */
+.seg-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 99px; padding: 3px; gap: 2px; background: var(--surface); }
+.seg-switch a, .seg-switch button { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 99px;
+  border: 0; background: none; color: var(--ink-2); cursor: pointer; white-space: nowrap; }
+.seg-switch a:hover, .seg-switch button:hover { text-decoration: none; color: var(--accent); }
+.seg-switch [aria-current="true"], .seg-switch [aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+@media (pointer: coarse) { .seg-switch a, .seg-switch button { min-height: 44px; } }

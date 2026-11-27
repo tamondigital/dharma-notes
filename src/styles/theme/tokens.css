@@ -1,0 +1,40 @@
+/* tiedy theme — design tokens shared by every site under tiedy.com. Source of truth: tamondigital.github.io/theme/.
+   Apps keep a synced copy (their scripts/sync_theme.sh); edit here, then sync, never in the copy. */
+:root {
+  --bg: #faf7f0;
+  --surface: #ffffff;
+  --surface-2: #f2ede2;
+  --ink: #2a2622;
+  --ink-2: #5c554c;
+  --ink-3: #736b60;
+  --line: #e4ddcf;
+  --accent: #8a3b2a;
+  --accent-soft: #f3e2da;
+  --mark: #b9773c;
+  --warn: #8a5a00;
+  --warn-soft: #fbf0d9;
+  --on-accent: #ffffff;
+  --shadow: rgba(40, 30, 20, .14);
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --serif-latin: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, var(--serif);
+  --sans: -apple-system, "Segoe UI", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  --radius: 10px;
+  --page: 1080px;
+  --page-wide: 1280px;
+  --rail: 210px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1816; --surface: #23201d; --surface-2: #2c2824; --ink: #e9e3d8; --ink-2: #b8afa2;
+    --ink-3: #9a9185; --line: #3a3530; --accent: #e09a7f; --accent-soft: #3d2a23; --mark: #d39a5f;
+    --warn: #e0b45f; --warn-soft: #3a3020; --on-accent: #1a1816; --shadow: rgba(0, 0, 0, .55);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1816; --surface: #23201d; --surface-2: #2c2824; --ink: #e9e3d8; --ink-2: #b8afa2;
+  --ink-3: #9a9185; --line: #3a3530; --accent: #e09a7f; --accent-soft: #3d2a23; --mark: #d39a5f;
+  --warn: #e0b45f; --warn-soft: #3a3020; --on-accent: #1a1816; --shadow: rgba(0, 0, 0, .55);
+  color-scheme: dark;
+}
