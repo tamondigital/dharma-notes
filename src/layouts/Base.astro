@@ -34,6 +34,8 @@ const ld = jsonld && JSON.stringify(jsonld).replace(/</g, "\\u003c");
     {ld && <script type="application/ld+json" set:html={ld} />}
     <link rel="sitemap" href={url("sitemap-index.xml")} />
     <link rel="icon" href={url("favicon.svg")} type="image/svg+xml" />
+    <link rel="icon" href={url("favicon.ico")} sizes="48x48" />
+    <link rel="apple-touch-icon" href={url("apple-touch-icon.png")} />
     {/* self-hosted, written by scripts/subset_font.py at build time (absent under `npm run dev`). Text shows in
         the fallback serif (--serif) until it arrives. A first visit fetches it after the page has loaded, so it does not
         hold up the page itself; once it is in the browser's cache it is applied at once. */}
